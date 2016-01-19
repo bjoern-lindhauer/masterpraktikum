@@ -27,3 +27,5 @@
 *.tps 
 *blx.bib 
 *.run.xml
+protokoll.pdf
+*.synctex.gz
