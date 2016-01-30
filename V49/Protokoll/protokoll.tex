@@ -51,26 +51,55 @@
 \end{center}
 \end{titlepage}
 \section{Einleitung}
-
+Die Grundlage der Kernspinresonanz ist, dass sich magnetische Momente der Atomkerne beim wirken eines äußerem Magnetfeld ausrichten. Die Ausrichtung kann durch Einstrahlung von Hochfrequenzquanten mit geeigneter Frequenz verändert werden und so können verschiedene magnetische Eigenschaften einer Probe untersucht werden.\\
+Zum einen können Resonanzphänomene beobachtet werden, indem die Energieaufnahme in Abhängigkeit der Frequenz aufgenommen wird. So lassen sich Rückschlüsse auf lokale Magnetfelder anhand der Resonanzstellen schließen. Mit diesen Daten kann die Struktur der Probe rekonstruiert werden.\\
+Zum anderen kann der zeitlicher Verlauf von Auf- und Abbau eines Magnetfeldes bestimmt werden. Außerdem lässt sich die Diffusionskonstante einer Probe bestimmen, da sich durch die Diffusion die Anzahl der Momente im Messabschnitt ändert und folglich das statische Magnetfeld der Probe verändert ist. Die Resonanzbedingung ändert sich und aus dieser Änderung lässt sich die Diffusionskonstante bestimmen. Da Resonanzbedingung erfüllt werden sollen, werden Hochfrequenzimpulse benötigt, welches dieser Methode ihren Namen gepulste Kernspinresonanz gab.\\
+In diesen Versuch soll mit der gepulsten Kernspinresonanz eine Probe untersucht werden.
 \section{Theoretische Grundlagen}
-- Kernspinresonanz: magnetische Momente der Atomkerne richten sich bei äußerem Magnetfeld aus
-- Änderung der Ausrichtung durch Einstrahlung von Hochfrequenzquanten mit geeigneter Frequenz veränderbar
-a) Resonanzphänomene: Energieaufnahme in Abhängigkeit der Frequenz --> Rückschlüsse auf lokale Magnetfelder durch Resonanzstellen --> Auflösung der Struktur
-b) zeitlicher Verlauf von Auf- und Abbau eines Magnetfeldes --> benötigt Hochfrequenzimpulse --> Daher gepulste Kernspinresonanz + durch Diffusion ändert sich \#Momente --> statisches Magnetfeld der Probe ändert sich --> Resonanzbedingung nicht mehr erfüllt  --> Diffusionskonstante bestimmbar
-
-
-Magnetisierung einer Probe, die im thermischen Gleichgewicht mit der Umgebung steht
-Durch anlegen von Feld $B_0\ \vec{e_z}$ spalten die entarteten Kernspinzustände mit der Spinquantenzahl $I$ in $2I+1$ äquidistante Unterniveaus auf.
-Besitzen Abstand $\Delta E = \gamma B_0 \hbar$
-Niveaus besetzt nach Boltzmann-Verteilung --> Besetzungszahlverhältnis bei $T$ gegeben durch
-\begin{align*}
+\subsection{Magnetisierung}
+Zunächst wird angenommen, dass die Probe im thermischen Gleichgewicht mit der Umgebung steht, da Konvektionsströme nicht Bestandteil der Betrachtungen sind.\\
+Des weiteren sei ein homogenes Magnetfeld $B_0\ \vec{e_z}$ angelegt.\\
+Durch dieses Feld spalten die entarteten Kernspinzustände
+Magnetisierung einer Probe, die im thermischen Gleichgewicht mit der Umgebung steht mit der Spinquantenzahl $I$ in $2I+1$ äquidistante Unterniveaus auf, welche den Abstand $\Delta E = \gamma B_0 \hbar$ besitzen.\\
+Die Besetzung der Niveaus erfolgt nach der Boltzmann-Verteilung. Es folgt daraus das Besetzungszahlverhältnis 
+\begin{align}
 \frac{N\left(m\right)}{N\left(m-1\right)}=\exp \left(-\frac{\gamma B_0\hbar}{k_\text{B}T}\right)
-\end{align*}
+\end{align}
+bei gegebenen $T$.\\
 Da die Besetzung folglich nicht homogen über alle Zustände ist, besitzt der Kern eine Kernspinpolarisation
 \begin{align}
-\left\langle I_Z \right\rangle = \frac{\sum\limits_{m=-I}^{I} \hbar m \exp\left(-\beta m\gamma B_0 \hbar \right)}{\sum\limits_{m=-I}^{I} \exp\left(-\beta m\gamma B_0 \hbar \right)}
+\left\langle I_Z \right\rangle = \frac{\sum\limits_{m=-I}^{I} \hbar m \exp\left(-\beta m\gamma B_0 \hbar \right)}{\sum\limits_{m=-I}^{I} \exp\left(-\beta m\gamma B_0 \hbar \right)} \label{eq_izallgemein}\hspace*{0.5cm}\text{.}
 \end{align}
-Im folgenden werden nur noch Protonen betrachtet, es ist somit $I=0.5$. Ein Niveau spaltet sich in zwei Unterniveaus auf mit den Quantenzahlen $m=-0.5$ und $m=-0.5$
+Im folgenden werden nur noch Protonen betrachtet, es ist somit $I=\frac{1}{2}$. Ein Niveau spaltet sich in zwei Unterniveaus auf mit den Quantenzahlen $m=-\frac{1}{2}$ und $m=+\frac{1}{2}$. Abbildung \ref{fig_aufspaltung} veranschaulicht dies.
+\begin{figure}[H]
+\centering
+\includegraphics[width=8cm]{images/aufspaltung_magnetfeld.png}
+\caption{Toller Titel (1)}
+\label{fig_aufspaltung}
+\end{figure}
+Für die Exponentialfunktion in \ref{eq_izallgemein} kann eine lineare Näherung eingesetzt werden, falls
+\begin{align}
+m\gamma B_0 \hbar \ll k_\text{B}T 
+\end{align}
+ist, welches für Magnetfelder in der Größenordnung von 1 Tesla und Temperaturen nahe der Zimmertemperatur gegeben ist.\\
+Es ergibt sich
+\begin{align}
+\left\langle I_Z \right\rangle_{\text{P}}= -\frac{\hbar^2}{4}\frac{\gamma B_0}{k_\text{B}T}\hspace*{0.5cm}\text{.} \label{eq_iznahrung}
+\end{align}
+Da die Kernspinpolarisation im direkten Zusammenhang mit den magnetischen Momenten $\vec{\mu}_I$ stehen, ist eine makroskopische Magnetisierung $\vec{M_0}$ der Probe messbar, die durch die Summe aller Einzelmomente pro Volumen
+\begin{align}
+\vec{M_0}=\sum\limits_{i}^{}\frac{\mu_0\vec{\mu}_i}{V}
+\end{align}
+gegeben ist.\\
+Es ist
+\begin{align}
+\left\langle \vec{M_0}_z \right\rangle =N\gamma \mu_0 \left\langle I_Z \right\rangle_{\text{P}} :=\left\langle M_0 \right\rangle\hspace*{0.5cm}\text{.}
+\end{align}
+Wird nun \ref{eq_iznahrung} eingesetzt, so ergibt sich
+\begin{align}
+\left\langle M_0 \right\rangle = N\frac{\hbar^2}{4}\mu_0\frac{\gamma^2 B_0}{k_\text{B}T}:=M_0
+\end{align}
+als Gleichgewichtsmagnetisierung bei Temperatur $T$.
 \section{Durchführung}
 
 \section{Quellen}
