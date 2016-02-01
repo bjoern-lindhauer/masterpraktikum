@@ -101,27 +101,86 @@ Wird nun \ref{eq_iznahrung} eingesetzt, so ergibt sich
 \end{align}
 als Gleichgewichtsmagnetisierung bei Temperatur $T$.
 \subsection{Larmor-Präzession}
--$\vec{M}$ wird aus Gleichgewichtslage $\vec{M_0}$ durch Hochfrequenzquanten mit Energie $\Delta E$ gebracht
--Magnetisierung durch viele Spins --> klassische Betrachtung
--Drehmoment
+Damit das System interessantes Verhalten zeigt, muss $\vec{M}$ aus der Gleichgewichtslage $\vec{M_0}$ durch Hochfrequenzquanten mit Energie $\Delta E$ gebracht werden.\\
+Außerdem kann das System klassisch betrachtet werden, da die Magnetisierung durch $N$ Spins mit $N \sim 10^{28}$ m$^{-2}$ erzeugt werden und folglich Quanteneffekte nicht relevant sind.\\
+Es wirkt somit ein Drehmoment
 \begin{align}
 \vec{D}=\vec{M}\times B_0 \vec{e_z}
 \end{align}
--über Kreiselgleichung lässt sich herleiten
+und es lässt sich dadurch über die Kreiselgleichung die Differenzialgleichung
 \begin{align}
-\frac{d \vec{M}}{d t} = \gamma \vec{M}\times B_0 \vec{e_z}
+\frac{d \vec{M}}{d t} = \gamma \vec{M}\times B_0 \vec{e_z}\label{eq::magzeit}
 \end{align}
-- Lösung der DGL Komponentenweise
+herleiten.\\
+Die komponentenweise Lösung der Differenzialgleichung ist durch
 \begin{align}
-M_x= 0 \\
-M_y= A \cos \gamma B_0 t \\
-M_z= -A \sin \gamma B_0 t
+M_x&= 0 \\
+M_y&= A \cos \gamma B_0 t \\
+M_z&= -A \sin \gamma B_0 t
 \end{align}
---> Präzession um  $\vec{e_z}$-Achse mit der Larmor-Frequenz genannten
+gegeben.\\
+Es folgt eine Präzession um $\vec{e_z}$-Achse mit der Larmor-Frequenz genannten Frequenz
 \begin{align}
-\omega_L =\gamma B_0
+\omega_L =\gamma B_0 \hspace*{0.5cm}\text{.}
 \end{align}
 \subsection{Relaxationserscheinungen}
+Der zeitliche Verlauf der Magnetisierung ist durch die Blochschen Gleichungen gegeben, die eine Zusammensetzung aus der Kreiselgleichung und der Differentialgleichung für die Relaxion besteht.\\
+In diesen Fall lauten sie
+\begin{align}
+\frac{d M_x}{d t}&= \gamma B_0 M_y - \frac{M_x}{T_2}\\
+\frac{d M_y}{d t}&= \gamma B_0 M_x - \frac{M_y}{T_2}\\
+\frac{d M_z}{d t}&= \frac{M_0-M_Z}{T_1}\hspace*{0.5cm}\text{.}
+\end{align}
+Es wurden dabei zwei Zeitkonstanten $T_1$ und $T_2$ eingeführt.\\
+$T_1$ longitudinale oder Spin-Gitter-Relaxationszeit:
+- Veränderung der Magnetisierungskomponente parallel zur Feldrichtung $\vec{B_0}$ 
+- Energie aus dem Kernspinsystem zu Gitterschwingungen
+$T_2$ transversale Spin-Spin-Relaxationszeit
+-Abnahme der Magnetisierung senkrecht häufig durch Spin-Spin-Wechselwirkungen
+\subsection{HF-Einstrahlungsvorgänge}
+Hochfrequenzfeld mit Magnetfeld $\vec{B_1} \perp \vec{e_z}$
+Feld gegeben durch
+\begin{align}
+\vec{B_{\text{HF}}}=2\vec{B_1} \cos \omega t
+\end{align}
+Aufteilbar in zwei zirkular polarisierte Felder $\omega_+$ und $\omega_-$
+Wenn $\omega_+$ nahe Larmor-Frequenz --> $\omega_-$ irrelevant
+--> rotierendes Feld um $\vec{e_x}$ und $\vec{e_y}$-Achse
+--> Wirkt gesamtes Magnetfeld auf Probe
+\begin{align*}
+B_x=B_1 \cos \omega t \\
+B_y=B_1 \sin \omega t \\
+B_z=B_0
+\end{align*}
+Sinnvoll: Transformation Koordinatensystem mit Zeitabhängigen Einheitsvektoren mit
+\begin{align}
+\frac{\partial \vec{\tilde{e_x}}}{\partial t}= -\vec{\omega} \times \vec{e_x}\\
+\frac{\partial \vec{\tilde{e_y}}}{\partial t}= -\vec{\omega} \times \vec{e_y}\\
+\frac{\partial \vec{\tilde{e_z}}}{\partial t}= 0
+\end{align}
+Lösung DGL 
+--> 
+\begin{align}
+\frac{d \vec{M}}{d t}= \gamma \vec{M}\times \left(\vec{B}_{\text{ges}}+\frac{\vec{\omega}}{\gamma}\right)
+\end{align}
+--> Gleichung \ref{eq::magzeit} mit effektiven Magnetfeld
+\begin{align}
+\vec{B}_\text{eff}=\vec{B}_0+\vec{B}_1+\frac{\vec{\omega}}{\gamma}
+\end{align}
+--> Analog zu Vorherigen Abschnitt --> Präzessionsbewegung um Feldrichtung von $B_{\text{eff}}$
+--> Wichtiger Fall: Resonanz $\omega=\omega_L$ --> $\vec{B}_{\text{eff}}=\vec{B}_1$
+präzediert um $\vec{B}_1$-Achse --> Präzessionskegel $90^\circ$
+Drehwinkel $\delta\left(\delta t\right)$ berechenbar
+\begin{align}
+\delta\left(\Delta t\right)=\gamma B_1 \Delta t
+\end{align}
+Einstrahlzeit:
+$\Delta t_{90}=\frac{\pi}{2\gamma B_1} $
+Es ist $\Delta t_{90} \ll T_1,T_2$
+Dabei wird $\vec{M}$ von der $-\vec{e_z}$ Richtung in die  $\vec{e_y}$ gedreht.
+Analog $\Delta t_{180}$ Dabei wird $\vec{M}$ von der $\vec{e_z}$ Richtung in die  $-\vec{e_z}$ gedreht. 
+Wenn Magnetisierung wieder in die Ruhelage --> $T_1$ und $T_2$ bestimmbar
+
 \section{Durchführung}
 
 \section{Quellen}
