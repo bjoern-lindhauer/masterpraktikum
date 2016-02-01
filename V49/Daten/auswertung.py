@@ -52,9 +52,9 @@ plt.plot(x_plot, f(x_plot, *params), 'r-', label='Nichtlinearer Fit')
 plt.legend(loc="best", numpoints=1)
 plt.xlim(0,10)
 plt.ylim(-1.5, 1.5)
-plt.xlabel(r'Zeitabstand $\tau$')
-plt.ylabel(r'Magnetisierung M$_z$')
-plt.savefig('plot.png')
+plt.xlabel(r'Zeitabstand $\tau$ [s]')
+plt.ylabel(r'Magnetisierung M$_z [V]$')
+plt.savefig('plotT1.png')
 
 errors=np.sqrt(np.diag(covariance))
 
