@@ -132,72 +132,72 @@ In diesen Fall lauten sie
 \frac{d M_z}{d t}&= \frac{M_0-M_Z}{T_1}\hspace*{0.5cm}\text{.}
 \end{align}
 Es wurden dabei zwei Zeitkonstanten $T_1$ und $T_2$ eingeführt.\\
-$T_1$ longitudinale oder Spin-Gitter-Relaxationszeit:
-- Veränderung der Magnetisierungskomponente parallel zur Feldrichtung $\vec{B_0}$ 
-- Energie aus dem Kernspinsystem zu Gitterschwingungen
-$T_2$ transversale Spin-Spin-Relaxationszeit
--Abnahme der Magnetisierung senkrecht häufig durch Spin-Spin-Wechselwirkungen
+Die Zeitkonstante $T_1$ wird auch longitudinale oder Spin-Gitter-Relaxationszeit genannt, sie beschreibt die zeitliche Veränderung der Magnetisierungskomponente parallel zur Feldrichtung $\vec{B_0}$. Andererseits beschreibt sie auch den Energiefluss zwischen den Kernspinsystem und den Gitterschwingungen.\\
+$T_2$ beschreibt hingegen die transversale Änderung. Sie wird auch Spin-Spin-Relaxationszeit, da die Abnahme der Magnetisierung senkrecht zur Feldrichtung $\vec{B_0}$ häufig durch Spin-Spin-Wechselwirkungen geschieht.
 \subsection{HF-Einstrahlungsvorgänge}
-Hochfrequenzfeld mit Magnetfeld $\vec{B_1} \perp \vec{e_z}$
-Feld gegeben durch
+Ein Hochfrequenzfeld mit Magnetfeld $\vec{B_1} \perp \vec{e_z}$ lässt sich durch
 \begin{align}
 \vec{B_{\text{HF}}}=2\vec{B_1} \cos \omega t
 \end{align}
-Aufteilbar in zwei zirkular polarisierte Felder $\omega_+$ und $\omega_-$
-Wenn $\omega_+$ nahe Larmor-Frequenz --> $\omega_-$ irrelevant
---> rotierendes Feld um $\vec{e_x}$ und $\vec{e_y}$-Achse
---> Wirkt gesamtes Magnetfeld auf Probe
+beschreiben.\\
+Das Feld ist in zwei zirkular polarisierte Felder $\omega_+$ und $\omega_-$ aufteilbar.\\
+Wenn $\omega_+$ nahe der Larmor-Frequenz $\omega_L$ ist, so ist der Beitrag von $\omega_-$ vernachlässigbar.\\
+Es handelt sich dann um ein rotierendes Feld um die $\vec{e_x}$ und $\vec{e_y}$-Achse und es wirkt als gesamtes Magnetfeld auf die Probe
 \begin{align*}
-B_x=B_1 \cos \omega t \\
-B_y=B_1 \sin \omega t \\
-B_z=B_0
+B_x=B_1 \cos \omega t \hspace*{0.1cm}\text{,}\hspace*{0.4cm} B_y=B_1 \sin \omega t \hspace*{0.3cm}\text{und}\hspace*{0.3cm} B_z=B_0\hspace*{0.1cm}\text{.}
 \end{align*}
-Sinnvoll: Transformation Koordinatensystem mit Zeitabhängigen Einheitsvektoren mit
+Es ist sinnvoll das Koordinatensystem in ein Koordinatensystem mit Zeitabhängigen Einheitsvektoren mit
 \begin{align}
-\frac{\partial \vec{\tilde{e_x}}}{\partial t}= -\vec{\omega} \times \vec{e_x}\\
-\frac{\partial \vec{\tilde{e_y}}}{\partial t}= -\vec{\omega} \times \vec{e_y}\\
+\frac{\partial \vec{\tilde{e_x}}}{\partial t}= -\vec{\omega} \times \vec{e_x}\hspace*{0.1cm}\text{,}\hspace*{0.4cm}
+\frac{\partial \vec{\tilde{e_y}}}{\partial t}= -\vec{\omega} \times \vec{e_y}\hspace*{0.3cm}\text{und}\hspace*{0.3cm}
 \frac{\partial \vec{\tilde{e_z}}}{\partial t}= 0
 \end{align}
-Lösung DGL 
---> 
+zu überführen.\\
+Dadurch kann die Differenzialgleichung 
 \begin{align}
 \frac{d \vec{M}}{d t}= \gamma \vec{M}\times \left(\vec{B}_{\text{ges}}+\frac{\vec{\omega}}{\gamma}\right)
 \end{align}
---> Gleichung \ref{eq::magzeit} mit effektiven Magnetfeld
+gewonnen werden, die die Form der Gleichung \ref{eq::magzeit} mit effektiven Magnetfeld
 \begin{align}
 \vec{B}_\text{eff}=\vec{B}_0+\vec{B}_1+\frac{\vec{\omega}}{\gamma}
 \end{align}
---> Analog zu Vorherigen Abschnitt --> Präzessionsbewegung um Feldrichtung von $B_{\text{eff}}$
---> Wichtiger Fall: Resonanz $\omega=\omega_L$ --> $\vec{B}_{\text{eff}}=\vec{B}_1$
-präzediert um $\vec{B}_1$-Achse --> Präzessionskegel $90^\circ$
-Drehwinkel $\delta\left(\delta t\right)$ berechenbar
+hat.\\
+Analog folgt auch eine Präzessionsbewegung, jedoch um die Feldrichtung von $\vec{B}_{\text{eff}}$.\\
+Im Fall der Resonanz, also $\omega=\omega_L$ folgt, dass $\vec{B}_{\text{eff}}=\vec{B}_1$ ist und das magnetische Moment um die $\vec{B}_1$-Achse präzediert. Der Präzessionskegel ist dabei um $90^\circ$ geöffnet.\\
+Der Drehwinkel $\delta\left(\delta t\right)$ ist durch
 \begin{align}
 \delta\left(\Delta t\right)=\gamma B_1 \Delta t
 \end{align}
-Einstrahlzeit:
-$\Delta t_{90}=\frac{\pi}{2\gamma B_1} $
-Es ist $\Delta t_{90} \ll T_1,T_2$
-Dabei wird $\vec{M}$ von der $-\vec{e_z}$ Richtung in die  $\vec{e_y}$ gedreht.
-Analog $\Delta t_{180}$ Dabei wird $\vec{M}$ von der $\vec{e_z}$ Richtung in die  $-\vec{e_z}$ gedreht. 
-Wenn Magnetisierung wieder in die Ruhelage --> $T_1$ und $T_2$ bestimmbar
-\subsection{Freier Induktionszerfall}
-Elektro- oder Permanentmagnet --> homogenes Feld $B_0\vec{e_z}$ 
-Senkrecht dazu Spule um Probe --> Hochfrequenter Strom --> hochfrequentes Magnetfeld, wie vorher besprochen
-Abbildung
-in x-y Ebene umlaufendes Feld
-B-Feld für t-90 --> Magnetisierung wandert in Richtung ey --> M präzession um x-y wegen Bz --> Relaxationsprozesse --> Ausgangslage
-Prozess = freier Induktionszerfall
-Präzession um x-y --> Induktionsspannung --> durch Spule Induktionssignal in Abhängigkeit von der Zeit messbar
-
-
-statisches Feld B0 nicht für alle gleich
-a) Apparativ: Magnetfeld nicht homogen
-b) Physikalisch: Zusätzliche Felder, wie Dipolfeldern aus nächsten Nachbarn
---> Larmorfrequenzen unterschiedlich --> Dephasierung --> gemessene $T_2^*$
+berechenbar.\\
+Es lässt sich die Einstrahlzeit 
 \begin{align}
-\frac{1}{T_2^*}=\frac{1}{T_2}+\frac{1}{T_{\Delta B}}
+\Delta t_{90}=\frac{\pi}{2\gamma B_1} 
 \end{align}
-$T_{\Delta B}$ Größenordnung $\left(\gamma d G\right)^{-1}$ $d$ Probendurchmesser $G$ Gradient des B0 Feldes
+bestimmen, die es benötigt bis $\vec{M}$ von der $-\vec{e_z}$ Richtung in die  $\vec{e_y}$ gedreht ist.\\
+Analog kann $\Delta t_{180}=2 \Delta t_{90}$ bestimmt werden, bis $\vec{M}$ von der $\vec{e_z}$ Richtung in die  $-\vec{e_z}$ gedreht ist.\\ 
+Durch das Relaxieren der Magnetisierung zurück in die Ruhelage können $T_1$ und $T_2$ bestimmt werden.
+\subsection{Freier Induktionszerfall}
+Ein Elektro- oder Permanentmagnet erzeugt ein homogenes Feld $B_0\vec{e_z}$. 
+Senkrecht dazu ist eine Spule, in dessen Innenraum sich die Probe befindet. Der Aufbau ist in Abbildung \ref{fig::aufbau} abgebildet.
+\begin{figure}[H]
+\centering
+\includegraphics[width=8cm]{images/versuchsaufbau.png}
+\caption{Toller Titel (1)}
+\label{fig::aufbau}
+\end{figure}
+Durch die Spule wird ein hochfrequenter Strom geschickt, der ein hochfrequentes Magnetfeld erzeugt, welches die Anforderungen aus Kapitel 2.4 erfüllt, also ein in x-y Ebene umlaufendes Feld besitzt.\\
+Es folgt ein $\Delta t_{90}$ Impuls, sodass die Magnetisierung in Richtung $\vec{e}_y$ liegt. Dadurch führt $\vec{M}$ eine Präzession auf der $\vec{e}_x$-$\vec{e}_y$-Ebene durch.\\
+Das System erreicht durch Relaxationsprozesse mit der Zeit die Ausgangslage $\vec{M_0}$.\\
+Dieser Prozess wird freier Induktionszerfall genannt.\\
+Die Messung ist möglich, da durch die Präzession um $\vec{e}_x$-$\vec{e}_y$ eine Spannung in der Spule induziert wird, die vom Empfänger aufgenommen werden kann.\\
+Nun ist das statische Feld $B_0$ nicht für alle Spins gleich stark. Dies hat sowohl physikalische als auch apparative Ursachen.\\
+Zum einen sind die einzelnen Spins zusätzlichen Feldern, wie Dipolfeldern aus der nächsten Nachbarn-Wechselwirkung unterworfen, zum anderen kann durch die endliche Ausdehnung der Apparatur das Magnetfeld nicht völlig homogen sein.\\
+Dadurch sind die Larmorfrequenzen lokal unterschiedlich, was zu unterschiedlichen Laufzeiten der Spins führt und somit zu einer Dephasierung.\\
+Das gemessene $T_2^*$ unterscheidet sich vom realen $T_2$ durch
+\begin{align}
+\frac{1}{T_2^*}=\frac{1}{T_2}+\frac{1}{T_{\Delta B}}\hspace*{0.5cm}\text{.}
+\end{align}
+Die Störung $T_{\Delta B}$ durch das endliche Magnetfeld Größenordnung $\left(\gamma d G\right)^{-1}$ $d$ Probendurchmesser $G$ Gradient des B0 Feldes
 Solange das B-Feld hinreichend homogen ($T_{\Delta B} \ll T_2$) Messung möglich
 Dann Fehler auch meistens durch Apparatur
 \subsection{Das Spin-Echo-Verfahren}
