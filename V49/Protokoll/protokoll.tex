@@ -200,25 +200,64 @@ Das gemessene $T_2^*$ unterscheidet sich vom realen $T_2$ durch
 Die Störung $T_{\Delta B}$ durch das endliche Magnetfeld ist von der Größenordnung $\left(\gamma d G\right)^{-1}$ mit den Probendurchmesser $d$ und den Gradient $G$  des $\vec{B}_0$ Feldes.\\
 Solange das B-Feld hinreichend homogen ist, also $T_{\Delta B} \ll T_2$ ist, ist eine Messung sinnvoll, da die Fehler dann meistens allein durch die Apparatur gegeben sind.
 \subsection{Das Spin-Echo-Verfahren}
--Störeffekte eliminierbar, wenn zeitlich konstant
--zwei HF-Pulse: 1. $90^\circ$ Magnetisierung e'y 
--präzedieren während Zeitraum $\tau \gg \Delta t_{90}$ um z
--Spins mit der Zeit außer Phase, bewegen sich entgegengesetzt
--Nach $\tau$  $180^\circ$ --> Spins flippen --> Laufen wieder zusammen
--Dabei nur Signal, wenn Beide nahe beianander
+Die im vorigen Abschnitt genannten Störeffekte sind eliminierbar, wenn zeitlich konstant. Dafür werden zwei HF-Pulse verwendet.\\
+Zunächst wird ein $90^\circ$-Puls gesendet, der die Magnetisierung entlang $\vec{\tilde{e}}_y$. Die Spins präzedieren während des Zeitraum $\tau \gg \Delta t_{90}$ um die $\vec{e}_z$ Achse.\\
+Da die Spins mit der Zeit außer Phase geraten, bewegt sich ein Teil in Uhrzeigersinn, und der andere Teil entgegengesetzt.\\
+Nach $\tau$ wird ein $180^\circ$-Puls gesendet, der die Spins flippt. Dadurch laufen die beiden Mengen an Spins wieder zusammen.
 \begin{figure}[H]
 \centering
 \includegraphics[width=12cm]{images/spin_echo.png}
 \caption{Toller Titel (1)}
 \label{fig::spin_echo}
 \end{figure}
-- Genannt nach Hahn-Echo
+Es entstehen dabei nur Signale, wenn die beiden Teile nahe beieinander sind. Es entsteht ein Signal der Form \ref{fig::hahn_echo_verlauf}.\\
+Diese Methode wird Hahn-Echo genannt.
 \begin{figure}[H]
 \centering
 \includegraphics[width=12cm]{images/hahn_echo.png}
 \caption{Toller Titel (1)}
 \label{fig::hahn_echo_verlauf}
 \end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width=12cm]{images/tauechohoehe.png}
+\caption{Toller Titel (1)}
+\label{fig::tauechohoehe}
+\end{figure}
+Im Grenzfall $T_2 \to \infty$ erreicht das Echosignal die ursprüngliche Höhe, jedoch besitzt das Signal ein umgekehrtes Vorzeichen.\\
+Die Wechselwirkung der Spins mit ihrer Umgebung sorgt jedoch dafür, dass einige Spins nach $2\tau$ nicht in Phase sind und somit die Höhe des Signals abnimmt. Je größer die Zeit $\tau$ ist, desto stärker ist der Effekt, wie in Abbildung \ref{fig::tauechohoehe} zu sehen ist.\\
+Der Zusammenhang ist durch
+\begin{align}
+M_y\left(t\right)=M_0\exp \left(-\frac{t}{T_2}\right)\label{eq::rechnung_tau_spin_echo}
+\end{align} 
+gegeben, dabei ist $M_y$ die Höhe des Spin-Echos.\\ 
+Es lässt sich $T_2$ durch Variation von $\tau$ messen.
+\subsection{Carr-Purcell- und die Meiboom-Gill-Methode}
+Spin-Echo-Methode nach 3b ist in der Praxis zeitraubend,ursprüngliche Gleichgewichts-magnetisierung M0 in 
+z-Richtung wieder
+Carr und Purcell vorgeschlagenen Methode
+Nach $90^\circ$ mehrere $180^\circ$ äquidistant im Abstand 2$\tau$ aufeinanderfolgen
+\begin{figure}[H]
+\centering
+\includegraphics[width=14cm]{images/Carr_Purcellt_signal.png}
+\caption{Toller Titel (1)}
+\label{fig::Carr_Purcellt_signal}
+\end{figure}
+$2n\tau$ $n\in \mathbb{N}$ Spins fokussieren - Echoamplitude nimmt mit Zeit ab durch Relaxionsprozesse
+--> Messung nach \ref{eq::rechnung_tau_spin_echo}
+--> Jedoch nur exakt, wenn $180^\circ$ exakt, sonst aus Messebene rausdreht mit jedem Puls
+--> Lösung Meiboom-Gill-Methode:
+180$^\circ$-Puls speziellen Vorrichtung um 90$^\circ$ in der Phase gegenüber den Schwingungen im 90$^\circ$-Puls verschoben, sodass bereits beim 1. 180$^\circ$-Puls $\vec{B}$ nicht mehr in $\vec{\tilde{e}}_x$-Richtung sondern in $\vec{\tilde{e}}_y$-Richtung weist. Während eines 180$^\circ$-Pulses werden die Spins nun um die $\vec{\tilde{e}}_y$-Richtung geklappt.
+
+Dadurch ist  jeder Zweite Impuls Spins zurück in der Ebene ist
+Abbildung
+\begin{figure}[H]
+\centering
+\includegraphics[width=14cm]{images/Meiboom_Gill_Methode.png}
+\caption{Toller Titel (1)}
+\label{fig::Meiboom_Gill_Methode}
+\end{figure}
+  
 \section{Durchführung}
 
 \section{Auswertung}
