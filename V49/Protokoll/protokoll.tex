@@ -127,9 +127,9 @@ Es folgt eine Präzession um $\vec{e_z}$-Achse mit der Larmor-Frequenz genannten
 Der zeitliche Verlauf der Magnetisierung ist durch die Blochschen Gleichungen gegeben, die eine Zusammensetzung aus der Kreiselgleichung und der Differentialgleichung für die Relaxion besteht.\\
 In diesen Fall lauten sie
 \begin{align}
-\frac{d M_x}{d t}&= \gamma B_0 M_y - \frac{M_x}{T_2}\\
-\frac{d M_y}{d t}&= \gamma B_0 M_x - \frac{M_y}{T_2}\\
-\frac{d M_z}{d t}&= \frac{M_0-M_Z}{T_1}\hspace*{0.5cm}\text{.}
+\frac{d M_x}{d t}&= \gamma B_0 M_y - \frac{M_x}{T_2}\label{eq::bloch1}\\
+\frac{d M_y}{d t}&= \gamma B_0 M_x - \frac{M_y}{T_2}\label{eq::bloch2}\\
+\frac{d M_z}{d t}&= \frac{M_0-M_Z}{T_1}\hspace*{0.5cm}\text{.}\label{eq::bloch3}
 \end{align}
 Es wurden dabei zwei Zeitkonstanten $T_1$ und $T_2$ eingeführt.\\
 Die Zeitkonstante $T_1$ wird auch longitudinale oder Spin-Gitter-Relaxationszeit genannt, sie beschreibt die zeitliche Veränderung der Magnetisierungskomponente parallel zur Feldrichtung $\vec{B_0}$. Andererseits beschreibt sie auch den Energiefluss zwischen den Kernspinsystem und den Gitterschwingungen.\\
@@ -232,46 +232,77 @@ M_y\left(t\right)=M_0\exp \left(-\frac{t}{T_2}\right)\label{eq::rechnung_tau_spi
 \end{align} 
 gegeben, dabei ist $M_y$ die Höhe des Spin-Echos.\\ 
 Es lässt sich $T_2$ durch Variation von $\tau$ messen.
-\subsection{Carr-Purcell- und die Meiboom-Gill-Methode}
-Spin-Echo-Methode nach 3b ist in der Praxis zeitraubend,ursprüngliche Gleichgewichts-magnetisierung M0 in 
-z-Richtung wieder
-Carr und Purcell vorgeschlagenen Methode
-Nach $90^\circ$ mehrere $180^\circ$ äquidistant im Abstand 2$\tau$ aufeinanderfolgen
+\subsection{Carr-Purcell- und Meiboom-Gill-Methode}
+Da nach jeder Messung das System die ursprüngliche Gleichgewichtsmagnetisierung $M_0$ in z-Richtung zurück kehren muss, ist die im vorherigen Abschnitt beschriebene Spin-Echo-Methode zeitintensiv.\\
+Eine Abhilfe schafft dabei die von Carr und Purcell vorgeschlagenen Methode, nach der zunächst analog wie bei der Spin-Echo-Methode ein $90^\circ$ Puls, jedoch wird anstatt einen $180^\circ$ Puls mehrere $180^\circ$ Pulse mit äquidistant Abstand $2\tau$ aufeinanderfolgen gesendet, wie in Abbildung \ref{fig::Carr_Purcellt_signal} dargestellt.
 \begin{figure}[H]
 \centering
 \includegraphics[width=14cm]{images/Carr_Purcellt_signal.png}
 \caption{Toller Titel (1)}
 \label{fig::Carr_Purcellt_signal}
 \end{figure}
-$2n\tau$ $n\in \mathbb{N}$ Spins fokussieren - Echoamplitude nimmt mit Zeit ab durch Relaxionsprozesse
---> Messung nach \ref{eq::rechnung_tau_spin_echo}
---> Jedoch nur exakt, wenn $180^\circ$ exakt, sonst aus Messebene rausdreht mit jedem Puls
---> Lösung Meiboom-Gill-Methode:
-180$^\circ$-Puls speziellen Vorrichtung um 90$^\circ$ in der Phase gegenüber den Schwingungen im 90$^\circ$-Puls verschoben, sodass bereits beim 1. 180$^\circ$-Puls $\vec{B}$ nicht mehr in $\vec{\tilde{e}}_x$-Richtung sondern in $\vec{\tilde{e}}_y$-Richtung weist. Während eines 180$^\circ$-Pulses werden die Spins nun um die $\vec{\tilde{e}}_y$-Richtung geklappt.
-
-Dadurch ist  jeder Zweite Impuls Spins zurück in der Ebene ist
-Abbildung
+Da die Spins nach $2n\tau$ $n\in \mathbb{N}$ erneut fokussieren, befindet sich an diesen Stellen ein Extremum mit alternierendem Vorzeichnen.\\
+Dabei nimmt die Echoamplitude mit der Zeit durch Relaxionsprozesse ab und es ist eine Messung nach \ref{eq::rechnung_tau_spin_echo} möglich.\\
+Diese Methode liefert jedoch nur exakte Werte, wenn die $180^\circ$ Pulse exakt justiert sind. Ist dies nicht der Fall, so werden die Spins mit jedem Puls aus Messebene herausdreht.\\ Die Lösung ist, dass jeder zweite $180^\circ$ so justiert wird, dass die Spins wieder in der Messebene liegen. Dies wird als Meiboom-Gill-Methode bezeichnet.
 \begin{figure}[H]
 \centering
 \includegraphics[width=14cm]{images/Meiboom_Gill_Methode.png}
 \caption{Toller Titel (1)}
 \label{fig::Meiboom_Gill_Methode}
 \end{figure}
-  
+Wird nun jedes zweite Signal verwendet, so sind die Messergebnisse exakt.
+\subsection{Einfluss der Diffusion}
+Die Gleichung \ref{eq::rechnung_tau_spin_echo} ist nur für Statische Felder $B_0$ gültig.\\
+Treten im Medium Erscheinungen wie die Brownscher Molekularbewegung auf, so bewegen sich die Spins in andere Teile des Systems mit anderem Magnetfeld. Die Lamorfrequenz wird deshalb zeitabhängig.\\
+Dies führt zu einer schnelleren Abnahme des Signals als nach Gleichung \ref{eq::rechnung_tau_spin_echo} berechnet.\\
+Es muss eine Diffusionskonstante $D$ eingeführt werden und die Blochschen Gleichungen \ref{eq::bloch1} - \ref{eq::bloch3} um
+\begin{align}
+\frac{\partial M}{\partial t} = D\Delta M \label{eq::bloch_diffusion}
+\end{align} 
+ergänzt werden.\\
+Wird die Inhomogenität des Magnetfeldes $B_0$ und die Folge der Impulse berücksichtigt, so lässt sich die Funktion
+\begin{align}
+A\left(2n\tau\right)= \exp\left( - \frac{2}{3} D\gamma^2G^2\tau^3n\right)
+\end{align}
+für die Amplitude mit den Gradient $G$ des Magnetfeldes $B_0$ berechnen.\\
+Die Magnetisierungsamplitude nimmt demnach exponentiell mit einer Zeitkonstanten
+\begin{align}
+T_D:=\frac{3}{D\gamma^2G^2\tau^2}
+\end{align}  
+ab. Diese Abnahme muss in \ref{eq::rechnung_tau_spin_echo} ergänzt werden, sodass sich
+\begin{align}
+M_y\left(t\right)=M_0\exp \left(-\frac{t}{T_2}\right)\exp \left(-\frac{t}{T_D}\right)
+\end{align}
+für die Amplitude ergibt.\\
+Es fällt auf, dass eine Messung nach Carr-Purcell- oder Meiboom-Gill möglich ist, wenn $T_D$ groß gegen $T_2$ ist.\\
+Andererseits kann die Diffusionskonstante durch Spin-Echo-Methode bestimmbar werden.
+Dafür wird die Zeit $\tau$ zwischen den  $90^\circ$ und  $180^\circ$ Puls variiert und die Amplitude des 1. Echos gemessen. Es ergibt sich dann mit $t=2\tau$
+\begin{align}
+M_y\left(t\right)=M_0\exp \left(-\frac{t}{T_2}\right)\exp \left(-\frac{D\gamma^2G^2t^3}{12}\right)\hspace*{0.5cm}\text{.}
+\end{align}
+Dies gilt solange
+\begin{align}
+T_2^3 \gg \frac{12}{D\gamma^2 G^2}
+\end{align}
+gegeben ist.
+\subsection{Spin-Gitter-Relaxationszeit T$_1$}
+Für die Bestimmung von $T_1$ wird zunächst ein $180^\circ$ Puls gesendet, der die Probe aus ihrer Gleichgewichtslage auslenkt.\\
+Nach der Zeit $\tau$ wird ein $90^\circ$ Puls geschickt, sodass ein Signal 
+\begin{align}
+M_{z}(\tau)=M_0(1-2\exp(-\tau/T_1))
+\label{eq_T1}
+\end{align}
+gemessen werden kann.
 \section{Durchführung}
 
 \section{Auswertung}
 
 \subsection{Bestimmung der Relaxationszeit T$_2$}
-Unter der Annahme,dass die T$_D$ groß gegen T$_2$ ist, d.h. $\tau
+Unter der Annahme,dass die T$_D$ groß gegen T$_2$ ist, d.h. $\tau$
 \subsection{Berechnung des Diffusionskoeffizienten D}
 
 \subsection{Bestimmung der Relaxationszeit T$_1$}
 Die z-Komponente der Magnetisierung weist einen exponentiellen Zusammenhang mit dem Zeitabstand $\tau$ zwischen den 90$^{\circ}$ auf, wie in Formel \ref{eq_T1} dargestellt ist. \\
-\begin{align}
-M_{z}(\tau)=M_0(1-2\exp(-\tau/T_1))
-\label{eq_T1}
-\end{align}
 Zur Bestimmung von T$_1$ wird eine nicht-lineare Ausgleichsrechnung mit den in Tabelle \ref{tab_t1} angegebenen Messwerten durchgeführt. \\
 \begin{center}
 	\begin{tabular}{|c|c||c|c|}
