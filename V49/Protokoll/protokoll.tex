@@ -262,7 +262,11 @@ Abbildung
 
 \section{Auswertung}
 
-\subsection{Messung der Relaxationszeit T$_1$}
+\subsection{Bestimmung der Relaxationszeit T$_2$}
+Unter der Annahme,dass die T$_D$ groß gegen T$_2$ ist, d.h. $\tau
+\subsection{Berechnung des Diffusionskoeffizienten D}
+
+\subsection{Bestimmung der Relaxationszeit T$_1$}
 Die z-Komponente der Magnetisierung weist einen exponentiellen Zusammenhang mit dem Zeitabstand $\tau$ zwischen den 90$^{\circ}$ auf, wie in Formel \ref{eq_T1} dargestellt ist. \\
 \begin{align}
 M_{z}(\tau)=M_0(1-2\exp(-\tau/T_1))
@@ -301,8 +305,14 @@ Zur Bestimmung von T$_1$ wird eine nicht-lineare Ausgleichsrechnung mit den in T
 	\label{tab_t1}
 \end{center}
 Mit Gleichung \ref{eq_T1} ergibt eine nicht-lineare Ausgleichsrechnung mit Python folgende Fitparameter:
+\begin{align*}
+M_0&=(1.51 \pm 0.01)\si{V} \\
+T_1&=(2.08 \pm 0.01)\si{s}
+\end{align*}
 
-		
+\subsection{Bestimmung der Viskosität $\eta$}
+
+\subsection{Berechnung des Molekülradius r von Wasser}
 \section{Quellen}
 
 \end{document}
