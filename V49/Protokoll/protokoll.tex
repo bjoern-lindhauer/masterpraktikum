@@ -300,12 +300,44 @@ gemessen werden kann.
 \subsection{Bestimmung der Relaxationszeit T$_2$}
 Unter der Annahme,dass die T$_D$ groß gegen T$_2$ ist, d.h. $\tau_1$ hinreichend klein ist, kann der Einfluss der Diffusion vernachlässigt werden. In diesem Fall ergibt sich für die Magnetisierung 
 \begin{align}
-M_Y(t)=M_0\exp\left( \frac{-t}{T_2}\right)\, ,
+M_Y(t)=M_0\exp\left( \frac{-t}{T_2}\right) \\
+\ln(M_Y(t))=\ln(M_0) + \frac{-t}{T_2}\,  ,
 \end{align}
-womit eine nicht-lineare Ausgleichsrechnung mit den Messwerten der Maxima aus der Meiboom-Gill-Methode durchgeführt werden kann.
-
-
-\subsection{Berechnung des Diffusionskoeffizienten D}
+womit eine lineare Ausgleichsrechnung mithilfe der aufgenommenen Messdaten, dargestellt in Tabelle \ref{tab_t2}, durchgeführt wird. \\
+\begin{center}
+	\begin{tabular}{|c|c||c|c|}
+		\hline	$\tau$ [s]	&	M$_y$ [V] & $\tau$ [s]	&	M$_y$ [V]\\
+		\hline	8.66	&	1.965	&	620.98	&	1.276	\\
+		\hline	25.86	&	1.993	&	688.92	&	1.261	\\
+		\hline	93.80	&	1.852	&	739.66	&	1.193	\\
+		\hline	111.00	&	1.710	&	756.86	&	1.177	\\
+		\hline	161.74	&	1.838	&	807.60	&	1.122	\\
+		\hline	178.94	&	1.724	&	824.80	&	1.151	\\
+		\hline	229.68	&	1.684	&	842.00	&	1.064	\\
+		\hline	246.88	&	1.738	&	892.74	&	1.052	\\
+		\hline	314.82	&	1.627	&	909.94	&	1.050	\\
+		\hline	382.76	&	1.571	&	960.68	&	1.010	\\
+		\hline	399.96	&	1.485	&	977.88	&	1.008	\\
+		\hline	467.90	&	1.471	&	995.80	&	0.924	\\
+		\hline	535.84	&	1.402	&	1012.28	&	0.755	\\
+		\hline	603.78	&	1.374	&	1029.48	&	0.614	\\
+		\hline
+	\end{tabular}
+	\captionof{table}{Aufgenommene Messwerte der y-Komponente der Magnetisierung in Abhängigkeit vom Zeitabstand $\tau$ zwischen den 90$^{\circ}$- und 180$^{\circ}$-Pulsen.}
+	\label{tab_t2}
+\end{center}
+Die lineare Ausgleichsrechnung wird mit Python ausgeführt und ergibt 
+\begin{align*}
+\ln(M_0)&=0.729 \pm 0.036 \\
+-\frac{1}{T_2}&= (-8.15 \pm 0.54) \frac{10^{-4}}{\mu s}
+\end{align*}
+und somit T$_2=(1.227 \pm 0.082)\,$s.
+Der lineare Fit sowie die aufgenommenen Messdaten sind in Abbildung \ref{fig:T2} dargestellt.
+\begin{center}
+	\includegraphics[width=10cm]{images/plotT2.png}
+	\captionof{figure}{Gemessene Amplitude der M$_y$-Komponente in Abhängigkeit des Zeitabstandes $\tau$ mit Linearem Fit}
+	\label{fig:T2}
+\end{center}
 
 \subsection{Bestimmung der Relaxationszeit T$_1$}
 Die z-Komponente der Magnetisierung weist einen exponentiellen Zusammenhang mit dem Zeitabstand $\tau$ zwischen den 90$^{\circ}$ auf, wie in Formel \ref{eq_T1} dargestellt ist. \\
@@ -346,6 +378,16 @@ Mit Gleichung \ref{eq_T1} ergibt eine nicht-lineare Ausgleichsrechnung mit Pytho
 M_0&=(1.51 \pm 0.01)\si{V} \\
 T_1&=(2.08 \pm 0.01)\si{s}
 \end{align*}
+Der Verlauf der angepassten Kurve sowie die aufgenommenen Messdaten sind in Abbildung \ref{fig:T1} dargestellt. 
+\begin{center}
+		\includegraphics[width=10cm]{images/plotT1.png}
+		\captionof{figure}{Gemessene Amplitude der M$_z$-Komponente in Abhängigkeit des Zeitabstandes $\tau$ mit Nichtlinearem Fit}
+		\label{fig:T1}
+\end{center}
+
+\subsection{Bestimmung des Faktors $\gamma G$ mithilfe von t$_{1/2}$}
+
+\subsection{Berechnung des Diffusionskoeffizienten D}
 
 \subsection{Bestimmung der Viskosität $\eta$}
 
