@@ -44,6 +44,12 @@ def f(t,M0,T1):
 def g(x, b, m):
     return m*x+b
 
+def h(t, M0, D):
+    T2=1.227
+    G=7.09*10**6
+    return M0*np.exp(-t/T2)*np.exp(-D*(G**2)*t**3/12)
+
+
 #T1-Bestimmung
 guess = [1.47, 1]
 x_plot=np.linspace(0,10, num=1000)
@@ -55,7 +61,7 @@ plt.errorbar(unp.nominal_values(tau), -unp.nominal_values(M) + errM, fmt='bx', l
 plt.plot(x_plot, f(x_plot, *params), 'r-', label='Nichtlinearer Fit')
 plt.legend(loc="best", numpoints=1)
 plt.xlim(0,10)
-plt.ylim(-1.5, 1.5)
+plt.ylim(0, 2)
 plt.xlabel(r'Zeitabstand $\tau$ [s]')
 plt.ylabel(r'Magnetisierung M$_z [V]$')
 plt.savefig('plotT1.png')
@@ -92,9 +98,41 @@ errors=np.sqrt(np.diag(covariance))
 print('ln(M0) =', params[0], '+/-', errors[0])
 print('-(1/T2) =', params[1], '+/-', errors[1])
 
+#t1/2-Messung
 t= ufloat(params[1],errors[1])
 T2=-(1/t)
 print('T2=',T2)
+
+t12= ufloat(282,4)
+gG=8.8/(4.4*t12)
+print(gG)
+
+#Diffusionsskonstante
+
+data2 = np.genfromtxt('DMessung.txt', unpack='True')
+
+tau=unp.uarray(data2[0,:],0)
+M=unp.uarray(data2[1,:],0.02)
+
+guess = [500, (2*10**(-7))]
+x_plot=np.linspace(0,0.03, num=1000)
+params, covariance = curve_fit(h, unp.nominal_values(tau), unp.nominal_values(M), p0=guess)
+
+plt.figure()
+errM = unp.std_devs(M)
+plt.errorbar(unp.nominal_values(tau), unp.nominal_values(M) + errM, fmt='bx', label="D-Messung")
+plt.plot(x_plot, h(x_plot, *params), 'r-', label='Nicht-Linearer Fit')
+plt.legend(loc="best", numpoints=1)
+plt.xlim(0,0.021)
+plt.ylim(0, 570)
+plt.xlabel(r'Zeitabstand $\tau$ [$\mu$s]')
+plt.ylabel(r'Magnetisierung M$_z$')
+plt.savefig('plotD.png')
+
+errors=np.sqrt(np.diag(covariance))
+
+print('M0 =', params[0], '+/-', errors[0])
+print('D =', params[1], '+/-', errors[1])
 
 #x1,x2, x3 = sympy.var('M_{z} M_{0} \tau')
 #f = -x3/(sympy.log((x1-x2)/(2*x2)))
