@@ -134,6 +134,14 @@ errors=np.sqrt(np.diag(covariance))
 print('M0 =', params[0], '+/-', errors[0])
 print('D =', params[1], '+/-', errors[1])
 
+#Viskosität
+t=947
+de=0.45
+rho=1000
+a=1.024*10**(-9)
+eta=rho*a*(t-de)
+print(eta)
+
 #x1,x2, x3 = sympy.var('M_{z} M_{0} \tau')
 #f = -x3/(sympy.log((x1-x2)/(2*x2)))
 #print(error(f))
