@@ -407,6 +407,39 @@ d\gamma G t_{1/2} = 8.8
 \end{align*}
 und der Angabe d=4.4\,mm das Produkt zu $\gamma G=(7.09\pm0.10)\cdot 10^6\,$m$^{-1}$s$^{-1}$.
 \subsection{Berechnung des Diffusionskoeffizienten D}
+Mit dem Ansatz
+\begin{align*}
+M_Y(t)=M_=0\exp\left( \frac{-t}{T_2}\right) \exp(-D\gamma^2G^2t^3/12)
+\end{align*}
+wird eine nicht-lineare Ausgleichsrechnung durchgeführt, wobei dazu die Messwerte aus Tabelle \ref{tab_D} der Magnetisierungsamplitude verwendet werden. \\
+\begin{center}
+	\begin{tabular}{|c|c|c|c|}
+		\hline	0,001	550	&	550	&	0,013	189	&	189	\\
+		\hline	0,006	500	&	500	&	0,012	219	&	219	\\
+		\hline	0,011	310	&	310	&	0,010	363	&	363	\\
+		\hline	0,016	70	&	70	&	0,009	408	&	408	\\
+		\hline	0,021	22	&	22	&	0,008	449	&	449	\\
+		\hline	0,020	25	&	25	&	0,007	483	&	483	\\
+		\hline	0,019	33	&	33	&	0,005	523	&	523	\\
+		\hline	0,018	42	&	42	&	0,004	537	&	537	\\
+		\hline	0,017	55	&	55	&	0,003	550	&	550	\\
+		\hline	0,015	115	&	115	&	0,002	550	&	550	\\
+		\hline	0,014	151	&	151	&		&		\\
+	\end{tabular}
+	\captionof{table}{Aufgenommene Messwerte der Maxima der Magnetisierungsamplitude für verschiedene Werte von $\tau$}
+	\label{tab_D}
+\end{center}
+Die nicht-lineare Ausgleichsrechnung wird mit Python ausgeführt und ergibt 
+\begin{align*}
+M_0&=(559 \pm 4.5)\,\text{V}\\
+D&=(1.11 \pm 0.03) 10^{-7}\,\text{m$^2$s$^{-1}$}
+\end{align*}
+Der Verlauf der angepassten Theoriekurve sowie die aufgenommenen Messdaten sind in Abbildung \ref{fig:D} zu sehen.
+\begin{center}
+	\includegraphics[width=10cm]{images/plotD.png}
+	\captionof{figure}{Gemessene Amplitude der M$_Y$-Komponente in Abhängigkeit des Zeitabstandes $\tau$ mit Nichtlinearem Fit}
+	\label{fig:D}
+\end{center}
 
 \subsection{Bestimmung der Viskosität $\eta$}
 

@@ -126,7 +126,7 @@ plt.legend(loc="best", numpoints=1)
 plt.xlim(0,0.021)
 plt.ylim(0, 570)
 plt.xlabel(r'Zeitabstand $\tau$ [$\mu$s]')
-plt.ylabel(r'Magnetisierung M$_z$')
+plt.ylabel(r'Magnetisierung M$_y$ [V]')
 plt.savefig('plotD.png')
 
 errors=np.sqrt(np.diag(covariance))
