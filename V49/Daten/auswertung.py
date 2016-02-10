@@ -142,6 +142,10 @@ a=1.024*10**(-9)
 eta=rho*a*(t-de)
 print(eta)
 
+#Molekülradius
+k=1.38*10**(-23)
+r = (k*293)/(6*np.pi*1.11*10**(-7)*0.97*10**(-3))
+print(r)
 #x1,x2, x3 = sympy.var('M_{z} M_{0} \tau')
 #f = -x3/(sympy.log((x1-x2)/(2*x2)))
 #print(error(f))
