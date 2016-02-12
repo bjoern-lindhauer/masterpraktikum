@@ -74,7 +74,7 @@ Im folgenden werden nur noch Protonen betrachtet, es ist somit $I=\frac{1}{2}$. 
 \begin{figure}[H]
 \centering
 \includegraphics[width=8cm]{images/aufspaltung_magnetfeld.png}
-\caption{Toller Titel (1)}
+\caption{Aufspaltung in ein Zwei-Niveau-System in einem homogenen Magnetfeld [2]}
 \label{fig_aufspaltung}
 \end{figure}
 Für die Exponentialfunktion in \ref{eq_izallgemein} kann eine lineare Näherung eingesetzt werden, falls
@@ -182,7 +182,7 @@ Senkrecht dazu ist eine Spule, in dessen Innenraum sich die Probe befindet. Der 
 \begin{figure}[H]
 \centering
 \includegraphics[width=8cm]{images/versuchsaufbau.png}
-\caption{Toller Titel (1)}
+\caption{Prinzipieller Versuchsaufbau [2]}
 \label{fig::aufbau}
 \end{figure}
 Durch die Spule wird ein hochfrequenter Strom geschickt, der ein hochfrequentes Magnetfeld erzeugt, welches die Anforderungen aus Kapitel 2.4 erfüllt, also ein in x-y Ebene umlaufendes Feld besitzt.\\
@@ -207,7 +207,7 @@ Nach $\tau$ wird ein $180^\circ$-Puls gesendet, der die Spins flippt. Dadurch la
 \begin{figure}[H]
 \centering
 \includegraphics[width=12cm]{images/spin_echo.png}
-\caption{Toller Titel (1)}
+\caption{Veranschaulichung des Spin-Echo-Verfahrens [2]}
 \label{fig::spin_echo}
 \end{figure}
 Es entstehen dabei nur Signale, wenn die beiden Teile nahe beieinander sind. Es entsteht ein Signal der Form \ref{fig::hahn_echo_verlauf}.\\
@@ -215,13 +215,13 @@ Diese Methode wird Hahn-Echo genannt.
 \begin{figure}[H]
 \centering
 \includegraphics[width=12cm]{images/hahn_echo.png}
-\caption{Toller Titel (1)}
+\caption{Signalverlauf des Spin-Echo-Verfahrens [2]}
 \label{fig::hahn_echo_verlauf}
 \end{figure}
 \begin{figure}[H]
 \centering
 \includegraphics[width=12cm]{images/tauechohoehe.png}
-\caption{Toller Titel (1)}
+\caption{Abhängigkeit der Amplitude von $\tau$}
 \label{fig::tauechohoehe}
 \end{figure}
 Im Grenzfall $T_2 \to \infty$ erreicht das Echosignal die ursprüngliche Höhe, jedoch besitzt das Signal ein umgekehrtes Vorzeichen.\\
@@ -238,7 +238,7 @@ Eine Abhilfe schafft dabei die von Carr und Purcell vorgeschlagenen Methode, nac
 \begin{figure}[H]
 \centering
 \includegraphics[width=14cm]{images/Carr_Purcellt_signal.png}
-\caption{Toller Titel (1)}
+\caption{Signalverlauf für die Carr-Purcell-Methode}
 \label{fig::Carr_Purcellt_signal}
 \end{figure}
 Da die Spins nach $2n\tau$ $n\in \mathbb{N}$ erneut fokussieren, befindet sich an diesen Stellen ein Extremum mit alternierendem Vorzeichnen.\\
@@ -246,8 +246,8 @@ Dabei nimmt die Echoamplitude mit der Zeit durch Relaxionsprozesse ab und es ist
 Diese Methode liefert jedoch nur exakte Werte, wenn die $180^\circ$ Pulse exakt justiert sind. Ist dies nicht der Fall, so werden die Spins mit jedem Puls aus Messebene herausdreht.\\ Die Lösung ist, dass jeder zweite $180^\circ$ so justiert wird, dass die Spins wieder in der Messebene liegen. Dies wird als Meiboom-Gill-Methode bezeichnet.
 \begin{figure}[H]
 \centering
-\includegraphics[width=14cm]{images/Meiboom_Gill_Methode.png}
-\caption{Toller Titel (1)}
+\includegraphics[width=12cm]{images/Meiboom_Gill_Methode.png}
+\caption{Pulsverlauf für die Meiboom-Gill-Methode}
 \label{fig::Meiboom_Gill_Methode}
 \end{figure}
 Wird nun jedes zweite Signal verwendet, so sind die Messergebnisse exakt.
@@ -304,6 +304,18 @@ Links im Bild ist die Halterung für den Permanentmagneten zu sehen, in welcher 
 \section{Auswertung}
 
 \subsection{Bestimmung der Relaxationszeit T$_2$}
+Es wurden sowohl für die Carr-Purcell als auch für die Meiboom-Gill-Methode Burst-Sequenzen aufgenommen. Diese sind in Abbildung \ref{fig:cp} bzw. in Abbildung \ref{fig:mg} dargestellt.
+\begin{center}
+	\includegraphics[width=10cm]{images/carrpur.png}
+	\captionof{figure}{Burst-Sequenz der Carr-Purcell-Methode}
+	\label{fig:cp}
+\end{center}
+\begin{center}
+	\includegraphics[width=10cm]{images/meigill.png}
+	\captionof{figure}{Burst-Sequenz der Meiboom-Gill-Methode}
+	\label{fig:mg}
+\end{center}
+Für die Auswertung wurden die Maxima der Sequenz verwendet, diese wurden in einer csv-Datei aufgezeichnet. \\
 Unter der Annahme,dass die T$_D$ groß gegen T$_2$ ist, d.h. $\tau_1$ hinreichend klein ist, kann der Einfluss der Diffusion vernachlässigt werden. In diesem Fall ergibt sich für die Magnetisierung 
 \begin{align}
 M_Y(t)=M_0\exp\left( \frac{-t}{T_2}\right) \\
