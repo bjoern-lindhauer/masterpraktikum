@@ -51,33 +51,32 @@
 \end{center}
 \end{titlepage}
 \section{Einleitung}
-Die Grundlage der Kernspinresonanz ist, dass sich magnetische Momente der Atomkerne beim wirken eines äußerem Magnetfeld ausrichten. Die Ausrichtung kann durch Einstrahlung von Hochfrequenzquanten mit geeigneter Frequenz verändert werden und so können verschiedene magnetische Eigenschaften einer Probe untersucht werden.\\
+Die Grundlage der Kernspinresonanz ist, dass sich magnetische Momente der Atomkerne beim Wirken eines äußeren Magnetfeldes ausrichten. Die Ausrichtung kann durch Einstrahlung von Hochfrequenzquanten mit geeigneter Frequenz verändert werden und so können verschiedene magnetische Eigenschaften einer Probe untersucht werden.\\
 Zum einen können Resonanzphänomene beobachtet werden, indem die Energieaufnahme in Abhängigkeit der Frequenz aufgenommen wird. So lassen sich Rückschlüsse auf lokale Magnetfelder anhand der Resonanzstellen schließen. Mit diesen Daten kann die Struktur der Probe rekonstruiert werden.\\
-Zum anderen kann der zeitlicher Verlauf von Auf- und Abbau eines Magnetfeldes bestimmt werden. Außerdem lässt sich die Diffusionskonstante einer Probe bestimmen, da sich durch die Diffusion die Anzahl der Momente im Messabschnitt ändert und folglich das statische Magnetfeld der Probe verändert ist. Die Resonanzbedingung ändert sich und aus dieser Änderung lässt sich die Diffusionskonstante bestimmen. Da Resonanzbedingung erfüllt werden sollen, werden Hochfrequenzimpulse benötigt, welches dieser Methode ihren Namen gepulste Kernspinresonanz gab.\\
-In diesen Versuch soll mit der gepulsten Kernspinresonanz eine Probe untersucht werden.
+Zum anderen kann der zeitliche Verlauf von Auf- und Abbau eines Magnetfeldes bestimmt werden. Außerdem lässt sich die Diffusionskonstante einer Probe bestimmen, da sich durch die Diffusion die Anzahl der Momente im Messabschnitt ändert und folglich das statische Magnetfeld der Probe verändert ist. Die Resonanzbedingung ändert sich und aus dieser Änderung lässt sich die Diffusionskonstante bestimmen. Da die Resonanzbedingung erfüllt werden soll, werden Hochfrequenzimpulse benötigt, welche dieser Methode ihren Namen gepulste Kernspinresonanz geben.\\
+In diesem Versuch soll mit der gepulsten Kernspinresonanz ein Probe von destilliertem Wasser untersucht werden.
 \section{Theoretische Grundlagen}
 \subsection{Magnetisierung}
 Zunächst wird angenommen, dass die Probe im thermischen Gleichgewicht mit der Umgebung steht, da Konvektionsströme nicht Bestandteil der Betrachtungen sind.\\
-Des weiteren sei ein homogenes Magnetfeld $B_0\ \vec{e_z}$ angelegt.\\
-Durch dieses Feld spalten die entarteten Kernspinzustände
-Magnetisierung einer Probe, die im thermischen Gleichgewicht mit der Umgebung steht mit der Spinquantenzahl $I$ in $2I+1$ äquidistante Unterniveaus auf, welche den Abstand $\Delta E = \gamma B_0 \hbar$ besitzen.\\
+Des Weiteren sei ein homogenes Magnetfeld $B_0\ \vec{e_z}$ angelegt.\\
+Durch dieses Feld spalten die entarteten Kernspinzustände die Magnetisierung einer Probe mit der Spinquantenzahl I, die im thermischen Gleichgewicht mit der Umgebung steht, in $2I+1$ äquidistante Unterniveaus auf, welche den Abstand $\Delta E = \gamma B_0 \hbar$ besitzen.\\
 Die Besetzung der Niveaus erfolgt nach der Boltzmann-Verteilung. Es folgt daraus das Besetzungszahlverhältnis 
 \begin{align}
 \frac{N\left(m\right)}{N\left(m-1\right)}=\exp \left(-\frac{\gamma B_0\hbar}{k_\text{B}T}\right)
 \end{align}
-bei gegebenen $T$.\\
+bei gegebenem $T$.\\
 Da die Besetzung folglich nicht homogen über alle Zustände ist, besitzt der Kern eine Kernspinpolarisation
 \begin{align}
 \left\langle I_Z \right\rangle = \frac{\sum\limits_{m=-I}^{I} \hbar m \exp\left(-\beta m\gamma B_0 \hbar \right)}{\sum\limits_{m=-I}^{I} \exp\left(-\beta m\gamma B_0 \hbar \right)} \label{eq_izallgemein}\hspace*{0.5cm}\text{.}
 \end{align}
-Im folgenden werden nur noch Protonen betrachtet, es ist somit $I=\frac{1}{2}$. Ein Niveau spaltet sich in zwei Unterniveaus auf mit den Quantenzahlen $m=-\frac{1}{2}$ und $m=+\frac{1}{2}$. Abbildung \ref{fig_aufspaltung} veranschaulicht dies.
+Im Folgenden werden nur noch Protonen betrachtet, es ist somit $I=\frac{1}{2}$. Ein Niveau spaltet sich in zwei Unterniveaus auf mit den Quantenzahlen $m=-\frac{1}{2}$ und $m=+\frac{1}{2}$. Abbildung \ref{fig_aufspaltung} veranschaulicht dies.
 \begin{figure}[H]
 \centering
 \includegraphics[width=8cm]{images/aufspaltung_magnetfeld.png}
 \caption{Aufspaltung in ein Zwei-Niveau-System in einem homogenen Magnetfeld [2]}
 \label{fig_aufspaltung}
 \end{figure}
-Für die Exponentialfunktion in \ref{eq_izallgemein} kann eine lineare Näherung eingesetzt werden, falls
+Für die Exponentialfunktion in (\ref{eq_izallgemein}) kann eine lineare Näherung eingesetzt werden, falls
 \begin{align}
 m\gamma B_0 \hbar \ll k_\text{B}T 
 \end{align}
@@ -86,7 +85,7 @@ Es ergibt sich
 \begin{align}
 \left\langle I_Z \right\rangle_{\text{P}}= -\frac{\hbar^2}{4}\frac{\gamma B_0}{k_\text{B}T}\hspace*{0.5cm}\text{.} \label{eq_iznahrung}
 \end{align}
-Da die Kernspinpolarisation im direkten Zusammenhang mit den magnetischen Momenten $\vec{\mu}_I$ stehen, ist eine makroskopische Magnetisierung $\vec{M_0}$ der Probe messbar, die durch die Summe aller Einzelmomente pro Volumen
+Da die Kernspinpolarisation im direkten Zusammenhang mit den magnetischen Momenten $\vec{\mu}_I$ steht, ist eine makroskopische Magnetisierung $\vec{M_0}$ der Probe messbar, die durch die Summe aller Einzelmomente pro Volumen
 \begin{align}
 \vec{M_0}=\sum\limits_{i}^{}\frac{\mu_0\vec{\mu}_i}{V}
 \end{align}
@@ -119,12 +118,12 @@ M_y&= A \cos \gamma B_0 t \\
 M_z&= -A \sin \gamma B_0 t
 \end{align}
 gegeben.\\
-Es folgt eine Präzession um $\vec{e_z}$-Achse mit der Larmor-Frequenz genannten Frequenz
+Es folgt eine Präzession um die $\vec{e_z}$-Achse mit der Larmor-Frequenz genannten Frequenz
 \begin{align}
 \omega_L =\gamma B_0 \hspace*{0.5cm}\text{.}
 \end{align}
 \subsection{Relaxationserscheinungen}
-Der zeitliche Verlauf der Magnetisierung ist durch die Blochschen Gleichungen gegeben, die eine Zusammensetzung aus der Kreiselgleichung und der Differentialgleichung für die Relaxion besteht.\\
+Der zeitliche Verlauf der Magnetisierung ist durch die Blochschen Gleichungen gegeben, die eine Zusammensetzung aus der Kreiselgleichung und der Differentialgleichung für die Relaxation besteht.\\
 In diesen Fall lauten sie
 \begin{align}
 \frac{d M_x}{d t}&= \gamma B_0 M_y - \frac{M_x}{T_2}\label{eq::bloch1}\\
@@ -132,8 +131,8 @@ In diesen Fall lauten sie
 \frac{d M_z}{d t}&= \frac{M_0-M_Z}{T_1}\hspace*{0.5cm}\text{.}\label{eq::bloch3}
 \end{align}
 Es wurden dabei zwei Zeitkonstanten $T_1$ und $T_2$ eingeführt.\\
-Die Zeitkonstante $T_1$ wird auch longitudinale oder Spin-Gitter-Relaxationszeit genannt, sie beschreibt die zeitliche Veränderung der Magnetisierungskomponente parallel zur Feldrichtung $\vec{B_0}$. Andererseits beschreibt sie auch den Energiefluss zwischen den Kernspinsystem und den Gitterschwingungen.\\
-$T_2$ beschreibt hingegen die transversale Änderung. Sie wird auch Spin-Spin-Relaxationszeit, da die Abnahme der Magnetisierung senkrecht zur Feldrichtung $\vec{B_0}$ häufig durch Spin-Spin-Wechselwirkungen geschieht.
+Die Zeitkonstante $T_1$ wird auch longitudinale oder Spin-Gitter-Relaxationszeit genannt; sie beschreibt die zeitliche Veränderung der Magnetisierungskomponente parallel zur Feldrichtung $\vec{B_0}$. Andererseits beschreibt sie auch den Energiefluss zwischen dem Kernspinsystem und den Gitterschwingungen.\\
+$T_2$ beschreibt hingegen die transversale Änderung. Sie wird auch Spin-Spin-Relaxationszeit genannt, da hierbei die Abnahme der Magnetisierung senkrecht zur Feldrichtung $\vec{B_0}$ durch Spin-Spin-Wechselwirkungen geschieht.
 \subsection{HF-Einstrahlungsvorgänge}
 Ein Hochfrequenzfeld mit Magnetfeld $\vec{B_1} \perp \vec{e_z}$ lässt sich durch
 \begin{align}
@@ -142,11 +141,11 @@ Ein Hochfrequenzfeld mit Magnetfeld $\vec{B_1} \perp \vec{e_z}$ lässt sich durc
 beschreiben.\\
 Das Feld ist in zwei zirkular polarisierte Felder $\omega_+$ und $\omega_-$ aufteilbar.\\
 Wenn $\omega_+$ nahe der Larmor-Frequenz $\omega_L$ ist, so ist der Beitrag von $\omega_-$ vernachlässigbar.\\
-Es handelt sich dann um ein rotierendes Feld um die $\vec{e_x}$ und $\vec{e_y}$-Achse und es wirkt als gesamtes Magnetfeld auf die Probe
+Es handelt sich dann um ein rotierendes Feld um die $\vec{e_x}$- und $\vec{e_y}$-Achsen und wirkt als gesamtes Magnetfeld auf die Probe
 \begin{align*}
 B_x=B_1 \cos \omega t \hspace*{0.1cm}\text{,}\hspace*{0.4cm} B_y=B_1 \sin \omega t \hspace*{0.3cm}\text{und}\hspace*{0.3cm} B_z=B_0\hspace*{0.1cm}\text{.}
 \end{align*}
-Es ist sinnvoll das Koordinatensystem in ein Koordinatensystem mit Zeitabhängigen Einheitsvektoren mit
+Es ist sinnvoll das Koordinatensystem in ein Koordinatensystem mit zeitabhängigen Einheitsvektoren mit
 \begin{align}
 \frac{\partial \vec{\tilde{e_x}}}{\partial t}= -\vec{\omega} \times \vec{e_x}\hspace*{0.1cm}\text{,}\hspace*{0.4cm}
 \frac{\partial \vec{\tilde{e_y}}}{\partial t}= -\vec{\omega} \times \vec{e_y}\hspace*{0.3cm}\text{und}\hspace*{0.3cm}
@@ -157,7 +156,7 @@ Dadurch kann die Differenzialgleichung
 \begin{align}
 \frac{d \vec{M}}{d t}= \gamma \vec{M}\times \left(\vec{B}_{\text{ges}}+\frac{\vec{\omega}}{\gamma}\right)
 \end{align}
-gewonnen werden, die die Form der Gleichung \ref{eq::magzeit} mit effektiven Magnetfeld
+gewonnen werden, die die Form der Gleichung (\ref{eq::magzeit}) mit effektiven Magnetfeld
 \begin{align}
 \vec{B}_\text{eff}=\vec{B}_0+\vec{B}_1+\frac{\vec{\omega}}{\gamma}
 \end{align}
@@ -173,7 +172,7 @@ Es lässt sich die Einstrahlzeit
 \begin{align}
 \Delta t_{90}=\frac{\pi}{2\gamma B_1} 
 \end{align}
-bestimmen, die es benötigt bis $\vec{M}$ von der $-\vec{e_z}$ Richtung in die  $\vec{e_y}$ gedreht ist.\\
+bestimmen, die es dauert, bis $\vec{M}$ von der $-\vec{e_z}$ Richtung in die  $\vec{e_y}$ gedreht ist.\\
 Analog kann $\Delta t_{180}=2 \Delta t_{90}$ bestimmt werden, bis $\vec{M}$ von der $\vec{e_z}$ Richtung in die  $-\vec{e_z}$ gedreht ist.\\ 
 Durch das Relaxieren der Magnetisierung zurück in die Ruhelage können $T_1$ und $T_2$ bestimmt werden.
 \subsection{Freier Induktionszerfall}
@@ -185,7 +184,7 @@ Senkrecht dazu ist eine Spule, in dessen Innenraum sich die Probe befindet. Der 
 \caption{Prinzipieller Versuchsaufbau [2]}
 \label{fig::aufbau}
 \end{figure}
-Durch die Spule wird ein hochfrequenter Strom geschickt, der ein hochfrequentes Magnetfeld erzeugt, welches die Anforderungen aus Kapitel 2.4 erfüllt, also ein in x-y Ebene umlaufendes Feld besitzt.\\
+Durch die Spule wird ein hochfrequenter Strom geschickt, der ein hochfrequentes Magnetfeld erzeugt, welches die Anforderungen aus Kapitel 2.4 erfüllt, also ein in der x-y-Ebene umlaufendes Feld besitzt.\\
 Es folgt ein $\Delta t_{90}$ Impuls, sodass die Magnetisierung in Richtung $\vec{e}_y$ liegt. Dadurch führt $\vec{M}$ eine Präzession auf der $\vec{e}_x$-$\vec{e}_y$-Ebene durch.\\
 Das System erreicht durch Relaxationsprozesse mit der Zeit die Ausgangslage $\vec{M_0}$.\\
 Dieser Prozess wird freier Induktionszerfall genannt.\\
@@ -197,11 +196,11 @@ Das gemessene $T_2^*$ unterscheidet sich vom realen $T_2$ durch
 \begin{align}
 \frac{1}{T_2^*}=\frac{1}{T_2}+\frac{1}{T_{\Delta B}}\hspace*{0.5cm}\text{.}
 \end{align}
-Die Störung $T_{\Delta B}$ durch das endliche Magnetfeld ist von der Größenordnung $\left(\gamma d G\right)^{-1}$ mit den Probendurchmesser $d$ und den Gradient $G$  des $\vec{B}_0$ Feldes.\\
+Die Störung $T_{\Delta B}$ durch das endliche Magnetfeld ist von der Größenordnung $\left(\gamma d G\right)^{-1}$ mit dem Probendurchmesser $d$ und dem Gradienten $G$  des $\vec{B}_0$ Feldes.\\
 Solange das B-Feld hinreichend homogen ist, also $T_{\Delta B} \ll T_2$ ist, ist eine Messung sinnvoll, da die Fehler dann meistens allein durch die Apparatur gegeben sind.
 \subsection{Das Spin-Echo-Verfahren}
 Die im vorigen Abschnitt genannten Störeffekte sind eliminierbar, wenn zeitlich konstant. Dafür werden zwei HF-Pulse verwendet.\\
-Zunächst wird ein $90^\circ$-Puls gesendet, der die Magnetisierung entlang $\vec{\tilde{e}}_y$. Die Spins präzedieren während des Zeitraum $\tau \gg \Delta t_{90}$ um die $\vec{e}_z$ Achse.\\
+Zunächst wird ein $90^\circ$-Puls gesendet, der die Magnetisierung in $\vec{\tilde{e}}_y$-Richtung kippt. Die Spins präzedieren während des Zeitraums $\tau \gg \Delta t_{90}$ um die $\vec{e}_z$-Achse.\\
 Da die Spins mit der Zeit außer Phase geraten, bewegt sich ein Teil in Uhrzeigersinn, und der andere Teil entgegengesetzt.\\
 Nach $\tau$ wird ein $180^\circ$-Puls gesendet, der die Spins flippt. Dadurch laufen die beiden Mengen an Spins wieder zusammen.
 \begin{figure}[H]
@@ -210,7 +209,7 @@ Nach $\tau$ wird ein $180^\circ$-Puls gesendet, der die Spins flippt. Dadurch la
 \caption{Veranschaulichung des Spin-Echo-Verfahrens [2]}
 \label{fig::spin_echo}
 \end{figure}
-Es entstehen dabei nur Signale, wenn die beiden Teile nahe beieinander sind. Es entsteht ein Signal der Form \ref{fig::hahn_echo_verlauf}.\\
+Es entstehen dabei nur Signale, wenn die beiden Spins in Phase sind. Es entsteht ein Signal der Form \ref{fig::hahn_echo_verlauf}.\\
 Diese Methode wird Hahn-Echo genannt.
 \begin{figure}[H]
 \centering
@@ -233,8 +232,8 @@ M_y\left(t\right)=M_0\exp \left(-\frac{t}{T_2}\right)\label{eq::rechnung_tau_spi
 gegeben, dabei ist $M_y$ die Höhe des Spin-Echos.\\ 
 Es lässt sich $T_2$ durch Variation von $\tau$ messen.
 \subsection{Carr-Purcell- und Meiboom-Gill-Methode}
-Da nach jeder Messung das System die ursprüngliche Gleichgewichtsmagnetisierung $M_0$ in z-Richtung zurück kehren muss, ist die im vorherigen Abschnitt beschriebene Spin-Echo-Methode zeitintensiv.\\
-Eine Abhilfe schafft dabei die von Carr und Purcell vorgeschlagenen Methode, nach der zunächst analog wie bei der Spin-Echo-Methode ein $90^\circ$ Puls, jedoch wird anstatt einen $180^\circ$ Puls mehrere $180^\circ$ Pulse mit äquidistant Abstand $2\tau$ aufeinanderfolgen gesendet, wie in Abbildung \ref{fig::Carr_Purcellt_signal} dargestellt.
+Da nach jeder Messung das System zur ursprünglichen Gleichgewichtsmagnetisierung $M_0$ in z-Richtung zurückkehren muss, ist die im vorherigen Abschnitt beschriebene Spin-Echo-Methode zeitintensiv.\\
+Eine Abhilfe schafft dabei die von Carr und Purcell vorgeschlagenen Methode, nach der zunächst analog wie bei der Spin-Echo-Methode ein $90^\circ$ Puls eigestrahlt wird. Jedoch werden anstatt eines $180^\circ$ Pulses mehrere $180^\circ$ Pulse mit äquidistanten Abstand $2\tau$ aufeinanderfolgend gesendet, wie in Abbildung \ref{fig::Carr_Purcellt_signal} dargestellt.
 \begin{figure}[H]
 \centering
 \includegraphics[width=14cm]{images/Carr_Purcellt_signal.png}
@@ -242,8 +241,8 @@ Eine Abhilfe schafft dabei die von Carr und Purcell vorgeschlagenen Methode, nac
 \label{fig::Carr_Purcellt_signal}
 \end{figure}
 Da die Spins nach $2n\tau$ $n\in \mathbb{N}$ erneut fokussieren, befindet sich an diesen Stellen ein Extremum mit alternierendem Vorzeichnen.\\
-Dabei nimmt die Echoamplitude mit der Zeit durch Relaxionsprozesse ab und es ist eine Messung nach \ref{eq::rechnung_tau_spin_echo} möglich.\\
-Diese Methode liefert jedoch nur exakte Werte, wenn die $180^\circ$ Pulse exakt justiert sind. Ist dies nicht der Fall, so werden die Spins mit jedem Puls aus Messebene herausdreht.\\ Die Lösung ist, dass jeder zweite $180^\circ$ so justiert wird, dass die Spins wieder in der Messebene liegen. Dies wird als Meiboom-Gill-Methode bezeichnet.
+Dabei nimmt die Echoamplitude mit der Zeit durch Relaxionsprozesse ab und es ist eine Messung nach Gleichung (\ref{eq::rechnung_tau_spin_echo}) möglich.\\
+Diese Methode liefert jedoch nur exakte Werte, wenn die $180^\circ$ Pulse exakt justiert sind. Ist dies nicht der Fall, so werden die Spins mit jedem Puls aus der Messebene herausgedreht.\\ Die Lösung ist, dass jeder zweite $180^\circ$ so justiert wird, dass die Spins wieder in der Messebene liegen. Dies wird als Meiboom-Gill-Methode bezeichnet.
 \begin{figure}[H]
 \centering
 \includegraphics[width=12cm]{images/Meiboom_Gill_Methode.png}
