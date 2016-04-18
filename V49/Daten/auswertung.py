@@ -10,6 +10,7 @@ from scipy.optimize import curve_fit
 import matplotlib.pyplot as plt
 from uncertainties import ufloat
 import uncertainties.unumpy as unp
+from uncertainties.unumpy import log10,log,exp,sqrt
 import sympy
 
 plt.rcParams['figure.figsize'] = (10, 8)
@@ -47,7 +48,7 @@ def g(x, b, m):
 def h(t, M0, D):
     T2=1.227
     G=7.09*10**6
-    return M0*np.exp(-t/T2)*np.exp(-D*(G**2)*t**3/12)
+    return M0*np.exp(-2*t/T2)*np.exp(-D*(G**2)*(2*t)**3/12)
 
 
 #T1-Bestimmung
@@ -80,11 +81,10 @@ M=unp.uarray(data2[1,:],0.02)
 
 guess = [1.47, 1]
 x_plot=np.linspace(0,1000, num=1000000)
-params, covariance = curve_fit(g, unp.nominal_values(tau), np.log(-unp.nominal_values(M)), p0=guess)
-
+params, covariance = curve_fit(g, unp.nominal_values(tau), np.log(unp.nominal_values(M)), p0=guess)
 plt.figure()
 errM = unp.std_devs(M)
-plt.errorbar(unp.nominal_values(tau), np.log(-unp.nominal_values(M)) + errM, fmt='bx', label="T2-Messung")
+plt.errorbar(unp.nominal_values(tau), np.log(unp.nominal_values(M)) + errM, fmt='bx', label="T2-Messung")
 plt.plot(x_plot, g(x_plot, *params), 'r-', label='Linearer Fit')
 plt.legend(loc="best", numpoints=1)
 plt.xlim(0,1010)
@@ -97,7 +97,9 @@ errors=np.sqrt(np.diag(covariance))
 
 print('ln(M0) =', params[0], '+/-', errors[0])
 print('-(1/T2) =', params[1], '+/-', errors[1])
-
+m0=ufloat(params[0], errors[0])
+M0=exp(m0)
+print('M0 =', unp.nominal_values(M0) , '+/-', unp.std_devs(M0))
 #t1/2-Messung
 t= ufloat(params[1],errors[1])
 T2=-(1/t)

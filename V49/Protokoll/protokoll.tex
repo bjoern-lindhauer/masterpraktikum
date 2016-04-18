@@ -299,7 +299,7 @@ In Abbildung \ref{fig:aufbau} ist ein Teil des Versuchsaufbaus dargestellt, wobe
 	\captionof{figure}{Ein Teil des Versuchsaufbaus}
 	\label{fig:aufbau}
 \end{center}
-Links im Bild ist die Halterung für den Permanentmagneten zu sehen, in welcher auch zwei Spulen und der Probenhalter befestigt sind. Die Spulen können dabei den Feldgradienten ändern und die zweite Spule kann ein Hochfrequenzfeld für die Probe anlegen. Das rechte Bauteil ist für die Messung er Induktion und die Steuerung der Spulen verantwortlich.
+Links im Bild ist die Halterung für den Permanentmagneten zu sehen, in welcher auch zwei Spulen und der Probenhalter befestigt sind. Die Spulen können dabei den Feldgradienten ändern und die zweite Spule kann ein Hochfrequenzfeld für die Probe anlegen. Das rechte Bauteil ist für die Messung der Induktion und die Steuerung der Spulen verantwortlich.
 \section{Auswertung}
 
 \subsection{Bestimmung der Relaxationszeit T$_2$}
@@ -315,12 +315,12 @@ Es wurden sowohl für die Carr-Purcell als auch für die Meiboom-Gill-Methode Bu
 	\label{fig:mg}
 \end{center}
 Für die Auswertung wurden die Maxima der Sequenz verwendet, diese wurden in einer csv-Datei aufgezeichnet. \\
-Unter der Annahme,dass die T$_D$ groß gegen T$_2$ ist, d.h. $\tau_1$ hinreichend klein ist, kann der Einfluss der Diffusion vernachlässigt werden. In diesem Fall ergibt sich für die Magnetisierung 
+Unter der Annahme, dass T$_D$ groß gegen T$_2$ ist, d.h. $\tau_1$ hinreichend klein ist, kann der Einfluss der Diffusion vernachlässigt werden. In diesem Fall ergibt sich für die Magnetisierung 
 \begin{align}
 M_Y(t)=M_0\exp\left( \frac{-t}{T_2}\right) \\
 \ln(M_Y(t))=\ln(M_0) + \frac{-t}{T_2}\,  ,
 \end{align}
-womit eine lineare Ausgleichsrechnung mithilfe der aufgenommenen Messdaten, dargestellt in Tabelle \ref{tab_t2}, durchgeführt wird. \\
+womit eine lineare Ausgleichsrechnung mithilfe der aufgenommenen Messdaten, dargestellt in Tabelle \ref{tab_t2}, durchgeführt wird. Die Fehlerrechnung wird mithilfe von Python mit dem Paket uncertainties durchgeführt.\\
 \begin{center}
 	\begin{tabular}{|c|c||c|c|}
 		\hline	$\tau$ [s]	&	M$_y$ [V] & $\tau$ [s]	&	M$_y$ [V]\\
@@ -348,16 +348,16 @@ Die lineare Ausgleichsrechnung wird mit Python ausgeführt und ergibt
 \ln(M_0)&=0.729 \pm 0.036 \\
 -\frac{1}{T_2}&= (-8.15 \pm 0.54) \frac{10^{-4}}{\mu s}
 \end{align*}
-und somit T$_2=(1.227 \pm 0.082)\,$s.
+und somit M$_0=(2.073 \pm 0.074)$V und T$_2=(1.227 \pm 0.082)\,$s.
 Der lineare Fit sowie die aufgenommenen Messdaten sind in Abbildung \ref{fig:T2} dargestellt.
 \begin{center}
 	\includegraphics[width=10cm]{images/plotT2.png}
-	\captionof{figure}{Gemessene Amplitude der M$_y$-Komponente in Abhängigkeit des Zeitabstandes $\tau$ mit Linearem Fit}
+	\captionof{figure}{Gemessene Amplitude der M$_y$-Komponente in Abhängigkeit des Zeitabstandes $\tau$ mit linearem Fit}
 	\label{fig:T2}
 \end{center}
 
 \subsection{Bestimmung der Relaxationszeit T$_1$}
-Die z-Komponente der Magnetisierung weist einen exponentiellen Zusammenhang mit dem Zeitabstand $\tau$ zwischen den 90$^{\circ}$ auf, wie in Formel \ref{eq_T1} dargestellt ist. \\
+Die z-Komponente der Magnetisierung weist einen exponentiellen Zusammenhang mit dem Zeitabstand $\tau$ zwischen den Pulsen auf, wie in Formel (\ref{eq_T1}) dargestellt ist. \\
 Zur Bestimmung von T$_1$ wird eine nicht-lineare Ausgleichsrechnung mit den in Tabelle \ref{tab_t1} angegebenen Messwerten durchgeführt. \\
 \begin{center}
 	\begin{tabular}{|c|c||c|c|}
@@ -387,10 +387,10 @@ Zur Bestimmung von T$_1$ wird eine nicht-lineare Ausgleichsrechnung mit den in T
 		\hline	1,403	&	0,04	&	9,003	&	-1,47	\\
 		\hline
 	\end{tabular}
-	\captionof{table}{Aufgenommene Messwerte der z-Komponente der Magnetisierung in Abhängigkeit vom Zeitabstand $\tau$ zwischen den 90$^{\circ}$-Pulsen.}
+	\captionof{table}{Aufgenommene Messwerte der z-Komponente der Magnetisierung in Abhängigkeit vom Zeitabstand $\tau$ zwischen den Pulsen.}
 	\label{tab_t1}
 \end{center}
-Mit Gleichung \ref{eq_T1} ergibt eine nicht-lineare Ausgleichsrechnung mit Python folgende Fitparameter:
+Mit Gleichung (\ref{eq_T1}) ergibt eine nicht-lineare Ausgleichsrechnung mit Python folgende Fitparameter:
 \begin{align*}
 M_0&=(1.51 \pm 0.01)\si{V} \\
 T_1&=(2.08 \pm 0.01)\si{s}
@@ -407,7 +407,7 @@ Für Bestimmung des Diffusionskoeffizienten D muss zunächst das Produkt  $\gamm
 Dazu wurden Werte für t$_{1/2}$ mithilfe des Oszilloskopes für verschiedene Werte von $\tau$ aufgenommen, dargestellt in Tabelle \ref{tab_t12}.
 \begin{center}
 	\begin{tabular}{|c|c|}
-	\hline $\tau$ [ms] & t$_{1/2}$ \\
+	\hline $\tau$ [ms] & t$_{1/2}$ [$\mu$s] \\
 	\hline 2.0 & 290 \\
 	\hline 4.0 & 280 \\
 	\hline 6.0 & 280 \\
@@ -426,7 +426,7 @@ und der Angabe d=4.4\,mm das Produkt zu $\gamma G=(7.09\pm0.10)\cdot 10^6\,$m$^{
 \subsection{Berechnung des Diffusionskoeffizienten D}
 Mit dem Ansatz
 \begin{align*}
-M_Y(t)=M_=0\exp\left( \frac{-t}{T_2}\right) \exp(-D\gamma^2G^2t^3/12)
+M_Y(2\tau)=M_0\exp\left( \frac{-2\tau}{T_2}\right) \exp(-D\gamma^2G^2(2\tau)^3/12)
 \end{align*}
 wird eine nicht-lineare Ausgleichsrechnung durchgeführt, wobei dazu die Messwerte aus Tabelle \ref{tab_D} der Magnetisierungsamplitude verwendet werden. \\
 \begin{center}
@@ -448,7 +448,7 @@ wird eine nicht-lineare Ausgleichsrechnung durchgeführt, wobei dazu die Messwer
 \end{center}
 Die nicht-lineare Ausgleichsrechnung wird mit Python ausgeführt und ergibt 
 \begin{align*}
-M_0&=(559 \pm 4.5)\,\text{V}\\
+M_0&=(559 \pm 4.5)\,\text{mV}\\
 D&=(1.11 \pm 0.03) 10^{-7}\,\text{m$^2$s$^{-1}$}
 \end{align*}
 Der Verlauf der angepassten Theoriekurve sowie die aufgenommenen Messdaten sind in Abbildung \ref{fig:D} zu sehen.
