@@ -448,13 +448,13 @@ wird eine nicht-lineare Ausgleichsrechnung durchgeführt, wobei dazu die Messwer
 \end{center}
 Die nicht-lineare Ausgleichsrechnung wird mit Python ausgeführt und ergibt 
 \begin{align*}
-M_0&=(559 \pm 4.5)\,\text{mV}\\
-D&=(1.11 \pm 0.03) 10^{-7}\,\text{m$^2$s$^{-1}$}
+M_0&=(564 \pm 4.8)\,\text{mV}\\
+D&=(1.70 \pm 0.04) 10^{-7}\,\text{m$^2$s$^{-1}$}
 \end{align*}
 Der Verlauf der angepassten Theoriekurve sowie die aufgenommenen Messdaten sind in Abbildung \ref{fig:D} zu sehen.
 \begin{center}
 	\includegraphics[width=10cm]{images/plotD.png}
-	\captionof{figure}{Gemessene Amplitude der M$_Y$-Komponente in Abhängigkeit des Zeitabstandes $\tau$ mit Nichtlinearem Fit}
+	\captionof{figure}{Gemessene Amplitude der M$_Y$-Komponente in Abhängigkeit des Zeitabstandes $\tau$ mit nichtlinearem Fit}
 	\label{fig:D}
 \end{center}
 \subsection{Bestimmung der Viskosität $\eta$}
@@ -475,9 +475,9 @@ bestimmt werden. So ergibt sich ein Molekülradius von
 r = 1.992\cdot10^{-12}\,\text{m}
 \end{align*}
 \subsubsection{Berechnung mit dichter-Kugelpackungs-Modell}
-Mit der Annahme, dass Wassermoleküle in einer hexagonal dichtesten Kugelpackung mit Packungsdichte 77\% angeordnet sind, ergibt sich für das Volumen eines Wassermoleküls
+Mit der Annahme, dass Wassermoleküle in einer hexagonal dichtesten Kugelpackung mit Packungsdichte 74\% angeordnet sind, ergibt sich für das Volumen eines Wassermoleküls
 \begin{align*}
-\text{V}=0.74 \frac{\text{M}}{\rho \text{N}_{\text{A}}}\,.
+\text{V}=0.74 \frac{\text{M}}{\rho \text{N}_{\text{A}}}=\frac{4}{3}\pi r_H^3\,.
 \end{align*}
 Mit M=18.015 gmol$^{-1}$[1], der molaren Masse von Wasser und $\rho$ der Dichte von Wasser ergibt sich für den Radius r der Wasser-Moleküle:
 \begin{align*}
@@ -500,14 +500,15 @@ ergibt. \\
 Der Radius r ergibt sich mit T$_c=647.17\si{K}$[1] und p$_c=220.64\si{bar}$[1] zu r =1.44$\cdot10^{-10}\si{m}$.
 
 \section{Diskussion}
+Auffällig ist, dass die Gleichgewichtsmagnetisierung in jeder der drei Auswertungen unterschiedlich ist, obwohl diese eine Konstante der Probe ist. \\
 Die longitudinale Relaxationszeit T$_1=(2.08 \pm 0.01)\si{s}$ sowie die transversale Relaxationszeit T$_2=(1.23 \pm 0.08)\si{s}$ können mit geringem Fehler bestimmt werden. Gemäß der Theorie ist dabei die longitudinale Relaxationszeit länger als die transversale Relaxationszeit. \\
-Der experimentell bestimmte Diffusionskoeffizient D=(1.11$\pm 0.03) \cdot10^{-7}\,\text{m}^2\text{s}^{-1}$ weicht hingegen deutlich vom Literaturwert D=$2.025\cdot10^{-7}\,\text{m}^2\text{s}^{-1}$[4] ab. \\
-Des weiteren ist festzustellen, dass der experimentell bestimmte Molekülradius r=$ 1.992\cdot10^{-12}\,\text{m}$ um zwei Größenordnungen von den berechneten Werten r=$1.74\cdot10^{-10}\si{m}$ und r=$1.44\cdot10^{-10}\si{m}$ abweicht. Eine der möglichen Ursachen dafür liegt in der Tatsache, dass kein destiliertes Wasser bei der Viskositätsmessung verwendet wurde und somit andere gelöste Stoffe einen Einfluss auf die Messung hatten.
+Der experimentell bestimmte Diffusionskoeffizient D\,$=(1.11\pm 0.03) \cdot10^{-7}\,\text{m}^2\text{s}^{-1}$ weicht hingegen deutlich vom Literaturwert D\,$=2.025\cdot10^{-7}\,\text{m}^2\text{s}^{-1}$[4] ab. \\
+Des Weiteren ist festzustellen, dass der experimentell bestimmte Molekülradius r=$ 1.992\cdot10^{-12}\,\text{m}$ um zwei Größenordnungen von den berechneten Werten r=$1.74\cdot10^{-10}\si{m}$ und r=$1.44\cdot10^{-10}\si{m}$ abweicht. Eine der möglichen Ursachen dafür liegt in der Tatsache, dass kein destiliertes Wasser bei der Viskositätsmessung verwendet wurde und somit andere gelöste Stoffe einen Einfluss auf die Messung hatten.
 
 \section{Quellen}
-[1] http://www.uni-magdeburg.de/isut/LSS/Lehre/Arbeitsheft/IV.pdf, Stand 11.02.16
-[2] Versuchsanleitung zu Versuch 49:
-http://129.217.224.2/HOMEPAGE/PHYSIKER/MASTER/SKRIPT/V49.pdf
-[3] Das große Tafelwerk, Cornelsen, 2010
-[4] http://pubs.rsc.org/en/content/articlepdf/2000/cp/b005319h, Stand 11.02.16
+{[1]} http://www.uni-magdeburg.de/isut/LSS/Lehre/Arbeitsheft/IV.pdf, Stand 11.02.16 \\
+{[2]} Versuchsanleitung zu Versuch 49:
+http://129.217.224.2/HOMEPAGE/PHYSIKER/MASTER/SKRIPT/V49.pdf \\
+{[3]} Das große Tafelwerk, Cornelsen, 2010 \\
+{[4]} http://pubs.rsc.org/en/content/articlepdf/2000/cp/b005319h, Stand 11.02.16
 \end{document}

@@ -117,17 +117,17 @@ tau=unp.uarray(data2[0,:],0)
 M=unp.uarray(data2[1,:],0.02)
 
 guess = [500, (2*10**(-7))]
-x_plot=np.linspace(0,0.03, num=1000)
-params, covariance = curve_fit(h, unp.nominal_values(tau), unp.nominal_values(M), p0=guess)
+x_plot=np.linspace(0,0.06, num=2000)
+params, covariance = curve_fit(h, 2*unp.nominal_values(tau), unp.nominal_values(M), p0=guess)
 
 plt.figure()
 errM = unp.std_devs(M)
-plt.errorbar(unp.nominal_values(tau), unp.nominal_values(M) + errM, fmt='bx', label="D-Messung")
+plt.errorbar(2*unp.nominal_values(tau), unp.nominal_values(M) + errM, fmt='bx', label="D-Messung")
 plt.plot(x_plot, h(x_plot, *params), 'r-', label='Nicht-Linearer Fit')
 plt.legend(loc="best", numpoints=1)
-plt.xlim(0,0.021)
+plt.xlim(0,0.05)
 plt.ylim(0, 570)
-plt.xlabel(r'Zeitabstand $\tau$ [$\mu$s]')
+plt.xlabel(r'Zeitabstand 2$\tau$ [$\mu$s]')
 plt.ylabel(r'Magnetisierung M$_y$ [V]')
 plt.savefig('plotD.png')
 
