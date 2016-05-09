@@ -25,9 +25,9 @@
 
 
 %Hier Titel und so
-\newcommand{\versuchnummer}{V56} 
+\newcommand{\versuchnummer}{V59} 
 \newcommand{\versuchname}{Modulation und Demodulation elektrischer Schwingungen} 
-\newcommand{\versuchdatum}{Datum} 
+\newcommand{\versuchdatum}{24.02.16} 
 
 
 \title{Versuch \versuchnummer\\ \versuchname}
@@ -83,7 +83,7 @@ Besteht die Modulationsspannung $\hat{U}_\text{M}$ aus einer Reihe von verschied
 \begin{figure}[H]
 \centering 
 \includegraphics[width=10cm]{images/zeitabhaengigkeit_momentanspannung.png}
-\caption{Text}
+\caption{Zeitliche Darstellung der Momentanspannung $U_3$ nach Gleichung \ref{eq:amplitudederamplitudenmoduliertenschwingung} (1)}
 \label{fig:zeitabhaengigkeit_momentanspannung}
 \end{figure}
 In Gleichung \ref{eq:amplitudederamplitudenmoduliertenschwingungbesser} ist ersichtlich, dass das Signal bei $\omega_\text{T}$ keinerlei Informationen besitzt, da sie unabhängig von $\hat{U}_\text{M}$ ist. Es wird auch als Trägerabstrahlung bezeichnet und stellt in der Praxis nur einen unnötigen Energieverbrauch da und wird deswegen vermieden.\\
@@ -91,21 +91,61 @@ Es kann außerdem Energie gespart werden, indem eines der beiden Bänder durch e
 \begin{figure}[H]
 \centering 
 \includegraphics[width=10cm]{images/frequenzsprektum_amplitudenmodulierten.png}
-\caption{Text}
+\caption{Frequenzspektrum einer nach \ref{eq:amplitudederamplitudenmoduliertenschwingungbesser} amplitudenmodulierten Schwingung (1)}
 \label{fig:frequenzsprektum_amplitudenmodulierten}
 \end{figure}
 Die Amplitudenmodulation besitzt jedoch eine geringe Störsicherheit und Verzerrungsfreiheit.
 \subsection{Frequenzmodulation} 
-
-
-
-
+Bei der Frequenzmodulation wird nicht die Amplitude, sondern die Frequenz im Rhythmus des Modulationssignales geändert.\\
+Es ergibt sich ein Signal der Form
+\begin{align}
+U\left(t\right)=\hat{U}\sin \left( \omega_{\text{T}}t+ m \frac{\omega_{\text{T}}}{\omega_{\text{M}}}\cos \omega_{\text{M}}t \right)\label{eq:frequenzmodulationsignal}
+\end{align}
+mit den Modulationsgrad $m$, der durch die Modulationsspannung gegeben ist.\\
+Durch Ableitung des Arguments der Sinus-Funktion in \ref{eq:frequenzmodulationsignal} kann die Momentanfrequenz
+\begin{align}
+f\left(t\right)=\frac{\omega_{\text{T}}}{2\pi}\left(1+m\sin \omega_{\text{M}}t\right)
+\end{align} 
+bestimmt werden.\\
+Des weiteren wird die Größe $m\frac{\omega_{\text{T}}}{2\pi}$ als Frequenzhub bezeichnet und gibt die Variationsbreite der Schwingungsfrequenz an.\\
+Wie ein frequenzmoduliertes Signal aussehen könnte, ist in Abbildung
+\ref{fig:frequenzmodulation_beispiel} abgebildet.
+\begin{figure}[H]
+\centering 
+\includegraphics[width=13cm]{images/frequenzmodulation_bsp.png}
+\caption{Beispielhafter zeitlicher Verlauf eines frequenzmodulierten Signals (1)}
+\label{fig:frequenzmodulation_beispiel}
+\end{figure} 
+Es soll im folgenden nur die Schmalband-Frequenzmodulation betrachtet werden, mit niedrigen Frequenzhub, sodass
+\begin{align}
+m\frac{\omega_{\text{T}}}{\omega_{\text{M}}}\ll 1 \label{eq:frequenzmodulationsignalentwicklungsparameter}
+\end{align}
+ist und \ref{eq:frequenzmodulationsignal} nach dieser Größe entwickelt werden kann. Dazu wird \ref{eq:frequenzmodulationsignal} zunächst durch Additionstheoreme in die Form
+\begin{align}
+U\left(t\right)=\hat{U}\left(\sin   \omega_{\text{T}}t \cos\left(m \frac{\omega_{\text{T}}}{\omega_{\text{M}}}\cos \omega_{\text{M}}t \right)+\cos   \omega_{\text{T}}t \sin\left(m \frac{\omega_{\text{T}}}{\omega_{\text{M}}}\cos \omega_{\text{M}}t \right) \right)\label{eq:frequenzmodulationsignalentwicklungsform}
+\end{align}
+gebracht, da diese sich leichter nach \ref{eq:frequenzmodulationsignalentwicklungsparameter} entwickeln lässt.\\
+Die entstehende Gleichung
+\begin{align}
+U\left(t\right)=\hat{U}\left(\sin   \omega_{\text{T}}t+ \frac{m}{2}\frac{\omega_{\text{T}}}{\omega_{\text{M}}}\cos\left(\omega_{\text{T}}+\omega_{\text{M}}\right) +\frac{m}{2}\frac{\omega_{\text{T}}}{\omega_{\text{M}}}\cos\left(\omega_{\text{T}}-\omega_{\text{M}}\right)  \right)
+\end{align}
+hat die gleiche Form wie die Gleichung \ref{eq:amplitudederamplitudenmoduliertenschwingungbesser} beim amplitudenmodulierte Signal und besteht auch aus drei Teilschwingungen, jedoch sind die Seitenlinien um $90^\circ$ gegen die Trägerschwingung in der Phase verschoben.\\
+Bei starker Frequenzmodulation mit
+\begin{align}
+m \omega_{\text{T}} \approx \omega_{\text{M}}
+\end{align}
+muss die Entwicklung von \ref{eq:frequenzmodulationsignalentwicklungsform} um höhere Ordnungen ergänzt werden.\\
+Dabei ergibt sich die Darstellung
+\begin{align}
+U\left(t\right)=\hat{U}\sum\limits_{n=-\infty}^{\infty} J_n\left(m\frac{\omega_{\text{T}}}{\omega_{\text{M}}} \right)\sin \left(\omega_{\text{T}}+n\omega_{\text{M}}\right)t\label{eq:frequenzmodulation_bessel}
+\end{align}
+mit der Besselsche Funktion $J_n\left(x\right)$. Dabei wird das Frequenzspektrum in Falle eines hohen Modulationsgrades vollständig abgedeckt, wie es aus Gleichung \ref{eq:frequenzmodulation_bessel} hervorgeht. In praktischen Anwendungen müssen jedoch nur Frequenzen nahe $\omega_{\text{T}}$ betrachtet werden, da die Besselsche Funktion für $x\l 1$ schnell abfällt.   
 \section{Durchführung}
 
 \section{Auswertung}
 
 \subsection{Amplitudenmodulation mit Ringmodulator}
-Mit einem Ringmodulator wird ein amplitudenmoduliertes SignaL mit Trägerunterdrückung erzeugt. Freequenzen f und Amplituden U von Träger- und Modulationssignal lauten:
+Mit einem Ringmodulator wird ein amplitudenmoduliertes Signal mit Trägerunterdrückung erzeugt. Freequenzen f und Amplituden U von Träger- und Modulationssignal lauten:
 \begin{enumerate}
 	\item Trägersignal f$_t10,0$\,MHz
 	\item Modulationssignal f$_m=158$\,kHz
@@ -125,5 +165,5 @@ Mit einem Ringmodulator wird ein amplitudenmoduliertes SignaL mit Trägerunterdr
 \section{Diskussion}
 
 \section{Quellen}
-
+(1) Versuchsbeschreibung
 \end{document}
