@@ -116,7 +116,7 @@ data2 = np.genfromtxt('DMessung.txt', unpack='True')
 tau=unp.uarray(data2[0,:],0)
 M=unp.uarray(data2[1,:],0.02)
 
-guess = [500, (2*10**(-7))]
+guess = [500, (2*10**(-8))]
 x_plot=np.linspace(0,0.06, num=2000)
 params, covariance = curve_fit(h, 2*unp.nominal_values(tau), unp.nominal_values(M), p0=guess)
 
@@ -124,7 +124,6 @@ plt.figure()
 errM = unp.std_devs(M)
 plt.errorbar(2*unp.nominal_values(tau), unp.nominal_values(M) + errM, fmt='bx', label="D-Messung")
 plt.plot(x_plot, h(x_plot, *params), 'r-', label='Nicht-Linearer Fit')
-plt.plot(x_plot, h(x_plot, 564, (1.3*10**(-8))))
 plt.legend(loc="best", numpoints=1)
 plt.xlim(0,0.05)
 plt.ylim(0, 570)

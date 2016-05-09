@@ -431,17 +431,18 @@ M_Y(2\tau)=M_0\exp\left( \frac{-2\tau}{T_2}\right) \exp(-D\gamma^2G^2(2\tau)^3/1
 wird eine nicht-lineare Ausgleichsrechnung durchgeführt, wobei dazu die Messwerte aus Tabelle \ref{tab_D} der Magnetisierungsamplitude verwendet werden. \\
 \begin{center}
 	\begin{tabular}{|c|c|c|c|}
-		\hline	0,001	550	&	550	&	0,013	189	&	189	\\
-		\hline	0,006	500	&	500	&	0,012	219	&	219	\\
-		\hline	0,011	310	&	310	&	0,010	363	&	363	\\
-		\hline	0,016	70	&	70	&	0,009	408	&	408	\\
-		\hline	0,021	22	&	22	&	0,008	449	&	449	\\
-		\hline	0,020	25	&	25	&	0,007	483	&	483	\\
-		\hline	0,019	33	&	33	&	0,005	523	&	523	\\
-		\hline	0,018	42	&	42	&	0,004	537	&	537	\\
-		\hline	0,017	55	&	55	&	0,003	550	&	550	\\
-		\hline	0,015	115	&	115	&	0,002	550	&	550	\\
-		\hline	0,014	151	&	151	&		&		\\
+		\hline	0,001	&	550	&	0,013	&	189	\\
+		\hline	0,006	&	500	&	0,012	&	219	\\
+		\hline	0,011	&	310	&	0,010	&	363	\\
+		\hline	0,016	&	70	&	0,009	&	408	\\
+		\hline	0,021	&	22	&	0,008	&	449	\\
+		\hline	0,020	&	25	&	0,007	&	483	\\
+		\hline	0,019	&	33	&	0,005	&	523	\\
+		\hline	0,018	&	42	&	0,004	&	537	\\
+		\hline	0,017	&	55	&	0,003	&	550	\\
+		\hline	0,015	&	115	&	0,002	&	550	\\
+		\hline	0,014	&	151	&		&		\\
+		\hline
 	\end{tabular}
 	\captionof{table}{Aufgenommene Messwerte der Maxima der Magnetisierungsamplitude für verschiedene Werte von $\tau$}
 	\label{tab_D}
@@ -449,7 +450,7 @@ wird eine nicht-lineare Ausgleichsrechnung durchgeführt, wobei dazu die Messwer
 Die nicht-lineare Ausgleichsrechnung wird mit Python ausgeführt und ergibt 
 \begin{align*}
 M_0&=(564 \pm 4.8)\,\text{mV}\\
-D&=(1.70 \pm 0.04) 10^{-7}\,\text{m$^2$s$^{-1}$}
+D&=(1.69 \pm 0.04) 10^{-9}\,\text{m$^2$s$^{-1}$}
 \end{align*}
 Der Verlauf der angepassten Theoriekurve sowie die aufgenommenen Messdaten sind in Abbildung \ref{fig:D} zu sehen.
 \begin{center}
@@ -472,7 +473,7 @@ r=\frac{kT}{6\pi \eta D}
 \end{align*}
 bestimmt werden. So ergibt sich ein Molekülradius von
 \begin{align*}
-r = 1.992\cdot10^{-12}\,\text{m}
+r = 1.305\cdot10^{-10}\,\text{m}
 \end{align*}
 \subsubsection{Berechnung mit dichter-Kugelpackungs-Modell}
 Mit der Annahme, dass Wassermoleküle in einer hexagonal dichtesten Kugelpackung mit Packungsdichte 74\% angeordnet sind, ergibt sich für das Volumen eines Wassermoleküls
@@ -500,10 +501,12 @@ ergibt. \\
 Der Radius r ergibt sich mit T$_c=647.17\si{K}$[1] und p$_c=220.64\si{bar}$[1] zu r =1.44$\cdot10^{-10}\si{m}$.
 
 \section{Diskussion}
+Die FID-Bilder sind aufgrund eines unverschuldeten Datenverlustes nicht im Protokoll
+enthalten.\\
 Auffällig ist, dass die Gleichgewichtsmagnetisierung in jeder der drei Auswertungen unterschiedlich ist, obwohl diese eine Konstante der Probe ist. \\
 Die longitudinale Relaxationszeit T$_1=(2.08 \pm 0.01)\si{s}$ sowie die transversale Relaxationszeit T$_2=(1.23 \pm 0.08)\si{s}$ können mit geringem Fehler bestimmt werden. Gemäß der Theorie ist dabei die longitudinale Relaxationszeit länger als die transversale Relaxationszeit. \\
-Der experimentell bestimmte Diffusionskoeffizient D\,$=(1.11\pm 0.03) \cdot10^{-7}\,\text{m}^2\text{s}^{-1}$ weicht hingegen deutlich vom Literaturwert D\,$=2.025\cdot10^{-7}\,\text{m}^2\text{s}^{-1}$[4] ab. \\
-Des Weiteren ist festzustellen, dass der experimentell bestimmte Molekülradius r=$ 1.992\cdot10^{-12}\,\text{m}$ um zwei Größenordnungen von den berechneten Werten r=$1.74\cdot10^{-10}\si{m}$ und r=$1.44\cdot10^{-10}\si{m}$ abweicht. Eine der möglichen Ursachen dafür liegt in der Tatsache, dass kein destiliertes Wasser bei der Viskositätsmessung verwendet wurde und somit andere gelöste Stoffe einen Einfluss auf die Messung hatten.
+Der experimentell bestimmte Diffusionskoeffizient D\,$=(1.69\pm 0.04) \cdot10^{-9}\,\text{m}^2\text{s}^{-1}$ weicht hingegen um 16.5\% vom Literaturwert D\,$=2.025\cdot10^{-9}\,\text{m}^2\text{s}^{-1}$[4] ab. \\
+Des Weiteren ist festzustellen, dass der experimentell bestimmte Molekülradius r=$ 1.305\cdot10^{-10}\,\text{m}$ nur um geringe Maße, d.h. um 25\% bzw. 9.5\%, von den berechneten Werten r=$1.74\cdot10^{-10}\si{m}$ und r=$1.44\cdot10^{-10}\si{m}$ abweicht. Eine der möglichen Ursachen dafür liegt in der Tatsache, dass kein destiliertes Wasser bei der Viskositätsmessung verwendet wurde und somit andere gelöste Stoffe einen Einfluss auf die Messung hatten.
 
 \section{Quellen}
 {[1]} http://www.uni-magdeburg.de/isut/LSS/Lehre/Arbeitsheft/IV.pdf, Stand 11.02.16 \\
