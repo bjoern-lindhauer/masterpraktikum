@@ -95,7 +95,7 @@ Es kann außerdem Energie gespart werden, indem eines der beiden Bänder durch e
 \label{fig:frequenzsprektum_amplitudenmodulierten}
 \end{figure}
 Die Amplitudenmodulation besitzt jedoch eine geringe Störsicherheit und Verzerrungsfreiheit.
-\subsection{Frequenzmodulation} 
+\subsection{Frequenzmodulation}\label{sec:frequenzmodulation}
 Bei der Frequenzmodulation wird nicht die Amplitude, sondern die Frequenz im Rhythmus des Modulationssignales geändert.\\
 Es ergibt sich ein Signal der Form
 \begin{align}
@@ -140,6 +140,56 @@ Dabei ergibt sich die Darstellung
 U\left(t\right)=\hat{U}\sum\limits_{n=-\infty}^{\infty} J_n\left(m\frac{\omega_{\text{T}}}{\omega_{\text{M}}} \right)\sin \left(\omega_{\text{T}}+n\omega_{\text{M}}\right)t\label{eq:frequenzmodulation_bessel}
 \end{align}
 mit der Besselsche Funktion $J_n\left(x\right)$. Dabei wird das Frequenzspektrum in Falle eines hohen Modulationsgrades vollständig abgedeckt, wie es aus Gleichung \ref{eq:frequenzmodulation_bessel} hervorgeht. In praktischen Anwendungen müssen jedoch nur Frequenzen nahe $\omega_{\text{T}}$ betrachtet werden, da die Besselsche Funktion für $x\l 1$ schnell abfällt.   
+\subsection{Modulationsschaltungen}
+\subsubsection*{Amplitudenmodulation}
+Um eine Amplitudenmodulation zu erreichen, muss das Produkt zweier Spannungen gebildet werden. Dafür wird ein Bauteil mit nicht-linearer Kennlinie benötigt.\\
+Die einfachste Modulationsschaltung besteht aus einer Diode und den zwei Spannungsquellen und ist in Abbildung \ref{fig:einfachemodulation} skizziert.
+\begin{figure}[H]
+\centering 
+\includegraphics[width=10cm]{images/primitive_modulationsschaltung.png}
+\caption{Einfache Modulationsschaltung mit einer Diode (1)}
+\label{fig:einfachemodulation}
+\end{figure} 
+Die Amplitudenmodulation dieser Schaltung wird ersichtlich, wenn der Strom
+\begin{align}
+I\left(U\right)=a_0+a_1 U+a_2U^2 + O(U^3)
+\end{align}
+nach $U$ entwickelt wird und die Summe der Träger- und Modulationsspannung in dieser Entwicklung eingesetzt werden:
+\begin{align}
+I\left(U_{\text{T}}+U_{\text{M}}\right)=a_0+a_1\left(U_{\text{T}}+U_{\text{M}}\right)+a_2\left(U_{\text{T}}^2+U_{\text{M}}^2+2U_{\text{T}}U_{\text{M}}\right) + O(\left(U_{\text{T}}+U_{\text{M}}\right)^3)
+\end{align}
+Es tauchen jedoch neben den gewünschten Term $U_{\text{T}}U_{\text{M}}$ noch weitere Terme auf, deren Frequenzen aber normalerweise weit außerhalb des Frequenzbandes von $\omega_{\text{T}}-\omega_{\text{M}}$ bis $\omega_{\text{T}}+\omega_{\text{M}}$ liegt und können somit durch einen Bandfilter unterdrückt werden.\\
+Dieses Verfahren ist unökonomisch, denn es sollte vermieden werden unnötige Beiträge in $I$ zu erzeugen, da diese nur Energie kosten.\\
+Die Beiträge können auf verschiedene Arten vermieden werden. Zum einen können andere Bauteile verwendet werden, bei denen die höheren Glieder der Entwicklung verschwinden. Zum anderen können die Bauteile so angeordnet werden, dass sich störende Glieder herausheben.\\
+Ein Beispiel für die letztere Methode ist der Ringmodulator.\\
+Ein Ringmodulator besteht aus vier zusammengeschalteten Dioden, wie in Abbildung \ref{fig:ringmodulator} dargestellt.\\
+Die Diodenzweige A und B sowie C und D dienen als Spannungsteiler für die Trägerspannung $U_{\text{T}}$, die an Eingang L angelegt wird.\\
+Die geteilten Spannungen werden an $\alpha$ und $\beta$ abgegriffen und über Hochfrequenz-Transformator an den Ausgang R ausgegeben.\\
+Wenn alle Dioden gleiche elektrische Eigenschaften haben, ändert sich zwar die Last der einzelnen Dioden, das Teilungsverhältnis ändert sich jedoch nicht, sodass keine Spannung zwischen $\alpha$ und $\beta$ anliegt.\\
+Wird jedoch eine Modulationsspannung am Eingang X angelegt, so ändern sich die Teilverhältnisse und zwischen $\alpha$ und $\beta$ ist eine Spannung im Rhythmus von $U_{\text{M}}\left(t\right)$ ab zugreifen.\\
+\begin{figure}[H]
+\centering 
+\includegraphics[width=13cm]{images/ringmodulatorschaltung.png}
+\caption{Schaltbild eines Ringmodulators (1)}
+\label{fig:ringmodulator}
+\end{figure} 
+Bei idealen Verhältnissen ist
+\begin{align}
+U_{\text{R}}=\gamma U_{\text{T}}U_{\text{M}}
+\end{align}
+nur proportional zu den Produkt aus $U_{\text{T}}$ und $U_{\text{M}}$ und es treten nur die beiden Seitenlinien im Frequenzspektrum auf.
+\subsubsection*{Frequenzmodulation}
+Im folgenden soll ein Frequenzmodulator mit geringem Frequenzhub beschrieben werden.\\
+Die Voraussetzungen für ein frequenzmoduliertes Signal wurde im Abschnitt \ref{sec:frequenzmodulation} diskutiert. Es wird jeweils eine amplitudenmodulierte Seitenlinien mit Frequenz $\omega_{\text{T}}-\omega_{\text{M}}$ und $\omega_{\text{T}}+\omega_{\text{M}}$ sowie ein um $90^\circ$ verschobenes Trägersignal benötigt.\\
+Im vorherigen Abschnitt wurde mit den Ringmodulator eine Möglichkeit beschrieben, um verlustfrei ein amplitudenmoduliertes Signal mit den benötigten Seitenlinien zu erzeugen. Dieses muss danach noch um den um $90^\circ$ verschobenen Trägersignal ergänzt werden. Dies ist mit der in Abbildung \ref{fig:frequenzmodulationsschaltung} dargestellten Schaltung möglich.
+\begin{figure}[H]
+\centering 
+\includegraphics[width=13cm]{images/frequenzmodulationsschaltung.png}
+\caption{Schaltbild für einen Frequenzmodulator mit geringem Frequenzhub (1)}
+\label{fig:frequenzmodulationsschaltung}
+\end{figure} 
+\subsection{Demodulator-Schaltungen}
+
 \section{Durchführung}
 
 \section{Auswertung}
