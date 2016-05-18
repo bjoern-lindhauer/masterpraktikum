@@ -206,8 +206,69 @@ Der Ergebnis der Amplitudenmodulation ist in Abbildung \ref{fig:ampmodring} darg
 	\captionof{figure}{Amplitudenmoduliertes Signal, erzeugt mit Ringmodulator}
 	\label{fig:ampmodring}
 \end{center}
+Eine Aufnahme des Frequenzspektrums, welches mit einem Frequenzanalysators aufgenommen wurde, ist in Abbildung \ref{fig:freqampmodring} dargestellt. Der Anteil der Trägerfrequenz ist um zwei Dekaden geringer als die der Seitenbänder. 
+\begin{center}
+	\includegraphics[width=10cm]{images/freqampmodring.png}
+	\captionof{figure}{Frequenzspektrum eines amplitudenmoduliertes Signals mit einem Ringmodulator, die Trägerfrequenz ist um eine Dekade unterdrückt.}
+	\label{fig:freqampmodring}
+\end{center}
+
+\subsection{Ausmessung des phasenempfindlichen Gleichrichters}
+Bevor die Amplitudendemodulation vorgenommen wird, wird zunächst der phasenempfindliche Gleichrichter ausgemessen und untersucht, ob die Ausgangsspannung der Relation
+\begin{align}
+U_{\text{ph}}=a\cos(\phi+b)
+\label{eq:phasen}
+\end{align}
+folgt, wobei $\phi$ dabei die Phasendifferenz der beiden Eingangssignale darstellt. \\\
+Die Phasendifferenzen $\phi$ werden über eine variable Verzögerungsleitung eingestellt, wodurch sich die Phasendifferenzen $\phi$ aus 
+\begin{align}
+\phi = tf2\pi
+\end{align}
+ergibt, mit f der Frequenz und t der Verzögerungszeit. Dazu wird die Frequenz auf f=9.58\si{MHz} eingestellt, um ein möglichst großes Intervall für die Phasendifferenz abzudecken. Die aufgenommenen Messwerte sind in Tabelle \ref{tab:phasen} dargestellt. \\
+\begin{center}
+	\begin{tabular}{|c|c|}
+		\hline $\Delta$t [ns] & U [V] \\
+		\hline	0	&	-0,247	\\
+		\hline	1	&	-0,239	\\
+		\hline	2	&	-0,231	\\
+		\hline	4	&	-0,215	\\
+		\hline	8	&	-0,175	\\
+		\hline	16	&	-0,072	\\
+		\hline	18	&	-0,038	\\
+		\hline	19	&	-0,020	\\
+		\hline	20	&	-0,006	\\
+		\hline	24	&	0,061	\\
+		\hline	28	&	0,117	\\
+		\hline	30	&	0,143	\\
+		\hline	32	&	0,170	\\
+		\hline	40	&	0,238	\\
+		\hline	48	&	0,263	\\
+		\hline	56	&	0,210	\\
+		\hline	64	&	0,127	\\
+		\hline	72	&	0,003	\\
+		\hline	80	&	-0,114	\\
+		\hline	88	&	-0,205	\\
+		\hline	96	&	-0,261	\\
+		\hline	104	&	-0,242	\\
+		\hline	112	&	-0,170	\\
+		\hline
+	\end{tabular}
+	\captionof{table}{Aufgenommene Messwerte für Verzögerungszeit $\Delta$t und Spannung zur Vermessung des phasenempfindlichen Gleichrichters}
+	\label{tab:phasen}
+\end{center}
+Mithilfe von Python werden die Verzögerungszeiten in Phasendifferenzen umgerechnet und eine nicht-lineare Ausgleichsrechnung durchgeführt, mithilfe von Gleichung \ref{eq:phasen}. Der entsprechende Plot ist in Abbildung \ref{fig:phasen} dargestellt, die nicht-lineare Ausgleichsrechnung ergibt dabei die folgenden Parameter:
+\begin{align}
+a &= (-0.259 \pm 0.001) V \\
+b &= ( 0.352 \pm 0.004) 
+\end{align}
+\begin{center}
+	\includegraphics[width=10cm]{images/plotgleich.png}
+	\captionof{figure}{Messwerte für den phasenabhängigen Gleichrichter und Cosinus-Fit für diese.}
+	\label{fig:phasen}
+\end{center}
 
 \subsection{Amplitudendemodulation mit Ringmodulator}
+
 
 \subsection{Amplitudenmodulation mit Diode}
 
