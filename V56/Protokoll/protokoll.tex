@@ -206,13 +206,33 @@ Alternativ kann auch eine Diode zur Demodulation verwendet werden, die nach Abbi
 \caption{Demodulator-Schaltung mit einer Gleichrichter-Diode (1)}
 \label{fig:demodulationsschaltungmitgleichrichtdiode}
 \end{figure}
-Die Diode schneidet sämtliche negative Halbwellen ab, sodass ein Signal der Form wie in der Abbildung \ref{fig:AusgangsspannungDemodulationDiode}.
+Die Diode schneidet sämtliche negative Halbwellen ab, sodass ein Signal der Form wie in der Abbildung \ref{fig:AusgangsspannungDemodulationDiode}.\\
+Die hochfrequenten Anteile können mithilfe eines Tiefpasses unterdrücken.\\
+Dies funktioniert unter der Annahme, dass die Diode eine lineare Strom-Spannungs-Kennlinie besitzt. Dies ist in der Praxis nicht der Fall, da die Kennlinie einer Halbleiter-Diode näherungsweise Exponentiell, sodass am Ausgang des Demodulators Verzerrungen auftreten.\\
+Die Verzerrungen können jedoch in Grenzen gehalten werden, indem der Modulationsgrad gering gehalten wird. \\
+Eine weitere Verbesserung der Linearität kann durch die Gegentaktschaltung erreicht werden, bei der beide Halbwellen ausgenutzt werden.
 \begin{figure}[H]
 \centering 
 \includegraphics[width=14cm]{images/AusgangsspannungDemodulationDiode.png}
-\caption{Demodulator-Schaltung mit einer Gleichrichter-Diode (1)}
+\caption{Gleichgerichtete modulierte Hochfrequenz-Spannung (links) und die dazugehörige Ausgangsspannung der Demodulator Schaltung hinter dem Tiefpass (rechts) (1)}
 \label{fig:AusgangsspannungDemodulationDiode}
 \end{figure}
+\subsubsection*{Frequenzmodulierte Signale}
+Die Demodulation eines frequenzmodulierten Signal kann beispielsweise durch einen Flankenmodulator geschehen. Dieser besteht, wie in Abbildung \ref{fig:Flankenmodulator} abgebildet, aus einen Schwingkreis, bei den die Frequenzabhängigkeit der Kondensatorspannung bei angeregten Schwingungen ausgenutzt wird.
+\begin{figure}[H]
+\centering 
+\includegraphics[width=15cm]{images/Flankenmodulator.png}
+\caption{Schaltbild eines Eintrakt-Flankenmodulator als Demodulator (1)}
+\label{fig:Flankenmodulator}
+\end{figure}
+Die Resonanzfrequenz des Schwingkreises wird dafür so eingestellt, dass die Trägerfrequenz $\omega_{\text{T}}$ in der steilen Flanke der Resonanzkurve liegt, wie in Abbildung \ref{fig:flanke} abgebildet ist.
+\begin{figure}[H]
+\centering 
+\includegraphics[width=10cm]{images/flanke.png}
+\caption{Resonanzkurve des Schwingkreises im Flankendemodulator (1)}
+\label{fig:flanke}
+\end{figure}
+Die Änderung der Momentfrequenz der modulierten Schwingung führt am Ausgang des Schwingkreises zu einer hochfrequenten Spannung $U_\text{c}\left(\omega\right)$, deren Amplitude im Rhythmus der Modulation schwankt. Das frequenzmodulierte Signal wurde so in ein amplitudenmoduliertes Signal überführt, welches mit den vorher besprochenen Methoden demodulieren werden kann.
 \section{Durchführung}
 
 \section{Auswertung}
@@ -220,7 +240,7 @@ Die Diode schneidet sämtliche negative Halbwellen ab, sodass ein Signal der For
 \subsection{Amplitudenmodulation mit Ringmodulator}
 Mit einem Ringmodulator wird ein amplitudenmoduliertes Signal mit Trägerunterdrückung erzeugt. Freequenzen f und Amplituden U von Träger- und Modulationssignal lauten:
 \begin{enumerate}
-	\item Trägersignal f$_t10,0$\,MHz
+	\item Trägersignal f$_t=10,0$\,MHz
 	\item Modulationssignal f$_m=158$\,kHz
 \end{enumerate}
 Der Ergebnis der Amplitudenmodulation ist in Abbildung \ref{fig:ampmodring} dargestellt.
