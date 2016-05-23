@@ -146,7 +146,7 @@ Um eine Amplitudenmodulation zu erreichen, muss das Produkt zweier Spannungen ge
 Die einfachste Modulationsschaltung besteht aus einer Diode und den zwei Spannungsquellen und ist in Abbildung \ref{fig:einfachemodulation} skizziert.
 \begin{figure}[H]
 \centering 
-\includegraphics[width=10cm]{images/primitive_modulationsschaltung.png}
+\includegraphics[width=8cm]{images/primitive_modulationsschaltung.png}
 \caption{Einfache Modulationsschaltung mit einer Diode (1)}
 \label{fig:einfachemodulation}
 \end{figure} 
@@ -175,7 +175,7 @@ Wird jedoch eine Modulationsspannung am Eingang X angelegt, so ändern sich die 
 \end{figure} 
 Bei idealen Verhältnissen ist
 \begin{align}
-U_{\text{R}}=\gamma U_{\text{T}}U_{\text{M}}
+U_{\text{R}}=\gamma U_{\text{T}}U_{\text{M}}\label{eq:ringmodulatorprodukt}
 \end{align}
 nur proportional zu den Produkt aus $U_{\text{T}}$ und $U_{\text{M}}$ und es treten nur die beiden Seitenlinien im Frequenzspektrum auf.
 \subsubsection*{Frequenzmodulation}
@@ -189,7 +189,30 @@ Im vorherigen Abschnitt wurde mit den Ringmodulator eine Möglichkeit beschriebe
 \label{fig:frequenzmodulationsschaltung}
 \end{figure} 
 \subsection{Demodulator-Schaltungen}
-
+\subsubsection*{Amplitudenmodulierte Signale}
+Aus Gleichung \ref{eq:ringmodulatorprodukt} geht hervor, dass ein Ringmodulator das Produkt zweier Spannungen bildet und dabei treten Frequenzen mit $\omega_{\text{T}}-\omega_{\text{M}}$ und $\omega_{\text{T}}+\omega_{\text{M}}$ auf.\\
+Um eine Demodulation zu erhalten, wird auf L eine Spannung mit der Frequenz $\omega_{\text{T}}$ angelegt, sodass am Ausgang X eine Spannung mit Frequenzen $\omega_{\text{M}}$, $2\omega_{\text{T}}-\omega_{\text{M}}$ und $2\omega_{\text{T}}+\omega_{\text{M}}$ anliegt. Die störenden Frequenzen können mithilfe eines Tiefpasses herausgefiltert werden, da meistens $\omega_{\text{T}}$ viel größer als $\omega_{\text{M}}$ ist. Nach den Tiefpass kann anschließend ein Signal mit der gewünschten Frequenz $\omega_{\text{M}}$ abgegriffen werden. Der Schaltplan ist in Abbildung \ref{fig:demodulationsschaltungmitringmodulator} dargestellt.\\
+Ein Problem dabei ist, dass die Trägerfrequenz für die Demodulation starr mit der Trägerfrequenz der Modulation gekoppelt sein muss. Das Problem kann durch sogenannte Phasenregelkreise umgangen werden.
+\begin{figure}[H]
+\centering 
+\includegraphics[width=10cm]{images/demodulationsschaltungmitringmodulator.png}
+\caption{Demodulator-Schaltung mit einem Ringmodulator (1)}
+\label{fig:demodulationsschaltungmitringmodulator}
+\end{figure} 
+Alternativ kann auch eine Diode zur Demodulation verwendet werden, die nach Abbildung \ref{fig:demodulationsschaltungmitgleichrichtdiode} aufgebaut wird.
+\begin{figure}[H]
+\centering 
+\includegraphics[width=10cm]{images/demodulationsschaltungmitgleichrichtdiode.png}
+\caption{Demodulator-Schaltung mit einer Gleichrichter-Diode (1)}
+\label{fig:demodulationsschaltungmitgleichrichtdiode}
+\end{figure}
+Die Diode schneidet sämtliche negative Halbwellen ab, sodass ein Signal der Form wie in der Abbildung \ref{fig:AusgangsspannungDemodulationDiode}.
+\begin{figure}[H]
+\centering 
+\includegraphics[width=14cm]{images/AusgangsspannungDemodulationDiode.png}
+\caption{Demodulator-Schaltung mit einer Gleichrichter-Diode (1)}
+\label{fig:AusgangsspannungDemodulationDiode}
+\end{figure}
 \section{Durchführung}
 
 \section{Auswertung}
