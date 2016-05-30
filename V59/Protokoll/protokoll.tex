@@ -319,9 +319,16 @@ Das amplitudenmodulierte Signal wird nun mithilfe einer Gleichrichterdiodenschal
 Auch mit einer Diode kann ein Signal amplitudenmoduliert werden. Dabei kommt es zur Trägerabstrahlung. Der Signalverlauf nach der Amplitudenmodulation ist in Abbildung \ref{fig:ampmoddio} dargestellt. \\
 Es soll der Modulationsgrad m aus der Abbildung ermittelt werden. Dieser bestimmt sich aus
 \begin{align}
-m=\frac{U_{max}-U_{min}}{U_{max}-U_{min}}\,.
+m=\frac{U_{max}-U_{min}}{U_{max}+U_{min}}\,.
 \label{eq:modgrad}
 \end{align}
+Aus der Abbildung werden maximale und minimale Spannung abgelesen:
+\begin{align*}
+\text{U}_{\text{max}}=(0.290\pm 0.05)\si{V} \\
+\text{U}_{\text{min}}=(0.160\pm 0.05)\si{V}
+\end{align*}
+Dies ergibt ein Modulationsgrad von $m=0.29\pm0.16$. Die Fehlerrechnung wurde mithilfe des Python-Paketes 'uncertainties' durchgeführt. \\
+Aus dem aufgenommenen Frequenzspektrum kann ebenfalls der Modulationsgrad entnommen sowie die Oberschwingungen des Trägers erkannt werden. \\
 
 \subsection{Frequenzmodulation}
 
