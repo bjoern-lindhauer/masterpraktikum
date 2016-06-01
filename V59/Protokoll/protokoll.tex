@@ -315,7 +315,7 @@ Das amplitudenmodulierte Signal wird nun mithilfe einer Gleichrichterdiodenschal
 	\captionof{figure}{Das obere Signal wird am Punkt A direkt nach der Gleichrichterdiode abgegriffen, das zweite Signal ist das demodulierte Signal, welches hinter dem Tiefpass abgegriffen wird.}
 	\label{fig:ampdemoddio}
 \end{center}
-\subsection{Amplitudenmodulation mit Diode}
+Zur\subsection{Amplitudenmodulation mit Diode}
 Auch mit einer Diode kann ein Signal amplitudenmoduliert werden. Dabei kommt es zur Trägerabstrahlung. Der Signalverlauf nach der Amplitudenmodulation ist in Abbildung \ref{fig:ampmoddio} dargestellt. \\
 Es soll der Modulationsgrad m aus der Abbildung ermittelt werden. Dieser bestimmt sich aus
 \begin{align}
@@ -329,11 +329,66 @@ Aus der Abbildung werden maximale und minimale Spannung abgelesen:
 \end{align*}
 Dies ergibt ein Modulationsgrad von $m=0.29\pm0.16$. Die Fehlerrechnung wurde mithilfe des Python-Paketes 'uncertainties' durchgeführt. \\
 Aus dem aufgenommenen Frequenzspektrum kann ebenfalls der Modulationsgrad entnommen sowie die Oberschwingungen des Trägers erkannt werden. \\
+\begin{center}
+	\includegraphics[width=10cm]{images/freqampmoddio.jpg}
+	\captionof{figure}{Frequenzspektrum des mit Diodenschaltung amplitudenmodulierten Signals. Es ist deutlich zu erkennen, dass keine Trägerunterdrückung vorliegt.}
+	\label{fig:freqdio}
+\end{center}
+\begin{center}
+	\includegraphics[width=10cm]{images/oberwellen.jpg}
+	\captionof{figure}{Frequenzspektrum des amplitudenmodulierten Signals über einen größeren Frequenzbereich. Die Oberwellen des Signals können gut erkannt werden.}
+	\label{fig:oberwellen}
+\end{center}
+Der Modulationsgrad m ergibt sich aus den Amplituden der Träger- und der Modulationsspannung, wobei diese Werte abgelesen werden können.Dabei wurde die Messfunktion des Frequenzanalysators verwendet. Es muss eine Umrechnung von dBm-Skala in lineare Skala stattfinden. \\
+Der Modulationsgrad berechnet sich somit aus
+\begin{align}
+\text{A}=10^{\frac{W}{20}} \\
+\text{m}=2\frac{A_M}{A_T}\,.
+\end{align}
+Es ergibt sich:
+\begin{itemize}
+	\item Trägersignal U$_T=(-26.12\pm 0.01) \text{dbm}$
+	\item Modulationssignal U$_M=(-48.67\pm 0.01) \text{dbm}$
+	\item Modulationsgrad m$=0.15\pm 0.01$
+\end{itemize}
 
 \subsection{Frequenzmodulation}
-
+Zur Erzeugung des frequenzmodulierten Signals wird auf das amplitudenmodulierte Signal ein um $\pi/2$ phasenverschobenes Signal gegeben. Die Phasenverschiebung wird mit einer Frequenz von 1 MHz un einer Verzögerungszeit von $\Delta$t=1000\,. erreicht. Die Phasenverschiebung kann mithilfe der in Abbildung \ref{fig:lisajous} dargestellten Lisajous-Figur überprüft werden. \\
+\begin{center}
+	\includegraphics[width=10cm]{images/lisajous.png}
+	\captionof{figure}{Lisajous-Figur zur Phasenverschiebung von $\pi/2$. Dabei wurden die beiden Signale im xy-Betrieb des Oszilloskops angezeigt.}
+	\label{fig:lisajous}
+\end{center}
+Mithilfe der Verbreiterung des Signals $\Delta$t nach einer Periode kann der Modulationsgrad m aus
+\begin{align}
+\Delta\text{t}&=\frac{1}{f_1}-\frac{1}{f_2}=\frac{2\pi}{\omega_T(1-m)}-\frac{2\pi}{\omega_T(1+m)} \\
+m&=-\frac{2}{\Delta tf_T}+\sqrt{\frac{2}{(\Delta tf_T)^2}+1}
+\end{align}
+berechnet werden. \\
+Mit dem bekannten Wert $f_T=1$\,MHz und dem abgelesenen Wert $\Delta$t=(375$\pm$ 25)\,ns ergibt sich der Modulationsgrad zu m=$(0.18\pm 0.01)$.
+Das entstehende Signal ist in Abbildung \ref{fig:freqmod} dargestellt.
+\begin{center}
+	\includegraphics[width=10cm]{images/freqmod.png}
+	\captionof{figure}{Ausgangssignal des Frequenzmodulators}
+	\label{fig:freqmod}
+\end{center}
+\begin{center}
+	\includegraphics[width=10cm]{images/freqmodfreq.jpg}
+	\captionof{figure}{Frequenzspektrum des frequenzmodulierten Signals. Das Trägersignal ist gut zu erkennen.}
+	\label{fig:freqmodfreq}
+\end{center}
 \subsection{Frequenzdemodulation}
-
+Im letzten Versuchsschritt wird das frequenzmodulierte Signal mit einem LC-Kreis und einem Tiefpass demoduliert. Abbildung \ref{fig:lc} zeigt das Signal, wenn es nach dem LC-Kreis abgegriffen wird, Abbildung \ref{fig:tiefpass} zeigt das Signal nach dem Durchlaufen des Tiefpasses. \\
+\begin{center}
+	\includegraphics[width=10cm]{images/lc.png}
+	\captionof{figure}{Oben ist das Signal direkt nach dem LC-Kreis dargestellt, welches jetzt amplitudenmoduliert ist. Unten ist das Modulationssignal zu sehen.}
+	\label{fig:lc}
+\end{center}
+\begin{center}
+	\includegraphics[width=10cm]{images/tiefpass.png}
+	\captionof{figure}{Signal nach dem Tiefpass.}
+	\label{fig:tiefpass}
+\end{center}
 \section{Diskussion}
 
 \section{Quellen}

@@ -41,6 +41,15 @@ def f(t,a,b):
     
 def g(t):
     return t*9.58*10**(-3)*2*np.pi
+    
+def h(x,y):
+    return 2*10**((x-y)/20)
+    
+def kontrast(x2, x1):
+    return (x2-x1)/(x2+x1)
+    
+def j(dt, ft):
+    return ((-1/(dt*ft))+unp.sqrt((1/(dt*ft))**2+1))
 
 
 #Fit für Gleichrichter
@@ -62,6 +71,20 @@ errors=np.sqrt(np.diag(covariance))
 print('a =', params[0], '+/-', errors[0])
 print('b =', params[1], '+/-', errors[1])
 
+
+#Modulationsgrad berechnen
+Umax=ufloat(0.290,0.05)
+Umin=ufloat(0.160,0.05)
+
+print(kontrast(Umax,Umin))
+
+Ut=ufloat(-26.12, 0.01)
+Um=ufloat(-48.67, 0.01)
+print('m=', h(Um,Ut))
+
+dt=ufloat(375*10**(-9),25*10**(-9))
+
+print('m=', j(dt, 10**6))
 
 #x1,x2, x3 = sympy.var('M_{z} M_{0} \tau')
 #f = -x3/(sympy.log((x1-x2)/(2*x2)))
