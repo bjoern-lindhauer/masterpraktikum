@@ -322,6 +322,11 @@ Es soll der Modulationsgrad m aus der Abbildung ermittelt werden. Dieser bestimm
 m=\frac{U_{max}-U_{min}}{U_{max}+U_{min}}\,.
 \label{eq:modgrad}
 \end{align}
+\begin{center}
+	\includegraphics[width=10cm]{images/ampmoddio.png}
+	\captionof{figure}{Mittels einer Diodenschaltung erzeugte amplitudenmoduliertes Signal.}
+	\label{fig:ampmoddio}
+\end{center}
 Aus der Abbildung werden maximale und minimale Spannung abgelesen:
 \begin{align*}
 \text{U}_{\text{max}}=(0.290\pm 0.05)\si{V} \\
@@ -390,13 +395,29 @@ Im letzten Versuchsschritt wird das frequenzmodulierte Signal mit einem LC-Kreis
 	\label{fig:tiefpass}
 \end{center}
 \section{Diskussion}
+Die erhaltenen Ergebnisse sollen nun hier abschnittsweise diskutiert werden.
+
 \subsection{Amplitudenmodulation mit Ringmodulator}
+Das modulierte Signal zeigt das erwartete Verhalten eines amplitudenmodulierten Signales. Im Frequenzspektrum ist deutlich zu erkennen, dass die Trägerfrequenz unterdrückt ist.
+
 \subsection{Ausmessung des phasenempfindlichen Gleichrichters}
+Die aufgenommenen Daten bestätigen klar die Cosinus-Abhängigkeit der Ausgangsspannung. Die Fehler der durch den Fit ermittelten Parameter sind gering.
+
 \subsection{Amplitudendemodulation mit Ringmodulator}
+Der Vergleich von Eingangssignal und demoduliertem Signal zeigt, dass ein Ringmodulator zur Demodulation von modulierten Signalen geeignet sind. Das Ausgangssignal ist dabei phasenerschoben und verschmiert, stimmt jedoch ansonsten gut mit dem Eingangssignal überein. 
+
 \subsection{Amplitudendemodulation mit Diode}
+Die Demodulation mit Diodenschaltung kann das Eingangssignal in grober Näherung wieder reproduzieren. Jedoch kommt es zu Schwankungen in der Amplitude sowie zu Verformungen des Signals. Die Frequenz des Ausgangssignals f=159.57\,kHz weicht jeodoch nur um 1.0\% von der Frequenz des Eingangssignals f=158\,kHZ ab.
+
 \subsection{Amplitudenmodulation mit Diode}
+Das amplitudenmodulierte Signal weist keine Trägerunterdrückung auf, wie in Abbildung \ref{fig:freqdio} zu sehen ist. Die erwarteten Oberwellen sind in Abbildung \ref{fig:oberwellen} zu sehen.
+
 \subsection{Frequenzmodulation}
+Der berechnete Modulationsgrad ist sehr gering, weist dafür aber nur einen geringen Fehler auf. Das Trägersignal ist gut auf dem Frequenzspektrum zu sehen.
+
 \subsection{Frequenzdemodulation}
+Der LC-Kreis wandelt das Signal in ein amplitudenmoduliertes Signal um, was in Abbildung \ref{fig:lc} gut zu sehen ist. Die Frequenz des Ausgangssingnals nach dem Tiefpass weicht jedoch um 11.6\% von der Frequenz des Eingangssignals ab.
+
 \section{Quellen}
 {[1]} Versuchsanleitung zu Versuch 59: \\
 http://129.217.
