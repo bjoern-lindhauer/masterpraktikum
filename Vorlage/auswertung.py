@@ -21,7 +21,7 @@ plt.rcParams['font.size'] = 16
 data = np.genfromtxt('data.txt', unpack='True')
 
 data1=ufloat(data[0,:], 0.01)
-data2=ufloat(data[0,:], 0.01)
+data2=ufloat(data[1,:], 0.01)
 
 #Fehlerformelausgabe
 
@@ -56,6 +56,7 @@ params, covariance = curve_fit(f, unp.nominal_values(data1), unp.nominal_values(
 plt.figure()
 err1 = unp.std_devs(data1)
 err2 = unp.std_devs(data2)
+
 
 plt.errorbar(unp.nominal_values(data1) + err1, -unp.nominal_values(data2) + err2, fmt='bx', label="Messung")
 plt.plot(x_plot, f(x_plot, *params), 'r-', label='Fit')

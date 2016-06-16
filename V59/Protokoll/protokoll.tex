@@ -248,23 +248,29 @@ Es sollen Schwingungen sowohl amplituden- als auch frequenzmoduliert werden. Dab
 
 \subsection{Amplitudenmodulation mit Ringmodulator}
 Mit einem Ringmodulator wird ein amplitudenmoduliertes Signal mit Trägerunterdrückung erzeugt. Freequenzen f und Amplituden U von Träger- und Modulationssignal lauten:
-\begin{enumerate}
-	\item Trägersignal f$_t=10,0$\,MHz
-	\item Modulationssignal f$_m=158$\,kHz
-\end{enumerate}
+\begin{itemize}
+	\item Trägersignal f$_t=(10.00\pm0.01)$\,MHz, U$=(2.70\pm0.01)$\,V
+	\item Modulationssignal f$_m=(158\pm1)$\,kHz, U=$(360\pm1)$\,mV
+\end{itemize}
 Der Ergebnis der Amplitudenmodulation ist in Abbildung \ref{fig:ampmodring} dargestellt.
 \begin{center}
 	\includegraphics[width=10cm]{images/ampmodring.png}
 	\captionof{figure}{Amplitudenmoduliertes Signal, erzeugt mit Ringmodulator}
 	\label{fig:ampmodring}
 \end{center}
-Eine Aufnahme des Frequenzspektrums, welches mit einem Frequenzanalysators aufgenommen wurde, ist in Abbildung \ref{fig:freqampmodring} dargestellt. Der Anteil der Trägerfrequenz ist um zwei Dekaden geringer als die der Seitenbänder. 
+Eine Aufnahme des Frequenzspektrums, welches mit einem Frequenzanalysators aufgenommen wurde, ist in Abbildung \ref{fig:freqampmodring} dargestellt. Der Anteil der Trägerfrequenz ist um zwei Dekaden geringer als die der Seitenbänder.
+Mithilfe des Frequenzanalysators können die Frequenzen abgelesen werden:
+\begin{itemize}
+	\item linkes Seitenband: 9.836\,MHz
+	\item mittleres Frequenzband: 9.995\,MHz
+	\item rechtes Seitenband: 10.15\,MHz
+\end{itemize} 
 \begin{center}
-	\includegraphics[width=10cm]{images/freqampmodring.png}
+	\includegraphics[width=10cm]{images/freqampmodring.jpg}
 	\captionof{figure}{Frequenzspektrum eines amplitudenmoduliertes Signals mit einem Ringmodulator, die Trägerfrequenz ist um eine Dekade unterdrückt.}
 	\label{fig:freqampmodring}
 \end{center}
-
+%Bis hierhin verbessert
 \subsection{Ausmessung des phasenempfindlichen Gleichrichters}
 Bevor die Amplitudendemodulation vorgenommen wird, wird zunächst der phasenempfindliche Gleichrichter ausgemessen und untersucht, ob die Ausgangsspannung der Relation
 \begin{align}
