@@ -15,6 +15,7 @@
 \usepackage{picinpar}
 \usepackage{tikz}
 \usepackage{float}
+\usepackage{mathtools}
 
 \renewcommand{\figurename}{Abb.}
 \usepackage[
@@ -51,9 +52,22 @@
 \end{center}
 \end{titlepage}
 \section{Einleitung}
-
+In diesen Versuch sollen die Landéschen $g$-Faktoren, der Spins der Elektronenhülle und der Spin des Kerns der stabilen Rubidium-Isotope $\prescript{85}{}{\text{Rb}}$ und $\prescript{87}{}{\text{Rb}}$ bestimmt werden.
 \section{Theoretische Grundlagen}
-
+Nach dem Aufbauprinzip von Bohr besitzt jedes Atom Elektronenhüllen, welche definierte Energieniveaus besitzen. Es werden zunächst die inneren Niveaus unter der Berücksichtigung des Paul-Prinzips voll besetzt. Ist die äußerste Schale nicht voll besetzt und befindet sich das Atom im thermischen Gleichgewicht, so folgt die Besetzung der Niveaus der äußeren Schale einer Boltzmann-Verteilung gemäß der statistischen Physik.\\
+Es lässt sich somit das Besetzungsverhältnis zweier Zustände mit den Energien $W_1$ und $W_2$ durch
+\begin{align}
+\frac{N_2}{N_1}=\frac{g_2}{g_1}\frac{\exp\left(-\beta W_2\right)}{\exp\left(-\beta W_2\right)}\label{eq:besetzungsverhaeltnisthermisch}
+\end{align}
+bestimmen. Die $g_i$ sind dabei statistische Gewichte, die die Zahl der Niveaus mit Energie $W_i$ angibt.
+\subsection{Optisches Pumpen}
+Durch ein Verfahren, welches optische Pumpen genannt wird, werden Abweichungen vom Besetzungsverhältnis \ref{eq:besetzungsverhaeltnisthermisch} erzeugt. Diese nicht-thermische Besetzung geht mit der Zeit zurück in das thermische Gleichgewicht, welches durch \ref{eq:besetzungsverhaeltnisthermisch} gegeben ist. Dabei werden Quanten mit einer Energie
+\begin{align}
+h\nu= W_2 -W_1
+\end{align}
+emittiert oder absorbiert.\\
+Diese Energie kann mit hoher Präzision ausgemessen werden, auch wenn die Energie der Quanten kleiner als die dominierende Energieskala $h\nu \ll k_\text{B}T$ ist. Dies ist beispielsweise bei Niveauunterschiede durch Hyperfeinstrukturaufspaltung oder bei Zeeman-Aufspaltung durch ein Magnetfeld gegeben.\\
+Aus dieser Größe lässt sich sowohl der Landéschen g-Faktoren als auch der Spin der Elektronenhülle und des Kerns berechnen.
 \section{Durchführung}
 
 \section{Quellen}
