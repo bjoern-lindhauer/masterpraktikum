@@ -17,6 +17,7 @@
 \usepackage{float}
 \usepackage{mathtools}
 
+
 \renewcommand{\figurename}{Abb.}
 \usepackage[
 	colorlinks=true,
@@ -60,24 +61,68 @@ Es lässt sich somit das Besetzungsverhältnis zweier Zustände mit den Energien
 \frac{N_2}{N_1}=\frac{g_2}{g_1}\frac{\exp\left(-\beta W_2\right)}{\exp\left(-\beta W_2\right)}\label{eq:besetzungsverhaeltnisthermisch}
 \end{align}
 bestimmen. Die $g_i$ sind dabei statistische Gewichte, die die Zahl der Niveaus mit Energie $W_i$ angibt.
-\subsection{Optisches Pumpen}
+\subsection{Ziel des Optisches Pumpen}
 Durch ein Verfahren, welches optische Pumpen genannt wird, werden Abweichungen vom Besetzungsverhältnis \ref{eq:besetzungsverhaeltnisthermisch} erzeugt. Diese nicht-thermische Besetzung geht mit der Zeit zurück in das thermische Gleichgewicht, welches durch \ref{eq:besetzungsverhaeltnisthermisch} gegeben ist. Dabei werden Quanten mit einer Energie
 \begin{align}
 h\nu= W_2 -W_1
 \end{align}
 emittiert oder absorbiert.\\
 Diese Energie kann mit hoher Präzision ausgemessen werden, auch wenn die Energie der Quanten kleiner als die dominierende Energieskala $h\nu \ll k_\text{B}T$ ist. Dies ist beispielsweise bei Niveauunterschiede durch Hyperfeinstrukturaufspaltung oder bei Zeeman-Aufspaltung durch ein Magnetfeld gegeben.\\
-Aus dieser Größe lässt sich sowohl der Landéschen $g$-Faktoren als auch der Spin der Elektronenhülle und des Kerns berechnen.
-\subsection{Landé-Faktor}
+Aus dieser Größe lässt sich sowohl der Landéschen $g$-Faktoren als auch der Spin der Elektronenhülle und des Kerns berechnen.\\
+Im folgenden
+\subsection{Drehimpuls und magnetisches Moment}
+\begin{figure}[H]
+\begin{minipage}[t]{0.38\textwidth}
+\vspace{0pt}
+\centering
+\includegraphics[width=\textwidth]{images/veranschaulichungdrehimpuls.png}
+\caption{Veranschaulichung der Zusammenhänge zwischen Drehimpulsen und magn. Momenten [1]}
+\label{fig:veranschaulichungdrehimpuls}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.6\textwidth}
+\vspace{0pt}
 Der Gesamtdrehimpuls $\vec{J}$ der Elektronenhülle ist mit einem magnetischen Moment $\vec{\mu}_J$ gekoppelt. Der Zusammenhang ist durch
 \begin{align}
 \vec{\mu}_J=-g_J\mu_B \vec{J}
 \end{align}
 gegeben. Es ist dabei $\mu_B$ das Bohrsche Magneton und $g_J$ der Landé-Faktor.\\
-Da $\vec{\mu}_J$ um die $\vec{J}$-Achse präzediert, sind nur die Komponenten $\vec{\mu}_J  	\parallel  \vec{J}$ relevant, da die senkrechte Komponente sich heraus mittelt. Dies ist in Abbildung
+Da $\vec{\mu}_J$ um die $\vec{J}$-Achse präzediert, sind nur die Komponenten $\vec{\mu}_J  	\parallel  \vec{J}$ relevant, da die senkrechte Komponente sich heraus mittelt. Die Zusammenhänge zwischen den Drehimpulsen werden in Abbildung \ref{fig:veranschaulichungdrehimpuls} veranschaulicht.
+Es lässt sich für den Landé-Faktor $g_J$ der Ausdruck
 \begin{align}
 g_J= \frac{\left(1+g_S\right)\left(J^2+J\right) \left(g_S-1\right)\left(S^2+S-L^2-L\right)}{2J\left(J+1\right)}
 \end{align}
+durch die Anwendung des Kosinus-Theorems herleiten.\\
+Das Anlegen eines Magnetfeldes $\vec{B}$ führt zu einer Wechselwirkung zwischen $\vec{\mu}_J$ und $\vec{B}$ mit der Energie
+\begin{align}
+U_\text{mag}=-\vec{\mu}_J\dot{\vec{B}} \hspace{0.2cm}\text{.}
+\end{align}
+\end{minipage}
+\end{figure}
+Die Wechselwirkungsenergie kann aufgrund der Richtungsquantelung nur diskrete Werte
+\begin{align}
+U_\text{mag}=M_J g_j\mu_B B \hspace{0.2cm}\text{mit} \hspace{0.2cm}M_J \in  \left[-L,L\right]\in \mathbb{Z}
+\end{align}
+annehmen.\\
+Jedes Energieniveau spaltet folglich in $2J+1$ Unterniveaus auf. Dies wird auch als Zeeman-Effekt bezeichnet.
+\subsection{Hyperfeinstruktur}
+Besitzt ein Kern einen Kernspin $I\ne 0$, so Spalten die Energieniveaus weiter in die Hyperfeinstruktur auf.\\
+Es koppelt der Gesamtdrehimpuls der Elektronen $\vec{J}$ und der Kernspin $\vec{I}$ zu einen Gesamtspin
+\begin{align}
+\vec{F}=\vec{J}+\vec{I} \hspace{0.2cm}\text{.}
+\end{align}
+Die dazugehörige Quantenzahl $F$ läuft dabei von $I+J$ bis $\left| I-J\right|$. Der zu $F$ gehörige Landé-Faktor $g_F$ ist durch
+\begin{align}
+g_F\approx g_J\frac{F\left(F+1\right)+J\left(J+1\right)+I\left(I+1\right)}{2F\left(F+1\right)}
+\end{align}
+gegeben.\\
+In Abbildung \ref{fig:hyperfeinaufspaltungbeispiel} ist die Hyperfeinaufspaltung der Niveaus für ein Alkali-Atoms mit Kernspin $I = 3/2$ in zwei Unterniveaus dargestellt.
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{images/aufspaltunghyperfein.png}
+\caption{Hyperfeinstruktur- und Zeeman-Aufspaltung der Energieniveaus eines Alkali-Atoms mit Kernspin $I = 3/2$ [1]}
+\label{fig:hyperfeinaufspaltungbeispiel}
+\end{figure}
 \section{Durchführung}
 
 \section{Quellen}
