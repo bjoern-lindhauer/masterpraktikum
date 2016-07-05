@@ -270,7 +270,7 @@ Mithilfe des Frequenzanalysators können die Frequenzen abgelesen werden:
 	\captionof{figure}{Frequenzspektrum eines amplitudenmoduliertes Signals mit einem Ringmodulator, die Trägerfrequenz ist um eine Dekade unterdrückt.}
 	\label{fig:freqampmodring}
 \end{center}
-%Bis hierhin verbessert
+
 \subsection{Ausmessung des phasenempfindlichen Gleichrichters}
 Bevor die Amplitudendemodulation vorgenommen wird, wird zunächst der phasenempfindliche Gleichrichter ausgemessen und untersucht, ob die Ausgangsspannung der Relation
 \begin{align}
@@ -286,18 +286,18 @@ ergibt, mit f der Frequenz und t der Verzögerungszeit. Dazu wird die Frequenz a
 \begin{center}
 	\begin{tabular}{|c|c||c|c|}
 		\hline $\Delta$t [ns] & U [V] & $\Delta$t [ns] & U [V]\\
-		\hline	0	&	-0,247	&	32	&	0,17	\\
-		\hline	1	&	-0,239	&	40	&	0,238	\\
-		\hline	2	&	-0,231	&	48	&	0,263	\\
-		\hline	4	&	-0,215	&	56	&	0,21	\\
-		\hline	8	&	-0,175	&	64	&	0,127	\\
-		\hline	16	&	-0,072	&	72	&	0,003	\\
-		\hline	18	&	-0,038	&	80	&	-0,114	\\
-		\hline	19	&	-0,02	&	88	&	-0,205	\\
-		\hline	20	&	-0,006	&	96	&	-0,261	\\
-		\hline	24	&	0,061	&	104	&	-0,242	\\
-		\hline	28	&	0,117	&	112	&	-0,17	\\
-		\hline	30	&	0,143	&		&	\\	
+		\hline	0	&	-0,247$\pm0.001$	&	32	&	0,170$\pm0.001$	\\
+		\hline	1	&	-0,239$\pm0.001$	&	40	&	0,238$\pm0.001$	\\
+		\hline	2	&	-0,231$\pm0.001$	&	48	&	0,263$\pm0.001$	\\
+		\hline	4	&	-0,215$\pm0.001$	&	56	&	0,210$\pm0.001$	\\
+		\hline	8	&	-0,175$\pm0.001$	&	64	&	0,127$\pm0.001$	\\
+		\hline	16	&	-0,072$\pm0.001$	&	72	&	0,003$\pm0.001$	\\
+		\hline	18	&	-0,038$\pm0.001$	&	80	&	-0,114$\pm0.001$	\\
+		\hline	19	&	-0,02$\pm0.001$		&	88	&	-0,205$\pm0.001$	\\
+		\hline	20	&	-0,006$\pm0.001$	&	96	&	-0,261$\pm0.001$	\\
+		\hline	24	&	0,061$\pm0.001$		&	104	&	-0,242$\pm0.001$	\\
+		\hline	28	&	0,117$\pm0.001$		&	112	&	-0,170$\pm0.001$	\\
+		\hline	30	&	0,143$\pm0.001$		&		&	\\	
 		\hline
 	\end{tabular}
 	\captionof{table}{Aufgenommene Messwerte für Verzögerungszeit $\Delta$t und Spannung zur Vermessung des phasenempfindlichen Gleichrichters}
@@ -322,6 +322,11 @@ Das zuvor mit einem Ringmodulator modulierte Signal wird nun mit einem weiteren 
 	\captionof{figure}{Eingangssignal (oberes Singal) und demoduliertes Signal (unteres Signal), welches am Ausgang des zweiten Ringmodulators gemessen wird.}
 	\label{fig:ampdemodring}
 \end{center}
+Das demodulierte Signal hat dabei 
+\begin{itemize}
+	\item die Frequenz f=(159.18$\pm$0.01)\,kHz
+	\item die Amplitude U=(101$\pm1$)\,mV\,.
+\end{itemize}
 
 \subsection{Amplitudendemodulation mit Diode}
 Das amplitudenmodulierte Signal wird nun mithilfe einer Gleichrichterdiodenschaltung demoduliert. Das Ergebnis dieser Demodulation ist in Abbildung \ref{fig:ampdemoddio} dargestellt. 
@@ -330,8 +335,18 @@ Das amplitudenmodulierte Signal wird nun mithilfe einer Gleichrichterdiodenschal
 	\captionof{figure}{Das obere Signal wird am Punkt A direkt nach der Gleichrichterdiode abgegriffen, das zweite Signal ist das demodulierte Signal, welches hinter dem Tiefpass abgegriffen wird.}
 	\label{fig:ampdemoddio}
 \end{center}
-Zur\subsection{Amplitudenmodulation mit Diode}
+Das demodulierte Signal hat dabei
+\begin{itemize}
+	\item die Frequenz f=(159.57$\pm$0.01)\,kHz
+	\item die Amplitude U=(3.3$\pm0.1$)\,mV\,.
+\end{itemize}
+\subsection{Amplitudenmodulation mit Diode}
 Auch mit einer Diode kann ein Signal amplitudenmoduliert werden. Dabei kommt es zur Trägerabstrahlung. Der Signalverlauf nach der Amplitudenmodulation ist in Abbildung \ref{fig:ampmoddio} dargestellt. \\
+Zur Modulation wurden die geichen Signale wie zur Modulations mittels Ringmodulator verwendet:
+\begin{itemize}
+		\item Trägersignal f$_t=(10.00\pm0.01)$\,MHz, U$=(2.70\pm0.01)$\,V
+		\item Modulationssignal f$_m=(158\pm1)$\,kHz, U=$(360\pm1)$\,mV
+\end{itemize}
 Es soll der Modulationsgrad m aus der Abbildung ermittelt werden. Dieser bestimmt sich aus
 \begin{align}
 m=\frac{U_{max}-U_{min}}{U_{max}+U_{min}}\,.
@@ -356,7 +371,7 @@ Aus dem aufgenommenen Frequenzspektrum kann ebenfalls der Modulationsgrad entnom
 \end{center}
 \begin{center}
 	\includegraphics[width=10cm]{images/oberwellen.jpg}
-	\captionof{figure}{Frequenzspektrum des amplitudenmodulierten Signals über einen größeren Frequenzbereich. Die Oberwellen des Signals können gut erkannt werden.}
+	\captionof{figure}{Frequenzspektrum des amplitudenmodulierten Signals über einen grö\ss eren Frequenzbereich. Die Oberwellen des Signals können gut erkannt werden.}
 	\label{fig:oberwellen}
 \end{center}
 Der Modulationsgrad m ergibt sich aus den Amplituden der Träger- und der Modulationsspannung, wobei diese Werte abgelesen werden können.Dabei wurde die Messfunktion des Frequenzanalysators verwendet. Es muss eine Umrechnung von dBm-Skala in lineare Skala stattfinden. \\
@@ -409,6 +424,12 @@ Im letzten Versuchsschritt wird das frequenzmodulierte Signal mit einem LC-Kreis
 	\captionof{figure}{Signal nach dem Tiefpass.}
 	\label{fig:tiefpass}
 \end{center}
+Das erhaltene Signal hat dabei
+\begin{itemize}
+	\item die Frequenz f=(898.5$\pm$0.1)\,kHz
+	\item die Amplitude U=(6.27$\pm$0.01)\,V\,.
+\end{itemize}
+
 \section{Diskussion}
 Die erhaltenen Ergebnisse sollen nun hier abschnittsweise diskutiert werden.
 
@@ -425,7 +446,8 @@ Der Vergleich von Eingangssignal und demoduliertem Signal zeigt, dass ein Ringmo
 Die Demodulation mit Diodenschaltung kann das Eingangssignal in grober Näherung wieder reproduzieren. Jedoch kommt es zu Schwankungen in der Amplitude sowie zu Verformungen des Signals. Die Frequenz des Ausgangssignals f=159.57\,kHz weicht jeodoch nur um 1.0\% von der Frequenz des Eingangssignals f=158\,kHZ ab.
 
 \subsection{Amplitudenmodulation mit Diode}
-Das amplitudenmodulierte Signal weist keine Trägerunterdrückung auf, wie in Abbildung \ref{fig:freqdio} zu sehen ist. Die erwarteten Oberwellen sind in Abbildung \ref{fig:oberwellen} zu sehen.
+Das amplitudenmodulierte Signal weist keine Trägerunterdrückung auf, wie in Abbildung \ref{fig:freqdio} zu sehen ist. Die erwarteten Oberwellen sind in Abbildung \ref{fig:oberwellen} zu sehen. \\
+Der Modulationsgrad wurde mittels der Aufnahme mit dem Oszilloskop und mit dem Frequenzspektrum bestimmt, die beiden berechneten Werte weichen signifikant voneinander ab. m$_{\text{Osz}}=m=0.29\pm0.16$ ist doppelt so gro\ss wie m$=0.15\pm 0.01$.
 
 \subsection{Frequenzmodulation}
 Der berechnete Modulationsgrad ist sehr gering, weist dafür aber nur einen geringen Fehler auf. Das Trägersignal ist gut auf dem Frequenzspektrum zu sehen.
