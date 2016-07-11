@@ -28,8 +28,11 @@ def magnhelm(I, N, R):
 def gi(m):
     return (4*np.pi*m0)/(e0*m)*10**3                    #10**3 wg. kHz#
 
-def I(gj):
-    return (g/(4*gj))-1+sqrt((1-(g/(4*gj)))**2-(3/4)*(1-(g/gj)))
+def I(gf):
+    return -(1-(gj/(4*gf)))+sqrt((1-(gj/(4*gf)))**2-0.75*(1-(gj/gf)))
+
+def g(x, a, b, c):
+    return a+(b/(x+c))
 
 
 #Daten auslesen
@@ -84,11 +87,32 @@ e0 = constants.elementary_charge
 g1 = gi(m1)
 g2 = gi(m2)
 
+print("Die Landefaktoren lauten:")
+print(g1, g2)
 #Kernspin berechnen
 
-g = 2.002
+gj = 2.002
 
 I1 = I(g1)
 I2 = I(g2)
 
+print("Die Kernspins lauten:")
 print(I1, I2)
+
+#Periodendauer fitten
+
+x_plot=np.linspace(1,8, num=100)
+params3, covariance3 = curve_fit(g,daten2[0], daten2[1])
+params4, covariance4 = curve_fit(g,daten2[0], daten2[2])
+
+plt.figure()
+plt.plot(daten2[0], daten2[1], 'bx', label='Messung erstes Isotop')
+plt.plot(daten2[0], daten2[2], 'kx', label='Messung zweites Isotop')
+plt.plot(x_plot, g(x_plot, *params3), 'r-', label='hyperbolischer Fit erstes Isotop')
+plt.plot(x_plot, g(x_plot, *params4), 'g-', label='hyperbolischer Fit zweites Isotop')
+plt.legend(loc="best", numpoints=1)
+plt.xlim(0,9)
+plt.ylim(0,3.2)
+plt.xlabel(r'Spannung [V]')
+plt.ylabel(r'Periodendauer T [$\mu$s]')
+plt.savefig('plot2.pdf')
