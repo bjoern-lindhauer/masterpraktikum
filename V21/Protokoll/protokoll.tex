@@ -125,6 +125,45 @@ In Abbildung \ref{fig:hyperfeinaufspaltungbeispiel} ist die Hyperfeinaufspaltung
 \end{figure}
 \section{Durchführung}
 
+\section{Auswertung}
+
+\subsection{Bestimmung der Horizontalkomponente des Erdmagnetfeldes}
+
+\begin{center}
+	\begin{tabular}{|c|c|c|}
+	\hline $\nu$ [kHz] & B$_1$ [$\mu$T] & B$_2$ [$\mu$T] \\
+	\hline	100	&	32.105	&	39.347	\\
+	\hline	200	&	48.287	&	63.133	\\
+	\hline	300	&	61.926	&	83.228	\\
+	\hline	402	&	75.730	&	104.576	\\
+	\hline	502	&	90.093	&	125.698	\\
+	\hline	601	&	104.862	&	148.011	\\
+	\hline	701	&	119.405	&	169.493	\\
+	\hline	799	&	133.345	&	191.554	\\
+	\hline	898	&	148.586	&	213.24	\\
+	\hline	1002	&	163.310	&	234.913	\\
+	\hline 
+	\end{tabular}
+\captionof{table}{Messwerte für das Magnetfeld im Abhängigkeit von der Resonanzfrequenz $\nu$ für induzierte Emission bei den beiden Rubidium-Isotopen}
+\label{tab:magnetfeld}
+\end{center}
+In Tabelle \ref{tab:magnetfeld} sind die Messwerte für das gesamte horizontale Magnetfeld in Abhängigkeit von der Resonanzfrequenz für beide Rubidium-Isotope dargestellt. \\
+Um die Stärke der horizontalen Komponente des Erdmagnetfeldes und die beiden Landé-Faktoren zu bestimmen, wird eine lineare Ausgleichsrechnung mit dem Ansatz
+\begin{align}
+f(x)=mx+b
+\end{align}
+durchgeführt. Die sich ergebenden Plots sind in Abbildung \ref{fig:plot1} dargestellt.
+\begin{center}
+	\includegraphics[width=10cm]{images/plot1.pdf}
+	\captionof{figure}{Messwerte des horizontalen Magnetfeldes in Abhängigkeit der Resonanzfrequenz und linearer Fit}
+	\label{fig:plot1}
+\end{center}
+Es ergeben sich somit folgende Fitparameter:
+\begin{align*}
+m_1&=(1.446\cdot 10^{-7} \pm 6.9552\cdot 10^{-10})\,\frac{\text{T}}{\text{kHz}} & m_2&=(2.164\cdot 10^{-7} \pm 9.216\cdot 10^{-10})\,\frac{\text{T}}{\text{kHz}} \\
+b_1&=(1.814\cdot 10^{-5} \pm 4.318\cdot 10^{-7})\,\text{T} & b_2&=(1.819\cdot 10^{-5} \pm 5.722\cdot 10^{-7})\,\text{T}\,.
+\end{align*}
+
 \section{Quellen}
 
 \end{document}
