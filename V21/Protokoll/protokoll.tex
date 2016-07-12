@@ -110,10 +110,12 @@ Besitzt ein Kern einen Kernspin $I\ne 0$, so Spalten die Energieniveaus weiter i
 Es koppelt der Gesamtdrehimpuls der Elektronen $\vec{J}$ und der Kernspin $\vec{I}$ zu einen Gesamtspin
 \begin{align}
 \vec{F}=\vec{J}+\vec{I} \hspace{0.2cm}\text{.}
+\label{eq:gesamtdrehimpuls}
 \end{align}
 Die dazugehörige Quantenzahl $F$ läuft dabei von $I+J$ bis $\left| I-J\right|$. Der zu $F$ gehörige Landé-Faktor $g_F$ ist durch
 \begin{align}
 g_F\approx g_J\frac{F\left(F+1\right)+J\left(J+1\right)+I\left(I+1\right)}{2F\left(F+1\right)}
+\label{eq:landefaktoren}
 \end{align}
 gegeben.\\
 In Abbildung \ref{fig:hyperfeinaufspaltungbeispiel} ist die Hyperfeinaufspaltung der Niveaus für ein Alkali-Atoms mit Kernspin $I = 3/2$ in zwei Unterniveaus dargestellt.
@@ -174,7 +176,7 @@ g_{f_{2}}= 0.331 \pm 0.001 \\
 Die Fehlerrechnung wurde mit dem Python-Paket \textit{uncertainties} durchgeführt.
 
 \subsection{Bestimmung der Kernspins}
-Mit Gleichung X und Gleichung X sowie den zuvor bestimmten Landé-Faktoren ergeben sich mit J=1/2 die Kernspins
+Mit Gleichung \ref{eq:gesamtdrehimpuls} und Gleichung \ref{eq:landefaktoren} sowie den zuvor bestimmten Landé-Faktoren ergeben sich mit J=1/2 die Kernspins
 \begin{align}
 I=-\left( 1-\frac{g_j}{4g_f}\right) +\sqrt{\left( 1-\frac{g_j}{4g_f}\right)^2-\frac{3}{4}\left( 1-\frac{g_j}{g_f}\right)}\,.
 \label{eq:kernspins}
@@ -185,6 +187,23 @@ I_1= 1.526 \pm 0.010\\
 I_2= 2.532 \pm 0.013\,.\\
 \end{align*}
 Somit ist Isotop  als $^{87}$Rb mit Kernspin von I=1.5 zu identifizieren, Isotop 2 ist das Isotop $^{85}$Rb.
+
+\subsection{Isotopenverhältnis}
+Das Isotopenverhältnis kann aus dem Amplitudenverhältnis in Abbildung \ref{fig:amplituden} berechnet werden.
+\begin{center}
+	\includegraphics[width=10cm]{images/Isotopenverhaeltnis.JPG}
+	\captionof{figure}{Darstellung der aufgenommenen Amplituden}
+	\label{fig:amplituden}
+\end{center}
+Das Isotopenverhältnis ergibt sich somit zu
+\begin{align*}
+\frac{N(^{87}Rb)}{N(^{85}Rb)}\approx0.530\,.
+\end{align*}
+
+\subsection{Abschätzung des quadratischen Zeeman-Effektes}
+
+
+
 \section{Quellen}
 
 \end{document}
