@@ -201,8 +201,43 @@ Das Isotopenverhältnis ergibt sich somit zu
 \end{align*}
 
 \subsection{Abschätzung des quadratischen Zeeman-Effektes}
+Das maximal anliegende Magnetfeld liegt bei $2.3\cdot10^{-4}$\,T. Eingesetzt in Gleichung \ref{eq:quadratzeeman} ergibt sich ein Korrekturterm mit der Größenordnung $10^{-32}$\,J. Dies ist um vier Grö\ss enordnungen kleiner als der lineare Term. Somit kann der quadratische Zeeman-Effekt vernachlässigt werden. 
 
+\subsection{Bestimmung des Verhältnisses b($^{87}$Rb)/b($^{85}$Rb)}
+Die Periodendauern sind in Abhängigkeit von der anliegenden Spannung in Tabelle \ref{tab:periodendauer} dargestellt. 
+\begin{center}
+	\begin{tabular}{|c|c|c|}
+	\hline U [V] & T$_1$ [ms] & T$_2$ [ms] \\
+	\hline	1	&	2,16	&	3,18	\\
+	\hline	3	&	0,72	&	1,08	\\
+	\hline	5	&	0,47	&	0,64	\\
+	\hline	7	&	0,32	&	0,5	\\
+	\hline	9	&	0,27	&	0,42	\\
+	\hline	2	&	1,12	&	1,64	\\
+	\hline	4	&	0,56	&	0,8	\\
+	\hline	6	&	0,38	&	0,58	\\
+	\hline	8	&	0,28	&	0,44	\\
+	\hline 
+	\end{tabular}
+\captionof{table}{Messwerte für die Periodendauer der beobachteten Schwingungen bei den beiden Rubidium-Isotopen in Abhängigkeit von der angelegten Spannung}
+\label{tab:periodendauer}
+\end{center}
+Mit den Messdaten wird eine hyperbolische Funktion der Form
+\begin{align*}
+f(x)=a+\frac{b}{x+c}
+\end{align*}
+angepasst. Dies wird für beide Isotope durchgeführt, eine graphische Darstellung ist in Abbildung \ref{fig:periodendauer} dargestellt.
+\begin{center}
+	\includegraphics[width=10cm]{images/plot2.pdf}
+	\captionof{figure}{Periodendauern der dargestellten Schwingungen in Abhängigkeit von der angelegten Spannung}
+	\label{fig:periodendauer}
+\end{center}
+Die nicht-lineare Ausgleichsrechnung, durchgeführt mit Python, liefert die Fitparameter
+\begin{align*}
+a_1=
+\end{align*}
 
+\section{Diskussion}
 
 \section{Quellen}
 
