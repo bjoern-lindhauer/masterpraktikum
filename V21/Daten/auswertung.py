@@ -126,8 +126,13 @@ plt.savefig('plot2.pdf')
 
 print('a =', params3[0], '+/-', errors3[0])
 print('b =', params3[1], '+/-', errors3[1])
-print('c =', params3[1], '+/-', errors3[1])
+print('c =', params3[2], '+/-', errors3[1])
 
-print('a =', params3[0], '+/-', errors3[0])
-print('b =', params3[1], '+/-', errors3[1])
-print('c =', params3[2], '+/-', errors3[2])
+print('a =', params4[0], '+/-', errors4[0])
+print('b =', params4[1], '+/-', errors4[1])
+print('c =', params4[2], '+/-', errors4[2])
+
+b1=ufloat(params3[1], errors3[1])
+b2=ufloat(params4[1], errors4[1])
+
+print(b1/b2)
