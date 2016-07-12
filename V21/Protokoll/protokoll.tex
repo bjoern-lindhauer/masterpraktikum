@@ -163,7 +163,28 @@ Es ergeben sich somit folgende Fitparameter:
 m_1&=(1.446\cdot 10^{-7} \pm 6.9552\cdot 10^{-10})\,\frac{\text{T}}{\text{kHz}} & m_2&=(2.164\cdot 10^{-7} \pm 9.216\cdot 10^{-10})\,\frac{\text{T}}{\text{kHz}} \\
 b_1&=(1.814\cdot 10^{-5} \pm 4.318\cdot 10^{-7})\,\text{T} & b_2&=(1.819\cdot 10^{-5} \pm 5.722\cdot 10^{-7})\,\text{T}\,.
 \end{align*}
+Der Mittelwert der b$_i$ ergibt die Stärke der horizontalen Komponente des Erdmagnetfeldes B$_{\text{horiz}}=(1.817\pm0.022)\cdot10^{-5}$\,T. \\
 
+\subsection{Bestimmung der Landé-Faktoren}
+Mit $m=\frac{B}{\nu}$ Gleichung X und dem Wert m$_0=9.109\cdot10^{-31}$ ergeben sich somit die beiden Landé-Faktoren zu
+\begin{align*}
+g_{f_{1}}= 0.494 \pm 0.002\\
+g_{f_{2}}= 0.331 \pm 0.001 \\
+\end{align*}
+Die Fehlerrechnung wurde mit dem Python-Paket \textit{uncertainties} durchgeführt.
+
+\subsection{Bestimmung der Kernspins}
+Mit Gleichung X und Gleichung X sowie den zuvor bestimmten Landé-Faktoren ergeben sich mit J=1/2 die Kernspins
+\begin{align}
+I=-\left( 1-\frac{g_j}{4g_f}\right) +\sqrt{\left( 1-\frac{g_j}{4g_f}\right)^2-\frac{3}{4}\left( 1-\frac{g_j}{g_f}\right)}\,.
+\label{eq:kernspins}
+\end{align}
+Mit $g_j=2.002$ ergeben sich aus Gleichung \ref{eq:kernspins} die Kernspins
+\begin{align*}
+I_1= 1.526 \pm 0.010\\
+I_2= 2.532 \pm 0.013\,.\\
+\end{align*}
+Somit ist Isotop  als $^{87}$Rb mit Kernspin von I=1.5 zu identifizieren, Isotop 2 ist das Isotop $^{85}$Rb.
 \section{Quellen}
 
 \end{document}

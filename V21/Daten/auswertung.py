@@ -68,13 +68,18 @@ plt.savefig('plot1.pdf')
 
 errors=np.sqrt(np.diag(covariance))
 
-print('m =', params[0], '+/-', errors[0])
-print('b =', params[1], '+/-', errors[1])
+#print('m =', params[0], '+/-', errors[0])
+#print('b =', params[1], '+/-', errors[1])
+b1=ufloat(params[1], errors[0])
 
 errors2=np.sqrt(np.diag(covariance2))
 
-print('m =', params2[0], '+/-', errors2[0])
-print('b =', params2[1], '+/-', errors2[1])
+#print('m =', params2[0], '+/-', errors2[0])
+#print('b =', params2[1], '+/-', errors2[1])
+b2=ufloat(params2[1], errors[1])
+
+print('Die horizontale Komponente des Erdmagnetfeldes lautet:')
+print((b1+b2)/2)
 
 #gi berechnen
 
