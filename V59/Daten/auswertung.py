@@ -25,29 +25,29 @@ def error(f, err_vars=None):
     from sympy import Symbol, latex
     s = 0
     latex_names = dict()
-    
+
     if err_vars == None:
         err_vars = f.free_symbols
-        
+
     for v in err_vars:
         err = Symbol('latex_std_' + v.name)
         s += f.diff(v)**2 * err**2
         latex_names[err] = '\\sigma_{' + latex(v) + '}'
-        
+
     return latex(sympy.sqrt(s), symbol_names=latex_names)
 
 def f(t,a,b):
     return a*np.cos(t+b)
-    
+
 def g(t):
     return t*9.58*10**(-3)*2*np.pi
-    
+
 def h(x,y):
     return 2*10**((x-y)/20)
-    
+
 def kontrast(x2, x1):
     return (x2-x1)/(x2+x1)
-    
+
 def j(dt, ft):
     return ((-1/(dt*ft))+unp.sqrt((1/(dt*ft))**2+1))
 
@@ -85,6 +85,18 @@ print('m=', h(Um,Ut))
 dt=ufloat(375*10**(-9),25*10**(-9))
 
 print('m=', j(dt, 10**6))
+
+#Phasenberechnung
+
+delta = ufloat(28.0, 1.0)
+
+delta = delta/65.0*500*10**(-9)
+ft=10**6
+
+m=delta*ft
+
+print(m)
+
 
 #x1,x2, x3 = sympy.var('M_{z} M_{0} \tau')
 #f = -x3/(sympy.log((x1-x2)/(2*x2)))
