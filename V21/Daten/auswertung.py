@@ -39,6 +39,7 @@ def g(x, a, b, c):
 
 daten1 = np.genfromtxt('landebestimmung.txt', unpack='True')
 daten2 = np.genfromtxt('periodenauswertung.txt', unpack='True')
+anstieg = np.genfromtxt('anstieg.txt', unpack='True')
 
 #Daten transformieren
 
@@ -136,3 +137,9 @@ b1=ufloat(params3[1], errors3[1])
 b2=ufloat(params4[1], errors4[1])
 
 print(b1/b2)
+
+#Anstiegszeit bestimmen
+
+plt.figure()
+plt.plot(anstieg[0], anstieg[1], 'bx', label='Messung der Anstiegszeit')
+plt.savefig('anstieg.pdf')
