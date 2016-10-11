@@ -34,12 +34,16 @@ def I(gf):
 def g(x, a, b, c):
     return a+(b/(x+c))
 
+def expon(t, a, b, tau):
+    return a*(1-np.exp(-t/tau))+b
+
 
 #Daten auslesen
 
 daten1 = np.genfromtxt('landebestimmung.txt', unpack='True')
 daten2 = np.genfromtxt('periodenauswertung.txt', unpack='True')
 anstieg = np.genfromtxt('anstieg.txt', unpack='True')
+anstieg_mod = np.genfromtxt('anstieg_mod.txt', unpack='True')
 
 #Daten transformieren
 
@@ -136,10 +140,22 @@ print('c =', params4[2], '+/-', errors4[2])
 b1=ufloat(params3[1], errors3[1])
 b2=ufloat(params4[1], errors4[1])
 
-print(b1/b2)
+print(b2/b1)
 
 #Anstiegszeit bestimmen
 
+x_plot=np.linspace(0, 0.06, num=1000)
+params, covariance = curve_fit(expon, anstieg_mod[0], anstieg_mod[1])
+errors=np.sqrt(np.diag(covariance))
+
 plt.figure()
-plt.plot(anstieg[0], anstieg[1], 'bx', label='Messung der Anstiegszeit')
-plt.savefig('anstieg.pdf')
+plt.plot(anstieg[0], anstieg[1], 'bx', label='Messung Anstiegszeit')
+plt.plot(x_plot, expon(x_plot, *params), 'r-', label='Exponentieller Fit')
+plt.legend(loc='best', numpoints=1)
+plt.ylabel('Spannung U [V]')
+plt.xlabel('Zeit t [ms]')
+plt.savefig('../Protokoll/images/anstieg.pdf')
+
+print('a =', params[0], '+/-', errors[0])
+print('b =', params[1], '+/-', errors[1])
+print('tau =', params[2], '+/-', errors[2])
