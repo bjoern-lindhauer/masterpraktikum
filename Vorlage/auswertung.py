@@ -7,6 +7,7 @@ Created on Sun Jul  5 15:07:54 2015
 
 import numpy as np
 from scipy.optimize import curve_fit
+from scipy import constants
 import matplotlib.pyplot as plt
 from uncertainties import ufloat
 import uncertainties.unumpy as unp
@@ -29,15 +30,15 @@ def error(f, err_vars=None):
     from sympy import Symbol, latex
     s = 0
     latex_names = dict()
-    
+
     if err_vars == None:
         err_vars = f.free_symbols
-        
+
     for v in err_vars:
         err = Symbol('latex_std_' + v.name)
         s += f.diff(v)**2 * err**2
         latex_names[err] = '\\sigma_{' + latex(v) + '}'
-        
+
     return latex(sympy.sqrt(s), symbol_names=latex_names)
 
 #Funktionen definieren
@@ -65,7 +66,7 @@ plt.xlim(0,10)
 plt.ylim(0,10)
 plt.xlabel(r'')
 plt.ylabel(r'')
-plt.savefig('plot1.png')
+plt.savefig('../Protokoll/images/plot1.pdf')
 
 errors=np.sqrt(np.diag(covariance))
 
