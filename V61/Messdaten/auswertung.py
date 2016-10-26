@@ -19,10 +19,11 @@ plt.rcParams['font.size'] = 16
 
 #Daten auslesen
 
-# data = np.genfromtxt('data.txt', unpack='True')
-#
-# data1=ufloat(data[0,:], 0.01)
-# data2=ufloat(data[1,:], 0.01)
+wave = np.genfromtxt('wavelength.txt', unpack='True')
+
+polarisation = np.genfromtxt('polarisation.txt', unpack='True')
+
+tem00 = np.genfromtxt('tem00.txt', unpack='True')
 
 #Fehlerformelausgabe
 
@@ -43,20 +44,23 @@ def error(f, err_vars=None):
 
 #Funktionen definieren
 
-def f(x, b):
-    return (1-x/b)
+def I(r, I0, r0, w):
+    return I0*np.exp(-2(r-r0)/w**2)
 
-def g(x, a, b):
-    return (1-x/a)*(1-x/b)
+def Lambda(d,L,n,g):
+    return (np.sin(np.arctan(d/L)))/(n*g)
+
+def Ip(phi,I0,delta):
+    return I0*np.cos(phi+delta)**2
 
 #Funktion fitten
 
-# guess = [1, 1]
-x_plot=np.linspace(0,10, num=1000)
-# params, covariance = curve_fit(f, unp.nominal_values(data1), unp.nominal_values(data2), p0=guess)
+guess = [1, 1]
+params_00, covariance_00 = curve_fit(I, tem00)
 
 #Daten und Fit plotten
 
+#x_plot=np.linspace(0,10, num=1000)
 plt.figure()
 # err1 = unp.std_devs(data1)
 # err2 = unp.std_devs(data2)
