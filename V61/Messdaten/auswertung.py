@@ -11,7 +11,7 @@ from scipy import constants
 import matplotlib.pyplot as plt
 from uncertainties import ufloat
 import uncertainties.unumpy as unp
-from uncertainties.unumpy import log10,log,exp,sqrt
+from uncertainties.unumpy import log10,log,exp,sqrt,sin,arctan
 import sympy
 
 plt.rcParams['figure.figsize'] = (10, 8)
@@ -19,10 +19,15 @@ plt.rcParams['font.size'] = 16
 
 #Daten auslesen
 
+#Daten zur Bestimmung der Wellenlänge formartieren
 wave = np.genfromtxt('wavelength.txt', unpack='True')
+n=wave[0,:]
+d=unp.uarray(wave[1,:]*10**(-2),0.3)
 
+#Polarisationsmessdaten einlesen
 polarisation = np.genfromtxt('polarisation.txt', unpack='True')
 
+#Daten zur Vermessung der TEM00-Mode einlesen
 tem00 = np.genfromtxt('tem00.txt', unpack='True')
 
 #Fehlerformelausgabe
@@ -48,19 +53,43 @@ def I(r, I0, r0, w):
     return I0*np.exp(-2(r-r0)/w**2)
 
 def Lambda(d,L,n,g):
-    return (np.sin(np.arctan(d/L)))/(n*g)
+    return (sin(arctan(d/L)))/(abs(n)*g)
 
 def Ip(phi,I0,delta):
     return I0*np.cos(phi+delta)**2
 
-#Funktion fitten
+def f(x,r):
+    return (1-x/r)
 
-guess = [1, 1]
-params_00, covariance_00 = curve_fit(I, tem00)
+def g(x,r1,r2):
+    return (1-x/r1)*(1-x/r2)
+
+#Konstanten defininieren
+
+g1=100*10**(3)
+L=ufloat(140.5*10**(-2),0.1)
+
+#Wellenlängebestimmung
+
+l=Lambda(d,L,n,g1)
+l_mean=l.mean();
+print(l_mean)
+
+
+#Polarisation fitten
+
+params_pol, covariance_pol = curve_fit(Ip, np.deg2rad(polarisation[0]), polarisation[1])
+x_plot=np.linspace(0,360,num=1000)
+
+plt.figure()
+plt.plot(x_plot, Ip(np.deg2rad(x_plot), *params_pol), 'r-', label='Nichtlinearer Fit')
+plt.plot(polarisation[0], polarisation[1], 'gx', label='Aufgenommenen Messdaten für die Polarisation')
+plt.legend(loc="best", numpoints=1)
+plt.savefig('polarisaton.pdf')
 
 #Daten und Fit plotten
 
-#x_plot=np.linspace(0,10, num=1000)
+x_plot=np.linspace(0,10, num=1000)
 plt.figure()
 # err1 = unp.std_devs(data1)
 # err2 = unp.std_devs(data2)
