@@ -53,7 +53,97 @@
 \section{Einleitung}
 
 \section{Theoretische Grundlagen}
+\section{Theoretische Grundlagen}
+Der Begriff Laser steht für Light Amplification by Stimulated Emission of Radiation und beschreibt ein Gerät, welches monochromatisches Licht mit hoher Intensität und Kohärenz emittiert.
 
+Ein Laser besteht aus drei grundlegenden Komponenten. Zum einem das aktive (Laser-) Medium, welches das Strahlungsspektrum eines Lasers bestimmt.
+Ein weiterer Bestannteil des Lasers ist die Pumpquelle, die eine Besetzungsinversion durch stimmulierte Emmision erzäugt. 
+Schlussendlich gibt es noch den Resonator, der Licht durch optische Rückkoppluang durch das aktive Medium leitet, sodass ein selbsterregter Oszillator enstetht.
+
+Die genaue Funktionsweise eines Lasers lässt sich am einfachsten durch ein zwei Niveau System verstehen. 
+Dabei sei das energetisch günstigere Niveau der Grundzustand mit der Besetzungszahl $n_1$ und das andere Niveau der angeregte Zustand mit der Besetzungszahl $n_2$, so gibt es drei verschiedene Übergänge.
+
+Bei der Absorption wird ein Photon mit passender Energie absorbiert und das Atom in einen angeregten Zuständ überführt. 
+Ein angeregtes Atom kann spontan in den Grund zurückkehren, wobei dabei ein Photon emittiert wird. Dies wird spontane Emission genannt.
+Alternativ kann eine Emission auch durch Bestrahlung mit energetisch passenden Photonen induziert werden, was induzierte Emission genannt wird.
+In Abbildung \ref{fig:schema_uebergaenge} werden diese Übergänge illustriert.
+
+\begin{figure}[h]
+ \centering
+ \includegraphics[]{images/schema_uebergaenge.png}
+\label{fig:schema_uebergaenge}
+\end{figure}
+
+Die Wechselwirkung zwischen der Energiedichte $\rho$ der Strahlungsfeldes und des Zwei-Niveau-Systems ist durch die Gleichung
+\begin{align}
+ \dot{N}_\text{A}   & =n_1 \rho\left(\nu \right)B_{12}  &\text{Absorption} \\
+ \dot{N}_\text{IE}  & =n_2 \rho\left(\nu \right)B_{21}  &\text{induzierte Emission} \\
+ \dot{N}_\text{SE}  & =n_2 A_{21}                       &\text{spontane Emission} \\
+\end{align}
+mit den Einsteinkoeffizienten $A_{21}$, $B_{12}$ und $B_{21}$, die Übergangswahrscheinlichkeiten zwischen den Zuständen beschreiben, gegeben.
+
+Aus diesen Gleichungen lassen sich, unter der Bedingung, dass keine Verluste ($n_1+n_2=\const$) auftreten, die Ratengleichungen für die Besetzungszahlen
+\begin{align}
+ \frac{d n_1}{d t}&=-n_1B_{12}\rho+N_2B_{21}\rho+n_2A_{21}\rho \\
+ \frac{d n_2}{d t}&=-n_2B_{21}\rho+N_1B_{12}\rho-n_2A_{21}\rho
+\end{align}
+herleiten.
+
+Damit das Strahlungsfeld koharent und dauerhaft verstärkt wird, muss die stimulierte Emission häufiger auftreten als die spontane Emission. 
+Nun sind die Zustände nach Maxwell-Boltzmann besetzt, sodass der Grundzustand viel stärker besetzt ist als der angeregte Zustand und die spontane Emission dominiert.
+Um dies zu ändern, muss der angeregte Zustand häufiger besetzt sein. Dies wird durch eine Besetzungsinversion realisiert. 
+Damit die Besetzungsinversion dauerhaft ist, muss die ganze Zeit Energie in das aktive Medium zugeführt werden. Dies wird auch Pumpen genannt.
+
+Da die Verstärkung exponentiell mit der Länge des Laufwegs des Lichts durch das aktive Medium steigt, wird der Laserstrahl durch einen optischen Resonator mehrfach durch das aktive Medium geleitet.
+
+\begin{figure}[h]
+ \centering
+ \includegraphics[]{images/schema_resonator.png}
+\label{fig:schema_resonator}
+\end{figure}
+
+Wie in Abbildung \ref{fig:schema_resonator} dargestellt, besteht der optische Resonator aus zwei parallelen Spiegeln, von denen ein Spiegel teildurchlässig ist, um den Laserstrahl auszukoppeln.
+Die Spiegel können dabei entweder nur planparallel oder nur sphärisch oder eine Kombination dieser beiden Typen sein.
+Es sollten jedoch die Verluste durch die Spiegel geringer sein als die Verstärkung durch die angeregte Emission, damit ein angetriebenen Oszillator entsteht.
+Um eine charaktaristische Größe für diese optische Stabilität zu erhalten, wird der Resonatorparameter
+\begin{align}
+ g_i := 1- \frac{L}{r_i}
+\end{align}
+mit der Länge $L$ des Resonators und der Krümmungsradius $r_i$ des Spiegels eingeführt.
+Die optische Stabilität ist dann für
+\begin{align}
+0 \le g_1 \cdot g_2 \le 1 
+\end{align}
+gegeben.
+
+Da die Resonatorlänge $L$ viel größer als die Wellenlänge $\lambda$ sein soll, erfüllen viele Frequenzen die Resonzbedingungen für stehende Wellen. 
+Diese $q$ Wellenlängen werden als longitudinale Mode bezeichnet. Es können auch transversalen Moden durch z.B. Spiegelunebenheiten oder Verkippungen entstehen.
+In Anlehnung an einen Hohlleiter werden diese Moden $TEM_{lpq}$ genannt, wobei $l$ und $p$ die Knoten in x- und y- Richtung sind und als transversale Modenzahl bezeichnet werden.
+$q$ ist die longitudinale Modenzahl und wird oft weg gelassen, da sie für die skalare Feldverteilung irrelevant ist.  
+
+Die Feldverteilungen für einen konfokalen Resonator mit runden Spiegeln ist durch
+\begin{align}
+ E_{lpq} \propto \cos \left(l \phi \right) \frac{4\rho^ 2}{\left(1+Z^2 \right)^{0.5\cdot \left(1+l\right)}}L_{q}^{p}\left( \frac{4\rho^2}{1+Z^2} \right)\exp \left(-\frac{\rho^2}{1+Z^2}\right)
+\cdot \exp \left\{-i \left[ \frac{\left(1+Z \right)\pi R}{\lambda} + \frac{\rho^2Z}{1+Z^2} - \left(l+2p+1\right)\left(\frac{\pi}{2}-\arctan \left(\frac{1-Z}{1+Z}\right) \right) \right] \right\}
+\end{align}
+\begin{align*}
+\text{mit} \rho= \sqrt{\frac{2\pi}{R\lambda}} \text{und} Z=\frac{2z}{R}
+\end{align*}
+approximativ gegeben. Dabei ist $L^{q}_{p}\left(u\right) $ das dazugehörige Laguerre-Polynom.
+
+Aus dieser Feldverteilung lässt sich die Intensitätsverteilung betimmen. Die Intensitätsverteilung der $TEM_{00}$ Mode, die Mode mit der hösten symmetrie und den geringsten Verlusten, ist durch die Gaußverteilung
+\begin{align}
+ I\left(r\right)=I_0\exp \left(-\frac{2r^2}{\omega^2}\right)
+\end{align}
+mit der Maximalitensität $I_0$ gegeben. Der Strahlradius $\omega$ ist durch den Abstand $z$ von der minimalen Strahltaille $\omega_0$ und der Strahldivergenz 
+\begin{align}
+ \theta = \frac{\lambda}{\pi}\omega_0
+\end{align}
+gegeben. Er lässt sich durch
+\begin{align}
+ \omega\left(z\right)=\omega_0\sqrt{1+\left(\frac{\theta z}{\omega}\right)}
+\end{align}
+bestimmen. 
 \section{Durchführung}
 
 \section{Quellen}
