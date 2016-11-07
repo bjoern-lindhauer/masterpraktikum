@@ -13,6 +13,9 @@ from uncertainties import ufloat
 import uncertainties.unumpy as unp
 from uncertainties.unumpy import log10,log,exp,sqrt,sin,arctan
 import sympy
+import sys
+reload(sys)
+sys.setdefaultencoding("utf-8")
 
 plt.rcParams['figure.figsize'] = (10, 8)
 plt.rcParams['font.size'] = 16
@@ -79,14 +82,13 @@ print(l_mean)
 #Polarisation fitten
 
 params_pol, covariance_pol = curve_fit(Ip, np.deg2rad(polarisation[0]), polarisation[1])
-x_plot=np.linspace(0,360,num=1000)
+x_plot=np.linspace(0,180,num=1000)
 
 plt.figure()
 plt.plot(x_plot, Ip(np.deg2rad(x_plot), *params_pol), 'r-', label='Nichtlinearer Fit')
-plt.plot(polarisation[0], polarisation[1], 'gx', label='Aufgenommenen Messdaten für die Polarisation')
+plt.plot(polarisation[0], polarisation[1], 'gx', label='Messdaten Polarisation')
 plt.legend(loc="best", numpoints=1)
-plt.savefig('polarisaton.pdf')
-
+plt.savefig('../Protokoll/images/polarisaton.pdf')
 #Daten und Fit plotten
 
 x_plot=np.linspace(0,10, num=1000)
