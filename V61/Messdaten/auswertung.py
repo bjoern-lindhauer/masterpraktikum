@@ -13,9 +13,6 @@ from uncertainties import ufloat
 import uncertainties.unumpy as unp
 from uncertainties.unumpy import log10,log,exp,sqrt,sin,arctan
 import sympy
-import sys
-reload(sys)
-sys.setdefaultencoding("utf-8")
 
 plt.rcParams['figure.figsize'] = (10, 8)
 plt.rcParams['font.size'] = 16
@@ -53,7 +50,7 @@ def error(f, err_vars=None):
 #Funktionen definieren
 
 def I(r, I0, r0, w):
-    return I0*np.exp(-2(r-r0)/w**2)
+    return I0*np.exp(-2*(r-r0)**2/w**2)
 
 def Lambda(d,L,n,g):
     return (sin(arctan(d/L)))/(abs(n)*g)
@@ -89,15 +86,11 @@ plt.plot(x_plot, Ip(np.deg2rad(x_plot), *params_pol), 'r-', label='Nichtlinearer
 plt.plot(polarisation[0], polarisation[1], 'gx', label='Messdaten Polarisation')
 plt.legend(loc="best", numpoints=1)
 plt.savefig('../Protokoll/images/polarisaton.pdf')
-#Daten und Fit plotten
+
+#Vorbereitungsaufgabe
 
 x_plot=np.linspace(0,10, num=1000)
 plt.figure()
-# err1 = unp.std_devs(data1)
-# err2 = unp.std_devs(data2)
-#
-#
-# plt.errorbar(unp.nominal_values(data1) + err1, -unp.nominal_values(data2) + err2, fmt='bx', label="Messung")
 plt.plot(x_plot, f(x_plot, 1.4), 'r-', label='Planarer und r=1m Spiegel')
 plt.plot(x_plot, g(x_plot, 1, 1.4), 'gx', label='r=1m Spiegel und r=1.4m Spiegel')
 plt.legend(loc="best", numpoints=1)
@@ -106,6 +99,22 @@ plt.ylim(0,1)
 plt.xlabel(r'L/m')
 plt.ylabel(r'g$_1*$g$_2$')
 plt.show()
+plt.savefig('../Protokoll/images/vorbereitung.pdf')
+
+#TEM00-Mode fitten
+
+x0=[0.1,2,4]
+params_tem, covariance_tem = curve_fit(I, tem00[0], tem00[1], p0=x0)
+
+x_plot=np.linspace(-15,15,num=1000)
+
+
+plt.figure()
+plt.plot(x_plot, I(x_plot, *params_tem), 'r-', label='Nichtlinearer Fit')
+plt.plot(tem00[0], tem00[1], 'gx', label='Messdaten TEM00-Mode')
+plt.legend(loc="best", numpoints=1)
+plt.show()
+plt.savefig('../Protokoll/images/tem00.pdf')
 
 # errors=np.sqrt(np.diag(covariance))
 #
