@@ -84,8 +84,11 @@ x_plot=np.linspace(0,180,num=1000)
 plt.figure()
 plt.plot(x_plot, Ip(np.deg2rad(x_plot), *params_pol), 'r-', label='Nichtlinearer Fit')
 plt.plot(polarisation[0], polarisation[1], 'gx', label='Messdaten Polarisation')
+plt.xlabel(r'Winkel $\phi$')
+plt.ylabel(r'Intensität/$\mu$A')
 plt.legend(loc="best", numpoints=1)
 plt.savefig('../Protokoll/images/polarisaton.pdf')
+plt.close()
 
 #Vorbereitungsaufgabe
 
@@ -98,8 +101,8 @@ plt.xlim(0,2)
 plt.ylim(0,1)
 plt.xlabel(r'L/m')
 plt.ylabel(r'g$_1*$g$_2$')
-plt.show()
 plt.savefig('../Protokoll/images/vorbereitung.pdf')
+plt.close()
 
 #TEM00-Mode fitten
 
@@ -112,9 +115,11 @@ x_plot=np.linspace(-15,15,num=1000)
 plt.figure()
 plt.plot(x_plot, I(x_plot, *params_tem), 'r-', label='Nichtlinearer Fit')
 plt.plot(tem00[0], tem00[1], 'gx', label='Messdaten TEM00-Mode')
+plt.xlabel('r/mm')
+plt.ylabel('I/$\mu$A')
 plt.legend(loc="best", numpoints=1)
-plt.show()
 plt.savefig('../Protokoll/images/tem00.pdf')
+plt.close()
 
 # errors=np.sqrt(np.diag(covariance))
 #
