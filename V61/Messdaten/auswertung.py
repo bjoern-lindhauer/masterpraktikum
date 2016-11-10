@@ -101,6 +101,7 @@ plt.xlim(0,2)
 plt.ylim(0,1)
 plt.xlabel(r'L/m')
 plt.ylabel(r'g$_1*$g$_2$')
+plt.grid()
 plt.savefig('../Protokoll/images/vorbereitung.pdf')
 plt.close()
 
