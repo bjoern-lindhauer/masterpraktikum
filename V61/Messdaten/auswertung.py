@@ -94,7 +94,7 @@ plt.close()
 
 x_plot=np.linspace(0,10, num=1000)
 plt.figure()
-plt.plot(x_plot, f(x_plot, 1.4), 'r-', label='Planarer und r=1m Spiegel')
+plt.plot(x_plot, f(x_plot, 1.4), 'r-', label='Planarer und r=1.4m Spiegel')
 plt.plot(x_plot, g(x_plot, 1, 1.4), 'gx', label='r=1m Spiegel und r=1.4m Spiegel')
 plt.legend(loc="best", numpoints=1)
 plt.xlim(0,2)
