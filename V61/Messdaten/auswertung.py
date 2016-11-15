@@ -72,8 +72,8 @@ L=ufloat(140.5*10**(-2),0.1)
 #Wellenlängebestimmung
 
 l=Lambda(d,L,n,g1)
-l_mean=l.mean();
-print(l_mean)
+l_mean=l.mean()*10**9
+print('Wellenlänge = {0:10.2f}'.format(l_mean))
 
 
 #Polarisation fitten
@@ -87,7 +87,7 @@ plt.plot(polarisation[0], polarisation[1], 'gx', label='Messdaten Polarisation')
 plt.xlabel(r'Winkel $\phi$')
 plt.ylabel(r'Intensität/$\mu$A')
 plt.legend(loc="best", numpoints=1)
-plt.savefig('../Protokoll/images/polarisaton.pdf')
+plt.savefig('../Protokoll/images/polarisation.pdf')
 plt.close()
 
 #Vorbereitungsaufgabe
@@ -110,8 +110,13 @@ plt.close()
 x0=[0.1,2,4]
 params_tem, covariance_tem = curve_fit(I, tem00[0], tem00[1], p0=x0)
 
-x_plot=np.linspace(-15,15,num=1000)
+errors=np.sqrt(np.diag(covariance_tem))
 
+print('I0 =', '%.3f' % params_tem[0], '+/-', '%.3f' % errors[0])
+print('r0 =', '%.3f' % params_tem[1], '+/-', '%.3f' % errors[1])
+print('w =', '%.3f' % params_tem[2], '+/-',  '%.3f' % errors[2])
+
+x_plot=np.linspace(-15,15,num=1000)
 
 plt.figure()
 plt.plot(x_plot, I(x_plot, *params_tem), 'r-', label='Nichtlinearer Fit')
