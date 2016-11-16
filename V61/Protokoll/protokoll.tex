@@ -103,7 +103,7 @@ Da die Verstärkung exponentiell mit der Länge des Laufwegs des Lichts durch da
 Wie in Abbildung \ref{fig:schema_resonator} dargestellt, besteht der optische Resonator aus zwei parallelen Spiegeln, von denen ein Spiegel teildurchlässig ist, um den Laserstrahl auszukoppeln.
 Die Spiegel können dabei entweder nur planparallel oder nur sphärisch oder eine Kombination dieser beiden Typen sein.
 Es sollten jedoch die Verluste durch die Spiegel geringer sein als die Verstärkung durch die angeregte Emission, damit ein angetriebenen Oszillator entsteht.
-Um eine charakteristische Größe für diese optische Stabilität zu erhalten, wird der Resonatorparameter
+Um eine charakteristische Grö"se für diese optische Stabilität zu erhalten, wird der Resonatorparameter
 \begin{align}
  g_i := 1- \frac{L}{r_i}
 \end{align}
@@ -144,6 +144,13 @@ gegeben. Er lässt sich durch
  \omega\left(z\right)=\omega_0\sqrt{1+\left(\frac{\theta z}{\omega}\right)}
 \end{align}
 bestimmen. 
+
+\section{Aufbau}
+Für den HeNe-Laser wird ein Helium-Neon-Gemisch im Verhältnis 5:1 verwendet. Das Gasgemisch befindet sich bei einem Druck von ca. 1 Torr in einem zylindrischen Glasgefä"s. Die Neon-Atome dienen als aktives Medium, die Heliumatome als Pumpquelle. Über Stö"se wird die Energie an die Neon-Atome weitergegeben, welche in metastabile Zustände übergehen und Besetzungsinversion erzeugt \\
+Das Helium wird mithilfe von Elektroden-Entladungen gepumpt. Dominant bei dieser Art von Laser ist die Wellenlänge $\lambda=\SI{632.8}{\nano\metre}$.\\
+Zur möglichst verlustfreien Durchleitung des Laserlichts sind beide Enden des zylindrischen Glasgefä"ses mit Brewsterfenstern abgeschlossen, welche auch der Einstellung einer wohldefinierten Polarisationsrichtung dienen. \\
+Ein bereits längs der optischen Achse ausgerichteter Justierlaser befindet sich ebenfalls auf der optischen Schiene, dieser kann zur Justage beim Aufbau des Resonators verwendet werden. Es stehen verschieden Spiegel, Gitter, Linsen und Photodioden zur Vermessung der Eigenschaften des Lasers zur Verfügung. 
+
 \section{Durchführung}
 
 \subsection{Überprüfung der Stabilitätsbedingung}
@@ -226,7 +233,7 @@ Für die Vermessung der TEM00-Mode wurden Werte für den Photostrom $I$ in Abhä
 	\captionof{table}{Werte für den Photostrom I in Abhängigkeit von der Position d der Photodiode}
 	\label{tab:tem00}
 \end{center}
-Aus Gleichung \ref{eq:tem00} folgt, dass der Verlauf der TEM00-Mode die Form einer Gauß-Funktion besitzen muss, mit $r_0$ der Nullposition der Photodiode und $w$ dem Strahlradius. \\
+Aus Gleichung \ref{eq:tem00} folgt, dass der Verlauf der TEM00-Mode die Form einer Gau"s-Funktion besitzen muss, mit $r_0$ der Nullposition der Photodiode und $w$ dem Strahlradius. \\
 Ein nicht-linearer Fit mithilfe von \textit{python} ergibt die Fit-Parameter
 \begin{align*}
 I_0=& (0.088 \pm 0.004) \si{\mu\ampere}\\
