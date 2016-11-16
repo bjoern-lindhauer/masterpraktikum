@@ -65,18 +65,18 @@ Bei der Absorption wird ein Photon mit passender Energie absorbiert und das Atom
 Ein angeregtes Atom kann spontan in den Grund zurückkehren, wobei dabei ein Photon emittiert wird. Dies wird spontane Emission genannt.
 Alternativ kann eine Emission auch durch Bestrahlung mit energetisch passenden Photonen induziert werden, was induzierte Emission genannt wird.
 In Abbildung \ref{fig:schema_uebergaenge} werden diese Übergänge illustriert.
-
 \begin{figure}[h]
  \centering
- \includegraphics[]{images/schema_uebergaenge.png}
+ \includegraphics[width=12cm]{images/schema_uebergaenge.png}
  \label{fig:schema_uebergaenge}
+ \captionof{figure}{mögliche Übergänge in einem 2-Niveau-System}
 \end{figure}
 
 Die Wechselwirkung zwischen der Energiedichte $\rho$ der Strahlungsfeldes und des Zwei-Niveau-Systems ist durch die Gleichung
 \begin{align}
  \dot{N}_\text{A}   & =n_1 \rho\left(\nu \right)B_{12}  &\text{Absorption} \\
  \dot{N}_\text{IE}  & =n_2 \rho\left(\nu \right)B_{21}  &\text{induzierte Emission} \\
- \dot{N}_\text{SE}  & =n_2 A_{21}                       &\text{spontane Emission} \\
+ \dot{N}_\text{SE}  & =n_2 A_{21}                       &\text{spontane Emission}
 \end{align}
 mit den Einsteinkoeffizienten $A_{21}$, $B_{12}$ und $B_{21}$, die Übergangswahrscheinlichkeiten zwischen den Zuständen beschreiben, gegeben.
 
@@ -96,7 +96,7 @@ Da die Verstärkung exponentiell mit der Länge des Laufwegs des Lichts durch da
 
 \begin{figure}[h]
  \centering
- \includegraphics[]{images/schema_resonator.png}
+ \includegraphics[width=12cm]{images/schema_resonator.png}
  \label{fig:schema_resonator}
 \end{figure}
 
@@ -115,22 +115,22 @@ Die optische Stabilität ist dann für
 \end{align}
 gegeben.
 
-Da die Resonatorlänge $L$ viel größer als die Wellenlänge $\lambda$ sein soll, erfüllen viele Frequenzen die Resonzbedingungen für stehende Wellen. 
+Da die Resonatorlänge $L$ viel grö"ser als die Wellenlänge $\lambda$ sein soll, erfüllen viele Frequenzen die Resonzbedingungen für stehende Wellen. 
 Diese $q$ Wellenlängen werden als longitudinale Mode bezeichnet. Es können auch transversalen Moden durch z.B. Spiegelunebenheiten oder Verkippungen entstehen.
 In Anlehnung an einen Hohlleiter werden diese Moden $TEM_{lpq}$ genannt, wobei $l$ und $p$ die Knoten in x- und y- Richtung sind und als transversale Modenzahl bezeichnet werden.
 $q$ ist die longitudinale Modenzahl und wird oft weg gelassen, da sie für die skalare Feldverteilung irrelevant ist.  
 
 Die Feldverteilungen für einen konfokalen Resonator mit runden Spiegeln ist durch
-\begin{align}
- E_{lpq} \propto \cos \left(l \phi \right) \frac{4\rho^ 2}{\left(1+Z^2 \right)^{0.5\cdot \left(1+l\right)}}L_{q}^{p}\left( \frac{4\rho^2}{1+Z^2} \right)\exp \left(-\frac{\rho^2}{1+Z^2}\right)
-\cdot \exp \left\{-i \left[ \frac{\left(1+Z \right)\pi R}{\lambda} + \frac{\rho^2Z}{1+Z^2} - \left(l+2p+1\right)\left(\frac{\pi}{2}-\arctan \left(\frac{1-Z}{1+Z}\right) \right) \right] \right\}
-\end{align}
+\begin{align*}
+ E_{lpq} \propto &\cos \left(l \phi \right) \frac{4\rho^ 2}{\left(1+Z^2 \right)^{0.5\cdot \left(1+l\right)}}L_{q}^{p}\left( \frac{4\rho^2}{1+Z^2} \right)\exp \left(-\frac{\rho^2}{1+Z^2}\right) \\
+&\cdot\exp \left\{-i \left[ \frac{\left(1+Z \right)\pi R}{\lambda} + \frac{\rho^2Z}{1+Z^2} - \left(l+2p+1\right)\left(\frac{\pi}{2}-\arctan \left(\frac{1-Z}{1+Z}\right) \right) \right] \right\}
+\end{align*}
 \begin{align*}
 \text{mit} \rho= \sqrt{\frac{2\pi}{R\lambda}} \text{und} Z=\frac{2z}{R}
 \end{align*}
 approximativ gegeben. Dabei ist $L^{q}_{p}\left(u\right) $ das dazugehörige Laguerre-Polynom.
 
-Aus dieser Feldverteilung lässt sich die Intensitätsverteilung bestimmen. Die Intensitätsverteilung der $TEM_{00}$ Mode, die Mode mit der hösten Symmetrie und den geringsten Verlusten, ist durch die Gaußverteilung
+Aus dieser Feldverteilung lässt sich die Intensitätsverteilung bestimmen. Die Intensitätsverteilung der $TEM_{00}$ Mode, die Mode mit der höchsten Symmetrie und den geringsten Verlusten, ist durch die Gau"sverteilung
 \begin{align}
  I\left(r\right)=I_0\exp \left(-\frac{2r^2}{\omega^2}\right)
  \label{eq:tem00}
@@ -145,6 +145,19 @@ gegeben. Er lässt sich durch
 \end{align}
 bestimmen. 
 \section{Durchführung}
+
+\subsection{Überprüfung der Stabilitätsbedingung}
+Mithilfe des angebrachten Justierlasers wird ein Resonator aufgebaut. Dazu werden ein konkaver Spiegel und ein planarer Spiegel, sowie zwei konkave Spiegel verwendet. Nach der korrekten Installation der Spiegel sowie der Justierung der Position des Spiegels wird die Laser-Tätigkeit erreicht. Danach wird die Resonatorlänge schrittweise erhöht, um die Stabilitätsbedingung zu überprüfen.
+
+\subsection{Bestimmung der Wellenlänge}
+Zu Bestimmung der Wellenlänge wird ein Gitter mit Gitterkonstante g=100$\frac{1}{\si{\milli\metre}}$ in den Strahlgang gestellt und das Interferenzbild vermessen. Daraus wird die Wellenlänge des Lasers bestimmt.
+
+\subsection{Vermessung der TEM-Moden}
+Zur Vermessung der TEM00-Mode wird der Laserstrahl mit einer Linse aufgeweitet und mithilfe einer verschiebbaren Photodiode und des Picoamperemeters ausgemessen. \\
+Zur Vermessung der TEM01-Mode wird ein dünner Wolframdraht in den Strahlgang gestellt, um so die TEM00-Mode herauszufiltern. Auch diese Mode wird mithilfe der Photodiode und des Amperemeters vermessen.
+
+\subsection{Polarisationsmessung}
+Zur Ausmessung der Polarisation des Laserstrahls wird ein verstellbarer Polarisationsfilter in den Strahlengang gestellt und in $\ang{5}$-Schritten gedreht. Für jede Einstellung wird die Intensität aufgenommen.
 
 \section{Auswertung}
 
@@ -289,5 +302,8 @@ Die aufgenommenen Messwerte folgen der von der Theorie vorhergesagten Cosinus-Fo
 Diese Übereinstimmung mit dem Malusschen Gesetz zeigt, dass die Resonatorspiegel kaum einen Einfluss auf die Polarisation des Lasers haben.
 
 \section{Quellen}
+{[1]} Versuchsanleitung zu Versuch 61: \\
+http://129.217.
+224.2/HOMEPAGE/PHYSIKER/MASTER/SKRIPT/V61.pdf (letzte Version vom 16.11.2016, 09:45)\\
 
 \end{document}
