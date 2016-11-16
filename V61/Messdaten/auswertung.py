@@ -79,6 +79,10 @@ print('Wellenlänge = {0:10.2f}'.format(l_mean))
 #Polarisation fitten
 
 params_pol, covariance_pol = curve_fit(Ip, np.deg2rad(polarisation[0]), polarisation[1])
+errors=np.sqrt(np.diag(covariance_pol))
+print('I0 =', '%.3f' % params_pol[0], '+/-', '%.3f' % errors[0])
+print('delta =', '%.3f' % params_pol[1], '+/-', '%.3f' % errors[1])
+print(np.rad2deg(np.pi-params_pol[1]))
 x_plot=np.linspace(0,180,num=1000)
 
 plt.figure()
