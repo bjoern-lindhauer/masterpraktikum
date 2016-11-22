@@ -96,14 +96,14 @@ Da die Verstärkung exponentiell mit der Länge des Laufwegs des Lichts durch da
 
 \begin{figure}[h]
  \centering
-  \includegraphics[width=12cm]{images/schema_resonator.jpg}
+  \includegraphics[width=12cm]{images/schema_resonator.png}
  \label{fig:schema_resonator}
-  \caption{Schematische Funktionsweise eines Lasers [1]} 
+  \caption{ändere ich  [1]} 
 \end{figure}
 
 Wie in Abbildung \ref{fig:schema_resonator} dargestellt, besteht der optische Resonator aus zwei parallelen Spiegeln, von denen ein Spiegel teildurchlässig ist, um den Laserstrahl auszukoppeln.
 Die Spiegel können dabei entweder nur planparallel oder nur sphärisch oder eine Kombination dieser beiden Typen sein.
-Es sollten jedoch die Verluste durch die Spiegel geringer sein als die Verstärkung durch die angeregte Emission, damit ein angetriebener Oszillator entsteht.
+Es sollten jedoch die Verluste durch die Spiegel geringer sein als die Verstärkung durch die angeregte Emission, damit ein angetriebenen Oszillator entsteht.
 Um eine charakteristische Grö"se für diese optische Stabilität zu erhalten, wird der Resonatorparameter
 \begin{align}
  g_i := 1- \frac{L}{r_i}
@@ -118,8 +118,8 @@ gegeben.
 
 Da die Resonatorlänge $L$ viel grö"ser als die Wellenlänge $\lambda$ sein soll, erfüllen viele Frequenzen die Resonzbedingungen für stehende Wellen. 
 Diese $q$ Wellenlängen werden als longitudinale Mode bezeichnet. Es können auch transversalen Moden durch z.B. Spiegelunebenheiten oder Verkippungen entstehen.
-In Anlehnung an einen Hohlleiter werden diese Moden $\text{TEM}_{lpq}$ genannt, wobei $l$ und $p$ die Knoten in x- und y- Richtung sind und als transversale Modenzahl bezeichnet werden.
-Dabei ist $q$ die longitudinale Modenzahl und wird oft weg gelassen, da sie für die skalare Feldverteilung irrelevant ist.  
+In Anlehnung an einen Hohlleiter werden diese Moden $TEM_{lpq}$ genannt, wobei $l$ und $p$ die Knoten in x- und y- Richtung sind und als transversale Modenzahl bezeichnet werden.
+$q$ ist die longitudinale Modenzahl und wird oft weg gelassen, da sie für die skalare Feldverteilung irrelevant ist.  
 
 Die Feldverteilungen für einen konfokalen Resonator mit runden Spiegeln ist durch
 \begin{align*}
@@ -127,11 +127,11 @@ Die Feldverteilungen für einen konfokalen Resonator mit runden Spiegeln ist dur
 &\cdot\exp \left\{-i \left[ \frac{\left(1+Z \right)\pi R}{\lambda} + \frac{\rho^2Z}{1+Z^2} - \left(l+2p+1\right)\left(\frac{\pi}{2}-\arctan \left(\frac{1-Z}{1+Z}\right) \right) \right] \right\}
 \end{align*}
 \begin{align*}
-\text{mit } \rho= \sqrt{\frac{2\pi}{R\lambda}} \text{ und } Z=\frac{2z}{R}
+\text{mit} \rho= \sqrt{\frac{2\pi}{R\lambda}} \text{und} Z=\frac{2z}{R}
 \end{align*}
 approximativ gegeben. Dabei ist $L^{q}_{p}\left(u\right) $ das dazugehörige Laguerre-Polynom.
 
-Aus dieser Feldverteilung lässt sich die Intensitätsverteilung bestimmen. Die Intensitätsverteilung der $\text{TEM}_{00}$ Mode, die Mode mit der höchsten Symmetrie und den geringsten Verlusten, ist durch die Gau"sverteilung
+Aus dieser Feldverteilung lässt sich die Intensitätsverteilung bestimmen. Die Intensitätsverteilung der $TEM_{00}$ Mode, die Mode mit der höchsten Symmetrie und den geringsten Verlusten, ist durch die Gau"sverteilung
 \begin{align}
  I\left(r\right)=I_0\exp \left(-\frac{2r^2}{\omega^2}\right)
  \label{eq:tem00}
@@ -142,13 +142,13 @@ mit der Maximalintensität $I_0$ gegeben. Der Strahlradius $\omega$ ist durch de
 \end{align}
 gegeben. Er lässt sich durch
 \begin{align}
- \omega\left(z\right)=\omega_0\sqrt{1+\left(\frac{\theta z}{\omega_0}\right)}
+ \omega\left(z\right)=\omega_0\sqrt{1+\left(\frac{\theta z}{\omega}\right)}
 \end{align}
 bestimmen. 
 
 \section{Aufbau}
-Für den HeNe-Laser wird ein Helium-Neon-Gemisch im Verhältnis 5:1 verwendet. Das Gasgemisch befindet sich bei einem Druck von ca. 1 Torr in einem zylindrischen Glasgefä"s. Die Neon-Atome dienen als aktives Medium, die Heliumatome als Pumpquelle. Über Stö"se wird die Energie an die Neon-Atome weitergegeben, welche in metastabile Zustände übergehen und Besetzungsinversion erzeugt. \\
-Das Helium wird mithilfe von Elektroden-Entladungen gepumpt. Dominant bei diesem Laser ist die Wellenlänge $\lambda=\SI{632.8}{\nano\metre}$.\\
+Für den HeNe-Laser wird ein Helium-Neon-Gemisch im Verhältnis 5:1 verwendet. Das Gasgemisch befindet sich bei einem Druck von ca. 1 Torr in einem zylindrischen Glasgefä"s. Die Neon-Atome dienen als aktives Medium, die Heliumatome als Pumpquelle. Über Stö"se wird die Energie an die Neon-Atome weitergegeben, welche in metastabile Zustände übergehen und Besetzungsinversion erzeugt \\
+Das Helium wird mithilfe von Elektroden-Entladungen gepumpt. Dominant bei dieser Art von Laser ist die Wellenlänge $\lambda=\SI{632.8}{\nano\metre}$.\\
 Zur möglichst verlustfreien Durchleitung des Laserlichts sind beide Enden des zylindrischen Glasgefä"ses mit Brewsterfenstern abgeschlossen, welche auch der Einstellung einer wohldefinierten Polarisationsrichtung dienen. \\
 Ein bereits längs der optischen Achse ausgerichteter Justierlaser befindet sich ebenfalls auf der optischen Schiene, dieser kann zur Justage beim Aufbau des Resonators verwendet werden. Es stehen verschieden Spiegel, Gitter, Linsen und Photodioden zur Vermessung der Eigenschaften des Lasers zur Verfügung. 
 
