@@ -22,7 +22,7 @@ plt.rcParams['font.size'] = 16
 #Daten zur Bestimmung der Wellenlänge formartieren
 wave = np.genfromtxt('wavelength.txt', unpack='True')
 n=wave[0,:]
-d=unp.uarray(wave[1,:]*10**(-2),0.3)
+d=unp.uarray(wave[1,:]*10**(-2),0.003)
 
 #Polarisationsmessdaten einlesen
 polarisation = np.genfromtxt('polarisation.txt', unpack='True')
@@ -82,7 +82,7 @@ params_pol, covariance_pol = curve_fit(Ip, np.deg2rad(polarisation[0]), polarisa
 errors=np.sqrt(np.diag(covariance_pol))
 print('I0 =', '%.3f' % params_pol[0], '+/-', '%.3f' % errors[0])
 print('delta =', '%.3f' % params_pol[1], '+/-', '%.3f' % errors[1])
-print(np.rad2deg(np.pi-params_pol[1]))  
+print(np.rad2deg(np.pi-params_pol[1]))
 x_plot=np.linspace(0,180,num=1000)
 
 plt.figure()
@@ -104,7 +104,7 @@ plt.legend(loc="best", numpoints=1)
 plt.xlim(0,2)
 plt.ylim(0,1)
 plt.xlabel(r'L/m')
-plt.ylabel(r'g$_1*$g$_2$')
+plt.ylabel(r'g$_1\cdot$g$_2$')
 plt.grid()
 plt.savefig('../Protokoll/images/vorbereitung.pdf')
 plt.close()

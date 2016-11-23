@@ -1,4 +1,4 @@
-\documentclass[]{scrartcl}
+\documentclass[captions=tableheading]{scrartcl}
 
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -11,10 +11,11 @@
 \usepackage{wrapfig}
 \usepackage{caption}
 \usepackage{wasysym}
-\usepackage{siunitx}
+\usepackage[separate-uncertainty=true]{siunitx}
 \usepackage{picinpar}
 \usepackage{tikz}
 \usepackage{float}
+\usepackage{booktabs}
 
 \renewcommand{\figurename}{Abb.}
 \usepackage[
@@ -97,8 +98,8 @@ Da die Verstärkung exponentiell mit der Länge des Laufwegs des Lichts durch da
 \begin{figure}[h]
  \centering
   \includegraphics[width=12cm]{images/schema_resonator.jpg}
- \label{fig:schema_resonator}
-  \caption{Schematische Funktionsweise eines Lasers [1]} 
+ \caption{Schematische Funktionsweise eines Lasers [1]} 
+  \label{fig:schema_resonator}
 \end{figure}
 
 Wie in Abbildung \ref{fig:schema_resonator} dargestellt, besteht der optische Resonator aus zwei parallelen Spiegeln, von denen ein Spiegel teildurchlässig ist, um den Laserstrahl auszukoppeln.
@@ -149,71 +150,69 @@ bestimmen.
 \section{Aufbau}
 Für den HeNe-Laser wird ein Helium-Neon-Gemisch im Verhältnis 5:1 verwendet. Das Gasgemisch befindet sich bei einem Druck von ca. 1 Torr in einem zylindrischen Glasgefä"s. Die Neon-Atome dienen als aktives Medium, die Heliumatome als Pumpquelle. Über Stö"se wird die Energie an die Neon-Atome weitergegeben, welche in metastabile Zustände übergehen und Besetzungsinversion erzeugt. \\
 Das Helium wird mithilfe von Elektroden-Entladungen gepumpt. Dominant bei diesem Laser ist die Wellenlänge $\lambda=\SI{632.8}{\nano\metre}$.\\
-Zur möglichst verlustfreien Durchleitung des Laserlichts sind beide Enden des zylindrischen Glasgefä"ses mit Brewsterfenstern abgeschlossen, welche auch der Einstellung einer wohldefinierten Polarisationsrichtung dienen. \\
+Zur möglichst verlustfreien Durchleitung des Laserlichts sind beide Enden des zylindrischen Glasgefä"ses mit Brewsterfenstern, die im Brewster-Winkel zur optischen Achse stehen, abgeschlossen, welche auch der Einstellung einer wohldefinierten Polarisationsrichtung dienen. Der Brewsterwinkel ist dabei der Winkel, unter welchem nur das senkrecht zur Einfallsebene polarisierte Licht reflektiert wird.\\
 Ein bereits längs der optischen Achse ausgerichteter Justierlaser befindet sich ebenfalls auf der optischen Schiene, dieser kann zur Justage beim Aufbau des Resonators verwendet werden. Es stehen verschieden Spiegel, Gitter, Linsen und Photodioden zur Vermessung der Eigenschaften des Lasers zur Verfügung. 
 
 \section{Durchführung}
-
-\subsection{Überprüfung der Stabilitätsbedingung}
-Mithilfe des angebrachten Justierlasers wird ein Resonator aufgebaut. Dazu werden ein konkaver Spiegel und ein planarer Spiegel, sowie zwei konkave Spiegel verwendet. Nach der korrekten Installation der Spiegel sowie der Justierung der Position des Spiegels wird die Laser-Tätigkeit erreicht. Danach wird die Resonatorlänge schrittweise erhöht, um die Stabilitätsbedingung zu überprüfen.
 
 \subsection{Bestimmung der Wellenlänge}
 Zu Bestimmung der Wellenlänge wird ein Gitter mit Gitterkonstante g=100$\frac{1}{\si{\milli\metre}}$ in den Strahlgang gestellt und das Interferenzbild vermessen. Daraus wird die Wellenlänge des Lasers bestimmt.
 
 \subsection{Vermessung der TEM-Moden}
-Zur Vermessung der TEM00-Mode wird der Laserstrahl mit einer Linse aufgeweitet und mithilfe einer verschiebbaren Photodiode und des Picoamperemeters ausgemessen. \\
-Zur Vermessung der TEM01-Mode wird ein dünner Wolframdraht in den Strahlgang gestellt, um so die TEM00-Mode herauszufiltern. Auch diese Mode wird mithilfe der Photodiode und des Amperemeters vermessen.
+Zur Vermessung der TEM$_{00}$-Mode wird der Laserstrahl mit einer Linse aufgeweitet und mithilfe einer verschiebbaren Photodiode und des Picoamperemeters ausgemessen. \\
+Zur Vermessung der TEM$_{01}$-Mode wird ein dünner Wolframdraht in den Strahlgang gestellt, um so die TEM$_{00}$-Mode herauszufiltern. Auch diese Mode wird mithilfe der Photodiode und des Amperemeters vermessen.
 
 \subsection{Polarisationsmessung}
 Zur Ausmessung der Polarisation des Laserstrahls wird ein verstellbarer Polarisationsfilter in den Strahlengang gestellt und in $\ang{5}$-Schritten gedreht. Für jede Einstellung wird die Intensität aufgenommen.
 
-\section{Auswertung}
-
 \subsection{Überprüfung der Stabilitätsbedingung}
-Zur Untersuchung der Stabilität des Lasers wurden zwei Konfigurationen von Spiegeln verwendet. Es wurden Spiegel mit Krümmungsradien r$_1=1\si{\meter}$ und r$_2=1.4\si{\meter}$ sowie r$_1=1\si{\meter}$ und r$_2=\infty\si{\meter}$, d.h. einem planaren Spiegel, verwendet. \\
-Gemä"s der Stabilitätsbedingung aus Gleichung \ref{eq:stabilitaet} wurden dann Graphen erstellt, an welchen die maximale Distanz L abzulesen ist. Diese sind in Abbildung \ref{fig:stab} zu sehen. \\
-\begin{center}
-	\includegraphics[width=\textwidth]{images/vorbereitung.pdf}
-	\captionof{figure}{Stabilitätskurven des Lasers bei verschiedenen Linsenkonfigurationen}
-	\label{fig:stab}
-\end{center}
-Aus der Abbildung können die beiden maximalen Längen L$_1=1.4\si{\meter}$ und L$_2=1\si{\metre}$ abgelesen werden. Im Experiment konnte nur die Kombination eines Spiegels mit Krümmungsradius r$=1.4\si{\metre}$ und eines planaren Spiegels verwendet werden. Die maximal erreichbare Resonatorlänge betrug dabei L$_{\text{max}}=1.34\si{\meter}$.
+Mithilfe des angebrachten Justierlasers wird ein Resonator aufgebaut. Dazu werden zunächst ein konkaver Spiegel und ein planarer Spiegel verwendet, danach werden diese durch zwei konkave Spiegel ausgetauscht. Nach der korrekten Installation der Spiegel sowie der Justierung der Position des Spiegels wird die Laser-Tätigkeit erreicht. Danach wird die Resonatorlänge schrittweise erhöht, um die Stabilitätsbedingung zu überprüfen.
+
+\section{Auswertung}
 
 \subsection{Bestimmung der Wellenlänge des Lasers}
 Zur Bestimmung der Wellenlänge des vom Laser emittierten Lichts wurden die Positionen von einem durch ein Gitter mit g=100$\frac{1}{\si{\milli\metre}}$ erzeugten Maxima aufgezeichnet. Diese Messwerte sind in Tabelle \ref{tab:maxima} dargestellt. \\
-\begin{center}
-	\begin{tabular}{|c|c|}
-		\hline n & r [cm] \\
-		\hline -5 & 45.5 \\
-			   -4 & 36.1 \\
-			   -3 & 26.9 \\
-			   -2 & 17.8 \\
-			   -1 & 8.7 \\
-			    1 & 9.1 \\
-			    2 & 18.5 \\
-			    3 & 28.5 \\
-			    4 & 37.4 \\
-			    5 & 48.1 \\
-		\hline
-	\end{tabular}
-	\captionof{table}{Distanz der einzelnen Maxima vom 0. Maximum}
-	\label{tab:maxima}
-\end{center}
+\begin{table}[H]
+	\centering
+		\captionof{table}{Distanz der einzelnen Maxima vom 0. Maximum}
+		\label{tab:maxima}
+		\begin{tabular}{r r}
+			\toprule
+			n & r [cm] \\
+			\midrule
+			-5 & 45.5 \\
+			-4 & 36.1 \\
+			-3 & 26.9 \\
+			-2 & 17.8 \\
+			-1 & 8.7 \\
+			1 & 9.1 \\
+			2 & 18.5 \\
+			3 & 28.5 \\
+			4 & 37.4 \\
+			5 & 48.1 \\
+			\bottomrule
+		\end{tabular}
+\end{table}
 Die Wellenlänge ergibt sich dann aus der Formel für die Beugung am Gitter aus
 \begin{align}
 \lambda = \frac{\sin\left(\arctan\left( \frac{d}{L}\right) \right) }{ng}\quad.
 \end{align}
 Nach Mittlung über alle berechneten Wellenlängen ergibt sich die experimentell bestimmte Wellenlänge zu
 \begin{align*}
-\lambda = (636.42 \pm 360.59)\si{\nano\metre}\quad.
+\lambda = (636.42 \pm 43.44)\si{\nano\metre}\quad.
 \end{align*}
 
-\subsection{Ausmessung der TEM00-Mode}
-Für die Vermessung der TEM00-Mode wurden Werte für den Photostrom $I$ in Abhängigkeit von der Position d der Photodiode aufgenommen, diese Werte sind in Tabelle \ref{tab:tem00} dargestellt.
-\begin{center}
-	\begin{tabular}{|c|c||c|c|}
-		\hline d [mm] & I [$\mu$A] & d [mm] & I [$\mu$A]\\
-		\hline	15	&	0	&	-1	&	0,076	\\
+\subsection{Ausmessung der TEM$_{00}$-Mode}
+Für die Vermessung der TEM$_{00}$-Mode wurden Werte für den Photostrom $I$ in Abhängigkeit von der Position d der Photodiode aufgenommen, diese Werte sind in Tabelle \ref{tab:tem00} dargestellt.
+\begin{table}
+	\centering
+	\captionof{table}{Werte für den Photostrom I in Abhängigkeit von der Position d der Photodiode}
+	\label{tab:tem00}
+	\begin{tabular}{c c c c}
+		\toprule
+				 d [mm] & I [$\mu$A] & d [mm] & I [$\mu$A]\\
+		\midrule
+				15	&	0	&	-1	&	0,076	\\
 				14	&	0	&	-2	&	0,07	\\
 				13	&	0	&	-3	&	0,066	\\
 				12	&	0	&	-4	&	0,078	\\
@@ -229,30 +228,31 @@ Für die Vermessung der TEM00-Mode wurden Werte für den Photostrom $I$ in Abhä
 				2	&	0,074	&	-14	&	0,007	\\
 				1	&	0,096	&	-15	&	0,006	\\
 				0	&	0,09	&		&		\\
-		\hline
+		\bottomrule
 	\end{tabular}
-	\captionof{table}{Werte für den Photostrom I in Abhängigkeit von der Position d der Photodiode}
-	\label{tab:tem00}
-\end{center}
-Aus Gleichung \ref{eq:tem00} folgt, dass der Verlauf der TEM00-Mode die Form einer Gau"s-Funktion besitzen muss, mit $r_0$ der Nullposition der Photodiode und $w$ dem Strahlradius. \\
+\end{table}
+Aus Gleichung \ref{eq:tem00} folgt, dass der Verlauf der TEM$_{00}$-Mode die Form einer Gau"s-Funktion besitzen muss, mit $r_0$ der Nullposition der Photodiode und $\omega$ dem Strahlradius. \\
 Ein nicht-linearer Fit mithilfe von \textit{python} ergibt die Fit-Parameter
 \begin{align*}
 I_0=& (0.088 \pm 0.004) \si{\mu\ampere}\\
 r_0=& (-2.362 \pm 0.276) \si{\milli\metre}\\
-w=&  (10.230  \pm 0.554) \si{\milli\metre}\quad.
+\omega=&  (10.230  \pm 0.554) \si{\milli\metre}\quad.
 \end{align*}
 Die angepasste Theoriekurve und die Messwerte sind in Abbildung \ref{fig:tem00} dargestellt.
 \begin{center}
-	\includegraphics[width=\textwidth]{images/tem00.pdf}
+	\includegraphics[width=10cm]{images/tem00.pdf}
 	\captionof{figure}{Messwerte für den Photostrom I in Abhängigkeit von der Diodenposition und angepasste Theoriekurve}
 	\label{fig:tem00}
 \end{center}
 \subsection{Polarisationsmessung}
 Der in Abhängigkeit von der Winkeleinstellung des Polarisationsfilters gemessene Fotostrom ist in Tabelle \ref{tab:polarisation} dargestellt.
-\begin{center}
-	\begin{tabular}{|c|c||c|c|}
-	\hline $\phi$ [$^{\circ}$] & I [$\mu$A] & $\phi$ [$^{\circ}$] & I [$\mu$A]\\
-	\hline 0	&	0.53	&	95	&	1.2	\\
+\begin{table}
+	\centering
+	\captionof{table}{Werte für den Photostrom I in Abhängigkeit von dem eingestellten Winkel $\phi$}
+	\label{tab:polarisation}
+	\begin{tabular}{r r r r}
+	\toprule $\phi$ [$^{\circ}$] & I [$\mu$A] & $\phi$ [$^{\circ}$] & I [$\mu$A]\\
+	\midrule 0	&	0.53	&	95	&	1.2	\\
 		   5	&	0.4	&	100	&	1.39	\\
 	   	  10	&	0.32	&	105	&	1.6	\\
 		  15	&	0.25	&	110	&	1.6	\\
@@ -271,46 +271,57 @@ Der in Abhängigkeit von der Winkeleinstellung des Polarisationsfilters gemessen
 		  80	&	0.9	&	175	&	0.8	\\
 		  85	&	0.98	&	180	&	0.65	\\
 		  90	&	1.27	&		&		\\				
-	\hline
+	\bottomrule
 		\end{tabular}
-		\captionof{table}{Werte für den Photostrom I in Abhängigkeit von dem eingestellten Winkel $\phi$}
-		\label{tab:polarisation}
-\end{center}
+\end{table}
 Die Intensität in Abhängigkeit vom eingestellten Winkel des Polarisationsfilters ist durch 
 \begin{align}
 T(\phi)=I_0\cos\left(\phi+\delta\right)^2
 \end{align}
 gegeben. \\
-Mit \textit{python} wurde die Theoriekurve mithilfe der experimentellen Daten angepasst. Die Fit-Parameter ergeben sich zu
+Die Fit-Parameter ergeben sich zu
 \begin{align*}
 I_0&=(1.815 \pm 0.019)\si{\mu\ampere} \\
 \delta&=(0.944 \pm 0.009)\quad.
 \end{align*}
-Messwerte und Fit sind in Abbildung \ref{fig:pol} dargestellt. Es ist deutlich sichtbar, dass die Intensität für $\phi=\ang{125.9}$ maximal wird, daher ist er Laser auch in dieser Richtung polarisiert.
+Messwerte und Fit sind in Abbildung \ref{fig:pol} dargestellt. Es ist deutlich sichtbar, dass die Intensität für $\phi=\ang{125.9}$ maximal wird.
 \begin{center}
  	\includegraphics[width=\textwidth]{images/polarisation.pdf}
  	\captionof{figure}{Messwerte für den Photostrom I in Abhängigkeit von des eigestellten Winkels des Polarisationsfilters und angepasste Theoriekurve}
  	\label{fig:pol}
 \end{center}
 
+\subsection{Überprüfung der Stabilitätsbedingung}
+Zur Untersuchung der Stabilität des Lasers wurden zwei Konfigurationen von Spiegeln verwendet. Es wurden Spiegel mit Krümmungsradien r$_1=1\si{\meter}$ und r$_2=1.4\si{\meter}$ sowie r$_1=1\si{\meter}$ und r$_2=\infty\si{\meter}$, d.h. einem planaren Spiegel, verwendet. \\
+Gemä"s der Stabilitätsbedingung aus Gleichung \ref{eq:stabilitaet} wurden dann Graphen erstellt, an welchen die maximale Distanz L abzulesen ist. Diese sind in Abbildung \ref{fig:stab} zu sehen. \\
+\begin{center}
+	\includegraphics[width=\textwidth]{images/vorbereitung.pdf}
+	\captionof{figure}{Stabilitätskurven des Lasers bei verschiedenen Linsenkonfigurationen}
+	\label{fig:stab}
+\end{center}
+Aus der Abbildung können die beiden maximalen Längen L$_1=1.4\si{\meter}$ und L$_2=1\si{\metre}$ abgelesen werden. Im Experiment konnte nur die Kombination eines Spiegels mit Krümmungsradius r$=1.4\si{\metre}$ und eines planaren Spiegels verwendet werden. Die maximal erreichbare Resonatorlänge betrug dabei L$_{\text{max}}=1.34\si{\meter}$.
+
 \section{Diskussion}
 
-\subsection{Überprüfung der Stabilitätsbedingung}
-Die theoretisch mögliche Resonatorlänge betrug $\SI{1.4}{\metre}$, dies wurde mit einer experimentell erreichten Resonatorlänge von $\SI{1.4}{\metre}$ nahezu erreicht. Die kleine Abweichung kann durch ein imperfektes Gesamtsystem, d.h. zum Beispiel leichte Erschütterung des Tisches, erklärt werden.
-
 \subsection{Bestimmung der Wellenlänge}
-Die experimentell bestimmte Wellenlänge von $\lambda = \SI{636.42}{\nano\metre}$ stimmt gut mit der in der Anleitung angegebenen Wellenlänge von $\lambda = \SI{632.8}{\nano\metre}$ überein. Der statistische Fehler ist jedoch sehr hoch, sodass eine ausreichende Genauigkeit der Messung nicht gegeben ist.
+Die experimentell bestimmte Wellenlänge von $\lambda = \SI{636.42(4344)}{\nano\metre}$ stimmt gut mit der in der Anleitung angegebenen Wellenlänge von $\lambda = \SI{632.8}{\nano\metre}$ überein. Der Fehler ist auf die begrenzte Ablesegenauigkeit zurückzuführen, diese betrug $\Delta d=\SI{0.3}{\centi\metre}$.
 
 \subsection{Vermessung der TEM-Moden}
-Aufgrund der sehr geringen Leistung des He-Ne-Lasers konnten weder die longitudinalen Moden noch die TEM01-Mode vermessen werden. Mögliche Gründe dafür sind Verunreinigungen in der Apparatur und eine ungenaue Justierung. \\
-Die gemessenen Messdaten spiegeln in Grundzügen den theoretischen Verlauf der TEM00-Mode wieder. Abweichungen können wie bereits erwähnt durch ungenaue Justierung und Verunreinigungen erklärt werden. 
+Aufgrund der sehr geringen Leistung des He-Ne-Lasers konnten weder die longitudinalen Moden noch die TEM$_{01}$-Mode vermessen werden. Mögliche Gründe dafür sind Verunreinigungen in der Apparatur und eine ungenaue Justierung. \\
+Die gemessenen Messdaten spiegeln in Grundzügen den theoretischen Verlauf der TEM$_{00}$-Mode wieder. Abweichungen können wie bereits erwähnt durch ungenaue Justierung und Verunreinigungen erklärt werden. \\
+Für die fit-Parameter haben sich  $I_0= (0.088 \pm 0.004) \si{\mu\ampere},\,r_0= (-2.362 \pm 0.276) \si{\milli\metre},\,\omega=  (10.230  \pm 0.554) \si{\milli\metre}$ ergeben. Die Unsicherheiten der Parameter liegen für $I_0$ und $r_0$ in der zweiten siginifikanten Stelle und für $\omega$ in der dritten signifikanten Stelle. Damit sind die Parameter mit ausreichender Genauigkeit bestimmt.
 
 \subsection{Polarisationsmessung}
-Die aufgenommenen Messwerte folgen der von der Theorie vorhergesagten Cosinus-Form. Es ergaben sich leichte statistische Abweichungen, die jedoch kaum signifikant sind. \\
-Diese Übereinstimmung mit dem Malusschen Gesetz zeigt, dass die Resonatorspiegel kaum einen Einfluss auf die Polarisation des Lasers haben.
+Die aufgenommenen Messwerte folgen der von der Theorie vorhergesagten Cosinus-Form. Es ergaben sich leichte statistische Abweichungen, die jedoch kaum signifikant sind. Die Fit-Paramter lauten $I_0=(1.815 \pm 0.019)\si{\mu\ampere},\, \delta=(0.944 \pm 0.009)$. \\
+Diese Übereinstimmung mit dem Malusschen Gesetz zeigt, dass die Resonatorspiegel kaum einen Einfluss auf die Polarisation des Lasers haben. \\
+Das Maximum bei $\phi=\ang{125.9}$ zeigt, dass der Laser in dieser Richtung polarisiert ist.
+
+\subsection{Überprüfung der Stabilitätsbedingung}
+Die theoretisch mögliche Resonatorlänge betrug $\SI{1.4}{\metre}$, dies wurde mit einer experimentell erreichten Resonatorlänge von $\SI{1.34}{\metre}$ nahezu erreicht. Die kleine Abweichung kann durch ein imperfektes Gesamtsystem, d.h. zum Beispiel leichte Erschütterung des Tisches, erklärt werden.
 
 \section{Quellen}
-{[1]} Versuchsanleitung zu Versuch 61: \\
+{[1]} Physikalisches Praktikum, TU Dortmund: \\
+Versuchsanleitung zu Versuch 61: \\
 http://129.217.
 224.2/HOMEPAGE/PHYSIKER/MASTER/SKRIPT/V61.pdf (letzte Version vom 16.11.2016, 09:45)\\
 
