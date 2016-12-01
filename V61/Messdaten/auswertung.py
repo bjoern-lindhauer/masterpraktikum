@@ -124,10 +124,10 @@ x_plot=np.linspace(-15,15,num=1000)
 
 plt.figure()
 plt.plot(x_plot, I(x_plot, *params_tem), 'r-', label='Nichtlinearer Fit')
-plt.plot(tem00[0], tem00[1], 'gx', label='Messdaten TEM00-Mode')
+plt.plot(tem00[0], tem00[1], 'gx', label=r'Messdaten TEM$_{00}$-Mode')
 plt.xlabel('r/mm')
 plt.ylabel('I/$\mu$A')
-plt.legend(loc="best", numpoints=1)
+plt.legend(loc="best", numpoints=1, fontsize="medium")
 plt.savefig('../Protokoll/images/tem00.pdf')
 plt.close()
 
