@@ -1,0 +1,126 @@
+\documentclass[]{scrartcl}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{ngerman}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{caption}
+\usepackage{wasysym}
+\usepackage{siunitx}
+\usepackage{picinpar}
+\usepackage{tikz}
+\usepackage{float}
+
+\renewcommand{\figurename}{Abb.}
+\usepackage[
+	colorlinks=true,
+	urlcolor=blue,
+	linkcolor=black
+]{hyperref}
+
+
+%Hier Titel und so
+\newcommand{\versuchnummer}{V59} 
+\newcommand{\versuchname}{Modulation und Demodulation elektrischer Schwingungen} 
+\newcommand{\versuchdatum}{24.02.16} 
+
+
+\title{Versuch \versuchnummer\\ \versuchname}
+\subtitle{Physikalisches Fortgeschrittenenpraktikum}
+\author{Robert Rauter und Björn Lindhauer}
+\date{\versuchdatum} 
+\begin{document}
+\begin{titlepage}
+{\large \versuchdatum}
+\vspace{7cm}
+\begin{center}
+\textbf{\huge Versuch \versuchnummer:}\\
+\vspace{0.5cm}
+\textbf{\huge \versuchname}\\
+\vspace{0.2cm}
+\textbf{ Physikalisches Fortgeschrittenenpraktikum}\\
+\vspace{9cm}
+
+{\Large Robert Rauter \ \ \hspace{1.5cm} und \hspace{1.5cm} Björn Lindhauer}\\
+{ \url{robert.rauter@tu-dortmund.de} \ \ \hspace{2cm} \url{bjoern.lindhauer@tu-dortmund.de}}
+\end{center}
+\end{titlepage}
+\section{Einleitung}
+
+\section{Theoretische Grundlagen}
+\subsection{Ideale Operationsverstärker}
+Ein Operationsverstärker wird durch das Schaltsymbol XXXX repräsentiert und ist ein elektronisches Bauteil, dessen Ausgangsspannung
+\begin{alig}
+ U_{\text{A}}=V\cdot \left( U_{\text{P}}-U_{\text{N}} \right)
+\end{alig}
+ist, welche somit proportional zur Differenz an den beiden Eingängen ist.
+
+Deswegen wir er auch als gleichstromgekoppelter Differenzverstärker bezeichnet.
+
+Die Betribsspannung $\pm U_{\text{B}}$ limitiert das Ausgangssignal $U_{\text{A}}$ auf dem Bereich
+\begin{align}
+ -U_{\text{B}} < U_{\text{A}} < U_{\text{B}}
+\end{align}
+und sorgt für eine Sättigung bei $\left| U_{\text{A}} \right| > U_{\text{B}}$. Der Verlauf der Kurve ist in Abbildung XXX schematisch dargestellt. 
+
+Es wird der Eingang mit der Spannung $U_{\text{P}}$ als nicht-invertierter Eingang (+) bezeichnet, da die Ausgangsspannung $U_{\text{A}}$ n Phase mit der Spannung $U_{\text{P}}$ ist.
+Die Ausgangsspannung ist jedoch gegenphasig zur Spannung $U_{\text{N}}$, weshalb deren Eingang als invertierter Eingang (-) bezeichnet wird.
+
+Bei einem idealen Operationsverstärker ist die Leerlaufverstärkung $V$, sowie der Eingangswiderstand $r_{e}$ unendlich groß und der Ausgangswirderstand $r_a$ verschwindet.
+
+Dies ist beim realen Operationsverstärker jedoch nicht der Fall, sodass es sinnvoll ist, weitere Größen zu definieren.
+
+\subsection{Reale Operationsverstärker}
+Die Ausgangsspannung ist von Null verschieden, wenn die beiden Eingangsspannungen gleich sind. Deshalb wird die Gleichtaktverstärkung
+\begin{align}
+ V_{gl}:=\frac{\Delta U_{A}}{\Delta U_{gl}}
+\end{align}
+definiert.
+
+Aus den endlichen Eingagnswiderständen folgen Eingangsruheströme $I_{P}$ und $I_{N}$, die zur Definition des Eingangsruhestroms
+\begin{align}
+ I_{B}:=\frac{1}{2} \cdot \left(I_{P}+I_{N}\right)
+\end{align}
+und des Offsetstroms
+\begin{align}
+ I_{0}:= \left. I_{P}-I_{N}\right|_{U_{P}=U_{N}=0} 
+\end{align}
+führen.
+
+Der Differenzwiderstand wird als
+\begin{align}
+ r_{D}:=\begin{center}
+\begin{array}{ll}
+\frac{\Delta U_{P}}{\Delta I_{P}} & \text{, }U_{N}=0\\
+\frac{\Delta U_{N}}{\Delta I_{N}} & \text{, }U_{P}=0
+        \end{array}
+        \end{center}
+\end{align}
+definiert und der Gleichtakteingangswiderstand als
+\begin{align}
+ r_{gl}:=\frac{\Delta U_{gl}}{\Delta I_{gl}} \hspace{0.3cm}\text{.}
+\end{align}
+
+Da die Ausgangsspannung $U_{a}$ bei realen Operationsverstärkern ungleich null ist, wird die Offsetspannung
+\begin{align}
+ U_0:=\left. U_{P}-U_{N} \right|_{U_{a}=0}
+\end{align}
+definiert.
+
+Diese ist häufig eine Funktion der Temperatur, Zeit und Betriebsspannung. Die totale Ableitung von $U_{0}$ wird Offsetspannungsdrift genannt.
+
+Reale Operationsverstärker kommen idealen Operationsverstärkern sehr nahe, sodass 
+\section{Durchführung}
+
+\section{Auswertung}
+
+\section{Quellen}
+{[1]} Versuchsanleitung zu Versuch 59: \\
+http://129.217.
+224.2/HOMEPAGE/PHYSIKER/MASTER/SKRIPT/V59.pdf (letzte Version vom 30.05.2016, 10:50)\\
+\end{document}
