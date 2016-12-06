@@ -42,27 +42,37 @@ def f(x,m, b):
 def g(x,c):
     return c
 
-#Funktion fitten
-
-# guess = [1, 1]
-# x_plot=np.linspace(0,10, num=1000)
-# params, covariance = curve_fit(f, unp.nominal_values(data1), unp.nominal_values(data2), p0=guess)
-
 #Daten und Fit plotten
 
-amplif = np.ones((19,3))
+amplif = np.ones((19,4))
 
-for i in range(1,4):
+for i in range(1,5):
 
     amplif[:,i-1]=data_linverst[2*i-1,:]/data_linverst[2*i,:]
-    print(amplif)
+
+    x_plot=np.linspace(0.5,10000, num=1000000)
+    params_1, covariance_1 = curve_fit(f,np.log(data_linverst[0,13:19]), np.log(amplif[13:19,0]))
+
+    params_2, covariance_2 = curve_fit(f,np.log(data_linverst[0,15:19]), np.log(amplif[15:19,1]))
+
+    params_3, covariance_3 = curve_fit(f,np.log(data_linverst[0,14:19]), np.log(amplif[14:19,2]))
+
+    params_4, covariance_4 = curve_fit(f,np.log(data_linverst[0,10:19]), np.log(amplif[10:19,3]))
+
+    params=np.array([params_1,params_2,params_3,params_4])#+
+
+    print(params)
     plt.figure()
     err_v = 0.05
-    plt.errorbar(data_linverst[0,:], amplif[:,i-1] , fmt='bx', label="Messung zum Widerstand%d" % i)
-    #plt.plot(x_plot, f(x_plot, *params), 'r-', label='Fit')
+    if i==4:
+        plt.errorbar(np.log(data_linverst[0,0:17]), np.log(amplif[0:17,i-1]) + err_v , fmt='bx', label="Messung zum Widerstand %d" % i)
+    else:
+        plt.errorbar(np.log(data_linverst[0,:]), np.log(amplif[:,i-1]) + err_v , fmt='bx', label="Messung zum Widerstand %d" % i)
+
+    plt.plot(np.log(x_plot), f(np.log(x_plot), params[:,i-1]), 'r-', label='Fit')
     plt.legend(loc="best", numpoints=1)
-    #plt.xlim(0,10)
-    #plt.ylim(0,10)
+    plt.grid()
+    plt.ylim(-4,0.1)
     plt.xlabel(r'Frequenz [kHz]')
     plt.ylabel(r"Verstärkung V' ")
     plt.savefig('../Protokoll/images/plot%d.pdf' % i)
