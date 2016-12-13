@@ -55,9 +55,9 @@
 \section{Theoretische Grundlagen}
 \subsection{Ideale Operationsverstärker}
 Ein Operationsverstärker wird durch das Schaltsymbol XXXX repräsentiert und ist ein elektronisches Bauteil, dessen Ausgangsspannung
-\begin{alig}
+\begin{align}
  U_{\text{A}}=V\cdot \left( U_{\text{P}}-U_{\text{N}} \right)
-\end{alig}
+\end{align}
 ist, welche somit proportional zur Differenz an den beiden Eingängen ist.
 
 Deswegen wir er auch als gleichstromgekoppelter Differenzverstärker bezeichnet.
@@ -94,12 +94,13 @@ führen.
 
 Der Differenzwiderstand wird als
 \begin{align}
- r_{D}:=\begin{center}
+ r_{D}:=
+\begin{center}
 \begin{array}{ll}
 \frac{\Delta U_{P}}{\Delta I_{P}} & \text{, }U_{N}=0\\
 \frac{\Delta U_{N}}{\Delta I_{N}} & \text{, }U_{P}=0
-        \end{array}
-        \end{center}
+\end{array}
+\end{center}
 \end{align}
 definiert und der Gleichtakteingangswiderstand als
 \begin{align}
@@ -116,11 +117,31 @@ Diese ist häufig eine Funktion der Temperatur, Zeit und Betriebsspannung. Die t
 
 Reale Operationsverstärker kommen idealen Operationsverstärkern sehr nahe, sodass die eingeführten Größen als Störparameter angesehen werden können und somit zu Korrekturen führen.
 
-\section{Versuchsaufbau}
 
 \section{Durchführung}
 
 \subsection{Frequenzgang des gegengekoppelten Verstärkers}
+In den Abbildungen \ref{fig:freq1}-\ref{fig:freq4} sind die Frequenzgänge des gegengekoppelten Verstärkers für verschiedene Verstärkungsgrade $V'$ dargestellt. Es wurde dabei stets ein Widerstand der Größe $R_1=\SI{1}{\kilo\ohm}$ verwendet.
+
+\begin{minipage}[t]{0.5\textwidth}
+	\includegraphics[width=\textwidth]{images/plot1.pdf}
+	\captionof{figure}{Frequenzgang für R$_n=\SI{1}{\kilo\ohm}$}
+	\label{fig:freq1}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+	\includegraphics[width=\textwidth]{images/plot2.pdf}
+	\captionof{figure}{Frequenzgang für R$_n=\SI{100}{\ohm}$}
+\end{minipage} \\
+\begin{minipage}[t]{0.5\textwidth}
+	\includegraphics[width=\textwidth]{images/plot3.pdf}
+	\captionof{figure}{Frequenzgang für R$_n=\SI{570}{\ohm}$}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+	\includegraphics[width=\textwidth]{images/plot4.pdf}
+	\captionof{figure}{Frequenzgang für R$_n=\SI{100}{\kilo\ohm}$}
+	\label{fig:freq4}
+\end{minipage} \\
+
 
 \subsection{Der Umkehrintegrator}
 
