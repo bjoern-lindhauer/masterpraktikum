@@ -23,6 +23,8 @@ data_diff = np.genfromtxt('difffreq.txt', unpack='True')
 
 data_schwing_abfall = np.genfromtxt('scope_101_data.txt', unpack='True')
 
+data_phase = np.genfromtxt('freqphasggverst.txt', unpack='True')
+
 #Fehlerformelausgabe
 
 def error(f, err_vars=None):
@@ -48,11 +50,8 @@ def f(x,m, b):
 def g(x,c):
     return c
 
-def h(x, a, l, k, p):
-    return a*np.exp(-x/l)*np.sin(k*x+p)
-
-def h_mod(x,a,k,p):
-    return a*np.sin(k*x+p)
+def h(x, a, l):
+    return a*np.exp(-x/l)
 
 
 #Frequenzen fitten
@@ -121,19 +120,45 @@ plt.savefig('../Protokoll/images/differentiator.pdf')
 #Abfallende Schwingung
 
 data_schwing_mod = data_schwing_abfall[:,200:1750]
-x0=[2.2,0.010,3443,0.038]
-x1=[2.5,3500, 0.001]
 
-params_schw, covariance_schw = curve_fit(h, data_schwing_mod[0] , data_schwing_mod[1], p0=x0)
-print(params_schw)
+#Peak-Detection
+
+peaks = np.ones((2,16))
+
+for i in range (1,16):
+
+     j = (i-1)*100
+     k = j+100
+     index = np.argmax(data_schwing_mod[2,j:k])
+     index=index+j
+     peaks[0,i] = data_schwing_mod[0,index]
+     peaks[1,i] = data_schwing_mod[2,index]
+
+peaks = np.delete(peaks, 0, 1)
+print(peaks)
+
+x0=[3,0.008]
+
+params_exp, covariance_exp = curve_fit(h, peaks[0], peaks[1], p0=x0)
 x_plot=np.linspace(0,0.018, num=10000)
 
 plt.figure()
 plt.plot(data_schwing_mod[0], data_schwing_mod[2], 'bx', label=r'Messwerte')
-plt.plot(x_plot, h(x_plot, *params_schw), 'r-', label='nichtlinearer Fit')
+plt.plot(x_plot, h(x_plot, *params_exp), 'r-', label='nichtlinearer Fit')
 plt.legend(loc="best", numpoints=1)
 plt.grid()
 plt.savefig('../Protokoll/images/schwing_abfall.pdf')
+
+#Phasebeziehung Gegenverstärker
+
+plt.figure()
+plt.plot(data_phase[0], np.deg2rad(data_phase[1]), 'bx', label=r'Messwerte')
+plt.xlabel(r'Frequenz f/Hz')
+plt.ylabel(r'Phase $\phi$')
+plt.legend(loc='best', numpoints=1)
+plt.ticklabel_format(style='sci', axis='x', scilimits=(0,0))
+plt.grid()
+plt.savefig('../Protokoll/images/phase_frequenz.pdf')
 
 # errors=np.sqrt(np.diag(covariance))
 #
