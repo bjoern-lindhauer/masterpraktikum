@@ -53,6 +53,9 @@ def g(x,c):
 def h(x, a, l):
     return a*np.exp(-x/l)
 
+def const(x,c):
+    return c*np.ones(np.shape(x))
+
 
 #Frequenzen fitten
 
@@ -81,6 +84,7 @@ for i in range(1,5):
         plt.errorbar(np.log(data_linverst[0,:]), np.log(amplif[:,i-1]) + err_v , fmt='bx', label="Messung zum Widerstand %d" % i)
 
     plt.plot(np.log(x_plot), f(np.log(x_plot), params[i-1,0], params[i-1, 1]), 'r-', label='Fit')
+    plt.plot([-4,10], const([-4,10], np.mean(np.log(amplif[0:3,i-1])-0.5*np.log(2))), 'g-', label=r"Grenzwert zur Grenzfrequenz")
     plt.legend(loc="best", numpoints=1)
     plt.grid()
     plt.ylim(-4,0.1)
@@ -135,7 +139,6 @@ for i in range (1,16):
      peaks[1,i] = data_schwing_mod[2,index]
 
 peaks = np.delete(peaks, 0, 1)
-print(peaks)
 
 x0=[3,0.008]
 
