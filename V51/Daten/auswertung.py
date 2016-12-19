@@ -44,13 +44,13 @@ def error(f, err_vars=None):
 
 #Funktionen definieren
 
-def f(x,m, b):
+def f(x,m,b):
     return m*x+b
 
 def g(x,c):
     return c
 
-def h(x, a, l):
+def h(x,a,l):
     return a*np.exp(-x/l)
 
 def const(x,c):
@@ -60,6 +60,8 @@ def const(x,c):
 #Frequenzen fitten
 
 amplif = np.ones((19,4))
+vgrenz= np.ones(5)
+vgrenz_errors= unp.uarray(np.ones(5),0.01)
 
 for i in range(1,5):
 
@@ -67,12 +69,16 @@ for i in range(1,5):
 
     x_plot=np.linspace(0.5,10000, num=1000000)
     params_1, covariance_1 = curve_fit(f,np.log(data_linverst[0,13:19]), np.log(amplif[13:19,0]))
+    errors_1=np.sqrt(np.diag(covariance_1))
 
     params_2, covariance_2 = curve_fit(f,np.log(data_linverst[0,15:19]), np.log(amplif[15:19,1]))
+    errors_2=np.sqrt(np.diag(covariance_2))
 
     params_3, covariance_3 = curve_fit(f,np.log(data_linverst[0,14:19]), np.log(amplif[14:19,2]))
+    errors_3=np.sqrt(np.diag(covariance_3))
 
     params_4, covariance_4 = curve_fit(f,np.log(data_linverst[0,10:17]), np.log(amplif[10:17,3]))
+    errors_4=np.sqrt(np.diag(covariance_4))
 
     params=np.array([params_1,params_2,params_3,params_4])
 
@@ -83,14 +89,42 @@ for i in range(1,5):
     else:
         plt.errorbar(np.log(data_linverst[0,:]), np.log(amplif[:,i-1]) + err_v , fmt='bx', label="Messung zum Widerstand %d" % i)
 
+    vgrenz[i-1] = np.mean(np.log(amplif[0:3,i-1])-0.5*np.log(2))
+    vgrenz_errors[i-1] = (vgrenz[i-1],np.std(np.log(amplif[0:3,i-1])-0.5*np.log(2)))
+
     plt.plot(np.log(x_plot), f(np.log(x_plot), params[i-1,0], params[i-1, 1]), 'r-', label='Fit')
-    plt.plot([-4,10], const([-4,10], np.mean(np.log(amplif[0:3,i-1])-0.5*np.log(2))), 'g-', label=r"Grenzwert zur Grenzfrequenz")
+    plt.plot([-4,10], const([-4,10], vgrenz[i]), 'g-', label=r"Grenzwert zur Grenzfrequenz")
     plt.legend(loc="best", numpoints=1)
     plt.grid()
     plt.ylim(-4,0.1)
     plt.xlabel(r'ln(f/kHz)')
     plt.ylabel(r"ln(V')")
     plt.savefig('../Protokoll/images/plot%d.pdf' % i)
+
+
+print('Die Steigungen lauten:')
+print('m_1 =', '%.3f' % params_1[0], '+/-', '%.3f' % errors_1[0])
+print('m_2 =', '%.3f' % params_2[0], '+/-', '%.3f' % errors_2[0])
+print('m_3 =', '%.3f' % params_3[0], '+/-', '%.3f' % errors_3[0])
+print('m_4 =', '%.3f' % params_4[0], '+/-', '%.3f' % errors_4[0])
+
+m_1 =ufloat(params_1[0], errors_1[0])
+m_2 =ufloat(params_2[0], errors_2[0])
+m_3 =ufloat(params_3[0], errors_3[0])
+m_4 =ufloat(params_4[0], errors_4[0])
+
+b_1 =ufloat(params_1[1], errors_1[1])
+b_2 =ufloat(params_2[1], errors_2[1])
+b_3 =ufloat(params_3[1], errors_3[1])
+b_4 =ufloat(params_4[1], errors_4[1])
+
+print(exp((vgrenz[0]-b_1)/m_1))
+print(exp((vgrenz[1]-b_2)/m_2))
+print(exp((vgrenz[2]-b_3)/m_3))
+print(exp((vgrenz[3]-b_4)/m_4))
+
+print(exp(vgrenz_errors[1])*sqrt(2))
+
 
 #Umkehrintegrator
 

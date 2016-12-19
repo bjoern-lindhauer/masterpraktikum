@@ -15,6 +15,7 @@
 \usepackage{picinpar}
 \usepackage{tikz}
 \usepackage{float}
+\usepackage{booktabs}
 
 \renewcommand{\figurename}{Abb.}
 \usepackage[
@@ -93,15 +94,14 @@ und des Offsetstroms
 führen.
 
 Der Differenzwiderstand wird als
-%\begin{align}
-% r_{D}:=
-%\begin{center}
-%\begin{array}{ll}
-%\frac{\Delta U_{P}}{\Delta I_{P}} & \text{, }U_{N}=0\\
-%\frac{\Delta U_{N}}{\Delta I_{N}} & \text{, }U_{P}=0
-%\end{array}
-%\end{center}
-%\end{align}
+\begin{align}
+ r_{D}:=\left\lbrace 
+\begin{array}{ll}
+\frac{\Delta U_{P}}{\Delta I_{P}} & \text{, }U_{N}=0 \vspace{0.2cm}\\
+\frac{\Delta U_{N}}{\Delta I_{N}} & \text{, }U_{P}=0
+\end{array}
+\right\rbrace 
+\end{align}
 definiert und der Gleichtakteingangswiderstand als
 \begin{align}
  r_{gl}:=\frac{\Delta U_{gl}}{\Delta I_{gl}} \hspace{0.3cm}\text{.}
@@ -159,6 +159,22 @@ In den Abbildungen \ref{fig:freq1}-\ref{fig:freq4} sind die Frequenzgänge des g
 \end{minipage} \\
 \\
 In Tabelle \ref{tab:frequenzgang} sind die Grenzfrequenz, die Verstärkung in Theorie und Experiment, die Leerlaufverstärkung, die Steigung m und das Verstärkungs-Bandbreite-Produkt für die einzelnen verwendeten Widerstände dargestellt. \\
+\begin{table}[H]
+		\captionof{table}{Experimentell bestimmte Kenndaten}
+		\label{tab:frequenzgang}
+		\hskip-1.50cm\begin{tabular}{r r r r r}
+			\toprule
+				Kenngröße & $R_n=\SI{1}{\kilo\ohm}$ & $R_n=\SI{100}{\ohm}$ &  $R_n=\SI{570}{\ohm}$ & $R_n=\SI{100}{\kilo\ohm}$ \\
+			\midrule
+				Grenzfrequenz f [kHz] & $450 \pm 350$ & $1000 \pm 500$ & $700 \pm 500$ & $14 \pm 11$ \\
+				$V'_{theor}$ & & & & \\
+				$V'_{exp}$ & & & & \\
+				$V'_{Leerlauf}$ & & & & \\
+				Steigung m & $-0.860 \pm 0.070$ & $-0.897 \pm 0.046$ & $-0.882 \pm 0.070$ & $-0.819 \pm 0.098$\\
+				Verstärkung-Bandbreite-Produkt & & & & \\
+			\bottomrule
+		\end{tabular}
+\end{table}
 Die Abnahme des Ausgangsamplitude ist damit zu erklären, dass der gekoppelte Verstärker, wie in Abbildung \ref{fig:tiefpass} dargestellt, die Funktion eines Tiefpasses hat.
 
 \subsection{Der Umkehrintegrator}
@@ -208,6 +224,22 @@ Die Abnahme des Ausgangsamplitude ist damit zu erklären, dass der gekoppelte Ve
 	\captionof{figure}{Thermodruck des Signalverlaufes bei einer Dreieck-Spannung}
 	\label{fig:dreieckdiff}
 \end{minipage} 
+
+\subsection{Der Schmitt-Trigger}
+
+\subsection{Der Dreiecksgenerator}
+
+\subsection{Die Schwingungsdifferentialschaltung}
+
+\subsection{Phasenbeziehung des gegengekoppelten Verstärkers}
+
+\section{Diskussion}
+
+\subsection{Frequenzgang des gegengekoppelten Verstärkers}
+
+\subsection{Der Umkehrintegrator}
+
+\subsection{Der Umkehrdifferentiator}
 
 \subsection{Der Schmitt-Trigger}
 
