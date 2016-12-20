@@ -61,7 +61,7 @@ def const(x,c):
 
 amplif = np.ones((19,4))
 vgrenz= np.ones(5)
-vgrenz_errors= unp.uarray(np.ones(5),0.01)
+vgrenz_errors= unp.uarray(np.ones(4),0.01)
 
 for i in range(1,5):
 
@@ -90,7 +90,7 @@ for i in range(1,5):
         plt.errorbar(np.log(data_linverst[0,:]), np.log(amplif[:,i-1]) + err_v , fmt='bx', label="Messung zum Widerstand %d" % i)
 
     vgrenz[i-1] = np.mean(np.log(amplif[0:3,i-1])-0.5*np.log(2))
-    vgrenz_errors[i-1] = (vgrenz[i-1],np.std(np.log(amplif[0:3,i-1])-0.5*np.log(2)))
+    vgrenz_errors[i-1] = ufloat(vgrenz[i-1],np.std(np.log(amplif[0:3,i-1])-0.5*np.log(2)))
 
     plt.plot(np.log(x_plot), f(np.log(x_plot), params[i-1,0], params[i-1, 1]), 'r-', label='Fit')
     plt.plot([-4,10], const([-4,10], vgrenz[i]), 'g-', label=r"Grenzwert zur Grenzfrequenz")
@@ -118,12 +118,23 @@ b_2 =ufloat(params_2[1], errors_2[1])
 b_3 =ufloat(params_3[1], errors_3[1])
 b_4 =ufloat(params_4[1], errors_4[1])
 
-print(exp((vgrenz[0]-b_1)/m_1))
-print(exp((vgrenz[1]-b_2)/m_2))
-print(exp((vgrenz[2]-b_3)/m_3))
-print(exp((vgrenz[3]-b_4)/m_4))
+print('Die Grenzfrequenzen lauten:')
+fgrenz = np.array([exp((vgrenz[0]-b_1)/m_1),exp((vgrenz[1]-b_2)/m_2),exp((vgrenz[2]-b_3)/m_3),exp((vgrenz[3]-b_4)/m_4)])
+print(fgrenz)
 
-print(exp(vgrenz_errors[1])*sqrt(2))
+print('Die Verstärkungen lauten:')
+vgrenz_exp = exp(vgrenz_errors)*sqrt(2)
+print(vgrenz_exp)
+
+vtheor = np.array([1.0,0.1,0.57,100])
+
+print('Die Leerlaufverstärkungen lauten:')
+vleer = (vgrenz_exp*vtheor)/(vtheor-vgrenz_exp)
+print(vleer)
+
+print('Das Verstärkung-Bandbreite-Produkt lautet:')
+bbprodukt = vgrenz_exp*fgrenz
+print(bbprodukt)
 
 
 #Umkehrintegrator
