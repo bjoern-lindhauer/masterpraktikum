@@ -99,7 +99,8 @@ for i in range(1,5):
     plt.ylim(-4,0.1)
     plt.xlabel(r'ln(f/kHz)')
     plt.ylabel(r"ln(V')")
-    plt.savefig('../Protokoll/images/plot%d.pdf' % i)
+    name = "../Protokoll/images/plot%d.pdf" % i
+    plt.savefig(name)
 
 
 print('Die Steigungen lauten:')
@@ -201,6 +202,8 @@ plt.savefig('../Protokoll/images/schwing_abfall.pdf')
 
 plt.figure()
 plt.plot(data_phase[0], np.deg2rad(data_phase[1]), 'bx', label=r'Messwerte')
+plt.yticks([np.pi/2, np.pi, 3*np.pi/2, 2*np.pi],
+          [r'$+\pi/2$', r'$+\pi$', r'$+3\pi/2$', r'$2\pi$'])
 plt.xlabel(r'Frequenz f/Hz')
 plt.ylabel(r'Phase $\phi$')
 plt.legend(loc='best', numpoints=1)
