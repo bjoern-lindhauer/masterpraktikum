@@ -55,7 +55,7 @@
 
 \section{Theoretische Grundlagen}
 \subsection{Ideale Operationsverstärker}
-Ein Operationsverstärker wird durch das Schaltsymbol XXXX repräsentiert und ist ein elektronisches Bauteil, dessen Ausgangsspannung
+Ein Operationsverstärker wird durch das Schaltsymbol \ref{fig:schaltsymbol_operationsverstaerker} repräsentiert und ist ein elektronisches Bauteil, dessen Ausgangsspannung
 \begin{align}
  U_{\text{A}}=V\cdot \left( U_{\text{P}}-U_{\text{N}} \right)
 \end{align}
@@ -63,11 +63,18 @@ ist, welche somit proportional zur Differenz an den beiden Eingängen ist.
 
 Deswegen wir er auch als gleichstromgekoppelter Differenzverstärker bezeichnet.
 
-Die Betribsspannung $\pm U_{\text{B}}$ limitiert das Ausgangssignal $U_{\text{A}}$ auf dem Bereich
+\begin{figure}[H]
+\centering
+\includegraphics[width=7cm]{images/schaltsymbol_operationsverstaerker.png}
+\caption{Schaltsymbol eines Operationsverstärkers. Die Betriebsspannung $\pm U_{\text{B}}$ wird jedoch häufig nicht mit eingezeichnet. [1]}
+\label{fig:schaltsymbol_operationsverstaerker}
+\end{figure}
+
+Die Betriebsspannung $\pm U_{\text{B}}$ limitiert das Ausgangssignal $U_{\text{A}}$ auf dem Bereich
 \begin{align}
  -U_{\text{B}} < U_{\text{A}} < U_{\text{B}}
 \end{align}
-und sorgt für eine Sättigung bei $\left| U_{\text{A}} \right| > U_{\text{B}}$. Der Verlauf der Kurve ist in Abbildung XXX schematisch dargestellt. 
+und sorgt für eine Sättigung bei $\left| U_{\text{A}} \right| > U_{\text{B}}$. Der Verlauf der Kurve ist in Abbildung \ref{fig:kennlinie_operationsverstaerker} schematisch dargestellt. 
 
 Es wird der Eingang mit der Spannung $U_{\text{P}}$ als nicht-invertierter Eingang (+) bezeichnet, da die Ausgangsspannung $U_{\text{A}}$ n Phase mit der Spannung $U_{\text{P}}$ ist.
 Die Ausgangsspannung ist jedoch gegenphasig zur Spannung $U_{\text{N}}$, weshalb deren Eingang als invertierter Eingang (-) bezeichnet wird.
@@ -75,6 +82,13 @@ Die Ausgangsspannung ist jedoch gegenphasig zur Spannung $U_{\text{N}}$, weshalb
 Bei einem idealen Operationsverstärker ist die Leerlaufverstärkung $V$, sowie der Eingangswiderstand $r_{e}$ unendlich groß und der Ausgangswirderstand $r_a$ verschwindet.
 
 Dies ist beim realen Operationsverstärker jedoch nicht der Fall, sodass es sinnvoll ist, weitere Größen zu definieren.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=7cm]{images/kennlinie_operationsverstaerker.png}
+\caption{Kennlinie eines Operationsverstärkers. Die Steigung der Geraden zwischen den Sättigungen ist in Realität wesentlich steiler. [1]}
+\label{fig:kennlinie_operationsverstaerker}
+\end{figure}
 
 \subsection{Reale Operationsverstärker}
 Die Ausgangsspannung ist von Null verschieden, wenn die beiden Eingangsspannungen gleich sind. Deshalb wird die Gleichtaktverstärkung
@@ -117,6 +131,213 @@ Diese ist häufig eine Funktion der Temperatur, Zeit und Betriebsspannung. Die t
 
 Reale Operationsverstärker kommen idealen Operationsverstärkern sehr nahe, sodass die eingeführten Größen als Störparameter angesehen werden können und somit zu Korrekturen führen.
 
+\subsection{Schaltungen mit Operationsverstärker}
+In diesen Abschnitt sollen einige gängige Schaltungen mit Operationsverstärkern vorgestellt werden und ein paar grundsätzliche Eigenschaften der Schaltungen diskutiert werden.
+\subsubsection{Linearverstärker}
+Da ein Operationsverstärker bereits eine hohe Leerlaufverstärkung besitzt, ist der Ansteuerungsbereich gering und schon kleine Eingangsspannungen führen zu einer Sättigung.
+\begin{figure}[H]
+\centering
+\includegraphics[width=9cm]{images/schaltplan_linearverstaerker.png}
+\caption{Schaltplan eines gegengekoppelten invertierten Linearverstärkers. [1]}
+\label{fig:schaltplan_linearverstaerker}
+\end{figure}
+Um dies zu unterbinden und höhere Eingangsspannungen zu verwirklichen, muss ein Gegenkopplungszweig, wie in Abbildung \ref{fig:schaltplan_linearverstaerker} integriert werden.
+
+Es wird im Gegenkopplungszweig ein durch das Widerstandsverhältnis der eingebauten Widerstände bestimmter Anteil der Ausgangsspannung zurück auf den invertierten Eingang gegeben. Somit führt eine Zunahme der Ausgangsspannung zu einer Abnahme der Eingangsspannung.
+
+Dies führt zwar zu einer Ausweitung des Ansteuerungsbereich, verringert jedoch die Gesamtverstärkung.
+
+Die Verstärkung $V'$ ist in erster Ordnung nur vom Verhältnis der Widerstände
+\begin{align}
+V'=-\frac{R_{\text{N}}}{R_{1}}
+\label{eq:verstaerkung_ideal}
+\end{align}
+abhängig.
+
+Die Leerlaufspannung führt zu der Korrektur Verstärkung
+\begin{align}
+\frac{1}{V'}\approx \frac{1}{V} + \frac{R_{1}}{R_{\text{N}}}
+\end{align}
+für große Leerlaufspannungen $V \gg 1$. Die Gleichung \ref{eq:verstaerkung_ideal} ist folglich für $\frac{R_{\text{N}}}{R_{1}} \gg 1$ korrekt.
+
+Wird eine solche starke Gegenkopplung verwirklicht, so haben thermische Fluktuationen der Leerlaufspannung nur einen kleinen Effekt auf die Schaltung, was die Stabilität der Schaltung verbessert.
+
+Es werden durch die Gegenkopplung auch weitere Parameter positiv beeinflusst. So nimmt beispielsweise der endliche Ausgangswiderstand um den Faktor
+\begin{align}
+g:=\frac{V}{V'}
+\end{align}
+ab. Auch Schwankungen der Leerlaufverstärkung werden um den Faktor $g$ vermindert:
+\begin{align}
+\frac{\Delta V'}{V'}=g^{-1}\frac{\Delta V}{V}
+\end{align}
+Außerdem kann eine Größere Frequenzbrandbreite unverzerrt übertragen werden, da diese auch um den Faktor $g$ erhöht wird. In Abbildung \ref{fig:frequenzgang_operationsverstaerker} wird der Unterschied der Brandbreiten im Frequenzgang des Linearverstärkers dargestellt.
+\begin{figure}[H]
+\centering
+\includegraphics[width=9cm]{images/frequenzgang_operationsverstaerker.png}
+\caption{Frequenzgang des Linearverstärkers. [1]}
+\label{fig:frequenzgang_operationsverstaerker}
+\end{figure}
+
+Der geringe Eingangswiderstand der Schaltung nach Abbildung \ref{fig:schaltplan_linearverstaerker} ist in manchen Anwendungen, wie Messungen an hochohmigen Spannungsquellen, unvorteilhaft.
+
+In diesen Fällen kann ein sogenannter Elektrometerverstärker nach Abbildung \ref{fig:schaltplan_elektrometerverstaerker} verwendet werden, der zwar auch invertierend gegengekoppelt ist, jedoch liegt die Eingangsspannung $U_1$ an den nicht-invertierten Eingang an. 
+
+Dies führt zu einem Eingangswiderstand $r_\text{e}=\infty$ bei idealen Operationsverstärkern und $r_\text{e}\approx 2r_{\text{gl}}$ für einen realen Operationsverstärker, wobei $r_{\text{gl}}$ der Gleichtakteingangswiderstand ist und typischerweise in der Größenordnung von 20G$\Omega$ liegt.
+\begin{figure}[H]
+\centering
+\includegraphics[width=9cm]{images/schaltplan_elektrometerverstaerker.png}
+\caption{Schaltplan eines Elektrometerverstärkers. [1]}
+\label{fig:schaltplan_elektrometerverstaerker}
+\end{figure}
+Es ergibt sich eine Verstärkung
+\begin{align}
+V'=\frac{R_\text{N}+R_1}{R_1}
+\end{align}
+des Elektrometerverstärkers bei idealen Operationsverstärkern.
+
+Sollen kleine Ströme ohne großen Spannungsabfall gemessen werden, so wird ein Linearverstärker mit sehr geringem Eingangswiderstand $r_\text{e}$ benötigt. 
+
+Der in Abbildung \ref{fig:schaltplan_linearverstaerker} dargestellte Linearverstärker besitzt in erster Ordnung den Eingangswiderstand $R_1$. Es liegt daher nahe, den Eingangswiderstand zu $R_1=0$ wählen. Ein solches Amp$\grave{\text{e}}$remeter ist in Abbildung \ref{fig:schaltplan_amperemeter} dargestellt.
+
+Die Ausgangsspannung 
+\begin{align}
+U_\text{A}=IR_\text{N}
+\end{align}
+ist proportional zum Messstrom. Die Schaltung eignet sich somit zur Strommessung.
+\begin{figure}[H]
+\centering
+\includegraphics[width=9cm]{images/schaltplan_amperemeter.png}
+\caption{Schaltplan eines Amp$\grave{\text{e}}$remeters}
+\label{fig:schaltplan_amperemeter}
+\end{figure}
+\subsubsection{Umkehr-Integrator}
+Wird ein Kondensator im Rückkopplungszweig eingebaut, wie in Abbildung \ref{fig:schalplan_umkehrintegrator}, so fungiert die Schaltung als Umkehr-Integrator
+\begin{align}
+U_\text{A}= \frac{1}{RC}\int dt\ U_1\left(t\right)  \hspace{0.3cm}\text{.}
+\end{align}
+\begin{figure}[H]
+\centering
+\includegraphics[width=9cm]{images/schalplan_umkehrintegrator.png}
+\caption{Schaltplan eines Umkehr-Integrators. [1]}
+\label{fig:schalplan_umkehrintegrator}
+\end{figure}
+Wird beispielsweise eine Sinusspannung an 
+\begin{align}
+U_1=U_0 \sin \omega t
+\end{align}
+angelegt, so hat das Ausgangssignal die Form
+\begin{align}
+U_\text{A} = \frac{U_0}{RC\omega}\cos \omega t
+\end{align}
+und ist umgekehrt proportional zur Frequenz des Eingangssignals.
+\subsubsection{Umkehr-Differentiator}
+Wird der Kondensator anstatt im Rückkopplungszweig vor den invertierten Eingang geschaltet, wie in Abbildung \ref{fig:schalplan_umkehrdifferentiator}, so wirkt die Schaltung als Umkehr-Differentiator
+\begin{align}
+U_\text{A}= -RC \frac{d}{d t} U_1 \hspace{0.3cm}\text{.}
+\end{align}
+\begin{figure}[H]
+\centering
+\includegraphics[width=9cm]{images/schaltplan_umkehrdifferentiator.png}
+\caption{Schaltplan eines Umkehr-Differentiator. [1]}
+\label{fig:schalplan_umkehrdifferentiator}
+\end{figure}
+Bei einer Sinusspannung
+\begin{align}
+U_1=U_0 \sin \omega t
+\end{align}
+kann am Ausgang die Spannung
+\begin{align}
+U_\text{A} = -RC\omega U_0 \cos \omega t
+\end{align}
+abgegriffen werden, welche proportional zur Frequenz des Eingangssignals ist.
+\subsubsection{Schmitt-Trigger}
+Bei einem Schmitt-Trigger wird bei einem gegengekoppelten invertierenden Linearverstärker die Rückkopplung anstatt am invertierenden Eingang auf den nicht-invertierenden Eingang gegeben. Diese Schaltung nach Abbildung \ref{fig:schalplan_schmitt_trigger} fungiert als ein Schalter.
+
+Eine Vergrößerung der Ausgangsspannung führt beim Schmitt-Trigger zu einer Vergrößerung der Eingangsspannung, welche wiederum zu einer Vergrößerung der Ausgangsspannung führt. Diese Schaltung ist instabil, da die Ausgangsspannung spontan auf die Betriebsspannung $U_\text{B}$ springt, wenn die Spannung $U_1$ den Schwellwert
+\begin{align}
+\frac{R_1}{R_\text{P}}U_\text{B}
+\end{align} 
+überschreitet. Umgekehrt springt die Ausgangsspannung auf die negative Betriebsspannung $-U_\text{B}$, wenn der Schwellwert
+\begin{align}
+-\frac{R_1}{R_\text{P}}U_\text{B}
+\end{align}
+unterschritten wird.
+
+Die Differenz der beiden Umschaltwerte wird als Schalthysterese bezeichnet.
+\begin{figure}[H]
+\centering
+\includegraphics[width=9cm]{images/schaltplan_schmitt_trigger.png}
+\caption{Schaltplan eines Schmitt-Triggers. [1]}
+\label{fig:schalplan_schmitt_trigger}
+\end{figure}
+
+
+\subsubsection{Der Operationsverstärker als Signalgenerator}
+Mit Hilfe der in den vorherigen Abschnitten beschriebenen Schaltungen lässt sich ein Rechteck- und Dreiecksgenerator erzeugen. 
+
+Es wird dabei jeweils ein Schmitt-Trigger und ein Integrator benötigt, die wie in Abbildung \ref{fig:schalplan_generator} geschaltet werden.
+
+Der Schmitt-Trigger liefert eine konstante Ausgangsspannung $U_\text{B}$, die anschließend vom Integrator integriert wird. Es fällt somit die Ausgangsspannung $U_1$ linear ab, bis sie den Schwellwert des Triggers erreicht und dieser auf $-U_\text{B}$ springt. Diese wird nun weiter integriert und steigt durch das invertierte Vorzeichen von $\left|U_\text{B} \right|$ wieder an.
+
+Daraus ergibt sich eine periodische Schwingung, die ihre Extrema an den Schwellwerten des Schmitt-Triggers besitzt. Die Frequenz ist von der Integratorzeitkonstanten und den Widerständen der Mittelkopplung abhängig.
+\begin{figure}[H]
+\centering
+\includegraphics[width=13.0cm]{images/schaltplan_generator.png}
+\caption{Schaltplan eines Rechteck-/Dreieckgenerators. [1]}
+\label{fig:schalplan_generator}
+\end{figure}
+
+\subsubsection{Erzeugung amplitudenmodulierter Sinusschwingung}
+Eine Sinusschwingung mit sich zeitlich veränderlicher Amplitude lässt sich durch zwei Integratoren und einem Umkehrverstärker realisieren, wie in Abbildung \ref{fig:schalplan_schwingung} dargestellt.
+Die Schaltung kann durch die Differentialgleichung
+\begin{align}
+\frac{d^2 U_\text{A}}{dt^2}-\frac{\eta}{10 RC} \frac{d U_\text{A}}{dt}+\frac{U_\text{A}}{R^2C^2}=0
+\end{align}
+beschrieben werden. Die Lösung 
+\begin{align}
+U_\text{A}\left(t\right)=U_0\exp \left(\frac{\eta t}{20 RC}\right)\sin \frac{t}{RC}
+\end{align}
+beschreibt eine gedämpfte ($\eta < 0$) bzw. entdämpfte Sinusschwingung. Dabei ist die Schwingungsdauer
+\begin{align}
+T=2\pi RC
+\end{align}
+und die Abklingdauer
+\begin{align}
+\tau=\frac{20RC}{\left|\eta \right| }\hspace{0.3cm}\text{.}
+\end{align}
+\begin{figure}[H]
+\centering
+\includegraphics[width=13cm]{images/schaltplan_schwingung.png}
+\caption{Schaltplan einer linearen Schwingungsdifferentialgleichung mit zeitlich veränderlichen Amplitude. [1]}
+\label{fig:schalplan_schwingung}
+\end{figure}
+\subsubsection{Logarithmierer und Exponentialgenerator}
+Ein Signal proportional zum Logarithmus oder zur Exponentialfunktion kann mit Hilfe eines Bauelement mit exponentieller Kennlinie bewerkstelligt werden, wie in Abbildung \ref{fig:schalplan_explog} dargestellt.
+
+Ein geeignetes Bauteil ist beispielsweise eine Diode bei hinreichend großer Spannung $U$, denn dann gilt
+\begin{align}
+I=I_0 \exp \left(\frac{e_0}{k_\text{B} T}U\right)
+\end{align}
+mit der Elementarladung $e_0$, der Boltzmann-Konstante $k_\text{B}$ und der Temperatur $T$. 
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=15cm]{images/schaltplan_explog.png}
+\caption{Schaltplan eines Logarithmierer (links) und eines Exponentialgenerator (rechts). [1]}
+\label{fig:schalplan_explog}
+\end{figure}
+
+Es ergibt sich für einen Logarithmierer die Ausgangsspannung 
+\begin{align}
+U_\text{A}=\frac{k_\text{B}T}{e_0}\ln \left(\frac{U_\text{e}}{I_0 R}\right)
+\end{align}
+und für einen Exponentialgenerator die Ausgangsspannung
+\begin{align}
+U_\text{A}=RI_0\exp \left(\frac{e_0}{k_\text{B} T}U_\text{e}\right)\hspace{0.3cm}\text{.}
+\end{align}
+
+\newpage
 
 \section{Durchführung}
 
