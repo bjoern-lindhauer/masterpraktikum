@@ -93,7 +93,7 @@ for i in range(1,5):
     vgrenz_errors[i-1] = ufloat(vgrenz[i-1],np.std(np.log(amplif[0:3,i-1])-0.5*np.log(2)))
 
     plt.plot(np.log(x_plot), f(np.log(x_plot), params[i-1,0], params[i-1, 1]), 'r-', label='Fit')
-    plt.plot([-4,10], const([-4,10], vgrenz[i]), 'g-', label=r"Grenzwert zur Grenzfrequenz")
+    plt.plot([-4,10], const([-4,10], vgrenz[i-1]), 'g-', label=r"Grenzwert zur Grenzfrequenz")
     plt.legend(loc="best", numpoints=1)
     plt.grid()
     plt.ylim(-4,0.1)
@@ -210,11 +210,6 @@ plt.legend(loc='best', numpoints=1)
 plt.ticklabel_format(style='sci', axis='x', scilimits=(0,0))
 plt.grid()
 plt.savefig('../Protokoll/images/phase_frequenz.pdf')
-
-# errors=np.sqrt(np.diag(covariance))
-#
-# print('m =', params[0], '+/-', errors[0])
-# print('b =', params[1], '+/-', errors[1])
 
 
 #x1,x2, x3 = sympy.var('M_{z} M_{0} \tau')
