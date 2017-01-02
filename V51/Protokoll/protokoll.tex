@@ -541,21 +541,41 @@ f_{theo}=\SI{82.5}{\kilo\hertz} & f_{exp}=\SI{91.34}{\kilo\hertz}\,.
 \end{align}
 
 \subsection{Die Schwingungsdifferentialschaltung}
-
+Für die Kapazität in der Schwingungsdifferentialschaltung wurde $C=\SI{22.5}{\nano\farad}$ gewählt. \\
+Die theoretischen Werte für die Frequenz $f_{theo}$ und die Abklingdauer $\tau$ ergeben sich zu
+\begin{align}
+f_{theo} = \frac{1}{2\pi RC}=\SI{723.43}{\hertz} \\
+\tau = 20RC=\SI{43}{\milli\second}\,.
+\end{align}
+In Abbildung \ref{fig:thermoexpon_ung} ist die ungedämpfte Schwingung dargestellt, die Frequenz der Schwingung beträgt $\SI{664.2}{\hertz}$.
+\begin{center}
+	\includegraphics[width=10cm]{images/schwingung.png}
+	\captionof{figure}{Thermodruck der ungedämpften Schwingung nach Anregung durch Rechteckschwingung}
+	\label{fig:thermoexpon_ung}
+\end{center}
+Zur Bestimmung der Abklingdauer der gedämpften Schwingung werden mithilfe eines Peak-Detection-Algorithmus die Maxima bestimmt und mit diesen mit einem Exponentialansatz $f(t)=a\exp\left(-t/\tau)$ eine Ausgleichsrechnung durchgeführt. In Abbildung \ref{fig:expfit} sind der nicht-lineare Fit sowie die Messwerte dargestellt, ein Thermodruck des Oszilloskopenbildes ist in Abbildung \ref{fig:thermoexpon} dargestellt. \\
+Aus der nicht-linearen Ausgleichsrechnung ergibt sich die Abklingdauer von
+\begin{align*}
+\tau_{exp}=
+\end{align*}
 \begin{center}
 	\includegraphics[width=10cm]{images/schwinggen.png}
 	\captionof{figure}{Thermodruck des exponentiellen Abfalls nach Anregung durch Rechteckschwingung}
 	\label{fig:thermoexpon}
 \end{center}
-
 \begin{center}
 	\includegraphics[width=10cm]{images/schwing_abfall.pdf}
 	\captionof{figure}{Messwerte zum Schwingabfall des Signals und nichtlinearer Fit der Maxima}
 	\label{fig:expfit}
 \end{center}
 
-
 \subsection{Phasenbeziehung des gegengekoppelten Verstärkers}
+In Abbildung \ref{fig:phase} sind die Messwerte für die Phasenverschiebung zwischen Eingangs- und Ausgangsspannung dargestellt.
+\begin{center}
+	\includegraphics[width=10cm]{images/phase_frequenz.pdf}
+	\captionof{figure}{Phasenverschiebung zwischen Eingangs- und Ausgangsspannung aufgetragen gegen die Fequenz}
+	\label{fig:phase}
+\end{center}
 
 \section{Diskussion}
 
@@ -574,7 +594,8 @@ f_{theo}=\SI{82.5}{\kilo\hertz} & f_{exp}=\SI{91.34}{\kilo\hertz}\,.
 \subsection{Phasenbeziehung des gegengekoppelten Verstärkers}
 
 \section{Quellen}
-{[1]} Versuchsanleitung zu Versuch 59: \\
+{[1]} Physikalisches Praktikum, TU Dortmund: \\
+Versuchsanleitung zu Versuch 51: \\
 http://129.217.
-224.2/HOMEPAGE/PHYSIKER/MASTER/SKRIPT/V59.pdf (letzte Version vom 30.05.2016, 10:50)\\
+224.2/HOMEPAGE/PHYSIKER/MASTER/SKRIPT/V51.pdf (letzte Version vom 02.01.2017, 11:10)\\
 \end{document}

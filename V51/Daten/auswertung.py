@@ -197,6 +197,11 @@ peaks = np.delete(peaks, 0, 1)
 x0=[3,0.008]
 
 params_exp, covariance_exp = curve_fit(h, peaks[0], peaks[1], p0=x0)
+errors_exp = np.sqrt(np.diag(covariance_exp))
+T = ufloat(params_exp[1], errors_exp[1])
+print('Die Abklindauer beträgt:')
+print(1/T)
+
 x_plot=np.linspace(0,0.018, num=10000)
 
 plt.figure()
