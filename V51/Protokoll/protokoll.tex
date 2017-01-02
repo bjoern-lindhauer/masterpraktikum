@@ -411,11 +411,41 @@ Die Abnahme des Ausgangsamplitude ist damit zu erklären, dass der gekoppelte Ve
 \end{center}
 
 \subsection{Der Umkehrintegrator}
-
+Für den Aufbau des Umkehrintegrators wurden ein Widerstand $R=\SI{32.7}{\kilo\ohm}$ und eine Kapazität $C=\SI{13.6}{\nano\farad}$ verwendet. Die gemessenen Ausgangsspannungen in Abhängigkeit von der Frequenz sind in Tabelle \ref{tab:integrator} dargestellt, in Abbildungen \ref{fig:sinusint}-\ref{fig:dreieckint} sind die Thermodrucke des Ausgangssignals für verschiedene Eingangssignalformen dargestellt.
+\begin{table}[H]
+	\captionof{table}{Werte der Ausgangsspannung des Umkehrintegrators}
+	\label{tab:integrator}
+	\hskip-1.50cm
+	\begin{tabular}{r r}
+		\toprule
+			Frequenz $f / \si{\kilo\hertz}$ & $U_A / \si{\volt}$ \\
+		\midrule
+			10000 & 0.19 \\
+			7500  & 0.27 \\
+			5000  & 0.38 \\
+			2500  & 0.76 \\
+			1000  & 1.49 \\
+			900   & 1.57 \\
+			800   & 1.65 \\
+			700   & 1.73 \\
+			600   & 1.81 \\
+			500   & 1.87 \\
+			400   & 2.01 \\
+			300   & 1.75 \\
+			200   & 1.69 \\
+			100   & 2.41 \\
+			50    & 2.41 \\
+		 \bottomrule
+	\end{tabular}
+\end{table}
+Mithilfe einer linearen Ausgleichsrechnung und einer Ausgleichsgeraden der Form $f(x)=m\cdot x +b$ ergibt sich die Steigung $m$ zu
+\begin{align*}
+m = -0.754\pm 0.040\,.
+\end{align*}
 \begin{center}
 	\includegraphics[width=12cm]{images/integrator.pdf}
 	\captionof{figure}{Ausgangsspannung $U_A$ des Umkehrintegrators bei variierter Frequenz}
-	\label{integrator}
+	\label{fig:integrator}
 \end{center}
 \begin{minipage}[t]{0.5\textwidth}
 	\includegraphics[width=\textwidth]{images/sinus_int}
@@ -435,11 +465,41 @@ Die Abnahme des Ausgangsamplitude ist damit zu erklären, dass der gekoppelte Ve
 \end{minipage}
 
 \subsection{Der Umkehrdifferentiator}
-
+Für den Aufbau des Umkehrdifferentiators wurden ein Widerstand $R=\SI{32.7}{\kilo\ohm}$ und eine Kapazität $C=\SI{13.6}{\nano\farad}$ verwendet. Die gemessenen Ausgangsspannungen in Abhängigkeit von der Frequenz sind in Tabelle \ref{tab:differentiator} dargestellt, in Abbildungen \ref{fig:sinusdiff}-\ref{fig:dreieckdiff} sind die Thermodrucke des Ausgangssignals für verschiedene Eingangssignalformen dargestellt.
+\begin{table}[H]
+	\captionof{table}{Werte der Ausgangsspannung des Umkehrdifferentiators}
+	\label{tab:differentiator}
+	\hskip-1.50cm
+	\begin{tabular}{r r}
+		\toprule
+		Frequenz $f / \si{\kilo\hertz}$ & $U_A / \si{\volt}$ \\
+		\midrule
+		10000 & 0.18 \\
+		7500  & 0.27 \\
+		5000  & 0.40 \\
+		2500  & 0.77 \\
+		1000  & 1.45 \\
+		900   & 1.53 \\
+		800   & 1.59 \\
+		700   & 1.67 \\
+		600   & 1.73 \\
+		500   & 1.79 \\
+		400   & 1.75 \\
+		300   & 1.61 \\
+		200   & 1.55 \\
+		100   & 1.51 \\
+		50    & 1.49 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+Mithilfe einer linearen Ausgleichsrechnung und einer Ausgleichsgeraden der Form $f(x)=m\cdot x +b$ ergibt sich die Steigung $m$ zu
+\begin{align*}
+m = -0.797 \pm 0.039\,.
+\end{align*}
 \begin{center}
 	\includegraphics[width=12cm]{images/differentiator.pdf}
 	\captionof{figure}{Ausgangsspannung $U_A$ des Umkehrdifferentiators bei variierter Frequenz}
-	\label{differentiator}
+	\label{fig:differentiator}
 \end{center}
 \begin{minipage}[t]{0.5\textwidth}
 	\includegraphics[width=\textwidth]{images/sinus_diff}
@@ -459,7 +519,11 @@ Die Abnahme des Ausgangsamplitude ist damit zu erklären, dass der gekoppelte Ve
 \end{minipage} 
 
 \subsection{Der Schmitt-Trigger}
-
+Für den Aufbau des Schmitt-Triggers wurden die Widerstände $R_P=\SI{33}{\kilo\ohm}$ und $R_1=\SI{100}{\ohm}$ verwendet. Der Wert des Betriebsspannung betrug $U_B=\SI{13.08}{\volt}$. \\
+Der Kippspannung betrug $U_{kipp}=\SI{90}{\milli\volt}$ die theoretisch errechnete Kippspannung betrug
+\begin{align*}
+U_{theor}=\SI{39.6}{\milli\volt}\,.
+\end{align*}
 \subsection{Der Dreiecksgenerator}
 
 \subsection{Die Schwingungsdifferentialschaltung}

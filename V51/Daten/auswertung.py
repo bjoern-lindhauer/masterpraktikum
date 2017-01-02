@@ -141,6 +141,10 @@ print(bbprodukt)
 #Umkehrintegrator
 
 params_int, covariance_int = curve_fit(f, np.log(data_integ[0,:11]), np.log(data_integ[1,:11]))
+errors_int = np.sqrt(np.diag(covariance_int))
+
+print(params_int, errors_int)
+
 x_plot=np.linspace(500,20000, num=100000)
 
 plt.figure()
@@ -156,6 +160,10 @@ plt.savefig('../Protokoll/images/integrator.pdf')
 #Unkehrdifferentiator
 
 params_diff, covariance_diff = curve_fit(f, np.log(data_diff[0,:9]), np.log(data_diff[1,:9]))
+errors_diff = np.sqrt(np.diag(covariance_diff))
+
+print(params_diff, errors_diff)
+
 x_plot=np.linspace(500,20000, num=100000)
 
 plt.figure()
