@@ -52,6 +52,7 @@
 \end{center}
 \end{titlepage}
 \section{Einleitung}
+Mithilfe von Operationsverstärkern sollen verschiedene Schaltungen realisiert werden, die z.B. als Signalgeneratoren genutzt werden können.
 
 \section{Theoretische Grundlagen}
 \subsection{Ideale Operationsverstärker}
@@ -413,6 +414,7 @@ Die Abnahme des Ausgangsamplitude ist damit zu erklären, dass der gekoppelte Ve
 \subsection{Der Umkehrintegrator}
 Für den Aufbau des Umkehrintegrators wurden ein Widerstand $R=\SI{32.7}{\kilo\ohm}$ und eine Kapazität $C=\SI{13.6}{\nano\farad}$ verwendet. Die gemessenen Ausgangsspannungen in Abhängigkeit von der Frequenz sind in Tabelle \ref{tab:integrator} dargestellt, in Abbildungen \ref{fig:sinusint}-\ref{fig:dreieckint} sind die Thermodrucke des Ausgangssignals für verschiedene Eingangssignalformen dargestellt.
 \begin{table}[H]
+	\centering
 	\captionof{table}{Werte der Ausgangsspannung des Umkehrintegrators}
 	\label{tab:integrator}
 	\hskip-1.50cm
@@ -467,6 +469,7 @@ m = -0.754\pm 0.040\,.
 \subsection{Der Umkehrdifferentiator}
 Für den Aufbau des Umkehrdifferentiators wurden ein Widerstand $R=\SI{32.7}{\kilo\ohm}$ und eine Kapazität $C=\SI{13.6}{\nano\farad}$ verwendet. Die gemessenen Ausgangsspannungen in Abhängigkeit von der Frequenz sind in Tabelle \ref{tab:differentiator} dargestellt, in Abbildungen \ref{fig:sinusdiff}-\ref{fig:dreieckdiff} sind die Thermodrucke des Ausgangssignals für verschiedene Eingangssignalformen dargestellt.
 \begin{table}[H]
+	\centering
 	\captionof{table}{Werte der Ausgangsspannung des Umkehrdifferentiators}
 	\label{tab:differentiator}
 	\hskip-1.50cm
@@ -528,7 +531,7 @@ U_{theor}=\SI{39.6}{\milli\volt}\,.
 \subsection{Der Dreiecksgenerator}
 Der Dreieckgenerator wurde mit der Konfiguration
 \begin{align*}
-R_1=\SI{100}{\ohm} & R_P=\SI{33}{\kilo\ohm} & R=\SI{10}{\kilo\ohm} & C=\SI{100}{\nano\farad}
+R_1=\SI{100}{\ohm} && R_P=\SI{33}{\kilo\ohm} && R=\SI{10}{\kilo\ohm} && C=\SI{100}{\nano\farad}
 \end{align*}
 aufgebaut. \\
 Die theoretische Frequenz des Dreiecksgenerators ergibt sich aus
@@ -537,7 +540,7 @@ f_{theo}=\frac{R_P}{4R_1RC}\,.
 \end{align}
 Somit ergaben sich für diese Konfiguration folgende Werte:
 \begin{align}
-f_{theo}=\SI{82.5}{\kilo\hertz} & f_{exp}=\SI{91.34}{\kilo\hertz}\,.
+f_{theo}=\SI{82.5}{\kilo\hertz} &  & f_{exp}=\SI{91.34}{\kilo\hertz}\,.
 \end{align}
 
 \subsection{Die Schwingungsdifferentialschaltung}
@@ -553,7 +556,7 @@ In Abbildung \ref{fig:thermoexpon_ung} ist die ungedämpfte Schwingung dargestel
 	\captionof{figure}{Thermodruck der ungedämpften Schwingung nach Anregung durch Rechteckschwingung}
 	\label{fig:thermoexpon_ung}
 \end{center}
-Zur Bestimmung der Abklingdauer der gedämpften Schwingung werden mithilfe eines Peak-Detection-Algorithmus die Maxima bestimmt und mit diesen mit einem Exponentialansatz $f(t)=a\exp\left(-t/\tau)$ eine Ausgleichsrechnung durchgeführt. In Abbildung \ref{fig:expfit} sind der nicht-lineare Fit sowie die Messwerte dargestellt, ein Thermodruck des Oszilloskopenbildes ist in Abbildung \ref{fig:thermoexpon} dargestellt. \\
+Zur Bestimmung der Abklingdauer der gedämpften Schwingung werden mithilfe eines Peak-Detection-Algorithmus die Maxima bestimmt und mit diesen mit einem Exponentialansatz $f(t)=a\exp\left(-t/\tau\right) $ eine Ausgleichsrechnung durchgeführt. In Abbildung \ref{fig:expfit} sind der nicht-lineare Fit sowie die Messwerte dargestellt, ein Thermodruck des Oszilloskopenbildes ist in Abbildung \ref{fig:thermoexpon} dargestellt. \\
 Aus der nicht-linearen Ausgleichsrechnung ergibt sich die Abklingdauer von
 \begin{align*}
 \tau_{exp}=
@@ -581,17 +584,24 @@ In Abbildung \ref{fig:phase} sind die Messwerte für die Phasenverschiebung zwis
 
 \subsection{Frequenzgang des gegengekoppelten Verstärkers}
 
+
 \subsection{Der Umkehrintegrator}
+Der Umkehrintegrator funktioniert wie erwartet, wie an den aufgenommen Bilder der Oszilloskopausgabe zu sehen ist. Da für den Integrator die Beziehung $U_A\propto\omega^{-1}$ gelten soll, lautet der Theoriewert $m=-1$. Die lineare Regression ergab einen Wert von $m=-0.754\pm0.040$, welcher um 24.6\% vom Theoriewert abweicht.
 
 \subsection{Der Umkehrdifferentiator}
 
+
 \subsection{Der Schmitt-Trigger}
+Der Schmitt-Trigger arbeitet zwar wie erwartet, die Kippspannung weicht jedoch mit 127\% signifikant vom theoretisch erwarteten Wert ab. Hier ist von einem systematischen Fehler im Aufbau oder der Apparatur auszugehen.
 
 \subsection{Der Dreiecksgenerator}
+Der Dreiecksgenerator liefert wie erwartet ein Dreieckssignal. Die experimentell bestimmte Frequenz des Dreieckgenerators weicht um 10.70\% vom berechneten Theoriewert ab.
 
 \subsection{Die Schwingungsdifferentialschaltung}
 
+
 \subsection{Phasenbeziehung des gegengekoppelten Verstärkers}
+
 
 \section{Quellen}
 {[1]} Physikalisches Praktikum, TU Dortmund: \\
