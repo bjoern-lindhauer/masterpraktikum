@@ -11,7 +11,7 @@
 \usepackage{wrapfig}
 \usepackage{caption}
 \usepackage{wasysym}
-\usepackage{siunitx}
+\usepackage[separate-uncertainty = true,multi-part-units=single]{siunitx}
 \usepackage{picinpar}
 \usepackage{tikz}
 \usepackage{float}
@@ -398,7 +398,7 @@ In Tabelle \ref{tab:frequenzgang} sind die Grenzfrequenz, die Verstärkung in Th
 				Grenzfrequenz f [kHz] & $450 \pm 350$ & $1000 \pm 500$ & $700 \pm 500$ & $14 \pm 11$ \\
 				$V'_{ideal}$ & $1.0$ & $0.1$ & $0.57$ & $100$ \\
 				$V'_{exp}$ & $0.980 \pm 0.007$ & $0.970 \pm 0.012$ & $0.970 \pm 0.012$ & $0.884 \pm 0.006$ \\
-				$V'_{Leerlauf}$ & $48.25 \pm 17.04$ & $-0.111 \pm 0.000$ & $-1.38 \pm 0.02$ & $0.892 \pm 0.006$ \\
+				$V_{Leerlauf}$ & $48.25 \pm 17.04$ & $-0.111 \pm 0.000$ & $-1.38 \pm 0.02$ & $0.892 \pm 0.006$ \\
 				Steigung m & $-0.860 \pm 0.070$ & $-0.897 \pm 0.046$ & $-0.882 \pm 0.070$ & $-0.819 \pm 0.098$\\
 				Verstärkung-Bandbreite-Produkt [kHz] & $441.58 \pm 347.37$ & $955.89 \pm 525.67$ & $658.61 \pm 529.53$ & $12.33 \pm 9.51$ \\
 			\bottomrule
@@ -548,7 +548,7 @@ Für die Kapazität in der Schwingungsdifferentialschaltung wurde $C=\SI{22.5}{\
 Die theoretischen Werte für die Frequenz $f_{theo}$ und die Abklingdauer $\tau$ ergeben sich zu
 \begin{align}
 f_{theo} = \frac{1}{2\pi RC}=\SI{723.43}{\hertz} \\
-\tau = 20RC=\SI{43}{\milli\second}\,.
+\tau = 20RC=\SI{4.5}{\milli\second}\,.
 \end{align}
 In Abbildung \ref{fig:thermoexpon_ung} ist die ungedämpfte Schwingung dargestellt, die Frequenz der Schwingung beträgt $\SI{664.2}{\hertz}$.
 \begin{center}
@@ -559,7 +559,7 @@ In Abbildung \ref{fig:thermoexpon_ung} ist die ungedämpfte Schwingung dargestel
 Zur Bestimmung der Abklingdauer der gedämpften Schwingung werden mithilfe eines Peak-Detection-Algorithmus die Maxima bestimmt und mit diesen mit einem Exponentialansatz $f(t)=a\exp\left(-t/\tau\right) $ eine Ausgleichsrechnung durchgeführt. In Abbildung \ref{fig:expfit} sind der nicht-lineare Fit sowie die Messwerte dargestellt, ein Thermodruck des Oszilloskopenbildes ist in Abbildung \ref{fig:thermoexpon} dargestellt. \\
 Aus der nicht-linearen Ausgleichsrechnung ergibt sich die Abklingdauer von
 \begin{align*}
-\tau_{exp}=
+\tau_{exp}=\SI{4.1(2)}{\milli\second}\,.
 \end{align*}
 \begin{center}
 	\includegraphics[width=10cm]{images/schwinggen.png}
@@ -583,13 +583,16 @@ In Abbildung \ref{fig:phase} sind die Messwerte für die Phasenverschiebung zwis
 \section{Diskussion}
 
 \subsection{Frequenzgang des gegengekoppelten Verstärkers}
-
+Die experimentell bestimmten Verstärkungen liegen nur im Falle von $R_n=\SI{1}{\kilo\ohm}$ und bei $R_n=\SI{570}{\ohm}$ mit 0.02\% und 70\% Abweichung vom Theoriewert in der gleichen Größenordnung wie der Theoriewert. \\
+Desweiteren ergeben sich bei $R_n=\SI{100}{\ohm}$ und bei $R_n=\SI{570}{\ohm}$ physikalisch nicht sinnvolle negative Leerlaufverstärkungen. Das eigentlich konstante Verstärkungs-Bandbreite-Produkt ist hier auch für jeden Widerstand unterschiedlich, was jedoch aus den vorherigen Abweichungen resultiert. \\
+Desweiteren ist auffällig, dass die Fehler der ermittelten Grenzfrequenzen sehr hoch sind. Dies resultiert aus dem Anwenden der Exponentialfunktion auf die ermittelten Fit-Parameter, deren Fehler noch nicht diese Größe hatte. \\
+Der Theoriewert der Steigung ist m=-1 (für einen Tiefpass), die Steigungen der verschiedenen Konfigurationen schwanken zwischen -0.897 und -0.819, haben also signifikante Abweichungen vom theoretisch erwarteten Wert.
 
 \subsection{Der Umkehrintegrator}
 Der Umkehrintegrator funktioniert wie erwartet, wie an den aufgenommen Bilder der Oszilloskopausgabe zu sehen ist. Da für den Integrator die Beziehung $U_A\propto\omega^{-1}$ gelten soll, lautet der Theoriewert $m=-1$. Die lineare Regression ergab einen Wert von $m=-0.754\pm0.040$, welcher um 24.6\% vom Theoriewert abweicht.
 
 \subsection{Der Umkehrdifferentiator}
-
+Der Umkehrdifferentiator arbeitete, wie auf den aufgenommenen Bildern zu sehen ist, wie erwartet. Jedoch ergab sich eine starke Abweichung von der Beziehung $U_A\propto\omega$. Der theoretisch erwartete Wert für die Steigung m war m=1, jedoch ergab die lineare Regression einen Wert von $m = -0.797 \pm 0.039$. Dies lässt sich auf einen systematischen Fehler im Aufbau oder in Apparatur zurückführen.
 
 \subsection{Der Schmitt-Trigger}
 Der Schmitt-Trigger arbeitet zwar wie erwartet, die Kippspannung weicht jedoch mit 127\% signifikant vom theoretisch erwarteten Wert ab. Hier ist von einem systematischen Fehler im Aufbau oder der Apparatur auszugehen.
@@ -598,10 +601,11 @@ Der Schmitt-Trigger arbeitet zwar wie erwartet, die Kippspannung weicht jedoch m
 Der Dreiecksgenerator liefert wie erwartet ein Dreieckssignal. Die experimentell bestimmte Frequenz des Dreieckgenerators weicht um 10.70\% vom berechneten Theoriewert ab.
 
 \subsection{Die Schwingungsdifferentialschaltung}
-
+Die Schwingungsdifferentialschaltung funktioniert, wie auf den Thermodrucken zu sehen ist, wie erwartet. Für die Frequenz der Schaltung ergibt ein experimentell bestimmter Wert von $f_{exp}=\SI{664.2}{\hertz}$, was mit 8.2\% vom Theoriewert $f_{theo}=\SI{723.43}{\hertz}$ abweicht. \\
+Die Abklingdauer liegt bei $\tau_{exp}=\SI{4.1(2)}{\milli\second}$, diesec weicht um 8,9\% vom Theoriewert ab, dies liegt außerhalb des angegebenen statistischen Fehlers.
 
 \subsection{Phasenbeziehung des gegengekoppelten Verstärkers}
-
+In der Abbildung ist deutlich zu erkennen, dass der Absolutbetrag der Phasendifferenz zwischen Eingangs- und Ausgangsspannung mit steigender Frequenz abnimmt. 
 
 \section{Quellen}
 {[1]} Physikalisches Praktikum, TU Dortmund: \\
