@@ -209,6 +209,8 @@ plt.figure()
 plt.plot(data_schwing_mod[0], data_schwing_mod[2], 'bx', label=r'Messwerte')
 plt.plot(x_plot, h(x_plot, *params_exp), 'r-', label='nichtlinearer Fit')
 plt.legend(loc="best", numpoints=1)
+plt.xlabel('t/s')
+plt.ylabel(r'Spannung $U_A$/V')
 plt.grid()
 plt.savefig('../Protokoll/images/schwing_abfall.pdf')
 

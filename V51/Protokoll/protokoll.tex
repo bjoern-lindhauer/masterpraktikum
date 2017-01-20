@@ -476,14 +476,15 @@ Aus der nicht-linearen Ausgleichsrechnung ergibt sich die Abklingdauer von
 
 \section{Diskussion}
 
-\subsection{Frequenzgang des gegengekoppelten Verstärkers}
+\subsection{Frequenzgang und Phasengang des gegengekoppelten Verstärkers}
 Die experimentell bestimmten Verstärkungen liegen nur im Falle von $R_n=\SI{1}{\kilo\ohm}$ und bei $R_n=\SI{570}{\ohm}$ mit 0.02\% und 70\% Abweichung vom Theoriewert in der gleichen Größenordnung wie der Theoriewert. \\
 Desweiteren ergeben sich bei $R_n=\SI{100}{\ohm}$ und bei $R_n=\SI{570}{\ohm}$ physikalisch nicht sinnvolle negative Leerlaufverstärkungen. Das eigentlich konstante Verstärkungs-Bandbreite-Produkt ist hier auch für jeden Widerstand unterschiedlich, was jedoch aus den vorherigen Abweichungen resultiert. \\
 Desweiteren ist auffällig, dass die Fehler der ermittelten Grenzfrequenzen sehr hoch sind. Dies resultiert aus dem Anwenden der Exponentialfunktion auf die ermittelten Fit-Parameter, deren Fehler noch nicht diese Größe hatte. \\
-Der Theoriewert der Steigung ist m=-1 (für einen Tiefpass), die Steigungen der verschiedenen Konfigurationen schwanken zwischen -0.897 und -0.819, haben also signifikante Abweichungen vom theoretisch erwarteten Wert.
+Der Theoriewert der Steigung ist m=-1 (für einen Tiefpass), die Steigungen der verschiedenen Konfigurationen schwanken zwischen -0.897 und -0.819, haben also signifikante Abweichungen vom theoretisch erwarteten Wert. \\
+Bezüglich des Phasenganges ist in der Abbildung deutlich zu erkennen, dass der Absolutbetrag der Phasendifferenz zwischen Eingangs- und Ausgangsspannung mit steigender Frequenz abnimmt. 
 
 \subsection{Der Umkehrintegrator}
-Der Umkehrintegrator funktioniert wie erwartet, wie an den aufgenommen Bilder der Oszilloskopausgabe zu sehen ist. Da für den Integrator die Beziehung $U_A\propto\omega^{-1}$ gelten soll, lautet der Theoriewert $m=-1$. Die lineare Regression ergab einen Wert von $m=-0.754\pm0.040$, welcher um 24.6\% vom Theoriewert abweicht.
+Der Umkehrintegrator funktioniert wie erwartet, wie an den aufgenommen Bilder der Oszilloskopausgabe zu sehen ist. Da für den Integrator die Beziehung $U_A\propto\omega^{-1}$ gelten soll, lautet der Theoriewert $m=-1$. Die lineare Regression ergab einen Wert von  \\$m=-0.754\pm0.040$, welcher um 24.6\% vom Theoriewert abweicht.
 
 \subsection{Der Umkehrdifferentiator}
 Der Umkehrdifferentiator arbeitete, wie auf den aufgenommenen Bildern zu sehen ist, wie erwartet. Jedoch ergab sich eine starke Abweichung von der Beziehung $U_A\propto\omega$. Der theoretisch erwartete Wert für die Steigung m war m=1, jedoch ergab die lineare Regression einen Wert von $m = -0.797 \pm 0.039$. Dies lässt sich auf einen systematischen Fehler im Aufbau oder in Apparatur zurückführen.
@@ -492,14 +493,11 @@ Der Umkehrdifferentiator arbeitete, wie auf den aufgenommenen Bildern zu sehen i
 Der Schmitt-Trigger arbeitet zwar wie erwartet, die Kippspannung weicht jedoch mit 127\% signifikant vom theoretisch erwarteten Wert ab. Hier ist von einem systematischen Fehler im Aufbau oder der Apparatur auszugehen.
 
 \subsection{Der Dreiecksgenerator}
-Der Dreiecksgenerator liefert wie erwartet ein Dreieckssignal. Die experimentell bestimmte Frequenz des Dreieckgenerators weicht um 10.70\% vom berechneten Theoriewert ab.
+Der Dreiecksgenerator liefert wie erwartet ein Dreieckssignal. Die experimentell \\bestimmte Frequenz des Dreieckgenerators weicht um 10.70\% vom berechneten Theoriewert ab.
 
 \subsection{Die Schwingungsdifferentialschaltung}
 Die Schwingungsdifferentialschaltung funktioniert, wie auf den Thermodrucken zu sehen ist, wie erwartet. Für die Frequenz der Schaltung ergibt ein experimentell bestimmter Wert von $f_{exp}=\SI{664.2}{\hertz}$, was mit 8.2\% vom Theoriewert $f_{theo}=\SI{723.43}{\hertz}$ abweicht. \\
 Die Abklingdauer liegt bei $\tau_{exp}=\SI{4.1(2)}{\milli\second}$, diesec weicht um 8,9\% vom Theoriewert ab, dies liegt außerhalb des angegebenen statistischen Fehlers.
-
-\subsection{Phasenbeziehung des gegengekoppelten Verstärkers}
-In der Abbildung ist deutlich zu erkennen, dass der Absolutbetrag der Phasendifferenz zwischen Eingangs- und Ausgangsspannung mit steigender Frequenz abnimmt. 
 
 \section{Quellen}
 {[1]} Physikalisches Praktikum, TU Dortmund: \\
