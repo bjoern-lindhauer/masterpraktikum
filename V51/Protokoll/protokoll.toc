@@ -1,0 +1,34 @@
+\contentsline {section}{\numberline {1}Einleitung}{3}{section.1}
+\contentsline {section}{\numberline {2}Theoretische Grundlagen}{4}{section.2}
+\contentsline {subsection}{\numberline {2.1}Ideale Operationsverst\IeC {\"a}rker}{4}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Reale Operationsverst\IeC {\"a}rker}{5}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Schaltungen mit Operationsverst\IeC {\"a}rker}{6}{subsection.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}Linearverst\IeC {\"a}rker}{6}{subsubsection.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.2}Umkehr-Integrator}{8}{subsubsection.2.3.2}
+\contentsline {subsubsection}{\numberline {2.3.3}Umkehr-Differentiator}{8}{subsubsection.2.3.3}
+\contentsline {subsubsection}{\numberline {2.3.4}Schmitt-Trigger}{9}{subsubsection.2.3.4}
+\contentsline {subsubsection}{\numberline {2.3.5}Der Operationsverst\IeC {\"a}rker als Signalgenerator}{10}{subsubsection.2.3.5}
+\contentsline {subsubsection}{\numberline {2.3.6}Erzeugung amplitudenmodulierter Sinusschwingung}{11}{subsubsection.2.3.6}
+\contentsline {section}{\numberline {3}Durchf\IeC {\"u}hrung}{12}{section.3}
+\contentsline {subsection}{\numberline {3.1}Frequenzgang und Phasenbeziehung des gegengekoppelten Verst\IeC {\"a}rkers}{12}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Der Umkehrintegrator}{12}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Der Umkehrdifferentiator}{12}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Der Schmitt-Trigger}{12}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.5}Der Dreiecksgenerator}{12}{subsection.3.5}
+\contentsline {subsection}{\numberline {3.6}Die Schwingungsdifferentialschaltung}{12}{subsection.3.6}
+\contentsline {section}{\numberline {4}Auswertung}{13}{section.4}
+\contentsline {subsection}{\numberline {4.1}Frequenzgang und Phasengang des gegengekoppelten Verst\IeC {\"a}rkers}{13}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Der Umkehrintegrator}{15}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Der Umkehrdifferentiator}{17}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Der Schmitt-Trigger}{19}{subsection.4.4}
+\contentsline {subsection}{\numberline {4.5}Der Dreiecksgenerator}{19}{subsection.4.5}
+\contentsline {subsection}{\numberline {4.6}Die Schwingungsdifferentialschaltung}{19}{subsection.4.6}
+\contentsline {section}{\numberline {5}Diskussion}{22}{section.5}
+\contentsline {subsection}{\numberline {5.1}Frequenzgang des gegengekoppelten Verst\IeC {\"a}rkers}{22}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Der Umkehrintegrator}{22}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Der Umkehrdifferentiator}{22}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.4}Der Schmitt-Trigger}{22}{subsection.5.4}
+\contentsline {subsection}{\numberline {5.5}Der Dreiecksgenerator}{22}{subsection.5.5}
+\contentsline {subsection}{\numberline {5.6}Die Schwingungsdifferentialschaltung}{23}{subsection.5.6}
+\contentsline {subsection}{\numberline {5.7}Phasenbeziehung des gegengekoppelten Verst\IeC {\"a}rkers}{23}{subsection.5.7}
+\contentsline {section}{\numberline {6}Quellen}{24}{section.6}
