@@ -1,34 +1,35 @@
 \BOOKMARK [1][-]{section.1}{Einleitung}{}% 1
-\BOOKMARK [1][-]{section.2}{Theoretische Grundlagen}{}% 2
-\BOOKMARK [2][-]{subsection.2.1}{Ideale Operationsverst\344rker}{section.2}% 3
-\BOOKMARK [2][-]{subsection.2.2}{Reale Operationsverst\344rker}{section.2}% 4
-\BOOKMARK [2][-]{subsection.2.3}{Schaltungen mit Operationsverst\344rker}{section.2}% 5
-\BOOKMARK [3][-]{subsubsection.2.3.1}{Linearverst\344rker}{subsection.2.3}% 6
+\BOOKMARK [1][-]{section.2}{Theoretische\040Grundlagen}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Ideale Operationsverstärker}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Reale Operationsverstärker}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Schaltungen mit Operationsverstärker}{section.2}% 5
+\BOOKMARK [3][-]{subsubsection.2.3.1}{Linearverstärker}{subsection.2.3}% 6
 \BOOKMARK [3][-]{subsubsection.2.3.2}{Umkehr-Integrator}{subsection.2.3}% 7
 \BOOKMARK [3][-]{subsubsection.2.3.3}{Umkehr-Differentiator}{subsection.2.3}% 8
 \BOOKMARK [3][-]{subsubsection.2.3.4}{Schmitt-Trigger}{subsection.2.3}% 9
-\BOOKMARK [3][-]{subsubsection.2.3.5}{Der Operationsverst\344rker als Signalgenerator}{subsection.2.3}% 10
-\BOOKMARK [3][-]{subsubsection.2.3.6}{Erzeugung amplitudenmodulierter Sinusschwingung}{subsection.2.3}% 11
-\BOOKMARK [1][-]{section.3}{Durchf\374hrung}{}% 12
-\BOOKMARK [2][-]{subsection.3.1}{Frequenzgang und Phasenbeziehung des gegengekoppelten Verst\344rkers}{section.3}% 13
-\BOOKMARK [2][-]{subsection.3.2}{Der Umkehrintegrator}{section.3}% 14
-\BOOKMARK [2][-]{subsection.3.3}{Der Umkehrdifferentiator}{section.3}% 15
-\BOOKMARK [2][-]{subsection.3.4}{Der Schmitt-Trigger}{section.3}% 16
-\BOOKMARK [2][-]{subsection.3.5}{Der Dreiecksgenerator}{section.3}% 17
-\BOOKMARK [2][-]{subsection.3.6}{Die Schwingungsdifferentialschaltung}{section.3}% 18
+\BOOKMARK [3][-]{subsubsection.2.3.5}{Der Operationsverstärker als Signalgenerator}{subsection.2.3}% 10
+\BOOKMARK [3][-]{subsubsection.2.3.6}{Erzeugung\040amplitudenmodulierter\040Sinusschwingung}{subsection.2.3}% 11
+\BOOKMARK [1][-]{section.3}{Durchführung}{}% 12
+\BOOKMARK [2][-]{subsection.3.1}{Frequenzgang und Phasenbeziehung des gegengekoppelten Verstärkers}{section.3}% 13
+\BOOKMARK [2][-]{subsection.3.2}{Der\040Umkehrintegrator}{section.3}% 14
+\BOOKMARK [2][-]{subsection.3.3}{Der\040Umkehrdifferentiator}{section.3}% 15
+\BOOKMARK [2][-]{subsection.3.4}{Der\040Schmitt-Trigger}{section.3}% 16
+\BOOKMARK [2][-]{subsection.3.5}{Der\040Dreiecksgenerator}{section.3}% 17
+\BOOKMARK [2][-]{subsection.3.6}{Die\040Schwingungsdifferentialschaltung}{section.3}% 18
 \BOOKMARK [1][-]{section.4}{Auswertung}{}% 19
-\BOOKMARK [2][-]{subsection.4.1}{Frequenzgang und Phasengang des gegengekoppelten Verst\344rkers}{section.4}% 20
-\BOOKMARK [2][-]{subsection.4.2}{Der Umkehrintegrator}{section.4}% 21
-\BOOKMARK [2][-]{subsection.4.3}{Der Umkehrdifferentiator}{section.4}% 22
-\BOOKMARK [2][-]{subsection.4.4}{Der Schmitt-Trigger}{section.4}% 23
-\BOOKMARK [2][-]{subsection.4.5}{Der Dreiecksgenerator}{section.4}% 24
-\BOOKMARK [2][-]{subsection.4.6}{Die Schwingungsdifferentialschaltung}{section.4}% 25
+\BOOKMARK [2][-]{subsection.4.1}{Frequenzgang und Phasengang des gegengekoppelten Verstärkers}{section.4}% 20
+\BOOKMARK [2][-]{subsection.4.2}{Der\040Umkehrintegrator}{section.4}% 21
+\BOOKMARK [2][-]{subsection.4.3}{Der\040Umkehrdifferentiator}{section.4}% 22
+\BOOKMARK [2][-]{subsection.4.4}{Der\040Schmitt-Trigger}{section.4}% 23
+\BOOKMARK [2][-]{subsection.4.5}{Der\040Dreiecksgenerator}{section.4}% 24
+\BOOKMARK [2][-]{subsection.4.6}{Die\040Schwingungsdifferentialschaltung}{section.4}% 25
 \BOOKMARK [1][-]{section.5}{Diskussion}{}% 26
-\BOOKMARK [2][-]{subsection.5.1}{Frequenzgang des gegengekoppelten Verst\344rkers}{section.5}% 27
-\BOOKMARK [2][-]{subsection.5.2}{Der Umkehrintegrator}{section.5}% 28
-\BOOKMARK [2][-]{subsection.5.3}{Der Umkehrdifferentiator}{section.5}% 29
-\BOOKMARK [2][-]{subsection.5.4}{Der Schmitt-Trigger}{section.5}% 30
-\BOOKMARK [2][-]{subsection.5.5}{Der Dreiecksgenerator}{section.5}% 31
-\BOOKMARK [2][-]{subsection.5.6}{Die Schwingungsdifferentialschaltung}{section.5}% 32
-\BOOKMARK [2][-]{subsection.5.7}{Phasenbeziehung des gegengekoppelten Verst\344rkers}{section.5}% 33
+\BOOKMARK [2][-]{subsection.5.1}{Frequenzgang des gegengekoppelten Verstärkers}{section.5}% 27
+\BOOKMARK [2][-]{subsection.5.2}{Der\040Umkehrintegrator}{section.5}% 28
+\BOOKMARK [2][-]{subsection.5.3}{Der\040Umkehrdifferentiator}{section.5}% 29
+\BOOKMARK [2][-]{subsection.5.4}{Der\040Schmitt-Trigger}{section.5}% 30
+\BOOKMARK [2][-]{subsection.5.5}{Der\040Dreiecksgenerator}{section.5}% 31
+\BOOKMARK [2][-]{subsection.5.6}{Die\040Schwingungsdifferentialschaltung}{section.5}% 32
+\BOOKMARK [2][-]{subsection.5.7}{Phasenbeziehung des gegengekoppelten Verstärkers}{section.5}% 33
 \BOOKMARK [1][-]{section.6}{Quellen}{}% 34
+\BOOKMARK [1][-]{section.7}{Anhang}{}% 35
