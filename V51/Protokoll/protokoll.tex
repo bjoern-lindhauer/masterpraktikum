@@ -17,6 +17,7 @@
 \usepackage{float}
 \usepackage{booktabs}
 
+
 \renewcommand{\figurename}{Abb.}
 \usepackage[
 	colorlinks=true,
@@ -24,12 +25,13 @@
 	linkcolor=black
 ]{hyperref}
 
-
 %Hier Titel und so
 \newcommand{\versuchnummer}{V51} 
 \newcommand{\versuchname}{Schaltungen mit Operationsverstärkern} 
 \newcommand{\versuchdatum}{28.11.16} 
 
+\let\oldsection\section
+\renewcommand\section{\clearpage\oldsection}
 
 \title{Versuch \versuchnummer\\ \versuchname}
 \subtitle{Physikalisches Fortgeschrittenenpraktikum}
@@ -342,14 +344,14 @@ U_\text{A}=RI_0\exp \left(\frac{e_0}{k_\text{B} T}U_\text{e}\right)\hspace{0.3cm
 
 \section{Durchführung}
 
-\subsection{Frequenzgang des gegengekoppelten Verstärkers}
-Ein gegengekoppelter Verstärker wird aufgebaut und bei vier verschiedenen Verstärkungen V' wird der entsprechende Frequenzgang vermessen.
+\subsection{Frequenzgang und Phasenbeziehung des gegengekoppelten Verstärkers}
+Ein gegengekoppelter Verstärker wird aufgebaut und bei vier verschiedenen Verstärkungen V' wird der entsprechende Frequenzgang vermessen. Außerdem wird die Phasenbeziehung zwischen Ausgangs- und Eingangsspannung bei einer aufgeführten Verstärkung V' vermessen.
 
 \subsection{Der Umkehrintegrator}
 Ein Umkehrintegrator wird aufgebaut und die Beziehung $U_A\propto\frac{1}{\omega}$ überprüft. Außerdem werden eine Sinus-, eine Rechteck- und eine Dreiecksspannung auf den Umkehrintegrator gegeben und von den Ausgangssignalen Bilder erstellt.
 
 \subsection{Der Umkehrdifferentiator}
-Es wird ein Umkehrdifferentiator aufgebaut und der Zusammenhang zwischen Ausgangsspannung $U_A $ und $\omega$ untersucht. Außerdem werden wieder Bilder von den Ausgangssignalen bei den oben genannten Spannungsformen aufgenommen.
+Es wird ein Umkehrdifferentiator aufgebaut und der Zusammenhang zwischen Ausgangsspannung $U_A $ und Frequenz $\omega$ untersucht. Außerdem werden wieder Bilder von den Ausgangssignalen bei den oben genannten Spannungsformen aufgenommen.
 
 \subsection{Der Schmitt-Trigger}
 Ein Schmitt-Trigger wird aufgebaut und der Scheitelwert der Spannung sowie die Betriebsspannung gemessen.
@@ -360,12 +362,9 @@ Ein Dreieckgenerator wird aufgebaut und ein Bild der erzeugten Spannung aufgenom
 \subsection{Die Schwingungsdifferentialschaltung}
 Mithilfe einer Schwingungsdifferentialschaltung wird eine ungedämpfte und eine gedämpfte Sinusspannung erzeugt. Davon werden Bilder aufgenommen und die Abklingdauer der gedämpften Schwingung bestimmt.
 
-\subsection{Phasenbeziehung des gegengekoppelten Verstärkers}
-Die Phasenbeziehung zwischen Ausgangs- und Eingangsspannung wird bei einer Verstärkung V' bestimmt.
-
 \section{Auswertung}
 
-\subsection{Frequenzgang des gegengekoppelten Verstärkers}
+\subsection{Frequenzgang und Phasengang des gegengekoppelten Verstärkers}
 
 In den Abbildungen \ref{fig:freq1}-\ref{fig:freq4} sind die Frequenzgänge des gegengekoppelten Verstärkers für verschiedene Verstärkungsgrade $V'$ dargestellt. Es wurde dabei stets ein Widerstand der Größe $R_1=\SI{1}{\kilo\ohm}$ verwendet. \\
 \begin{minipage}[t]{0.5\textwidth}
@@ -409,6 +408,13 @@ Die Abnahme des Ausgangsamplitude ist damit zu erklären, dass der gekoppelte Ve
 	\includegraphics[width=10cm]{images/tiefpass.png}
 	\captionof{figure}{Ersatzschaltbild des Tiefpasses}
 	\label{fig:tiefpass}
+\end{center}
+
+In Abbildung \ref{fig:phase} sind die Messwerte für die Phasenverschiebung zwischen Eingangs- und Ausgangsspannung dargestellt.
+\begin{center}
+	\includegraphics[width=10cm]{images/phase_frequenz.pdf}
+	\captionof{figure}{Phasenverschiebung zwischen Eingangs- und Ausgangsspannung aufgetragen gegen die Fequenz}
+	\label{fig:phase}
 \end{center}
 
 \subsection{Der Umkehrintegrator}
@@ -570,14 +576,6 @@ Aus der nicht-linearen Ausgleichsrechnung ergibt sich die Abklingdauer von
 	\includegraphics[width=10cm]{images/schwing_abfall.pdf}
 	\captionof{figure}{Messwerte zum Schwingabfall des Signals und nichtlinearer Fit der Maxima}
 	\label{fig:expfit}
-\end{center}
-
-\subsection{Phasenbeziehung des gegengekoppelten Verstärkers}
-In Abbildung \ref{fig:phase} sind die Messwerte für die Phasenverschiebung zwischen Eingangs- und Ausgangsspannung dargestellt.
-\begin{center}
-	\includegraphics[width=10cm]{images/phase_frequenz.pdf}
-	\captionof{figure}{Phasenverschiebung zwischen Eingangs- und Ausgangsspannung aufgetragen gegen die Fequenz}
-	\label{fig:phase}
 \end{center}
 
 \section{Diskussion}
