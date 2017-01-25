@@ -59,7 +59,8 @@
 \tableofcontents
 
 \section{Einleitung}
-Mithilfe von Operationsverstärkern sollen verschiedene Schaltungen realisiert werden, die z.B. als Signalgeneratoren genutzt werden können.
+Mithilfe von Operationsverstärkern können Signale verstärkt werden. Werden Operationsverstärker sinnvoll mit Kondensatoren und Widerständen kombiniert, so ist die Erzeugung von besonderen Signalen, wie zum Beispiel einem Dreiecksignal , möglich. \\
+In diesem Versuch soll untersucht werden, wie mit verschiedenen Schaltungen verschiedene Verstärkungsgrade realisiert werden können. Au"serdem sollen komplexere Schaltungen zur Erzeugung eines Dreieckssignals und einer exponentiell abfallenden Schwingung realisiert werden.
 
 \section{Theoretische Grundlagen}
 \subsection{Ideale Operationsverstärker}
@@ -313,7 +314,7 @@ Mithilfe einer Schwingungsdifferentialschaltung wird eine ungedämpfte und eine 
 
 \subsection{Frequenzgang und Phasengang des gegengekoppelten Verstärkers}
 
-In Abbildung \ref{fig:frequenzgang} sind die Frequenzgänge des gegengekoppelten Verstärkers für verschiedene Verstärkungsgrade $V'$ dargestellt. Es wurde dabei stets ein Widerstand der Grö"se $R_1=\SI{1}{\kilo\ohm}$ verwendet. \\
+In Abbildung \ref{fig:frequenzgang} sind die Frequenzgänge des gegengekoppelten Verstärkers für verschiedene Verstärkungsgrade $V'$ dargestellt. Es wurde dabei stets ein Widerstand der Grö"se $R_1=\SI{1}{\kilo\ohm}$ verwendet. Die Tabellen mit den Messdaten sind im Anhang zu finden.\\
 \begin{minipage}[t]{0.6\textwidth}
 		\includegraphics[width=\textwidth]{images/plot1.pdf}
 		\centering
@@ -525,6 +526,133 @@ http://129.217.
 224.2/HOMEPAGE/PHYSIKER/MASTER/SKRIPT/V51.pdf (letzte Version vom 02.01.2017, 11:10)\\
 
 \section{Anhang}
+
+\begin{table}[H]
+	\centering
+	\captionof{table}{Frequenzgang des gegengekoppelten Verstärkers für $R_n=\SI{1}{\kilo\ohm}$}
+	\label{tab:ggverst_a}
+	\hskip-1.50cm
+	\begin{tabular}{r r r}
+		\toprule
+		$f / \si{\kilo\hertz}$ & $U_A/\si{\volt}$ & $U_E/\si{\volt}$ \\
+		\midrule
+		0.25	&	2.57	&	2.65 \\
+		0.50	&	2.57	&	2.61 \\
+		0.10	&	2.57	&	2.61 \\
+		0.50	&	2.61	&	2.69 \\
+		1.00	&	2.61	&	2.69 \\
+		5.00	&	2.57	&	2.65 \\
+		10.00	&	2.92	&	3.02 \\
+		15.00	&	3.38	&	3.42 \\
+		20.00	&	2.05	&	2.09 \\
+		50.00	&	1.51	&	1.57 \\
+		75.00	&	1.57	&	1.65 \\
+		100.00	&	1.59	&	1.69 \\¸
+		200.00	&	1.53	&	1.77 \\
+		300.00	&	1.43	&	1.87 \\
+		500.00	&	1.39	&	2.13 \\
+		1000.00	&	0.98	&	2.25 \\
+		2000.00	&	0.56	&	2.37 \\
+		5000.00	&	0.19	&	2.33 \\
+		10000.00	&	0.09	&	2.14 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\captionof{table}{Frequenzgang des gegengekoppelten Verstärkers für $R_n=\SI{100}{\ohm}$}
+	\label{tab:ggverst_b}
+	\hskip-1.50cm
+	\begin{tabular}{r r r}
+		\toprule
+		$f / \si{\kilo\hertz}$ & $U_A/\si{\volt}$ & $U_E/\si{\volt}$ \\
+		\midrule
+		0.25	&	2.57	&	2.69 \\
+		0.50	&	2.57	&	2.61 \\
+		0.10	&	2.61	&	2.69 \\
+		0.50	&	2.61	&	2.65 \\
+		1.00	&	2.61	&	2.69 \\
+		5.00	&	2.53	&	2.61 \\
+		10.00	&	2.97	&	2.97 \\
+		15.00	&	3.38	&	3.42 \\
+		20.00	&	2.01	&	2.05 \\
+		50.00	&	1.57	&	1.61 \\
+		75.00	&	1.63	&	1.67 \\
+		100.00	&	1.53	&	1.63 \\
+		200.00	&	1.53	&	1.71 \\
+		300.00	&	1.57	&	1.83 \\
+		500.00	&	1.71	&	2.11 \\
+		1000.00	&	1.45	&	2.25 \\
+		2000.00	&	0.88	&	2.21 \\
+		5000.00	&	0.33	&	2.17 \\
+		10000.00	&	0.17	&	1.97 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\captionof{table}{Frequenzgang des gegengekoppelten Verstärkers für $R_n=\SI{570}{\ohm}$}
+	\label{tab:ggverst_c}
+	\hskip-1.50cm
+	\begin{tabular}{r r r}
+		\toprule
+		$f / \si{\kilo\hertz}$ & $U_A/\si{\volt}$ & $U_E/\si{\volt}$ \\
+		\midrule
+		0.25	&	2.61	&	2.73 \\
+		0.50	&	2.57	&	2.65 \\
+		0.10	&	2.57	&	2.61 \\
+		0.50	&	2.57	&	2.65 \\
+		1.00	&	2.57	&	2.65 \\
+		5.00	&	2.57	&	2.69 \\
+		10.00	&	2.97	&	2.97 \\
+		15.00	&	3.38	&	3.42 \\
+		20.00	&	2.09	&	2.09 \\
+		50.00	&	1.55	&	1.61 \\
+		75.00	&	1.57	&	1.63 \\
+		100.00	&	1.53	&	1.69 \\
+		200.00	&	1.49	&	1.73 \\
+		300.00	&	1.55	&	1.83 \\
+		500.00	&	1.61	&	2.13 \\
+		1000.00	&	1.21	&	2.25 \\
+		2000.00	&	0.72	&	2.25 \\
+		5000.00	&	0.26	&	2.25 \\
+		10000.00	&	0.12	&	2.06 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\captionof{table}{Frequenzgang des gegengekoppelten Verstärkers für $R_n=\SI{100}{\kilo\ohm}$}
+	\label{tab:ggverst_d}
+	\hskip-1.50cm
+	\begin{tabular}{r r r}
+		\toprule
+		$f / \si{\kilo\hertz}$ & $U_A/\si{\volt}$ & $U_E/\si{\volt}$ \\
+		\midrule
+		0.25	&	2.37	&	2.69 \\
+		0.50	&	2.33	&	2.61 \\
+		0.10	&	2.33	&	2.65 \\
+		0.50	&	2.33	&	2.61 \\
+		1.00	&	2.37	&	2.69 \\
+		5.00	&	2.13	&	3.10 \\
+		10.00	&	2.17	&	3.78 \\
+		15.00	&	2.09	&	4.38 \\
+		20.00	&	1.25	&	3.18 \\
+		50.00	&	0.50	&	2.81 \\
+		75.00	&	0.32	&	2.25 \\
+		100.00	&	0.19	&	2.05 \\
+		200.00	&	0.14	&	1.81 \\
+		300.00	&	0.12	&	1.75 \\
+		500.00	&	0.10	&	2.09 \\
+		1000.00	&	0.04	&	2.37 \\
+		2000.00	&	0.02	&	2.41 \\	
+		\bottomrule
+	\end{tabular}
+\end{table}
+		
 
 \begin{table}[H]
 	\centering
