@@ -275,10 +275,12 @@ U_\text{A}\left(t\right)=U_0\exp \left(\frac{\eta t}{20 RC}\right)\sin \frac{t}{
 beschreibt eine gedämpfte ($\eta < 0$) bzw. entdämpfte Sinusschwingung. Dabei ist die Schwingungsdauer
 \begin{align}
 T=2\pi RC
+\label{eq:freqsin}
 \end{align}
 und die Abklingdauer
 \begin{align}
 \tau=\frac{20RC}{\left|\eta \right| }\hspace{0.3cm}\text{.}
+\label{eq:key}
 \end{align}
 \begin{figure}[H]
 \centering
@@ -295,11 +297,8 @@ und die Abklingdauer
 \subsection{Frequenzgang und Phasenbeziehung des gegengekoppelten Verstärkers}
 Ein gegengekoppelter Verstärker wird aufgebaut und bei vier verschiedenen Verstärkungen V' wird der entsprechende Frequenzgang vermessen. Außerdem wird die Phasenbeziehung zwischen Ausgangs- und Eingangsspannung bei einer aufgeführten Verstärkung V' vermessen.
 
-\subsection{Der Umkehrintegrator}
-Ein Umkehrintegrator wird aufgebaut und die Beziehung $U_A\propto\frac{1}{\omega}$ überprüft. Außerdem werden eine Sinus-, eine Rechteck- und eine Dreiecksspannung auf den Umkehrintegrator gegeben und von den Ausgangssignalen Bilder erstellt.
-
-\subsection{Der Umkehrdifferentiator}
-Es wird ein Umkehrdifferentiator aufgebaut und der Zusammenhang zwischen Ausgangsspannung $U_A $ und Frequenz $\omega$ untersucht. Außerdem werden wieder Bilder von den Ausgangssignalen bei den oben genannten Spannungsformen aufgenommen.
+\subsection{Der Umkehrintegrator- und Differentiatir}
+Ein Umkehrintegrator und -differentiator werden aufgebaut und die Beziehung $U_A\propto\frac{1}{\omega}$ bzw. $U_A\propto\omega$ überprüft. Au"serdem werden eine Sinus-, eine Rechteck- und eine Dreiecksspannung auf den Umkehrintegrator und -differentiator gegeben und von den Ausgangssignalen Bilder erstellt.
 
 \subsection{Der Schmitt-Trigger}
 Ein Schmitt-Trigger wird aufgebaut und der Scheitelwert der Spannung sowie die Betriebsspannung gemessen.
@@ -314,33 +313,37 @@ Mithilfe einer Schwingungsdifferentialschaltung wird eine ungedämpfte und eine 
 
 \subsection{Frequenzgang und Phasengang des gegengekoppelten Verstärkers}
 
-In den Abbildungen \ref{fig:freq1}-\ref{fig:freq4} sind die Frequenzgänge des gegengekoppelten Verstärkers für verschiedene Verstärkungsgrade $V'$ dargestellt. Es wurde dabei stets ein Widerstand der Größe $R_1=\SI{1}{\kilo\ohm}$ verwendet. \\
-\begin{minipage}[t]{0.5\textwidth}
-	\includegraphics[width=\textwidth]{images/plot1.pdf}
-	\captionof{figure}{Frequenzgang für R$_n=\SI{1}{\kilo\ohm}$}
-	\label{fig:freq1}
+In Abbildung \ref{fig:frequenzgang} sind die Frequenzgänge des gegengekoppelten Verstärkers für verschiedene Verstärkungsgrade $V'$ dargestellt. Es wurde dabei stets ein Widerstand der Grö"se $R_1=\SI{1}{\kilo\ohm}$ verwendet. \\
+\begin{minipage}[t]{0.6\textwidth}
+		\includegraphics[width=\textwidth]{images/plot1.pdf}
+		\centering
+		a)
 \end{minipage}
-\begin{minipage}[t]{0.5\textwidth}
-	\includegraphics[width=\textwidth]{images/plot2.pdf}
-	\captionof{figure}{Frequenzgang für R$_n=\SI{100}{\ohm}$}
+\begin{minipage}[t]{0.6\textwidth}
+		\includegraphics[width=\textwidth]{images/plot2.pdf}
+		\centering
+		b)
 \end{minipage} \\
-\begin{minipage}[t]{0.5\textwidth}
-	\includegraphics[width=\textwidth]{images/plot3.pdf}
-	\captionof{figure}{Frequenzgang für R$_n=\SI{570}{\ohm}$}
+\begin{minipage}[t]{0.6\textwidth}
+		\includegraphics[width=\textwidth]{images/plot3.pdf}
+		\centering
+		c)
 \end{minipage}
-\begin{minipage}[t]{0.5\textwidth}
-	\includegraphics[width=\textwidth]{images/plot4.pdf}
-	\captionof{figure}{Frequenzgang für R$_n=\SI{100}{\kilo\ohm}$}
-	\label{fig:freq4}
-\end{minipage} \\
-\\
+\begin{minipage}[t]{0.6\textwidth}
+		\includegraphics[width=\textwidth]{images/plot4.pdf}
+		\centering
+		d)
+\end{minipage}
+\captionof{figure}{Frequenzgang für $R_n=$ a) $\SI{1}{\kilo\ohm}$, b) $\SI{100}{\ohm}$, c) $\SI{570}{\ohm}$, d) $\SI{570}{\ohm}$}
+\label{fig:frequenzgang}
+\vspace{0.5cm}
 In Tabelle \ref{tab:frequenzgang} sind die Grenzfrequenz, die Verstärkung in Theorie und Experiment, die Leerlaufverstärkung, die Steigung m und das Verstärkungs-Bandbreite-Produkt für die einzelnen verwendeten Widerstände dargestellt. \\
 \begin{table}[H]
 		\captionof{table}{Experimentell bestimmte Kenndaten}
 		\label{tab:frequenzgang}
 		\hskip-1.50cm\begin{tabular}{r r r r r}
 			\toprule
-				Kenngröße & $R_n=\SI{1}{\kilo\ohm}$ & $R_n=\SI{100}{\ohm}$ &  $R_n=\SI{570}{\ohm}$ & $R_n=\SI{100}{\kilo\ohm}$ \\
+				Kenngrö"s e & $R_n=\SI{1}{\kilo\ohm}$ & $R_n=\SI{100}{\ohm}$ &  $R_n=\SI{570}{\ohm}$ & $R_n=\SI{100}{\kilo\ohm}$ \\
 			\midrule
 				Grenzfrequenz $f_{\text{g}}$ [kHz] & $450 \pm 350$ & $1000 \pm 500$ & $700 \pm 500$ & $14 \pm 11$ \\
 				$V'_{\text{ideal}}$ & $1.0$ & $0.1$ & $0.57$ & $100$ \\
@@ -358,73 +361,84 @@ Die Abnahme des Ausgangsamplitude ist damit zu erklären, dass der gekoppelte Ve
 	\label{fig:tiefpass}
 \end{center}
 
-In Abbildung \ref{fig:phase} sind die Messwerte für die Phasenverschiebung zwischen Eingangs- und Ausgangsspannung dargestellt.
+In Abbildung \ref{fig:phase} sind die Messwerte für die Phasenverschiebung zwischen Eingangs- und Ausgangsspannung dargestellt.Die entsprechenden Messwerte sind in Tabelle \ref{tab:phase} zu finden.
 \begin{center}
 	\includegraphics[width=10cm]{images/phase_frequenz.pdf}
 	\captionof{figure}{Phasenverschiebung zwischen Eingangs- und Ausgangsspannung aufgetragen gegen die Fequenz}
 	\label{fig:phase}
 \end{center}
 
-\subsection{Der Umkehrintegrator}
-Für den Aufbau des Umkehrintegrators wurden ein Widerstand $R=\SI{32.7}{\kilo\ohm}$ und eine Kapazität $C=\SI{13.6}{\nano\farad}$ verwendet. Die gemessenen Ausgangsspannungen in Abhängigkeit von der Frequenz sind in Tabelle \ref{tab:integrator} dargestellt, in Abbildungen \ref{fig:sinusint}-\ref{fig:dreieckint} sind die Thermodrucke des Ausgangssignals für verschiedene Eingangssignalformen dargestellt.
-
-Mithilfe einer linearen Ausgleichsrechnung und einer Ausgleichsgeraden der Form $f(x)=m\cdot x +b$ ergibt sich die Steigung $m$ zu
+\subsection{Der Umkehrintegrator und -differentiator}
+Für den Aufbau des Umkehrintegrators wurden ein Widerstand $R=\SI{32.7}{\kilo\ohm}$ und eine Kapazität $C=\SI{13.6}{\nano\farad}$ verwendet. Die gemessenen Ausgangsspannungen in Abhängigkeit von der Frequenz sind in Tabelle \ref{tab:integrator} dargestellt, in Abbildungen \ref{fig:sinusint}-\ref{fig:dreieckint} sind die Thermodrucke des Ausgangssignals für verschiedene Eingangssignalformen dargestellt. \\
+Es wird eine lineare Ausgleichsrechnung der Form 
+\begin{align}
+\ln |U_A| = \ln\left(\frac{U_0}{RC}\right)+m\cdot\omega
+\end{align}
+gemacht. \\
+Mithilfe der linearen Ausgleichsrechnung ergibt sich die Steigung $m$ zu
 \begin{align*}
 m = -0.754\pm 0.040\,.
 \end{align*}
 \begin{center}
 	\includegraphics[width=12cm]{images/integrator.pdf}
-	\captionof{figure}{Ausgangsspannung $U_A$ des Umkehrintegrators bei variierter Frequenz}
+	\captionof{figure}{Ausgangsspannung $U_A$ des Umkehrintegrators bei variierter Frequenz $f$}
 	\label{fig:integrator}
 \end{center}
 \begin{minipage}[t]{0.5\textwidth}
 	\includegraphics[width=\textwidth]{images/sinus_int}
-	\captionof{figure}{Thermodruck des Signalverlaufes bei einer Sinus-Spannung}
+	\captionof{figure}{Signalverlauf bei einer Sinus-Spannung (Gelb: $U_E$, Grün: $U_A$ )}
 	\label{fig:sinusint}
 \end{minipage}
 \hspace{0.1\textwidth}
 \begin{minipage}[t]{0.5\textwidth}
 	\includegraphics[width=\textwidth]{images/rechteck_int}
-	\captionof{figure}{Thermodruck des Signalverlaufes bei einer Rechteck-Spannung}
+	\captionof{figure}{Signalverlauf bei einer Rechteck-Spannung (Gelb: $U_E$, Grün: $U_A$ )}
 	\label{fig:rechteckint}
 \end{minipage} \\
 \begin{minipage}[t]{0.5\textwidth}
 	\includegraphics[width=\textwidth]{images/dreieck_int}
-	\captionof{figure}{Thermodruck des Signalverlaufes bei einer Dreieck-Spannung}
+	\captionof{figure}{Signalverlaufe bei einer Dreieck-Spannung (Gelb: $U_E$, Grün: $U_A$ )}
 	\label{fig:dreieckint}
 \end{minipage}
-
-\subsection{Der Umkehrdifferentiator}
 Für den Aufbau des Umkehrdifferentiators wurden ein Widerstand $R=\SI{32.7}{\kilo\ohm}$ und eine Kapazität $C=\SI{13.6}{\nano\farad}$ verwendet. Die gemessenen Ausgangsspannungen in Abhängigkeit von der Frequenz sind in Tabelle \ref{tab:differentiator} dargestellt, in Abbildungen \ref{fig:sinusdiff}-\ref{fig:dreieckdiff} sind die Thermodrucke des Ausgangssignals für verschiedene Eingangssignalformen dargestellt.
-
-Mithilfe einer linearen Ausgleichsrechnung und einer Ausgleichsgeraden der Form $f(x)=m\cdot x +b$ ergibt sich die Steigung $m$ zu
+Es wird eine lineare Ausgleichsrechnung der Form 
+\begin{align}
+\ln |U_A| = \ln\left(-RCU_0\right)+m\cdot\omega
+\end{align}
+gemacht. \\
+Mithilfe der linearen Ausgleichsrechnung ergibt sich die Steigung $m$ zu
 \begin{align*}
 m = -0.797 \pm 0.039\,.
 \end{align*}
 \begin{center}
 	\includegraphics[width=12cm]{images/differentiator.pdf}
-	\captionof{figure}{Ausgangsspannung $U_A$ des Umkehrdifferentiators bei variierter Frequenz}
+	\captionof{figure}{Ausgangsspannung $U_A$ des Umkehrdifferentiators bei variierter Frequenz $f$}
 	\label{fig:differentiator}
 \end{center}
 \begin{minipage}[t]{0.5\textwidth}
 	\includegraphics[width=\textwidth]{images/sinus_diff}
-	\captionof{figure}{Thermodruck des Signalverlaufes bei einer Sinus-Spannung}
+	\captionof{figure}{Signalverlauf bei einer Sinus-Spannung (Grün: $U_E$, Gelb: $U_A$)}
 	\label{fig:sinusdiff}
 \end{minipage}
 \hspace{0.1\textwidth}
 \begin{minipage}[t]{0.5\textwidth}
 	\includegraphics[width=\textwidth]{images/rechteck_diff}
-	\captionof{figure}{Thermodruck des Signalverlaufes bei einer Rechteck-Spannung}
+	\captionof{figure}{Signalverlauf bei einer Rechteck-Spannung (Grün: $U_E$, Gelb: $U_A$)}
 	\label{fig:rechteckdiff}
 \end{minipage} \\
 \begin{minipage}[t]{0.5\textwidth}
 	\includegraphics[width=\textwidth]{images/dreieck_diff}
-	\captionof{figure}{Thermodruck des Signalverlaufes bei einer Dreieck-Spannung}
+	\captionof{figure}{Signalverlauf bei einer Dreieck-Spannung (Grün: $U_E$, Gelb: $U_A$)}
 	\label{fig:dreieckdiff}
 \end{minipage} 
 
 \subsection{Der Schmitt-Trigger}
-Für den Aufbau des Schmitt-Triggers wurden die Widerstände $R_P=\SI{33}{\kilo\ohm}$ und $R_1=\SI{100}{\ohm}$ verwendet. Der Wert des Betriebsspannung betrug $U_B=\SI{13.08}{\volt}$. \\
+Für den Aufbau des Schmitt-Triggers wurden die Widerstände $R_P=\SI{33}{\kilo\ohm}$ und $R_1=\SI{100}{\ohm}$ verwendet. Der Wert des Betriebsspannung betrug $U_B=\SI{13.08}{\volt}$. Der Signalverlauf ist in Abbildung \ref{fig:schmitt} dargestellt.\\
+\begin{center}
+	\includegraphics[width=10cm]{images/schmitt.png}
+	\captionof{figure}{Signalverlauf der Ausgangsspannung des Schmitt-Triggers}
+	\label{fig:schmitt}
+\end{center}
 Der Kippspannung betrug $U_{kipp}=\SI{90}{\milli\volt}$ die theoretisch errechnete Kippspannung betrug
 \begin{align*}
 U_{theor}=\SI{39.6}{\milli\volt}\,.
@@ -433,10 +447,17 @@ U_{theor}=\SI{39.6}{\milli\volt}\,.
 \subsection{Der Dreiecksgenerator}
 Der Dreieckgenerator wurde mit der Konfiguration
 \begin{align*}
-R_1=\SI{100}{\ohm} && R_P=\SI{33}{\kilo\ohm} && R=\SI{10}{\kilo\ohm} && C=\SI{100}{\nano\farad}
+R_1=\SI{100}{\ohm}, && R_P=\SI{33}{\kilo\ohm}, && R=\SI{10}{\kilo\ohm} && \text{und} && C=\SI{100}{\nano\farad}
 \end{align*}
-aufgebaut. \\
-Die theoretische Frequenz des Dreiecksgenerators ergibt sich aus
+aufgebaut. Die Betriebsspannung wurde auf $U_B=\SI{13.08}{\volt}$ eingestellt, der Maximalwert der Dreiecksspannung lag bei $U_D=\SI{0.79}{\volt}$.
+Der Signalverlauf ist in Abbildung \ref{fig:dreieckgen} dargestellt.
+\begin{center}
+	\includegraphics[width=10cm]{images/dreieckgen.png}
+	\captionof{figure}{Signalverlauf der Ausgangsspannung des Dreiecksgenerators}
+	\label{fig:dreieckgen}
+\end{center}
+Die Zeit, um den Kondensator vollständig aufzuladen, beträgt $T_ {1/2}=2RC$, für eine ganze Periode daher $T=2RC$. Die Frequenz ist desweiteren proportional zur Verstärkung. \\
+Die theoretische Frequenz des Dreiecksgenerators ergibt sich daher zu
 \begin{align}
 f_{theo}=\frac{R_P}{4R_1RC}\,.
 \end{align}
@@ -446,19 +467,19 @@ f_{theo}=\SI{82.5}{\kilo\hertz} &  & f_{exp}=\SI{91.34}{\kilo\hertz}\,.
 \end{align}
 
 \subsection{Die Schwingungsdifferentialschaltung}
-Für die Kapazität in der Schwingungsdifferentialschaltung wurde $C=\SI{22.5}{\nano\farad}$ gewählt. \\
-Die theoretischen Werte für die Frequenz $f_{theo}$ und die Abklingdauer $\tau$ ergeben sich zu
+Für die Kapazität in der Schwingungsdifferentialschaltung wurden $R=\SI{10}{\kilo\ohm}$ und \\ $C=\SI{22.5}{\nano\farad}$ gewählt. \\
+Die theoretischen Werte für die Frequenz $f_{theo}$ und die Abklingdauer $\tau$ ergeben sich gemä"s Gleichungen \ref{eq:freqsin} und \ref{eq:key} zu
 \begin{align}
 f_{theo} = \frac{1}{2\pi RC}=\SI{723.43}{\hertz} \\
 \tau = 20RC=\SI{4.5}{\milli\second}\,.
 \end{align}
-In Abbildung \ref{fig:thermoexpon_ung} ist die ungedämpfte Schwingung dargestellt, die Frequenz der Schwingung beträgt $\SI{664.2}{\hertz}$.
+In Abbildung \ref{fig:thermoexpon_ung} ist die ungedämpfte Schwingung dargestellt, die Frequenz der Schwingung beträgt $\SI{664.2}{\hertz}$ und die maximale Spannung ist $U_{\text{max}}=\SI{2.37}{\volt}$.
 \begin{center}
 	\includegraphics[width=10cm]{images/schwingung.png}
 	\captionof{figure}{Thermodruck der ungedämpften Schwingung nach Anregung durch Rechteckschwingung}
 	\label{fig:thermoexpon_ung}
 \end{center}
-Zur Bestimmung der Abklingdauer der gedämpften Schwingung werden mithilfe eines Peak-Detection-Algorithmus die Maxima bestimmt und mit diesen mit einem Exponentialansatz $f(t)=a\exp\left(-t/\tau\right) $ eine Ausgleichsrechnung durchgeführt. In Abbildung \ref{fig:expfit} sind der nicht-lineare Fit sowie die Messwerte dargestellt, ein Thermodruck des Oszilloskopenbildes ist in Abbildung \ref{fig:thermoexpon} dargestellt. \\
+Zur Bestimmung der Abklingdauer der gedämpften Schwingung, welche in Abbildung \ref{fig:thermoexpon} dargestellt ist, werden mithilfe eines Peak-Detection-Algorithmus die Maxima bestimmt und mit diesen mit einem Exponentialansatz $f(t)=a\exp\left(-t/\tau\right) $ eine Ausgleichsrechnung durchgeführt. In Abbildung \ref{fig:expfit} sind der nicht-lineare Fit sowie die Messwerte dargestellt. Die Positionen der Peaks sind in Tabelle \ref{tab:peak} aufgeführt.\\
 Aus der nicht-linearen Ausgleichsrechnung ergibt sich die Abklingdauer von
 \begin{align*}
 \tau_{exp}=\SI{4.1(2)}{\milli\second}\,.
@@ -483,14 +504,12 @@ Desweiteren ist auffällig, dass die Fehler der ermittelten Grenzfrequenzen sehr
 Der Theoriewert der Steigung ist m=-1 (für einen Tiefpass), die Steigungen der verschiedenen Konfigurationen schwanken zwischen -0.897 und -0.819, haben also signifikante Abweichungen vom theoretisch erwarteten Wert. \\
 Bezüglich des Phasenganges ist in der Abbildung deutlich zu erkennen, dass der Absolutbetrag der Phasendifferenz zwischen Eingangs- und Ausgangsspannung mit steigender Frequenz abnimmt. 
 
-\subsection{Der Umkehrintegrator}
-Der Umkehrintegrator funktioniert wie erwartet, wie an den aufgenommen Bilder der Oszilloskopausgabe zu sehen ist. Da für den Integrator die Beziehung $U_A\propto\omega^{-1}$ gelten soll, lautet der Theoriewert $m=-1$. Die lineare Regression ergab einen Wert von  \\$m=-0.754\pm0.040$, welcher um 24.6\% vom Theoriewert abweicht.
-
-\subsection{Der Umkehrdifferentiator}
+\subsection{Der Umkehrintegrator und -differentiator}
+Der Umkehrintegrator funktioniert wie erwartet, wie an den aufgenommen Bilder der Oszilloskopausgabe zu sehen ist. Da für den Integrator die Beziehung $U_A\propto\omega^{-1}$ gelten soll, lautet der Theoriewert $m=-1$. Die lineare Regression ergab einen Wert von  \\$m=-0.754\pm0.040$, welcher um 24.6\% vom Theoriewert abweicht. \\
 Der Umkehrdifferentiator arbeitete, wie auf den aufgenommenen Bildern zu sehen ist, wie erwartet. Jedoch ergab sich eine starke Abweichung von der Beziehung $U_A\propto\omega$. Der theoretisch erwartete Wert für die Steigung m war m=1, jedoch ergab die lineare Regression einen Wert von $m = -0.797 \pm 0.039$. Dies lässt sich auf einen systematischen Fehler im Aufbau oder in Apparatur zurückführen.
 
 \subsection{Der Schmitt-Trigger}
-Der Schmitt-Trigger arbeitet zwar wie erwartet, die Kippspannung weicht jedoch mit 127\% signifikant vom theoretisch erwarteten Wert ab. Hier ist von einem systematischen Fehler im Aufbau oder der Apparatur auszugehen.
+Der Schmitt-Trigger arbeitet nicht vollständig wie erwartet, die Kippspannung weicht mit 127\% signifikant vom theoretisch erwarteten Wert ab. Zudem ist beim Signalverlauf zu erkennen, dass keine perfekte Rechteckspannung erzeugt wurde, sondern signifikant die Form noch vom eingehenden Sinus-Signal beeinflusst wurde. Hier ist von einem systematischen Fehler im Aufbau oder der Apparatur auszugehen.
 
 \subsection{Der Dreiecksgenerator}
 Der Dreiecksgenerator liefert wie erwartet ein Dreieckssignal. Die experimentell \\bestimmte Frequenz des Dreieckgenerators weicht um 10.70\% vom berechneten Theoriewert ab.
@@ -506,6 +525,52 @@ http://129.217.
 224.2/HOMEPAGE/PHYSIKER/MASTER/SKRIPT/V51.pdf (letzte Version vom 02.01.2017, 11:10)\\
 
 \section{Anhang}
+
+\begin{table}[H]
+	\centering
+	\captionof{table}{Phasenverschiebung $\phi$ in Abhängigkeit von der Frequenz $f$}
+	\label{tab:phase}
+	\hskip-1.50cm
+	\begin{tabular}{r r}
+		\toprule
+		$f / \si{\hertz}$ & $\phi / ^{\circ}$ \\
+		\midrule
+		20	&	172	\\
+		30	&	173	\\
+		40	&	173	\\
+		50	&	173	\\
+		100	&	172	\\
+		200	&	172	\\
+		500	&	171	\\
+		1000	&	172	\\
+		10000	&	174	\\
+		20000	&	176	\\
+		30000	&	179	\\
+		40000	&	189	\\
+		50000	&	200	\\
+		60000	&	214	\\
+		70000	&	224	\\
+		80000	&	234	\\
+		90000	&	240	\\
+		100000	&	247	\\
+		150000	&	264	\\
+		200000	&	272	\\
+		250000	&	284	\\
+		300000	&	288	\\
+		350000	&	292	\\
+		400000	&	298	\\
+		500000	&	305	\\
+		600000	&	314	\\
+		700000	&	322	\\
+		800000	&	334	\\
+		900000	&	340	\\
+		1000000	&	350	\\
+		1200000	&	360	\\
+		1500000	&	337	\\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
 \begin{table}[H]
 	\centering
 	\captionof{table}{Werte der Ausgangsspannung des Umkehrintegrators in Abhängigkeit von $f$}
@@ -513,7 +578,7 @@ http://129.217.
 	\hskip-1.50cm
 	\begin{tabular}{r r}
 		\toprule
-		Frequenz $f / \si{\kilo\hertz}$ & $U_A / \si{\volt}$ \\
+		$f / \si{\kilo\hertz}$ & $U_A / \si{\volt}$ \\
 		\midrule
 		10000 & 0.19 \\
 		7500  & 0.27 \\
@@ -541,7 +606,7 @@ http://129.217.
 	\hskip-1.50cm
 	\begin{tabular}{r r}
 		\toprule
-		Frequenz $f / \si{\kilo\hertz}$ & $U_A / \si{\volt}$ \\
+		$f / \si{\kilo\hertz}$ & $U_A / \si{\volt}$ \\
 		\midrule
 		10000 & 0.18 \\
 		7500  & 0.27 \\
@@ -561,5 +626,60 @@ http://129.217.
 		\bottomrule
 	\end{tabular}
 \end{table}
+
+\begin{table}[H]
+	\centering
+	\captionof{table}{Werte der Ausgangsspannung des Umkehrdifferentiators in Abhängigkeit von $f$}
+	\label{tab:differentiator}
+	\hskip-1.50cm
+	\begin{tabular}{r r}
+		\toprule
+		$f / \si{\kilo\hertz}$ & $U_A / \si{\volt}$ \\
+		\midrule
+		10000 & 0.18 \\
+		7500  & 0.27 \\
+		5000  & 0.40 \\
+		2500  & 0.77 \\
+		1000  & 1.45 \\
+		900   & 1.53 \\
+		800   & 1.59 \\
+		700   & 1.67 \\
+		600   & 1.73 \\
+		500   & 1.79 \\
+		400   & 1.75 \\
+		300   & 1.61 \\
+		200   & 1.55 \\
+		100   & 1.51 \\
+		50    & 1.49 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\captionof{table}{Peaks der gedämpften Schwingung}
+	\label{tab:peak}
+	\hskip-1.50cm
+	\begin{tabular}{r r}
+		\toprule
+		$t/\si{\micro\second}$ & $U_A / \si{\volt}$ \\
+		\midrule
+		1.36 & 2.44 \\
+		2.75 & 1.81 \\
+		2.91 & 1.36 \\
+		4.14 & 1.30 \\
+		5.54 & 0.910 \\
+		6.93 & 0.631 \\
+		8.35 & 0.455 \\
+		9.71 & 0.313 \\
+		9.91 & 0.227 \\
+		11.1 & 0.238 \\
+		12.5 & 0.172 \\
+		13.9 & 0.101 \\
+		15.3 & 0.065 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
 
 \end{document}

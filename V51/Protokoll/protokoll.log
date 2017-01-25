@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.11.14)  20 JAN 2017 14:56
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.11.14)  25 JAN 2017 17:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1075,7 +1075,11 @@ tly
 )
 \Hy@SectionHShift=\skip63
 )
-(./protokoll.aux)
+(./protokoll.aux
+
+LaTeX Warning: Label `tab:differentiator' multiply defined.
+
+)
 \openout1 = `protokoll.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
@@ -1288,54 +1292,40 @@ File: images/schaltplan_schwingung.png Graphic file (type QTm)
 File: images/plot1.pdf Graphic file (type QTm)
 
 <use  "images/plot1.pdf" >
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 320.
-See the caption package documentation for explanation.
-
 File: images/plot2.pdf Graphic file (type QTm)
-<use  "images/plot2.pdf" >
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 325.
-See the caption package documentation for explanation.
-
+ <use  "images/plot2.pdf" >
 File: images/plot3.pdf Graphic file (type QTm)
+
 <use  "images/plot3.pdf" >
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 329.
-See the caption package documentation for explanation.
-
 File: images/plot4.pdf Graphic file (type QTm)
-<use  "images/plot4.pdf" >
+ <use  "images/plot4.pdf" >
 
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 333.
+Package caption Warning: \captionsetup{type*=...} or \captionof
+(caption)                outside box or environment on input line 337.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (80.13687pt too wide) in paragraph at lines 341--353
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 337.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (86.08916pt too wide) in paragraph at lines 316--337
 [] [] 
  []
 
 
-Overfull \hbox (2.43333pt too wide) in paragraph at lines 317--353
+Overfull \hbox (86.08916pt too wide) in paragraph at lines 316--337
 [] [] 
  []
 
 
-Overfull \hbox (2.43333pt too wide) in paragraph at lines 317--353
+Overfull \hbox (80.13687pt too wide) in paragraph at lines 344--356
 [] [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 317--353
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 317--353
+Underfull \hbox (badness 10000) in paragraph at lines 340--356
 
  []
 
@@ -1346,14 +1336,14 @@ File: images/tiefpass.png Graphic file (type QTm)
  <use  "images/tiefpass.png" >
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 357.
+(caption)                particular \caption on input line 360.
 See the caption package documentation for explanation.
 
 File: images/phase_frequenz.pdf Graphic file (type QTm)
 <use  "images/phase_frequenz.pdf" >
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 364.
+(caption)                particular \caption on input line 367.
 See the caption package documentation for explanation.
 
 [14]
@@ -1361,120 +1351,169 @@ File: images/integrator.pdf Graphic file (type QTm)
  <use  "images/integrator.pdf" >
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 377.
+(caption)                particular \caption on input line 384.
 See the caption package documentation for explanation.
 
+[15]
 File: images/sinus_int.png Graphic file (type QTm)
-<use  "images/sinus_int.png" >
+ <use  "images/sinus_int.png" >
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 382.
+(caption)                particular \caption on input line 389.
 See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 389--389
+[][][]|[]\T1/lmr/m/n/10.95 Signalverlauf bei ei-ner Sinus-
+ []
 
 File: images/rechteck_int.png Graphic file (type QTm)
 <use  "images/rechteck_int.png" >
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 388.
+(caption)                particular \caption on input line 395.
 See the caption package documentation for explanation.
 
 File: images/dreieck_int.png Graphic file (type QTm)
 <use  "images/dreieck_int.png" >
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 393.
+(caption)                particular \caption on input line 400.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (46.69458pt too wide) in paragraph at lines 380--396
+Overfull \hbox (46.69458pt too wide) in paragraph at lines 387--405
 []   [] 
  []
 
-[15]
+[16]
 File: images/differentiator.pdf Graphic file (type QTm)
  <use  "images/differentiator.pdf" >
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 406.
+(caption)                particular \caption on input line 415.
 See the caption package documentation for explanation.
 
-[16]
+[17]
 File: images/sinus_diff.png Graphic file (type QTm)
  <use  "images/sinus_diff.png" >
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 411.
+(caption)                particular \caption on input line 420.
 See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 420--420
+[][][]|[]\T1/lmr/m/n/10.95 Signalverlauf bei ei-ner Sinus-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 420--420
+\T1/lmr/m/n/10.95 Spannung (Grün: $\OML/lmm/m/it/10.95 U[]$\T1/lmr/m/n/10.95 , 
+Gelb:
+ []
 
 File: images/rechteck_diff.png Graphic file (type QTm)
 <use  "images/rechteck_diff.png" >
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 417.
+(caption)                particular \caption on input line 426.
 See the caption package documentation for explanation.
 
 File: images/dreieck_diff.png Graphic file (type QTm)
 <use  "images/dreieck_diff.png" >
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 422.
+(caption)                particular \caption on input line 431.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (46.69458pt too wide) in paragraph at lines 409--425
+Underfull \hbox (badness 1983) in paragraph at lines 431--431
+[][][]|[]\T1/lmr/m/n/10.95 Signalverlauf bei ei-ner Dreieck-
+ []
+
+
+Overfull \hbox (46.69458pt too wide) in paragraph at lines 418--434
 []   [] 
  []
 
-[17]
-File: images/schwingung.png Graphic file (type QTm)
- <use  "images/schwingung.png" >
+[18]
+Underfull \hbox (badness 10000) in paragraph at lines 436--437
+
+ []
+
+File: images/schmitt.png Graphic file (type QTm)
+<use  "images/schmitt.png" >
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 458.
+(caption)                particular \caption on input line 439.
 See the caption package documentation for explanation.
 
-[18]
+[19]
+File: images/dreieckgen.png Graphic file (type QTm)
+ <use  "images/dreieckgen.png" >
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 456.
+See the caption package documentation for explanation.
+
+File: images/schwingung.png Graphic file (type QTm)
+<use  "images/schwingung.png" >
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 479.
+See the caption package documentation for explanation.
+
+[20]
 File: images/schwinggen.png Graphic file (type QTm)
  <use  "images/schwinggen.png" >
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 468.
+(caption)                particular \caption on input line 489.
 See the caption package documentation for explanation.
 
-[19]
+[21]
 File: images/schwing_abfall.pdf Graphic file (type QTm)
  <use  "images/schwing_abfall.pdf" >
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 473.
+(caption)                particular \caption on input line 494.
 See the caption package documentation for explanation.
 
-[20] [21
+[22] [23
 
-] [22]
-Underfull \hbox (badness 10000) in paragraph at lines 503--507
+] [24]
+Underfull \hbox (badness 10000) in paragraph at lines 522--526
 
  []
 
-[23
+[25
 
-] [24
+] [26
 
-]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 565.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 565.
+] [27]
+LaTeX Font Info:    Try loading font information for TS1+lmr on input line 665.
+
+ (/usr/share/texmf/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+) [28]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 685.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 685.
  (./protokoll.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 565.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 565.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 565.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 685.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 685.
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 685.
  ) 
 Here is how much of TeX's memory you used:
- 32101 strings out of 493638
- 613918 string characters out of 6146795
- 659900 words of memory out of 5000000
- 35048 multiletter control sequences out of 15000+600000
- 73907 words of font info for 64 fonts, out of 8000000 for 9000
+ 32150 strings out of 493638
+ 614965 string characters out of 6146795
+ 659039 words of memory out of 5000000
+ 35088 multiletter control sequences out of 15000+600000
+ 75379 words of font info for 68 fonts, out of 8000000 for 9000
  1330 hyphenation exceptions out of 8191
- 64i,21n,60p,10381b,1056s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 64i,21n,60p,10381b,986s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on protokoll.pdf (24 pages).
+Output written on protokoll.pdf (28 pages).

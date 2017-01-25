@@ -63,21 +63,22 @@ amplif = np.ones((19,4))
 vgrenz= np.ones(5)
 vgrenz_errors= unp.uarray(np.ones(4),0.01)
 
+
 for i in range(1,5):
 
     amplif[:,i-1]=data_linverst[2*i-1,:]/data_linverst[2*i,:]
 
     x_plot=np.linspace(0.5,10000, num=1000000)
-    params_1, covariance_1 = curve_fit(f,np.log(data_linverst[0,13:19]), np.log(amplif[13:19,0]))
+    params_1, covariance_1 = curve_fit(f,np.log(data_linverst[0,14:19]), np.log(amplif[14:19,0]))
     errors_1=np.sqrt(np.diag(covariance_1))
 
-    params_2, covariance_2 = curve_fit(f,np.log(data_linverst[0,15:19]), np.log(amplif[15:19,1]))
+    params_2, covariance_2 = curve_fit(f,np.log(data_linverst[0,14:19]), np.log(amplif[14:19,1]))
     errors_2=np.sqrt(np.diag(covariance_2))
 
     params_3, covariance_3 = curve_fit(f,np.log(data_linverst[0,14:19]), np.log(amplif[14:19,2]))
     errors_3=np.sqrt(np.diag(covariance_3))
 
-    params_4, covariance_4 = curve_fit(f,np.log(data_linverst[0,10:17]), np.log(amplif[10:17,3]))
+    params_4, covariance_4 = curve_fit(f,np.log(data_linverst[0,5:17]), np.log(amplif[5:17,3]))
     errors_4=np.sqrt(np.diag(covariance_4))
 
     params=np.array([params_1,params_2,params_3,params_4])
@@ -85,20 +86,25 @@ for i in range(1,5):
     plt.figure()
     err_v = 0.05
     if i==4:
-        plt.errorbar(np.log(data_linverst[0,0:17]), np.log(amplif[0:17,i-1]) + err_v , fmt='bx', label="Messung zum Widerstand %d" % i)
+        plt.errorbar(data_linverst[0,0:4], amplif[0:4,i-1] + err_v , fmt='bx', label="Nicht für den Fit verwendet")
+        plt.errorbar(data_linverst[0,5:17], amplif[5:17,i-1] + err_v , fmt='yx', label="Für den Fit verwendet")
     else:
-        plt.errorbar(np.log(data_linverst[0,:]), np.log(amplif[:,i-1]) + err_v , fmt='bx', label="Messung zum Widerstand %d" % i)
+        plt.errorbar(data_linverst[0,0:13], amplif[0:13,i-1] + err_v , fmt='bx', label="Nicht für den Fit verwendet")
+        plt.errorbar(data_linverst[0,14:19], amplif[14:19,i-1] + err_v , fmt='yx', label="Für den Fit verwendet")
 
     vgrenz[i-1] = np.mean(np.log(amplif[0:3,i-1])-0.5*np.log(2))
     vgrenz_errors[i-1] = ufloat(vgrenz[i-1],np.std(np.log(amplif[0:3,i-1])-0.5*np.log(2)))
 
-    plt.plot(np.log(x_plot), f(np.log(x_plot), params[i-1,0], params[i-1, 1]), 'r-', label='Fit')
-    plt.plot([-4,10], const([-4,10], vgrenz[i-1]), 'g-', label=r"Grenzwert zur Grenzfrequenz")
-    plt.legend(loc="best", numpoints=1)
+    plt.plot(x_plot, np.exp(f(np.log(x_plot), params[i-1,0], params[i-1, 1])), 'r-', label='Fit')
+    plt.plot([5*10**(-2),5*10**4], const([5*10**(-2),5*10**4], np.exp(vgrenz[i-1])), 'g-', label=r"Grenzwert zur Grenzfrequenz")
+    plt.xscale("log")
+    plt.yscale("log")
+    plt.legend(loc="lower left", numpoints=1)
     plt.grid()
-    plt.ylim(-4,0.1)
-    plt.xlabel(r'ln(f/kHz)')
-    plt.ylabel(r"ln(V')")
+    plt.xlim(5*10**(-2),5*10**4)
+    plt.ylim(10**(-2),2)
+    plt.xlabel(r'f/kHz')
+    plt.ylabel(r"V'")
     name = "../Protokoll/images/plot%d.pdf" % i
     plt.savefig(name)
 
@@ -149,12 +155,16 @@ x_plot=np.linspace(500,20000, num=100000)
 
 plt.figure()
 err_v = 0.05
-plt.errorbar(np.log(data_integ[0,:11]), np.log(data_integ[1,:11]) + err_v, fmt='bx', label=r"U$_A$ des Umkehrintegrators")
-plt.plot(np.log(x_plot), f(np.log(x_plot), *params_int), 'r-', label='Fit')
+plt.errorbar(data_integ[0,:11], data_integ[1,:11] + err_v, fmt='bx', label=r"U$_A$ des Umkehrintegrators")
+plt.plot(x_plot, np.exp(f(np.log(x_plot), *params_int)), 'r-', label='Fit')
 plt.legend(loc="best", numpoints=1)
 plt.grid()
-plt.xlabel(r'ln(f/kHz)')
-plt.ylabel(r"ln(U$_A$/V)")
+plt.xlabel(r'f/kHz')
+plt.ylabel(r"U$_A$/V")
+plt.xscale("log")
+plt.yscale("log")
+plt.xlim(3*10**2,2*10**4)
+plt.ylim(10**(-1),4)
 plt.savefig('../Protokoll/images/integrator.pdf')
 
 #Unkehrdifferentiator
@@ -167,12 +177,16 @@ print(params_diff, errors_diff)
 x_plot=np.linspace(500,20000, num=100000)
 
 plt.figure()
-plt.errorbar(np.log(data_diff[0,:]), np.log(data_diff[1,:]) + err_v, fmt='bx', label=r"U$_A$ des Umkehrdifferentiators")
-plt.plot(np.log(x_plot), f(np.log(x_plot), *params_diff), 'r-', label='Fit')
+plt.errorbar(data_diff[0,:], data_diff[1,:] + err_v, fmt='bx', label=r"U$_A$ des Umkehrdifferentiators")
+plt.plot(x_plot, np.exp(f(np.log(x_plot), *params_diff)), 'r-', label='Fit')
 plt.legend(loc="best", numpoints=1)
 plt.grid()
-plt.xlabel(r'ln(f/kHz)')
-plt.ylabel(r"ln(U$_A$/V)")
+plt.xlabel(r'f/kHz')
+plt.ylabel(r"U$_A$/V")
+plt.xscale("log")
+plt.yscale("log")
+plt.xlim(9,2*10**4)
+plt.ylim(10**(-1),4)
 plt.savefig('../Protokoll/images/differentiator.pdf')
 
 #Abfallende Schwingung
@@ -194,6 +208,7 @@ for i in range (1,16):
 
 peaks = np.delete(peaks, 0, 1)
 
+print(peaks)
 x0=[3,0.008]
 
 params_exp, covariance_exp = curve_fit(h, peaks[0], peaks[1], p0=x0)
