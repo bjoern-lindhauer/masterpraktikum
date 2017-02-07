@@ -165,6 +165,7 @@ abhängig.
 Die Leerlaufspannung führt zu der Korrektur Verstärkung
 \begin{align}
 \frac{1}{V'}\approx \frac{1}{V} + \frac{R_{1}}{R_{\text{N}}}
+\label{eq:leerlaufkorrektur}
 \end{align}
 für große Leerlaufspannungen $V \gg 1$. Die Gleichung \ref{eq:verstaerkung_ideal} ist folglich für $\frac{R_{\text{N}}}{R_{1}} \ll V$ korrekt.
 
@@ -178,13 +179,27 @@ ab. Auch Schwankungen der Leerlaufverstärkung werden um den Faktor $g$ verminde
 \begin{align}
 \frac{\Delta V'}{V'}=g^{-1}\frac{\Delta V}{V}
 \end{align}
-Außerdem kann eine Größere Frequenzbrandbreite unverzerrt übertragen werden, da diese auch um den Faktor $g$ erhöht wird. In Abbildung \ref{fig:frequenzgang_operationsverstaerker} wird der Unterschied der Brandbreiten im Frequenzgang des Linearverstärkers dargestellt.
+Außerdem kann eine größere Frequenzbrandbreite unverzerrt übertragen werden, da diese auch um den Faktor $g$ erhöht wird. In Abbildung \ref{fig:frequenzgang_operationsverstaerker} wird der Unterschied der Brandbreiten im Frequenzgang des Linearverstärkers dargestellt.
 \begin{figure}[H]
 \centering
 \includegraphics[width=9cm]{images/frequenzgang_operationsverstaerker.png}
 \caption{Frequenzgang des Linearverstärkers. [1]}
 \label{fig:frequenzgang_operationsverstaerker}
 \end{figure}
+
+Der Linearverstärker hat die au"serdem die Funktion eines Tiefpasses. Dies ist in dem folgenden Ersatzschaltbild dargestellt. Damit erklärt sich die Abnahme der Ausgangsamplitude bei großen Frequenzen.
+\begin{center}
+	\includegraphics[width=10cm]{images/tiefpass.png}
+	\captionof{figure}{Ersatzschaltbild des Tiefpasses}
+	\label{fig:tiefpass}
+\end{center}
+Für den hier vorliegenden RC-Tiefpass ergibt sich mit der Grenzfrequenz $\omega_g$ für den Betrag der Verstärkungsfunktion $V'(\omega)$ sowie die Phase der Verstärkungsfunktion
+\begin{align}
+|V'(\omega)|=\frac{1}{\sqrt{1+\left(\frac{\omega}{\omega_g}\right)^2}} 
+\label{eq:tiefpass}\\
+\tan\phi=-\frac{\omega}{\omega_g}\,.
+\label{eq:tiefpass_phase}
+\end{align} 
 
 \subsubsection{Umkehr-Integrator}
 Wird ein Kondensator im Rückkopplungszweig eingebaut, wie in Abbildung \ref{fig:schalplan_umkehrintegrator}, so fungiert die Schaltung als Umkehr-Integrator
@@ -314,7 +329,11 @@ Mithilfe einer Schwingungsdifferentialschaltung wird eine ungedämpfte und eine 
 
 \subsection{Frequenzgang und Phasengang des gegengekoppelten Verstärkers}
 
-In Abbildung \ref{fig:frequenzgang} sind die Frequenzgänge des gegengekoppelten Verstärkers für verschiedene Verstärkungsgrade $V'$ dargestellt. Es wurde dabei stets ein Widerstand der Grö"se $R_1=\SI{1}{\kilo\ohm}$ verwendet. Die Tabellen mit den Messdaten sind im Anhang zu finden.\\
+In Abbildung \ref{fig:frequenzgang} sind die Frequenzgänge des gegengekoppelten Verstärkers für verschiedene Verstärkungsgrade $V'$ dargestellt. Dazu wurde jeweils eine konstante Funktion, die die Verstärkungsfunktion bei der Grenzfrequenz $f_g$ schneidet und den konstanten Wert $\frac{V'}{\sqrt{2}}$ hat, sowie ein linearer Fit für alle Werte von $f>f_g$ angefertigt. Der lineare Ansatz, der sich aus Gleichung \ref{eq:tiefpass} sowie der Näherung $f \gg f_g$ ergibt, lautet
+\begin{align}
+\ln(|V'(\omega)|)=-m\ln(f)+\ln(f_g)\,.
+\end{align} 
+Es wurde dabei stets ein Widerstand der Grö"se $R_1=\SI{1}{\kilo\ohm}$ verwendet. Die Tabellen mit den Messdaten sind im Anhang zu finden.\\
 \begin{minipage}[t]{0.6\textwidth}
 		\includegraphics[width=\textwidth]{images/plot1.pdf}
 		\centering
@@ -338,29 +357,24 @@ In Abbildung \ref{fig:frequenzgang} sind die Frequenzgänge des gegengekoppelten
 \captionof{figure}{Frequenzgang für $R_n=$ a) $\SI{1}{\kilo\ohm}$, b) $\SI{100}{\ohm}$, c) $\SI{570}{\ohm}$, d) $\SI{570}{\ohm}$}
 \label{fig:frequenzgang}
 \vspace{0.5cm}
-In Tabelle \ref{tab:frequenzgang} sind die Grenzfrequenz, die Verstärkung in Theorie und Experiment, die Leerlaufverstärkung, die Steigung m und das Verstärkungs-Bandbreite-Produkt für die einzelnen verwendeten Widerstände dargestellt. \\
+In Tabelle \ref{tab:frequenzgang} sind die Grenzfrequenz $f_g$, die Verstärkung in Theorie 	$V'_{\text{ideal}}$, die sich aus Gleichung \ref{eq:verstaerkung_ideal} ergibt, und Experiment $V'_{\text{exp}}$, die sich aus dem Mittelwert der blau markierten Daten ergibt, die Leerlaufverstärkung $V_\text{Leerlauf}$, die sich aus Gleichung \ref{eq:leerlaufkorrektur} ergibt, die Steigung m und das Verstärkungs-Bandbreite-Produkt $B_0v_0=\frac{V'}{\sqrt{2}}f_g$ für die einzelnen verwendeten Widerstände dargestellt. \\
 \begin{table}[H]
+	\centering
 		\captionof{table}{Experimentell bestimmte Kenndaten}
 		\label{tab:frequenzgang}
 		\hskip-1.50cm\begin{tabular}{r r r r r}
 			\toprule
-				Kenngrö"s e & $R_n=\SI{1}{\kilo\ohm}$ & $R_n=\SI{100}{\ohm}$ &  $R_n=\SI{570}{\ohm}$ & $R_n=\SI{100}{\kilo\ohm}$ \\
+				Kenngrö"se & $R_n=\SI{1}{\kilo\ohm}$ & $R_n=\SI{100}{\ohm}$ &  $R_n=\SI{570}{\ohm}$ & $R_n=\SI{100}{\kilo\ohm}$ \\
 			\midrule
-				Grenzfrequenz $f_{\text{g}}$ [kHz] & $450 \pm 350$ & $1000 \pm 500$ & $700 \pm 500$ & $14 \pm 11$ \\
+				$f_{\text{g}}$ [kHz] & $450 \pm 350$ & $1000 \pm 500$ & $700 \pm 500$ & $14 \pm 11$ \\
 				$V'_{\text{ideal}}$ & $1.0$ & $0.1$ & $0.57$ & $100$ \\
 				$V'_{\text{exp}}$ & $0.980 \pm 0.007$ & $0.970 \pm 0.012$ & $0.970 \pm 0.012$ & $0.884 \pm 0.006$ \\
 				$V_{\text{Leerlauf}}$ & $48.25 \pm 17.04$ & $-0.111 \pm 0.000$ & $-1.38 \pm 0.02$ & $0.892 \pm 0.006$ \\
-				Steigung m & $-0.860 \pm 0.070$ & $-0.897 \pm 0.046$ & $-0.882 \pm 0.070$ & $-0.819 \pm 0.098$\\
-				Verstärkung-Bandbreite-Produkt [kHz] & $441.58 \pm 347.37$ & $955.89 \pm 525.67$ & $658.61 \pm 529.53$ & $12.33 \pm 9.51$ \\
+				m & $-0.860 \pm 0.070$ & $-0.897 \pm 0.046$ & $-0.882 \pm 0.070$ & $-0.819 \pm 0.098$\\
+				$B_0v_0$ [kHz] & $441.58 \pm 347.37$ & $955.89 \pm 525.67$ & $658.61 \pm 529.53$ & $12.33 \pm 9.51$ \\
 			\bottomrule
 		\end{tabular}
 \end{table}
-Die Abnahme des Ausgangsamplitude ist damit zu erklären, dass der gekoppelte Verstärker, wie in Abbildung \ref{fig:tiefpass} dargestellt, die Funktion eines Tiefpasses hat.
-\begin{center}
-	\includegraphics[width=10cm]{images/tiefpass.png}
-	\captionof{figure}{Ersatzschaltbild des Tiefpasses}
-	\label{fig:tiefpass}
-\end{center}
 
 In Abbildung \ref{fig:phase} sind die Messwerte für die Phasenverschiebung zwischen Eingangs- und Ausgangsspannung dargestellt.Die entsprechenden Messwerte sind in Tabelle \ref{tab:phase} zu finden.
 \begin{center}
@@ -387,18 +401,18 @@ m = -0.754\pm 0.040\,.
 \end{center}
 \begin{minipage}[t]{0.5\textwidth}
 	\includegraphics[width=\textwidth]{images/sinus_int}
-	\captionof{figure}{Signalverlauf bei einer Sinus-Spannung (Gelb: $U_E$, Grün: $U_A$ )}
+	\captionof{figure}{Gelbes Sinus-Signal: $U_E$, grünes negatives Cosinus-Signal: $U_A$}
 	\label{fig:sinusint}
 \end{minipage}
 \hspace{0.1\textwidth}
 \begin{minipage}[t]{0.5\textwidth}
 	\includegraphics[width=\textwidth]{images/rechteck_int}
-	\captionof{figure}{Signalverlauf bei einer Rechteck-Spannung (Gelb: $U_E$, Grün: $U_A$ )}
+	\captionof{figure}{Gelbes Rechteck-Signal: $U_E$, grünes Dreieck-Signal: $U_A$}
 	\label{fig:rechteckint}
 \end{minipage} \\
 \begin{minipage}[t]{0.5\textwidth}
 	\includegraphics[width=\textwidth]{images/dreieck_int}
-	\captionof{figure}{Signalverlaufe bei einer Dreieck-Spannung (Gelb: $U_E$, Grün: $U_A$ )}
+	\captionof{figure}{Gelbes Dreick-Signal: $U_E$, grünes Parabel-Signal: $U_A$}
 	\label{fig:dreieckint}
 \end{minipage} \\
 Für den Aufbau des Umkehrdifferentiators wurden ein Widerstand $R=\SI{32.7}{\kilo\ohm}$ und eine Kapazität $C=\SI{13.6}{\nano\farad}$ verwendet. Die gemessenen Ausgangsspannungen in Abhängigkeit von der Frequenz sind in Tabelle \ref{tab:differentiator} dargestellt, in Abbildungen \ref{fig:sinusdiff}-\ref{fig:dreieckdiff} sind die Thermodrucke des Ausgangssignals für verschiedene Eingangssignalformen dargestellt.
@@ -418,18 +432,18 @@ m = -0.797 \pm 0.039\,.
 \end{center}
 \begin{minipage}[t]{0.5\textwidth}
 	\includegraphics[width=\textwidth]{images/sinus_diff}
-	\captionof{figure}{Signalverlauf bei einer Sinus-Spannung (Grün: $U_E$, Gelb: $U_A$)}
+	\captionof{figure}{Grünes Sinus-Signal: $U_E$, gelbes Cosinus-Signal: $U_A$}
 	\label{fig:sinusdiff}
 \end{minipage}
 \hspace{0.1\textwidth}
 \begin{minipage}[t]{0.5\textwidth}
 	\includegraphics[width=\textwidth]{images/rechteck_diff}
-	\captionof{figure}{Signalverlauf bei einer Rechteck-Spannung (Grün: $U_E$, Gelb: $U_A$)}
+	\captionof{figure}{Grünes Rechteck-Signal: $U_E$, gelbes Dreieck-Signals: $U_A$}
 	\label{fig:rechteckdiff}
 \end{minipage} \\
 \begin{minipage}[t]{0.5\textwidth}
 	\includegraphics[width=\textwidth]{images/dreieck_diff}
-	\captionof{figure}{Signalverlauf bei einer Dreieck-Spannung (Grün: $U_E$, Gelb: $U_A$)}
+	\captionof{figure}{Gelbes Dreieck-Signal: $U_E$, grünes Rechteck-Signal: $U_A$}
 	\label{fig:dreieckdiff}
 \end{minipage} 
 
@@ -451,7 +465,7 @@ Der Dreieckgenerator wurde mit der Konfiguration
 R_1=\SI{100}{\ohm}, && R_P=\SI{33}{\kilo\ohm}, && R=\SI{10}{\kilo\ohm} && \text{und} && C=\SI{100}{\nano\farad}
 \end{align*}
 aufgebaut. Die Betriebsspannung wurde auf $U_B=\SI{13.08}{\volt}$ eingestellt, der Maximalwert der Dreiecksspannung lag bei $U_D=\SI{0.79}{\volt}$.
-Der Signalverlauf ist in Abbildung \ref{fig:dreieckgen} dargestellt.
+Der Signalverlauf ist in Abbildung \ref{fig:dreieckgen} dargestellt. Dabei ist anzumerken, dass $U\ll U_B=\SI{13.08}{\volt}$ ist.
 \begin{center}
 	\includegraphics[width=10cm]{images/dreieckgen.png}
 	\captionof{figure}{Signalverlauf der Ausgangsspannung des Dreiecksgenerators}
@@ -485,6 +499,7 @@ Aus der nicht-linearen Ausgleichsrechnung ergibt sich die Abklingdauer von
 \begin{align*}
 \tau_{exp}=\SI{4.1(2)}{\milli\second}\,.
 \end{align*}
+\newpage
 \begin{center}
 	\includegraphics[width=10cm]{images/schwinggen.png}
 	\captionof{figure}{Thermodruck des exponentiellen Abfalls nach Anregung durch Rechteckschwingung}
@@ -503,7 +518,11 @@ Die experimentell bestimmten Verstärkungen liegen nur im Falle von $R_n=\SI{1}{
 Desweiteren ergeben sich bei $R_n=\SI{100}{\ohm}$ und bei $R_n=\SI{570}{\ohm}$ physikalisch nicht sinnvolle negative Leerlaufverstärkungen. Das eigentlich konstante Verstärkungs-Bandbreite-Produkt ist hier auch für jeden Widerstand unterschiedlich, was jedoch aus den vorherigen Abweichungen resultiert. \\
 Desweiteren ist auffällig, dass die Fehler der ermittelten Grenzfrequenzen sehr hoch sind. Dies resultiert aus dem Anwenden der Exponentialfunktion auf die ermittelten Fit-Parameter, deren Fehler noch nicht diese Grö"se hatte. \\
 Der Theoriewert der Steigung ist m=-1 (für einen Tiefpass), die Steigungen der verschiedenen Konfigurationen schwanken zwischen -0.897 und -0.819, haben also signifikante Abweichungen vom theoretisch erwarteten Wert. \\
-Bezüglich des Phasenganges ist in der Abbildung deutlich zu erkennen, dass der Absolutbetrag der Phasendifferenz zwischen Eingangs- und Ausgangsspannung mit steigender Frequenz abnimmt. 
+Bezüglich des Phasenganges ist in der Abbildung deutlich zu erkennen, dass der Absolutbetrag der Phasendifferenz zwischen Eingangs- und Ausgangsspannung mit steigender Frequenz abnimmt. Dies ist konsistent mit Gleichung \ref{eq:tiefpass_phase}, wonach zwischen Phase $\phi$ und Frequenz $f=2\pi\omega$ die Beziehung 
+\begin{align*}
+\phi=\arctan\left(-\frac{f}{f_g}\right)
+\end{align*}
+gilt. Durch die Punktsymmetrie des $\arctan$ ergibt sich so ein dem aufgenommenen Bild ähnlicher Verlauf.
 
 \subsection{Der Umkehrintegrator und -differentiator}
 Der Umkehrintegrator funktioniert wie erwartet, wie an den aufgenommen Bilder der Oszilloskopausgabe zu sehen ist. Da für den Integrator die Beziehung $U_A\propto\omega^{-1}$ gelten soll, lautet der Theoriewert $m=-1$. Die lineare Regression ergab einen Wert von  \\$m=-0.754\pm0.040$, welcher um 24.6\% vom Theoriewert abweicht. \\
