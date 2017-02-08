@@ -56,10 +56,23 @@
 
 \section{Aufbau}
 
+\subsection{Justierung des Strahlengangs}
+Zur Justierung des Strahlengangs wird eine Laserdetektionskarte in den Strahlengang gehalten und eine Videokamera auf die Photozelle gerichtet. \\
+Zur Justierung des Strahlenganges sind zwei Drehschrauben am Diodenlaser vorhanden, jeweils für die horizontale und die vertikale Justierung.
+ 
+\subsection{Beobachtung der Rubidium-Resonanz}
+In Abbildung \ref{fig:setup} ist das Setup zur Detektion der Rubidium-Fluoreszenz dargestellt.
+\begin{center}
+	\includegraphics[width=10cm]{images/setup.png}
+	\captionof{figure}{Setup zur Detektion von Rubidium-Fluoreszenz}
+	\label{fig:setup}
+\end{center}
+Zur Detektion der Fluoreszenz wird der horizontale Winkel des Gitters schrittweise angepasst. Die Feinabstimmung wird durch eine Anpassung der Piezospannung erreicht. Im Falle einer Resonanz kann diese mit der Kamera und des Oszilloskop detektiert werden. \\
+
 \section{Durchführung}
 
 \subsection{Justierung des Strahlengangs}
-Mithilfe einer Kamera kann das Verhalten des Strahls bei Variation der Stromstärke beobachtet werden. Unterhalb des Grenzwertes der Stomstärke verhält sich der Diodenlaser wie eine LED, d.h. es kommt zu spontaner Emission. Ein Bild es enstehenden Signals ist in Abbildung \ref{fig:led} zu sehen.
+Mithilfe einer Kamera kann das Verhalten des Strahls bei Variation der Stromstärke beobachtet werden. Unterhalb des Grenzwertes der Stromstärke verhält sich der Diodenlaser wie eine LED, d.h. es kommt zu spontaner Emission. Ein Bild es entstehenden Signals ist in Abbildung \ref{fig:led} zu sehen.
 \begin{center}
 	\includegraphics[width=10cm]{images/led_spot.jpg}
 	\captionof{figure}{Beobachtetes Ausgangssignal des Diodenlasers unterhalb der Grenzstromstärke}
@@ -73,21 +86,22 @@ Wird der Grenzwert der Stromstärke überschritten, tritt eine deutliche Erhöhu
 \end{center}
 
 \subsection{Beobachtung der Rubidium-Resonanz}
-
+Mithilfe des im Kapitel 3 beschriebenen Aufbaus kann die Rubidium-Resonanz mittels einer Kamera beobachtet werden. Dies ist in Abbildung \ref{fig:resonanzbild} abgebildet.
 \begin{center}
 	\includegraphics[width=10cm]{images/resonanz_bild.jpg}
 	\captionof{figure}{Mit Kamera detektiertes Resonanzsignal}
 	\label{fig:resonanzbild}
 \end{center}
-
+Um die Intensität zu verringern, wird ein Dämpfungsglied in den Strahlengang gestellt. Das Signal der Photodiode wird mithilfe eines Photodetektors detektiert und auf einem Oszilloskop dargestellt. 
 \begin{center}
 	\includegraphics[width=10cm]{images/scope_22.png}
 	\captionof{figure}{Resonanzspektrum von Rubidium}
 	\label{fig:resonanz}
 \end{center}
+Das grüne Dreiecksignal ist die Spannung, die am Piezoelement anliegt, welches die Orientierung des Gitters bestimmt und somit die Frequenzen durchscannt. Das gelbe Signal zeigt die Absorptionspeaks der Photozelle, die durch den Rubidium-Dampf erzeugt werden.
 
 \subsection{Bereinigung des Resonanzsignals}
-
+Zur Bereinigung des Resonanzsignals von z.B. der Spannungsmodulation des Piezokristalles, wird mithilfe der Differenzspannungsmethode der Hintergrund des Signals entfernt. In Abbildung \ref{fig:resonanzlinien} ist dabei das Absorptionssignal ohne Hintergrundbereinigung dargestelt, in Abbildung \ref{fig:resonanzlinien_mh} das finale Signal ohne Hintergrund.
 \begin{center}
 	\includegraphics[width=10cm]{images/resonanz.png}
 	\captionof{figure}{Resonanzlinien der Rubidium-Probe, mit Hintergrund-Intensität}
