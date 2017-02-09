@@ -49,6 +49,8 @@
 \textbf{\huge \versuchname}\\
 \vspace{0.2cm}
 \textbf{ Physikalisches Fortgeschrittenenpraktikum}\\
+\vspace{0.2cm}
+\textbf{Korrigierte Version des Protokolls}\\
 \vspace{9cm}
 
 {\Large Robert Rauter \ \ \hspace{1.5cm} und \hspace{1.5cm} Björn Lindhauer}\\
@@ -257,7 +259,7 @@ Die Differenz der beiden Umschaltwerte wird als Schalthysterese bezeichnet.
 Mit Hilfe der in den vorherigen Abschnitten beschriebenen Schaltungen lässt sich ein Rechteck- und Dreiecksgenerator erzeugen. 
 Es wird dabei jeweils ein Schmitt-Trigger und ein Integrator benötigt, die wie in Abbildung \ref{fig:schalplan_generator} geschaltet werden.
 
-Der Schmitt-Trigger liefert eine konstante Ausgangsspannung $U_\text{B}$, die anschließend vom Integrator integriert wird. Es fällt somit die Ausgangsspannung $U_1$ linear ab, bis sie den Schwellwert des Triggers erreicht und dieser auf $-U_\text{B}$ springt. Diese wird nun weiter integriert und steigt durch das invertierte Vorzeichen von $\left|U_\text{B} \right|$ wieder an.
+Der Schmitt-Trigger liefert eine konstante Ausgangsspannung $U_\text{B}$, die anschließend vom Integrator integriert wird. Es fällt somit die Ausgangsspannung $U_1$ linear ab, bis sie den Schwellwert des Triggers erreicht und dieser auf $-U_\text{B}$ springt. Diese wird nun weiter integriert und steigt durch das invertierte Vorzeichen von $U_\text{B}$ wieder an.
 Daraus ergibt sich eine periodische Schwingung, die ihre Extrema an den Schwellwerten des Schmitt-Triggers besitzt. Die Frequenz ist von der Integratorzeitkonstanten und den Widerständen der Mittelkopplung abhängig.
 \begin{figure}[H]
 \centering
@@ -436,7 +438,7 @@ m = -0.797 \pm 0.039\,.
 \end{minipage} 
 
 \subsection{Der Schmitt-Trigger}
-Für den Aufbau des Schmitt-Triggers wurden die Widerstände $R_P=\SI{33}{\kilo\ohm}$ und $R_1=\SI{100}{\ohm}$ verwendet. Der Wert des Betriebsspannung betrug $U_B=\SI{13.08}{\volt}$. Der Signalverlauf ist in Abbildung \ref{fig:schmitt} dargestellt.\\
+Für den Aufbau des Schmitt-Triggers wurden die Widerstände $R_P=\SI{33}{\kilo\ohm}$ und $R_1=\SI{100}{\ohm}$ verwendet. Der Wert des Betriebsspannung betrug $U_B=\SI{13.08}{\volt}$. Dazu ist anzumerken, dass $U\ll U_B=\SI{13.08}{\volt}$ ist. Der Signalverlauf ist in Abbildung \ref{fig:schmitt} dargestellt.\\
 \begin{center}
 	\includegraphics[width=10cm]{images/schmitt.png}
 	\captionof{figure}{Signalverlauf der Ausgangsspannung des Schmitt-Triggers}
@@ -452,8 +454,8 @@ Der Dreieckgenerator wurde mit der Konfiguration
 \begin{align*}
 R_1=\SI{100}{\ohm}, && R_P=\SI{33}{\kilo\ohm}, && R=\SI{10}{\kilo\ohm} && \text{und} && C=\SI{100}{\nano\farad}
 \end{align*}
-aufgebaut. Die Betriebsspannung wurde auf $U_B=\SI{13.08}{\volt}$ eingestellt, der Maximalwert der Dreiecksspannung lag bei $U_D=\SI{0.79}{\volt}$.
-Der Signalverlauf ist in Abbildung \ref{fig:dreieckgen} dargestellt. Dabei ist anzumerken, dass $U\ll U_B=\SI{13.08}{\volt}$ ist.
+aufgebaut. Die Betriebsspannung wurde auf $U_B=\SI{13.08}{\volt}$ eingestellt. Auf dem Oszilloskop wird ein Signal mit zwei unterschiedlichen Extremwerten beobachtet. Das Maximum befindet sich bei $U_{\text{max}}=\SI{0.69}{\volt}$, das Minimum bei $U_{\text{min}}=\SI{-0.85}{\volt}$.
+Der Signalverlauf ist in Abbildung \ref{fig:dreieckgen} dargestellt.
 \begin{center}
 	\includegraphics[width=10cm]{images/dreieckgen.png}
 	\captionof{figure}{Signalverlauf der Ausgangsspannung des Dreiecksgenerators}
@@ -520,7 +522,7 @@ Der Umkehrdifferentiator arbeitete, wie auf den aufgenommenen Bildern zu sehen i
 Der Schmitt-Trigger arbeitet nicht vollständig wie erwartet, die Kippspannung weicht mit 127\% signifikant vom theoretisch erwarteten Wert ab. Zudem ist beim Signalverlauf zu erkennen, dass keine perfekte Rechteckspannung erzeugt wurde, sondern signifikant die Form noch vom eingehenden Sinus-Signal beeinflusst wurde. Hier ist von einem systematischen Fehler im Aufbau oder der Apparatur auszugehen.
 
 \subsection{Der Dreiecksgenerator}
-Der Dreiecksgenerator liefert wie erwartet ein Dreieckssignal. Die experimentell \\bestimmte Frequenz des Dreieckgenerators weicht um 10.70\% vom berechneten Theoriewert ab.
+Der Dreiecksgenerator liefert wie erwartet ein Dreieckssignal. Die experimentell \\bestimmte Frequenz des Dreieckgenerators weicht um 10.70\% vom berechneten Theoriewert ab. Jedoch ist eine Asymmetrie der der Extremwerte festzustellen, was auch an der Abflachung des Signals zu erkennen ist. Hier kann von einem systematischen Fehler, wie z.B. der falschen Parameterwahl, ausgegangen werden.
 
 \subsection{Die Schwingungsdifferentialschaltung}
 Die Schwingungsdifferentialschaltung funktioniert, wie auf den Thermodrucken zu sehen ist, wie erwartet. Für die Frequenz der Schaltung ergibt ein experimentell bestimmter Wert von $f_{exp}=\SI{664.2}{\hertz}$, was mit 8.2\% vom Theoriewert $f_{theo}=\SI{723.43}{\hertz}$ abweicht. \\
@@ -543,9 +545,9 @@ http://129.217.
 		\toprule
 		$f / \si{\kilo\hertz}$ & $U_A/\si{\volt}$ & $U_E/\si{\volt}$ \\
 		\midrule
+		0.10	&	2.57	&	2.61 \\
 		0.25	&	2.57	&	2.65 \\
 		0.50	&	2.57	&	2.61 \\
-		0.10	&	2.57	&	2.61 \\
 		0.50	&	2.61	&	2.69 \\
 		1.00	&	2.61	&	2.69 \\
 		5.00	&	2.57	&	2.65 \\
@@ -575,9 +577,9 @@ http://129.217.
 		\toprule
 		$f / \si{\kilo\hertz}$ & $U_A/\si{\volt}$ & $U_E/\si{\volt}$ \\
 		\midrule
+		0.10	&	2.61	&	2.69 \\
 		0.25	&	2.57	&	2.69 \\
 		0.50	&	2.57	&	2.61 \\
-		0.10	&	2.61	&	2.69 \\
 		0.50	&	2.61	&	2.65 \\
 		1.00	&	2.61	&	2.69 \\
 		5.00	&	2.53	&	2.61 \\
@@ -607,9 +609,9 @@ http://129.217.
 		\toprule
 		$f / \si{\kilo\hertz}$ & $U_A/\si{\volt}$ & $U_E/\si{\volt}$ \\
 		\midrule
+		0.10	&	2.57	&	2.61 \\
 		0.25	&	2.61	&	2.73 \\
 		0.50	&	2.57	&	2.65 \\
-		0.10	&	2.57	&	2.61 \\
 		0.50	&	2.57	&	2.65 \\
 		1.00	&	2.57	&	2.65 \\
 		5.00	&	2.57	&	2.69 \\
@@ -639,9 +641,9 @@ http://129.217.
 		\toprule
 		$f / \si{\kilo\hertz}$ & $U_A/\si{\volt}$ & $U_E/\si{\volt}$ \\
 		\midrule
+		0.10	&	2.33	&	2.65 \\
 		0.25	&	2.37	&	2.69 \\
 		0.50	&	2.33	&	2.61 \\
-		0.10	&	2.33	&	2.65 \\
 		0.50	&	2.33	&	2.61 \\
 		1.00	&	2.37	&	2.69 \\
 		5.00	&	2.13	&	3.10 \\

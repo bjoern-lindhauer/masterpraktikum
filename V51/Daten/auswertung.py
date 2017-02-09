@@ -154,8 +154,7 @@ print(params_int, errors_int)
 x_plot=np.linspace(500,20000, num=100000)
 
 plt.figure()
-err_v = 0.05
-plt.errorbar(data_integ[0,:11], data_integ[1,:11] + err_v, fmt='bx', label=r"U$_A$ des Umkehrintegrators")
+plt.plot(data_integ[0,:], data_integ[1,:], 'bx', label=r"U$_A$ des Umkehrintegrators")
 plt.plot(x_plot, np.exp(f(np.log(x_plot), *params_int)), 'r-', label='Fit')
 plt.legend(loc="best", numpoints=1)
 plt.grid()
@@ -163,10 +162,9 @@ plt.xlabel(r'f/kHz')
 plt.ylabel(r"U$_A$/V")
 plt.xscale("log")
 plt.yscale("log")
-plt.xlim(3*10**2,2*10**4)
+plt.xlim(40,2*10**4)
 plt.ylim(10**(-1),4)
 plt.savefig('../Protokoll/images/integrator.pdf')
-
 #Unkehrdifferentiator
 
 params_diff, covariance_diff = curve_fit(f, np.log(data_diff[0,:9]), np.log(data_diff[1,:9]))
