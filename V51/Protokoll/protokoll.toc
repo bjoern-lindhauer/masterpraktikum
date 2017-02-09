@@ -7,8 +7,8 @@
 \contentsline {subsubsection}{\numberline {2.3.2}Umkehr-Integrator}{8}{subsubsection.2.3.2}
 \contentsline {subsubsection}{\numberline {2.3.3}Umkehr-Differentiator}{9}{subsubsection.2.3.3}
 \contentsline {subsubsection}{\numberline {2.3.4}Schmitt-Trigger}{10}{subsubsection.2.3.4}
-\contentsline {subsubsection}{\numberline {2.3.5}Der Operationsverst\IeC {\"a}rker als Signalgenerator}{11}{subsubsection.2.3.5}
-\contentsline {subsubsection}{\numberline {2.3.6}Erzeugung amplitudenmodulierter Sinusschwingung}{12}{subsubsection.2.3.6}
+\contentsline {subsubsection}{\numberline {2.3.5}Der Operationsverst\IeC {\"a}rker als Signalgenerator}{10}{subsubsection.2.3.5}
+\contentsline {subsubsection}{\numberline {2.3.6}Erzeugung amplitudenmodulierter Sinusschwingung}{11}{subsubsection.2.3.6}
 \contentsline {section}{\numberline {3}Durchf\IeC {\"u}hrung}{13}{section.3}
 \contentsline {subsection}{\numberline {3.1}Frequenzgang und Phasenbeziehung des gegengekoppelten Verst\IeC {\"a}rkers}{13}{subsection.3.1}
 \contentsline {subsection}{\numberline {3.2}Der Umkehrintegrator- und Differentiator}{13}{subsection.3.2}

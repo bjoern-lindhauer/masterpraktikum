@@ -30,7 +30,7 @@
 \newcommand{\versuchname}{Schaltungen mit Operationsverstärkern} 
 \newcommand{\versuchdatum}{28.11.16} 
 
-\hyphenation{Ausgangs-spannung Eingangs-widerstand}
+\hyphenation{Ausgangs-spannung Eingangs-widerstand Linear-verstärker}
 
 \let\oldsection\section
 \renewcommand\section{\clearpage\oldsection}
@@ -88,7 +88,6 @@ Es wird der Eingang mit der Spannung $U_{\text{P}}$ als nicht-invertierter Einga
 Die Ausgangsspannung ist jedoch gegenphasig zur Spannung $U_{\text{N}}$, weshalb deren Eingang als invertierter Eingang (-) bezeichnet wird.
 
 Bei einem idealen Operationsverstärker ist die Leerlaufverstärkung $V$, sowie der Eingangswiderstand $r_{e}$ unendlich groß und der Ausgangswirderstand $r_a$ verschwindet.
-
 Dies ist beim realen Operationsverstärker jedoch nicht der Fall, sodass es sinnvoll ist, weitere Größen zu definieren.
 
 \begin{figure}[H]
@@ -103,8 +102,7 @@ Die Ausgangsspannung ist von Null verschieden, wenn an den beiden Eingängen die
 \begin{align}
  V_{gl}:=\frac{\Delta U_{A}}{\Delta U_{gl}}
 \end{align}
-definiert. Dabei ist $\Delta U_{gl}$ 
-
+definiert. 
 Aus den endlichen Eingangswiderständen folgen Eingangsruheströme $I_{P}$ und $I_{N}$, die zur Definition des Eingangsruhestroms
 \begin{align}
  I_{B}:=\frac{1}{2} \cdot \left(I_{P}+I_{N}\right)
@@ -114,7 +112,6 @@ und des Offsetstroms
  I_{0}:= \left. I_{P}-I_{N}\right|_{U_{P}=U_{N}=0} 
 \end{align}
 führen.
-
 Der Differenzwiderstand wird als
 \begin{align}
  r_{D}:=\left\lbrace 
@@ -126,9 +123,9 @@ Der Differenzwiderstand wird als
 \end{align}
 definiert und der Gleichtakteingangswiderstand als
 \begin{align}
- r_{gl}:=\frac{\Delta U_{gl}}{\Delta I_{gl}} \hspace{0.3cm}\text{.}
+ r_{gl}:=\frac{\Delta U_{gl}}{\Delta I_{gl}}
 \end{align}
-
+mit $I_{gl}=I_N+I_P$.
 Da die Ausgangsspannung $U_{a}$ bei realen Operationsverstärkern ungleich null ist, wird die Offsetspannung
 \begin{align}
  U_0:=\left. U_{P}-U_{N} \right|_{U_{a}=0}
@@ -136,7 +133,6 @@ Da die Ausgangsspannung $U_{a}$ bei realen Operationsverstärkern ungleich null 
 definiert.
 
 Diese ist häufig eine Funktion der Temperatur, Zeit und Betriebsspannung. Die totale Ableitung von $U_{0}$ wird Offsetspannungsdrift genannt.
-
 Reale Operationsverstärker kommen idealen Operationsverstärkern sehr nahe, sodass die eingeführten Größen als Störparameter angesehen werden können und somit zu Korrekturen führen.
 
 \subsection{Schaltungen mit Operationsverstärker}
@@ -152,25 +148,20 @@ Da ein Operationsverstärker bereits eine hohe Leerlaufverstärkung besitzt, ist
 Um dies zu unterbinden und höhere Eingangsspannungen zu verwirklichen, muss ein Gegenkopplungszweig, wie in Abbildung \ref{fig:schaltplan_linearverstaerker} integriert werden.
 
 Es wird im Gegenkopplungszweig ein durch das Widerstandsverhältnis der eingebauten Widerstände bestimmter Anteil der Ausgangsspannung zurück auf den invertierten Eingang gegeben. Somit führt eine Zunahme der Ausgangsspannung zu einer Abnahme der Eingangsspannung.
-
 Dies führt zwar zu einer Ausweitung des Ansteuerungsbereich, verringert jedoch die Gesamtverstärkung.
-
 Die Verstärkung $V'$ ist beim idealen Operationsverstärker nur vom Verhältnis der Widerstände
 \begin{align}
 V'=-\frac{R_{\text{N}}}{R_{1}}
 \label{eq:verstaerkung_ideal}
 \end{align}
 abhängig.
-
 Die Leerlaufspannung führt zu der Korrektur Verstärkung
 \begin{align}
 \frac{1}{V'}\approx \frac{1}{V} + \frac{R_{1}}{R_{\text{N}}}
 \label{eq:leerlaufkorrektur}
 \end{align}
 für große Leerlaufspannungen $V \gg 1$. Die Gleichung \ref{eq:verstaerkung_ideal} ist folglich für $\frac{R_{\text{N}}}{R_{1}} \ll V$ korrekt.
-
 Wird eine solche starke Gegenkopplung verwirklicht, so haben thermische Fluktuationen der Leerlaufspannung nur einen kleinen Effekt auf die Schaltung, was die Stabilität der Schaltung verbessert.
-
 Es werden durch die Gegenkopplung auch weitere Parameter positiv beeinflusst. So nimmt beispielsweise der endliche Ausgangswiderstand um den Faktor
 \begin{align}
 g:=\frac{V}{V'}
@@ -242,7 +233,7 @@ U_\text{A} = -RC\omega U_0 \cos \omega t
 \end{align}
 abgegriffen werden, welche somit proportional zur Frequenz des Eingangssignals ist.
 \subsubsection{Schmitt-Trigger}
-Bei einem Schmitt-Trigger wird in Gegensatz zum gegengekoppelten invertierenden Linearverstärker die Rückkopplung anstatt auf den invertierenden Eingang auf den nicht-invertierenden Eingang gegeben. Diese Schaltung nach Abbildung \ref{fig:schalplan_schmitt_trigger} fungiert als ein Schalter.
+Bei einem Schmitt-Trigger wird im Gegensatz zum gegengekoppelten invertierenden Linearverstärker die Rückkopplung anstatt auf den invertierenden Eingang auf den nicht-invertierenden Eingang gegeben. Diese Schaltung nach Abbildung \ref{fig:schalplan_schmitt_trigger} fungiert als ein Schalter.
 
 Eine Vergrößerung der Ausgangsspannung führt beim Schmitt-Trigger zu einer Vergrößerung der Eingangsspannung, welche wiederum zu einer Vergrößerung der Ausgangsspannung führt. Diese Schaltung ist instabil, da die Ausgangsspannung spontan auf die Betriebsspannung $U_\text{B}$ springt, wenn die Eingangsspannung $U_1$ den Schwellwert
 \begin{align}
@@ -253,7 +244,6 @@ U_1=\frac{R_1}{R_\text{P}}U_\text{B}
 U_1=-\frac{R_1}{R_\text{P}}U_\text{B}
 \end{align}
 unterschritten wird.
-
 Die Differenz der beiden Umschaltwerte wird als Schalthysterese bezeichnet.
 \begin{figure}[H]
 \centering
@@ -265,11 +255,9 @@ Die Differenz der beiden Umschaltwerte wird als Schalthysterese bezeichnet.
 
 \subsubsection{Der Operationsverstärker als Signalgenerator}
 Mit Hilfe der in den vorherigen Abschnitten beschriebenen Schaltungen lässt sich ein Rechteck- und Dreiecksgenerator erzeugen. 
-
 Es wird dabei jeweils ein Schmitt-Trigger und ein Integrator benötigt, die wie in Abbildung \ref{fig:schalplan_generator} geschaltet werden.
 
 Der Schmitt-Trigger liefert eine konstante Ausgangsspannung $U_\text{B}$, die anschließend vom Integrator integriert wird. Es fällt somit die Ausgangsspannung $U_1$ linear ab, bis sie den Schwellwert des Triggers erreicht und dieser auf $-U_\text{B}$ springt. Diese wird nun weiter integriert und steigt durch das invertierte Vorzeichen von $\left|U_\text{B} \right|$ wieder an.
-
 Daraus ergibt sich eine periodische Schwingung, die ihre Extrema an den Schwellwerten des Schmitt-Triggers besitzt. Die Frequenz ist von der Integratorzeitkonstanten und den Widerständen der Mittelkopplung abhängig.
 \begin{figure}[H]
 \centering
