@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.11.14)  9 FEB 2017 15:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.11.14)  9 FEB 2017 17:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1724,261 +1724,255 @@ Package pdftex.def Info: images/schaltplan_schwingung.png used on input line 29
  [11 <./images/schaltplan_generator.png>] [12 <./images/schaltplan_schwingung.p
 ng>] [13
 
+] [14
+
 ]
-<images/plot1.pdf, id=296, 722.7pt x 578.16pt>
+<images/plot1.pdf, id=304, 722.7pt x 578.16pt>
 File: images/plot1.pdf Graphic file (type pdf)
  <use images/plot1.pdf>
-Package pdftex.def Info: images/plot1.pdf used on input line 328.
+Package pdftex.def Info: images/plot1.pdf used on input line 338.
 (pdftex.def)             Requested size: 250.95477pt x 200.76224pt.
 
-<images/plot2.pdf, id=297, 722.7pt x 578.16pt>
+<images/plot2.pdf, id=305, 722.7pt x 578.16pt>
 File: images/plot2.pdf Graphic file (type pdf)
  <use images/plot2.pdf>
-Package pdftex.def Info: images/plot2.pdf used on input line 333.
+Package pdftex.def Info: images/plot2.pdf used on input line 338.
 (pdftex.def)             Requested size: 250.95477pt x 200.76224pt.
 
-<images/plot3.pdf, id=298, 722.7pt x 578.16pt>
+<images/plot3.pdf, id=306, 722.7pt x 578.16pt>
 File: images/plot3.pdf Graphic file (type pdf)
  <use images/plot3.pdf>
-Package pdftex.def Info: images/plot3.pdf used on input line 338.
+Package pdftex.def Info: images/plot3.pdf used on input line 349.
 (pdftex.def)             Requested size: 250.95477pt x 200.76224pt.
 
-<images/plot4.pdf, id=299, 722.7pt x 578.16pt>
+<images/plot4.pdf, id=307, 722.7pt x 578.16pt>
 File: images/plot4.pdf Graphic file (type pdf)
  <use images/plot4.pdf>
-Package pdftex.def Info: images/plot4.pdf used on input line 343.
+Package pdftex.def Info: images/plot4.pdf used on input line 349.
 (pdftex.def)             Requested size: 250.95477pt x 200.76224pt.
 
 
 Package caption Warning: \captionsetup{type*=...} or \captionof
-(caption)                outside box or environment on input line 347.
+(caption)                outside box or environment on input line 350.
 See the caption package documentation for explanation.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 347.
+(caption)                particular \caption on input line 350.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (86.08916pt too wide) in paragraph at lines 325--347
-[] [] 
+Underfull \hbox (badness 10000) in paragraph at lines 353--370
+
  []
 
-
-Overfull \hbox (86.08916pt too wide) in paragraph at lines 325--347
-[] [] 
- []
-
-[14
-
- <./images/plot1.pdf> <./images/plot2.pdf
+[15 <./images/plot1.pdf> <./images/plot2.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/plot2.pdf): PDF inclusion: mul
 tiple pdfs with page group included in a single page
->]
-Underfull \hbox (badness 10000) in paragraph at lines 350--367
+> <./images/plot3.pdf
 
- []
+pdfTeX warning: /usr/bin/pdflatex (file ./images/plot3.pdf): PDF inclusion: mul
+tiple pdfs with page group included in a single page
+> <./images/plot4.pdf
 
-<images/phase_frequenz.pdf, id=388, 722.7pt x 578.16pt>
+pdfTeX warning: /usr/bin/pdflatex (file ./images/plot4.pdf): PDF inclusion: mul
+tiple pdfs with page group included in a single page
+>] <images/phase_frequenz.pdf, id=467, 722.7pt x 578.16pt>
 File: images/phase_frequenz.pdf Graphic file (type pdf)
 
 <use images/phase_frequenz.pdf>
-Package pdftex.def Info: images/phase_frequenz.pdf used on input line 371.
+Package pdftex.def Info: images/phase_frequenz.pdf used on input line 374.
 (pdftex.def)             Requested size: 284.52756pt x 227.62523pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 372.
+(caption)                particular \caption on input line 375.
 See the caption package documentation for explanation.
 
-[15 <./images/plot3.pdf> <./images/plot4.pdf
-
-pdfTeX warning: /usr/bin/pdflatex (file ./images/plot4.pdf): PDF inclusion: mul
-tiple pdfs with page group included in a single page
->] <images/integrator.pdf, id=474, 722.7pt x 578.16pt>
+[16 <./images/phase_frequenz.pdf>]
+<images/integrator.pdf, id=527, 722.7pt x 578.16pt>
 File: images/integrator.pdf Graphic file (type pdf)
 
 <use images/integrator.pdf>
-Package pdftex.def Info: images/integrator.pdf used on input line 388.
+Package pdftex.def Info: images/integrator.pdf used on input line 390.
 (pdftex.def)             Requested size: 341.43306pt x 273.14676pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 389.
+(caption)                particular \caption on input line 391.
 See the caption package documentation for explanation.
 
-[16 <./images/phase_frequenz.pdf>]
-<images/sinus_int.png, id=529, 803.0pt x 541.02126pt>
+<images/sinus_int.png, id=528, 803.0pt x 541.02126pt>
 File: images/sinus_int.png Graphic file (type png)
 
 <use images/sinus_int.png>
-Package pdftex.def Info: images/sinus_int.png used on input line 393.
+Package pdftex.def Info: images/sinus_int.png used on input line 395.
 (pdftex.def)             Requested size: 209.12686pt x 140.90161pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 394.
+(caption)                particular \caption on input line 396.
 See the caption package documentation for explanation.
 
-<images/rechteck_int.png, id=530, 803.0pt x 541.02126pt>
+<images/rechteck_int.png, id=529, 803.0pt x 541.02126pt>
 File: images/rechteck_int.png Graphic file (type png)
 
 <use images/rechteck_int.png>
-Package pdftex.def Info: images/rechteck_int.png used on input line 399.
+Package pdftex.def Info: images/rechteck_int.png used on input line 401.
 (pdftex.def)             Requested size: 209.12686pt x 140.90161pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 400.
+(caption)                particular \caption on input line 402.
 See the caption package documentation for explanation.
 
-<images/dreieck_int.png, id=531, 803.0pt x 541.02126pt>
+<images/dreieck_int.png, id=530, 803.0pt x 541.02126pt>
 File: images/dreieck_int.png Graphic file (type png)
 
 <use images/dreieck_int.png>
-Package pdftex.def Info: images/dreieck_int.png used on input line 404.
+Package pdftex.def Info: images/dreieck_int.png used on input line 406.
 (pdftex.def)             Requested size: 209.12686pt x 140.90161pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 405.
+(caption)                particular \caption on input line 407.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (46.69458pt too wide) in paragraph at lines 392--410
+Overfull \hbox (46.69458pt too wide) in paragraph at lines 394--412
 []   [] 
  []
 
 [17 <./images/integrator.pdf>]
-<images/differentiator.pdf, id=579, 722.7pt x 578.16pt>
+<images/differentiator.pdf, id=578, 722.7pt x 578.16pt>
 File: images/differentiator.pdf Graphic file (type pdf)
 
 <use images/differentiator.pdf>
-Package pdftex.def Info: images/differentiator.pdf used on input line 419.
+Package pdftex.def Info: images/differentiator.pdf used on input line 421.
 (pdftex.def)             Requested size: 341.43306pt x 273.14676pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 420.
+(caption)                particular \caption on input line 422.
 See the caption package documentation for explanation.
 
 [18 <./images/sinus_int.png (PNG copy)> <./images/rechteck_int.png (PNG copy)> 
 <./images/dreieck_int.png (PNG copy)>]
-<images/sinus_diff.png, id=589, 803.0pt x 541.02126pt>
+<images/sinus_diff.png, id=588, 803.0pt x 541.02126pt>
 File: images/sinus_diff.png Graphic file (type png)
 
 <use images/sinus_diff.png>
-Package pdftex.def Info: images/sinus_diff.png used on input line 424.
+Package pdftex.def Info: images/sinus_diff.png used on input line 426.
 (pdftex.def)             Requested size: 209.12686pt x 140.90161pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 425.
+(caption)                particular \caption on input line 427.
 See the caption package documentation for explanation.
 
-<images/rechteck_diff.png, id=590, 803.0pt x 541.02126pt>
+<images/rechteck_diff.png, id=589, 803.0pt x 541.02126pt>
 File: images/rechteck_diff.png Graphic file (type png)
 
 <use images/rechteck_diff.png>
-Package pdftex.def Info: images/rechteck_diff.png used on input line 430.
+Package pdftex.def Info: images/rechteck_diff.png used on input line 432.
 (pdftex.def)             Requested size: 209.12686pt x 140.90161pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 431.
+(caption)                particular \caption on input line 433.
 See the caption package documentation for explanation.
 
-<images/dreieck_diff.png, id=591, 803.0pt x 541.02126pt>
+<images/dreieck_diff.png, id=590, 803.0pt x 541.02126pt>
 File: images/dreieck_diff.png Graphic file (type png)
 
 <use images/dreieck_diff.png>
-Package pdftex.def Info: images/dreieck_diff.png used on input line 435.
+Package pdftex.def Info: images/dreieck_diff.png used on input line 437.
 (pdftex.def)             Requested size: 209.12686pt x 140.90161pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 436.
+(caption)                particular \caption on input line 438.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (46.69458pt too wide) in paragraph at lines 423--439
+Overfull \hbox (46.69458pt too wide) in paragraph at lines 425--441
 []   [] 
  []
 
 [19 <./images/differentiator.pdf> <./images/sinus_diff.png (PNG copy)> <./image
 s/rechteck_diff.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 441--442
+Underfull \hbox (badness 10000) in paragraph at lines 443--444
 
  []
 
-<images/schmitt.png, id=639, 803.0pt x 541.02126pt>
+<images/schmitt.png, id=638, 803.0pt x 541.02126pt>
 File: images/schmitt.png Graphic file (type png)
  <use images/schmitt.png>
-Package pdftex.def Info: images/schmitt.png used on input line 443.
+Package pdftex.def Info: images/schmitt.png used on input line 445.
 (pdftex.def)             Requested size: 284.52756pt x 191.70477pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 444.
+(caption)                particular \caption on input line 446.
 See the caption package documentation for explanation.
 
 [20 <./images/dreieck_diff.png (PNG copy)> <./images/schmitt.png (PNG copy)>]
-<images/dreieckgen.png, id=646, 803.0pt x 541.02126pt>
+<images/dreieckgen.png, id=645, 803.0pt x 541.02126pt>
 File: images/dreieckgen.png Graphic file (type png)
 
 <use images/dreieckgen.png>
-Package pdftex.def Info: images/dreieckgen.png used on input line 460.
+Package pdftex.def Info: images/dreieckgen.png used on input line 462.
 (pdftex.def)             Requested size: 284.52756pt x 191.70477pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 461.
+(caption)                particular \caption on input line 463.
 See the caption package documentation for explanation.
 
 [21 <./images/dreieckgen.png (PNG copy)>]
-<images/schwingung.png, id=659, 803.0pt x 541.02126pt>
+<images/schwingung.png, id=658, 803.0pt x 541.02126pt>
 File: images/schwingung.png Graphic file (type png)
 
 <use images/schwingung.png>
-Package pdftex.def Info: images/schwingung.png used on input line 483.
+Package pdftex.def Info: images/schwingung.png used on input line 485.
 (pdftex.def)             Requested size: 284.52756pt x 191.70477pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 484.
+(caption)                particular \caption on input line 486.
 See the caption package documentation for explanation.
 
 [22 <./images/schwingung.png (PNG copy)>]
-<images/schwinggen.png, id=671, 803.0pt x 541.02126pt>
+<images/schwinggen.png, id=670, 803.0pt x 541.02126pt>
 File: images/schwinggen.png Graphic file (type png)
 
 <use images/schwinggen.png>
-Package pdftex.def Info: images/schwinggen.png used on input line 494.
+Package pdftex.def Info: images/schwinggen.png used on input line 496.
 (pdftex.def)             Requested size: 284.52756pt x 191.70477pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 495.
+(caption)                particular \caption on input line 497.
 See the caption package documentation for explanation.
 
-<images/schwing_abfall.pdf, id=672, 722.7pt x 578.16pt>
+<images/schwing_abfall.pdf, id=671, 722.7pt x 578.16pt>
 File: images/schwing_abfall.pdf Graphic file (type pdf)
 
 <use images/schwing_abfall.pdf>
-Package pdftex.def Info: images/schwing_abfall.pdf used on input line 499.
+Package pdftex.def Info: images/schwing_abfall.pdf used on input line 501.
 (pdftex.def)             Requested size: 284.52756pt x 227.62523pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 500.
+(caption)                particular \caption on input line 502.
 See the caption package documentation for explanation.
 
 [23 <./images/schwinggen.png (PNG copy)> <./images/schwing_abfall.pdf>]
 [24
 
 ] [25]
-Underfull \hbox (badness 10000) in paragraph at lines 532--536
+Underfull \hbox (badness 10000) in paragraph at lines 534--538
 
  []
 
@@ -1987,14 +1981,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 532--536
 ] [27
 
 ] [28] [29] [30] [31] [32] [33]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 794.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 794.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 796.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 796.
  (./protokoll.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 794.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 794.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 796.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 796.
 Package rerunfilecheck Info: File `protokoll.out' has not changed.
 (rerunfilecheck)             Checksum: 315CA2CD7C0AB846AF37D8238D9ABCAD;2390.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 794.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 796.
  ) 
 Here is how much of TeX's memory you used:
  30041 strings out of 493029
@@ -2018,10 +2012,10 @@ re/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm
 xmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lm
 sy6.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fon
 ts/type1/public/lm/lmtt10.pfb>
-Output written on protokoll.pdf (33 pages, 905609 bytes).
+Output written on protokoll.pdf (33 pages, 905661 bytes).
 PDF statistics:
- 858 PDF objects out of 1000 (max. 8388607)
- 524 compressed objects within 6 object streams
+ 857 PDF objects out of 1000 (max. 8388607)
+ 523 compressed objects within 6 object streams
  133 named destinations out of 1000 (max. 500000)
  401 words of extra memory for PDF output out of 10000 (max. 10000000)
 

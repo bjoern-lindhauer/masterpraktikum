@@ -321,29 +321,32 @@ Mithilfe einer Schwingungsdifferentialschaltung wird eine ungedämpfte und eine 
 
 In Abbildung \ref{fig:frequenzgang} sind die Frequenzgänge des gegengekoppelten Verstärkers für verschiedene Verstärkungsgrade $V'$ dargestellt. Dazu wurde jeweils eine konstante Funktion, die die Verstärkungsfunktion bei der Grenzfrequenz $f_g$ schneidet und den konstanten Wert $\frac{V'}{\sqrt{2}}$ hat, sowie ein linearer Fit für alle Werte von $f>f_g$ angefertigt. Der lineare Ansatz, der sich aus Gleichung \ref{eq:tiefpass} sowie der Näherung $f \gg f_g$ ergibt, lautet
 \begin{align}
-\ln(|V'(\omega)|)=-m\ln(f)+\ln(f_g)\,.
+\ln(|V'(f)|)=-m\ln(f)+\ln(f_g)\,.
 \end{align} 
-Es wurde dabei stets ein Widerstand der Grö"se $R_1=\SI{1}{\kilo\ohm}$ verwendet. Die Tabellen mit den Messdaten sind im Anhang zu finden.\\
+Es wurde dabei stets ein Widerstand der Grö"se $R_1=\SI{1}{\kilo\ohm}$ verwendet. Die Tabellen mit den Messdaten sind im Anhang zu finden.
+\newpage
+\noindent\makebox[\textwidth][c]{
 \begin{minipage}[t]{0.6\textwidth}
-		\includegraphics[width=\textwidth]{images/plot1.pdf}
+		\includegraphics[width=\linewidth]{images/plot1.pdf}
 		\centering
 		a)
 \end{minipage}
 \begin{minipage}[t]{0.6\textwidth}
-		\includegraphics[width=\textwidth]{images/plot2.pdf}
+		\includegraphics[width=\linewidth]{images/plot2.pdf}
 		\centering
 		b)
-\end{minipage} \\
+\end{minipage}} \\
+\noindent\makebox[\textwidth][c]{
 \begin{minipage}[t]{0.6\textwidth}
-		\includegraphics[width=\textwidth]{images/plot3.pdf}
+		\includegraphics[width=\linewidth]{images/plot3.pdf}
 		\centering
 		c)
 \end{minipage}
 \begin{minipage}[t]{0.6\textwidth}
-		\includegraphics[width=\textwidth]{images/plot4.pdf}
+		\includegraphics[width=\linewidth]{images/plot4.pdf}
 		\centering
 		d)
-\end{minipage}
+\end{minipage}}
 \captionof{figure}{Frequenzgang für $R_n=$ a) $\SI{1}{\kilo\ohm}$, b) $\SI{100}{\ohm}$, c) $\SI{570}{\ohm}$, d) $\SI{570}{\ohm}$}
 \label{fig:frequenzgang}
 \vspace{0.5cm}
@@ -375,11 +378,10 @@ In Abbildung \ref{fig:phase} sind die Messwerte für die Phasenverschiebung zwis
 
 \subsection{Der Umkehrintegrator und -differentiator}
 Für den Aufbau des Umkehrintegrators wurden ein Widerstand $R=\SI{32.7}{\kilo\ohm}$ und eine Kapazität $C=\SI{13.6}{\nano\farad}$ verwendet. Die gemessenen Ausgangsspannungen in Abhängigkeit von der Frequenz sind in Tabelle \ref{tab:integrator} dargestellt, in Abbildungen \ref{fig:sinusint}-\ref{fig:dreieckint} sind die Thermodrucke des Ausgangssignals für verschiedene Eingangssignalformen dargestellt. \\
-Es wird eine lineare Ausgleichsrechnung der Form 
+Der Ansatz für die lineare Ausgleichsrechnung lautet
 \begin{align}
-\ln |U_A| = \ln\left(\frac{U_0}{RC}\right)+m\cdot\omega
+\ln |U_A| = \ln\left(\frac{U_0}{RC}\right)+m\cdot\omega\,.
 \end{align}
-gemacht. \\
 Mithilfe der linearen Ausgleichsrechnung ergibt sich die Steigung $m$ zu
 \begin{align*}
 m = -0.754\pm 0.040\,.
@@ -454,7 +456,7 @@ Der Dreieckgenerator wurde mit der Konfiguration
 \begin{align*}
 R_1=\SI{100}{\ohm}, && R_P=\SI{33}{\kilo\ohm}, && R=\SI{10}{\kilo\ohm} && \text{und} && C=\SI{100}{\nano\farad}
 \end{align*}
-aufgebaut. Die Betriebsspannung wurde auf $U_B=\SI{13.08}{\volt}$ eingestellt. Auf dem Oszilloskop wird ein Signal mit zwei unterschiedlichen Extremwerten beobachtet. Das Maximum befindet sich bei $U_{\text{max}}=\SI{0.69}{\volt}$, das Minimum bei $U_{\text{min}}=\SI{-0.85}{\volt}$.
+aufgebaut. Die Betriebsspannung wurde auf $U_B=\SI{13.08}{\volt}$ eingestellt. Auf dem Oszilloskop wird ein Signal mit zwei unterschiedlichen Extremwerten beobachtet. Das Maximum befindet sich bei $U_{\text{max}}=\SI{0.41}{\volt}$, das Minimum bei $U_{\text{min}}=\SI{-1.12}{\volt}$.
 Der Signalverlauf ist in Abbildung \ref{fig:dreieckgen} dargestellt.
 \begin{center}
 	\includegraphics[width=10cm]{images/dreieckgen.png}

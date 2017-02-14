@@ -78,7 +78,7 @@ for i in range(1,5):
     params_3, covariance_3 = curve_fit(f,np.log(data_linverst[0,14:19]), np.log(amplif[14:19,2]))
     errors_3=np.sqrt(np.diag(covariance_3))
 
-    params_4, covariance_4 = curve_fit(f,np.log(data_linverst[0,5:17]), np.log(amplif[5:17,3]))
+    params_4, covariance_4 = curve_fit(f,np.log(data_linverst[0,10:17]), np.log(amplif[10:17,3]))
     errors_4=np.sqrt(np.diag(covariance_4))
 
     params=np.array([params_1,params_2,params_3,params_4])
@@ -86,8 +86,8 @@ for i in range(1,5):
     plt.figure()
     err_v = 0.05
     if i==4:
-        plt.errorbar(data_linverst[0,0:4], amplif[0:4,i-1] + err_v , fmt='bx', label="Nicht für den Fit verwendet")
-        plt.errorbar(data_linverst[0,5:17], amplif[5:17,i-1] + err_v , fmt='yx', label="Für den Fit verwendet")
+        plt.errorbar(data_linverst[0,0:9], amplif[0:9,i-1] + err_v , fmt='bx', label="Nicht für den Fit verwendet")
+        plt.errorbar(data_linverst[0,10:17], amplif[10:17,i-1] + err_v , fmt='yx', label="Für den Fit verwendet")
     else:
         plt.errorbar(data_linverst[0,0:13], amplif[0:13,i-1] + err_v , fmt='bx', label="Nicht für den Fit verwendet")
         plt.errorbar(data_linverst[0,14:19], amplif[14:19,i-1] + err_v , fmt='yx', label="Für den Fit verwendet")
