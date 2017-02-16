@@ -62,8 +62,8 @@ def const(x,c):
 amplif = np.ones((19,4))
 vgrenz= np.ones(5)
 vgrenz_errors= unp.uarray(np.ones(4),0.01)
-th_l = np.array([15,15,15,11]) #lower threshold for fit
-th_u = np.array([20,20,20,18]) #higher threshold for fit
+th_l = np.array([15,15,15,10]) #lower threshold for fit
+th_u = np.array([20,20,20,17]) #upper threshold for fit
 params = [np.zeros((2,1)),np.zeros((2,1)),np.zeros((2,1)),np.zeros((2,1))]
 covariance = [np.zeros((2,2)),np.zeros((2,2)),np.zeros((2,1)),np.zeros((2,2))]
 errors_cov = [np.zeros((2,1)),np.zeros((2,1)),np.zeros((2,1)),np.zeros((2,1))]
@@ -78,8 +78,8 @@ for i in range(1,5):
 
     plt.figure()
     err_v = 0.05
-    plt.errorbar(data_linverst[0,0:th_l[i-1]-1], amplif[0:th_l[i-1]-1,i-1] + err_v , fmt='bx', label="Nicht für den Fit verwendet")
-    plt.errorbar(data_linverst[0,th_l[i-1]:th_u[i-1]], amplif[th_l[i-1]:th_u[i-1],i-1] + err_v , fmt='yx', label="Für den Fit verwendet")
+    plt.plot(data_linverst[0,0:th_l[i-1]-1], amplif[0:th_l[i-1]-1,i-1] , 'bx', label="Nicht für den Fit verwendet")
+    plt.plot(data_linverst[0,th_l[i-1]:th_u[i-1]], amplif[th_l[i-1]:th_u[i-1],i-1], 'yx', label="Für den Fit verwendet")
 
     vgrenz[i-1] = np.mean(np.log(amplif[0:3,i-1])-0.5*np.log(2))
     vgrenz_errors[i-1] = ufloat(vgrenz[i-1],np.std(np.log(amplif[0:3,i-1])-0.5*np.log(2)))
