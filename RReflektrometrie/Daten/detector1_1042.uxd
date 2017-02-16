@@ -1,0 +1,107 @@
+; (content of file C:\Users\Bruker\Desktop\Praktikum\LindhauerRauter\detector1_1042.raw)
+_FILEVERSION = 2
+_SAMPLE = 
+_+SAMPLE = 
+_SITE = Dortmund
+_USER = "Metin Tolan"
+_GONIOMETER_CODE = 21
+_STAGE_CODE = 8
+; Goniometer : D8 theta/theta, stage : XYZ Drive(s)
+_SAMPLE_CHANGER_CODE = 0
+_ATTACHMENTS_CODE = 0
+_GONIOMETER_RADIUS = 300
+_FIXED_DIVSLIT = 0.15
+_FIXED_SAMPLESLIT = 1
+_SOLLER_SLITS = 2
+_FIXED_DETSLIT = 1
+_MONOCHROMATOR = 0
+; Incident beam monochromator : None
+_THIN_FILM = N
+_BETA_FILTER = N
+_FIXED_ANTISLIT = 0.15
+_ANALYZER_CODE = 0
+; Received beam analyzer : None
+_DATEMEASURED = "16-Feb-2017 10:34:58"
+_WL_UNIT = A
+_WL1 = 1.5406
+_WL2 = 1.54439
+_WL3 = 1.39222
+_WLRATIO = 0.5
+_ANODE = Cu
+
+; Data for range 1
+_DRIVE = 2THETA
+_STEPTIME = 1
+_STEPSIZE = 0.005
+_STEPMODE = S
+_START = -0.1
+_THETA = 0
+_2THETA = -0.1
+_KHI = 0
+_PHI = 0
+_X = 27.8
+_Y = -5
+_Z = -34.0135
+_DETECTOR = 1
+; Detector type : Scintillation counter
+_HV = 743.4
+_GAIN = 80
+_LLD = 0.98
+_ULD = 2.01
+_DETECTORSLIT = out
+_AUX1 = 0
+_AUX2 = 0
+_AUX3 = 0
+_TIMESTARTED = 2
+_TEMP_RATE = -1
+_TEMP_DELAY = -1
+_KV = 40
+_MA = 40
+_RANGE_WL = 1.5406
+_3DPLANE = 0
+_V4_COUNTERS_MASK = 1
+_V4_DRIVES_MASK = 0
+_V4_ENCODERS_MASK = 0
+_2THETACOUNTS = 1
+; 2THETA  Cnt1_D1
+  -0.1000      52440
+  -0.0950      60512
+  -0.0900      70372
+  -0.0850      81532
+  -0.0800     101093
+  -0.0750     129635
+  -0.0700     181663
+  -0.0650     346167
+  -0.0600     629436
+  -0.0550    1166390
+  -0.0500    2025400
+  -0.0450    3456690
+  -0.0400    5677140
+  -0.0350    7537510
+  -0.0300   10118000
+  -0.0250   12194400
+  -0.0200   15435100
+  -0.0150   16707300
+  -0.0100   18063600
+  -0.0050   17883600
+   0.0000   18915800
+   0.0050   18279700
+   0.0100   17703500
+   0.0150   16575300
+   0.0200   15747100
+   0.0250   13850800
+   0.0300   12590500
+   0.0350   10634100
+   0.0400    9049810
+   0.0450    7429490
+   0.0500    6577320
+   0.0550    4452890
+   0.0600    3372670
+   0.0650    2220440
+   0.0700    1656330
+   0.0750     759307
+   0.0800     535906
+   0.0850     400328
+   0.0900     306914
+   0.0950     244949
+   0.1000     212103
