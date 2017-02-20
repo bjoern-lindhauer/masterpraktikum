@@ -94,16 +94,9 @@ for i in range(1,5):
     plt.ylim(10**(-2),2)
     plt.xlabel(r'f/kHz')
     plt.ylabel(r"V'")
-    name = "../Protokoll/images/plot%d_varied.pdf" % i
+    name = "../Protokoll/images/plot%d.pdf" % i
     plt.savefig(name)
     plt.close()
-
-
-print('Die Steigungen lauten:')
-print('m_1 =', '%.3f' % params[0][0], '+/-', '%.3f' % errors_cov[0][0])
-print('m_2 =', '%.3f' % params[1][0], '+/-', '%.3f' % errors_cov[1][0])
-print('m_3 =', '%.3f' % params[2][0], '+/-', '%.3f' % errors_cov[2][0])
-print('m_4 =', '%.3f' % params[3][0], '+/-', '%.3f' % errors_cov[3][0])
 
 m_1,m_2,m_3,m_4 =ufloat(params[0][0], errors_cov[0][0]), ufloat(params[1][0], errors_cov[1][0]), ufloat(params[2][0], errors_cov[2][0]), ufloat(params[3][0], errors_cov[3][0])
 
@@ -122,6 +115,12 @@ vtheor = np.array([1.0,0.1,0.57,100])
 print('Die Leerlaufverstärkungen lauten:')
 vleer = (vgrenz_exp*vtheor)/(vtheor-vgrenz_exp)
 print(vleer)
+
+print('Die Steigungen lauten:')
+print('m_1 =', '%.3f' % params[0][0], '+/-', '%.3f' % errors_cov[0][0])
+print('m_2 =', '%.3f' % params[1][0], '+/-', '%.3f' % errors_cov[1][0])
+print('m_3 =', '%.3f' % params[2][0], '+/-', '%.3f' % errors_cov[2][0])
+print('m_4 =', '%.3f' % params[3][0], '+/-', '%.3f' % errors_cov[3][0])
 
 print('Das Verstärkung-Bandbreite-Produkt lautet:')
 bbprodukt = vgrenz_exp*fgrenz
