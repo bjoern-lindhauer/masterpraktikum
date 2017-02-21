@@ -31,6 +31,8 @@
 \newcommand{\versuchname}{Der Diodenlaser} 
 \newcommand{\versuchdatum}{23.01.2017} 
 
+\let\oldsection\section
+\renewcommand\section{\clearpage\oldsection}
 
 \title{Versuch \versuchnummer\\ \versuchname}
 \subtitle{Physikalisches Fortgeschrittenenpraktikum}
@@ -63,16 +65,16 @@ Der Diodenlaser liegt in Form eines Chips vor, welcher auf einen Kühlkörper be
 \end{center}
 Wird nun eine Spannung am Chip angelegt, so entstehen Elektronen-Loch-Paare.
 Diese rekombinieren in der aktiven Schicht und emittieren dabei Licht.
-Das Licht wird in kleinen Kanal in der Größenordnung $2\times 10 \times 400\si{\micro\meter}$  eingeschlossen. 
+Das Licht wird in kleinen Kanal in der Grö"senordnung $2\times 10 \times 400\si{\micro\meter}$  eingeschlossen. 
 Die Facetten am Ende des Kanals bilden teilweise reflektierende Flächen, sodass ein Resonator entsteht.
 
 Der Chip besteht aus n- und p-notierten Schichten, deshalb Elektronen rekombinieren an den Verbindungsflächen von den p und n Schichten. 
 Somit ist in erster Näherung die Wellenlänge des emittierten Lichts gleich der Bandlücke.
 
-Der Resonator in der Diode kann so konstruiert werden, dass nur longituale Moden im Resonator ausgebildet werden. 
+Der Resonator in der Diode kann so konstruiert werden, dass nur longitudinale Moden im Resonator ausgebildet werden. 
 Diese Dioden haben typischerweise eine Bandbreite von $\Delta \nu \sim \SI{50}{\mega\hertz}$.
 \newpage
-Ein Diodenlaser ist abhängig von der angelegten Spannung. Ist die Spannung zu klein, so ist der Verlust größer als der Verstärkungsgrad (gain) des Resonators und es wird keine Besetzungsinversion erreicht. Das emittierte Licht entsteht nur durch die spontane Emission und ist somit breitbandig.
+Ein Diodenlaser ist abhängig von der angelegten Spannung. Ist die Spannung zu klein, so ist der Verlust grö"ser als der Verstärkungsgrad (gain) des Resonators und es wird keine Besetzungsinversion erreicht. Das emittierte Licht entsteht nur durch die spontane Emission und ist somit breitbandig.
 Überschreitet die Spannung einen Schwellwert, so wird ein kohärenter Strahl aus dem Laser emittiert, da die induzierte Emission überliegt. 
 Die Intensität des Stahls wächst linear mit der Spannung und dabei erreicht der Diodenlaser eine Effektivität von $\sim 50\%$.
 
@@ -201,6 +203,7 @@ Mithilfe einer Kamera kann das Verhalten des Strahls bei Variation der Stromstä
 	\label{fig:led}
 \end{center}
 Wird der Grenzwert der Stromstärke überschritten, tritt eine deutliche Erhöhung der Strahlintensität auf, wie es in Abbildung \ref{fig:over_threshold} zu sehen ist. 
+\newpage
 \begin{center}
 	\includegraphics[width=10cm]{images/over_threshold.jpg}
 	\captionof{figure}{Beobachtetes Ausgangssignal des Diodenlaser oberhalb der Grenzstromstärke}
@@ -237,6 +240,9 @@ Zur Bereinigung des Resonanzsignals von z.B. der Spannungsmodulation des Piezokr
 	\end{center}
 
 \section{Diskussion}
+Nach der Justierung des Strahlenganges konnte eine hohe Intensität des Strahls erreicht werden. Desweiteren wurde eine starke Resonanzintensität des Rubidiumdampfes erreicht. \\
+Die Resonanzlinien des Rubidiumdampfes ($^{85}$Rb und $^{87}$Rb) konnten klar abgebildet werden, wobei die Resonanzspitzen gau"sverbreitert waren. Zusätzlich dazu konnten zwei "'extra features"' im Spektrum zu entdecken gewesen. \\
+
 
 \section{Quellen}
 %\renewcommand{\labelenumi}{\value{enumi}}
