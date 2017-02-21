@@ -1,5 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%% 
 clear all 
+graphics_toolkit gnuplot
 %Brechungsindex 
 n1=1; %Luft 
 n2=1-1e-6; %Schicht 
@@ -37,4 +38,4 @@ xlabel('q_z [A^{-1}]');
 ylabel('intensity'); 
 legend('sigma=0A','sigma=6A');
 set au replot 
-%%%%%%%%%%%%%%%%%%
+print test.png

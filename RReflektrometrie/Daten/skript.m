@@ -33,10 +33,9 @@ r23=(kz2-kz3)./(kz2+kz3).*exp(-2*kz2.*kz3*sigma2^2);
 x2=r23; 
 x1_new=(r12+x2)./(1+r12.*x2); 
 
-
 semilogy(qz,abs(x1).^2,qz,abs(x1_new).^2);
-xlabel('q_z [A^{-1}]'); 
+xlabel(r'q_z [A^{-1}]'); 
 ylabel('intensity'); 
 legend('sigma=0A','sigma=6A');
-set au replot 
+set au replot
 %%%%%%%%%%%%%%%%%%
