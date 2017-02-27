@@ -167,7 +167,7 @@ r_\indx{j,j+1}= \frac{k_\indx{z,j}-k_\indx{z,j+1}}{k_\indx{z,j}+k_\indx{z,j+1}}
 der Fresnelreflektivität der j-ten Grenzfläche. 
 Abbildung \ref{fig:reflexionbeispiel} zeigt das Ergebnis des Parratt-Algorithmus für ein System mit einer Schicht mit $\delta=10^{-6}$ auf einen  Substrat mit $\delta = 3\cdot 10^{-6}$.
 \begin{center}
-	\includegraphics[width=10cm]{images/reflexionmehrschichten.png}
+	\includegraphics[width=10cm]{images/reflektivitaet_schicht.pdf}
 	\captionof{figure}{Durch  Parratt-Algorithmus berechnete Reflexität für ein System mit einer Schicht mit $\delta=10^{-6}$ auf einen  Substrat mit $\delta = 3\cdot 10^{-6} $ }
 	\label{fig:reflexionbeispiel}
 \end{center}
@@ -178,7 +178,7 @@ Die Rauigkeit der j-ten Grenzfläche wird durch die root-mean-square-Rauigkeit
 \sigma_\indx{j}^2=\int \left(z-z_\indx{j} \right)^2 P_\indx{j}\left(z\right)~\mathrm{d}z
 \end{equation}
 approximiert.
-Dabei gibt $P_\indx{j}\left(z\right)$ die Wahrscheinlichkeit an, dass die j-te Grenzfläche bei einer Position im Interval $\left[z_\indx{j}+ z, z_\indx{j}+ z+\mathrm{d}z \right]$ liegt.
+Dabei gibt $P_\indx{j}\left(z\right)$ die Wahrscheinlichkeit an, dass die j-te Grenzfläche bei einer Position im Intervall $\left[z_\indx{j}+ z, z_\indx{j}+ z+\mathrm{d}z \right]$ liegt.
 Beim Parratt-Algorithmus kann die Rauigkeit berücksichtigt werden, indem modifizierte Fresnelkoeffizienten
 \begin{align}
 \tilde{r}_\indx{j,j+1}&=r_\indx{j,j+1}\exp\left( -2k_\indx{z,j}k_\indx{z,j+1}\sigma_\indx{j}^2 \right) \\
@@ -187,14 +187,16 @@ Beim Parratt-Algorithmus kann die Rauigkeit berücksichtigt werden, indem modifi
 verwendet werden. In Abbildung \ref{fig:rauigkeitbeispiel} ist die Auswirkung der Rauigkeit an einen konkreten Beispiel dargestellt.
 
 \begin{center}
-	\includegraphics[width=10cm]{images/reflexionmehrschichten.png}
-	\captionof{figure}{Durch  Parratt-Algorithmus berechnete Reflexität für ein System mit einer Schicht mit $\delta=10^{-6}$ auf einen  Substrat mit $\delta = 3\cdot 10^{-6} $  mit unterschiedlichen Rauigkeiten $\sigma_1=$\SI{0}{\angstrom} und $\sigma_2=$\SI{6}{\angstrom}.}
+	\includegraphics[width=10cm]{images/reflektivitaet_rau.pdf}
+	\captionof{figure}{Berechnete Reflexität für ein Substrat mit unterschiedlichen Rauigkeiten $\sigma_1=$\SI{0}{\angstrom} und $\sigma_2=$\SI{6}{\angstrom}.}
 	\label{fig:rauigkeitbeispiel}
 \end{center}
-\section{Aufbau}
 
+\section{Aufbau}
+$I\left(\vec{k}\right)=\left\|\Psi_0\left(\vec{k}\right)+\sum\limits_j\Psi_j\left( \vec{k} \right) \right|^2$
 
 \section{Durchführung}
+
 \subsection{Justage des D8-Labordiffraktometers}
 
 \subsection{Messung der Röntgenreflektivität}
@@ -210,6 +212,5 @@ verwendet werden. In Abbildung \ref{fig:rauigkeitbeispiel} ist die Auswirkung de
 \textit{Versuchsanleitung zu Versuch: Röntgenreflektometrie} \\
 \url{http://e1.physik.tu-dortmund.de/cms/Medienpool/Downloads/Roentgenreflektometrie_Versuch.pdf} (letzte Version vom 15.02.2017, 12:26)
 \end{enumerate}
-
 
 \end{document}
