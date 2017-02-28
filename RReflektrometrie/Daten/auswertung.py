@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import numpy as np
+from numpy.lib import scimath
 import scipy
 from scipy.optimize import curve_fit
 from scipy import constants
@@ -32,25 +33,26 @@ datatxt.close()
 l=1.54*10**(-10) #wavelength in Angstrom
 k=2*np.pi/l #wavenumber
 
-ai = np.linspace(0,5,10000)*np.pi/180 #incident angle
+ai = np.linspace(0,2.5,10000) #incident angle
 qz = 4*np.pi/(l*10**(10))*np.sin(ai) #change of wave vector
 
 
 def reflectrometry(a,n1,n2,n3,s1,s2,a0):
 
+    a = np.deg2rad(a)
     #z-components
-    kz1=k*np.sqrt(n1**2-np.square(np.cos(a)))
-    kz2=k*np.sqrt(n2**2-np.square(np.cos(a)))
-    kz3=k*np.sqrt(n3**2-np.square(np.cos(a)))
+    kz1=k*scimath.sqrt(n1**2-np.cos(a)**2)
+    kz2=k*scimath.sqrt(n2**2-np.cos(a)**2)
+    kz3=k*scimath.sqrt(n3**2-np.cos(a)**2)
 
     #modified Fresnel-coefficients
 
     r12=(kz1-kz2)/(kz1+kz2)*np.exp(-2*kz1*kz2*s1**2)
     r23=(kz2-kz3)/(kz2+kz3)*np.exp(-2*kz2*kz3*s2**2)
     x2=np.exp(-2*1j*kz2*z2)*r23
-    x1=a0*(r12+x2)/(1+r12*x2)
+    x1=(r12+x2)/(1+r12*x2)
 
-    return np.absolute(x1)
+    return a0*np.absolute(x1)**2
 
 #Abfallende Schwingung
 
@@ -81,7 +83,7 @@ dist = np.delete(dist, [0,15], 0)
 
 z2 = l/(2*np.mean(dist))
 
-x0 = [1, 1-10**(-6), 1-10**(-6), 0.5*10**(-9), 0.5*10**(-9), 7*10**8]
+x0 = [1, 1-25*10**(-7), 1-75*10**(-7), 55*10**(-11), 35*10**(-11), 2*10**7]
 
 params, covariance = curve_fit(reflectrometry, data[0,:], data[1,:], p0=x0)
 
@@ -89,7 +91,8 @@ params, covariance = curve_fit(reflectrometry, data[0,:], data[1,:], p0=x0)
 
 plt.figure()
 plt.plot(data[0], data[1], 'b-', label="Messwerte")
-plt.plot(ai, reflectrometry(ai, *params), 'g-', label="Fit")
+#plt.plot(ai, reflectrometry(ai, *params), 'y-', label="Fit")
+plt.plot(ai, reflectrometry(ai, *x0), 'g-', label="Test")
 plt.yscale("log")
 plt.legend(loc="best", numpoints=1)
 plt.grid()
