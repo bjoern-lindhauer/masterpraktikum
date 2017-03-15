@@ -65,7 +65,9 @@ z2 = l/(2*np.mean(np.deg2rad(dist)))
 
 print(z2)
 
-def reflectrometry(a,n2,n3,s1,s2,a0):
+def reflectrometry(a,n2,n3,s1,s2,z):
+
+    a0=5*10**7
 
     kz1 =k*scimath.sqrt(n1**2-(np.cos(a))**2)
     kz2 =k*scimath.sqrt(n2**2-(np.cos(a))**2)
@@ -73,13 +75,13 @@ def reflectrometry(a,n2,n3,s1,s2,a0):
 
     r12 = (kz1-kz2)/(kz1+kz2)*np.exp(-2*kz1*kz2*s1**2)
     r23 = (kz2-kz3)/(kz2+kz3)*np.exp(-2*kz2*kz3*s2**2)
-    x2 = np.exp(-2*1j*kz2*z2)*r23
+    x2 = np.exp(-2*1j*kz2*z)*r23
     x1 = (r12+x2)/(1+r12*x2)
     rr = a0*(np.absolute(x1))**2
     return rr
 
 
-x0 = [1-20*10**(-7), 1-75*10**(-7), 55*10**(-11), 35*10**(-11), 3*10**7]
+x0 = [1-20*10**(-7), 1-76*10**(-7), 45*10**(-11), 35*10**(-11), 1.06*z2]
 
 params, covariance = curve_fit(reflectrometry, np.deg2rad(data[0,0:300]), data[1,0:300], p0=x0)
 errors = np.sqrt(np.diag(covariance))
@@ -91,8 +93,8 @@ for i in range (0,len(params)):
 plt.figure()
 plt.plot(data[0], data[1], 'b-', label="Messwerte")
 plt.plot(peaks[0], peaks[1], 'rx', label="verwendete Peaks")
-#plt.plot(ai, reflectrometry(np.deg2rad(ai), *params), 'y-', label="Fit")
-plt.plot(ai, reflectrometry(np.deg2rad(ai), *x0), 'g-', label="Test")
+plt.plot(ai, reflectrometry(np.deg2rad(ai), *params), 'y-', label="Fit")
+#plt.plot(ai, reflectrometry(np.deg2rad(ai), *x0), 'g-', label="Test")
 plt.yscale("log")
 plt.legend(loc="best", numpoints=1)
 plt.grid()
