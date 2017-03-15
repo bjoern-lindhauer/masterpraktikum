@@ -64,8 +64,8 @@ dist = np.delete(dist, [0,15], 0)
 z2 = l/(2*np.mean(np.deg2rad(dist)))
 
 print(z2)
-
-def reflectrometry(a,n2,n3,s1,s2,z):
+print(dist)
+def reflectrometry(a,n2,n3,s1,s2):
 
     a0=5*10**7
 
@@ -75,13 +75,13 @@ def reflectrometry(a,n2,n3,s1,s2,z):
 
     r12 = (kz1-kz2)/(kz1+kz2)*np.exp(-2*kz1*kz2*s1**2)
     r23 = (kz2-kz3)/(kz2+kz3)*np.exp(-2*kz2*kz3*s2**2)
-    x2 = np.exp(-2*1j*kz2*z)*r23
+    x2 = np.exp(-2*1j*kz2*0.93*z2)*r23
     x1 = (r12+x2)/(1+r12*x2)
     rr = a0*(np.absolute(x1))**2
     return rr
 
 
-x0 = [1-20*10**(-7), 1-76*10**(-7), 45*10**(-11), 35*10**(-11), 1.06*z2]
+x0 = [1-20*10**(-7), 1-76*10**(-7), 55*10**(-11), 35*10**(-11)]
 
 params, covariance = curve_fit(reflectrometry, np.deg2rad(data[0,0:300]), data[1,0:300], p0=x0)
 errors = np.sqrt(np.diag(covariance))
