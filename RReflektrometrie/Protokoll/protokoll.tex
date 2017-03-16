@@ -191,7 +191,22 @@ verwendet werden. In Abbildung \ref{fig:rauigkeitbeispiel} ist die Auswirkung de
 	\captionof{figure}{Berechnete Reflexität für ein Substrat mit unterschiedlichen Rauigkeiten $\sigma_1=$\SI{0}{\angstrom} und $\sigma_2=$\SI{6}{\angstrom}.}
 	\label{fig:rauigkeitbeispiel}
 \end{center}
-
+\subsection{Geometrischer Winkel}
+Bei kleinen Winkeln trifft der Röntgenstrahl nicht vollständig auf die Probe. Der Winkel, ab dem der gesamte Strahl auf die Probe trifft wird als Geometriewinkel 
+\begin{align}
+\alpha_{\indx{g}}=\arcsin \left( \frac{d_0}{D} \right)
+\end{align}
+bezeichen. 
+Dabei ist $D$ der Durchmesser der Probenoberfläche und $d_0$ die Höhe des Strahls.
+Es lässt sich so ein Geometriefaktor 
+\begin{align}
+G=\left\lbrace\begin{matrix}
+\frac{D \sin \alpha_{i} }{d} &,\ \alpha_{i} < \alpha_{\indx{g}} \\
+1 &,\  \alpha_{i} > \alpha_{\indx{g}}
+\end{matrix}\right.
+\end{align}
+bestimmen, der angibt, welcher Anteil des Strahls auf die Probenoberfläche trifft.
+Der Geometriefaktor muss reziprok mit der gemessenen Itensität multiplizert werden.
 \section{Aufbau}
 $I\left(\vec{k}\right)=\left\|\Psi_0\left(\vec{k}\right)+\sum\limits_j\Psi_j\left( \vec{k} \right) \right|^2$
 
