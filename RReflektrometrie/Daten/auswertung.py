@@ -73,9 +73,11 @@ for i in range (1,23):
 
 dist = np.delete(dist, [0,15], 0)
 
-z2 = l/(2*np.mean(np.deg2rad(dist)))
+mean_dist = ufloat(np.mean(np.deg2rad(dist)),np.std(np.deg2rad(dist)))
+z_unp = l/(2*mean_dist)
+z2 = unp.nominal_values(z_unp)
 
-print(z2)
+print("{:.2u}".format(z_unp))
 print(dist)
 
 def geometryfactor(I,a):
@@ -106,6 +108,10 @@ def reflectrometry(a,n2,n3,s1,s2):
     rr = a0*(np.absolute(x1))**2
     return rr
 
+def electron_density(de):
+
+    return (2*np.pi)/(l**2*constants.value(u'classical electron radius'))*de
+
 
 x0 = [1-25*10**(-7), 1-70*10**(-7), 75*10**(-11), 35*10**(-11)]
 
@@ -115,6 +121,12 @@ errors = np.sqrt(np.diag(covariance))
 for i in range (0,len(params)):
     print(params[i], "\t", "+/-", errors[i], "\n")
 
+delta = unp.uarray([params[0],params[1]],[errors[0], errors[1]])
+#calculation electron-density
+
+print('Die Elektronendichten lauten: ', '\n')
+print(electron_density(1-delta[0]), '\n')
+print(electron_density(1-delta[1]), '\n')
 
 plt.figure()
 plt.plot(data[0], data[1], 'b-', label="Messwerte")
