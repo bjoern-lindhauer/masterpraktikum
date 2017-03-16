@@ -206,18 +206,30 @@ G=\left\lbrace\begin{matrix}
 \frac{D \sin \alpha_{i} }{d} &,\ \alpha_{i} < \alpha_{\indx{g}} \\
 1 &,\  \alpha_{i} > \alpha_{\indx{g}}
 \end{matrix}\right.
+\label{eq:geometriefaktor}
 \end{align}
 bestimmen, der angibt, welcher Anteil des Strahls auf die Probenoberfläche trifft.
-Der Geometriefaktor muss reziprok mit der gemessenen Itensität multiplizert werden.
-
-\section{Aufbau}
-$I\left(\vec{k}\right)=\left\|\Psi_0\left(\vec{k}\right)+\sum\limits_j\Psi_j\left( \vec{k} \right) \right|^2$
+Der Geometriefaktor muss reziprok mit der gemessenen Intensität multipliziert werden.
 
 \section{Durchführung}
+Der Versuch wurd am D8-Diffraktometer der Firma Bruker-AXS durchgeführt. Die im Diffraktometer erzeugte Röntgenstrahlung hat eine Wellenlänge von $\lambda=\SI{1.54}{\angstrom}$ (Cu-K$_{\alpha}$-Linie) und wird von einer Kupferanodenröhre emittiert. Die emittierte divergente Strahlung wird von einem Göbelspiegel monochromatisiert und gebündelt. Nach dem Göbelspiegel wird die Strahlungsintensität durch einen Autoabsorber vermindert und der Strahl passiert eine Blende, die den Einfallswinkel $\alpha_i$ definiert. Dieser Aufbau ist in Abbildung \ref{fig:aufbau} dargestellt.
+\begin{center}
+	\includegraphics[width=0.8\textwidth]{images/aufbau.png}
+	\captionof{figure}{Bild der Kupferanodenröhre mit Göbelspiegel und Blende}
+	\label{fig:aufbau}
+\end{center}
+Nach der Reflexion wird Streustrahlung durch einen weiteren Spalt ausgefiltert. Eine weitere Blende legt den Ausfallwinkel $\alpha_f$ fest. \\
 
 \subsection{Justage des D8-Labordiffraktometers}
+Zur Justage des D8-Labordiffraktometers wird zunächst ein Detektorscan durchgeführt. Dabei bleibt die Röntgenröhre fest, während die Probe aus dem Strahl herausgefahren und die einfallende Intensität abhängig vom Winkel zwischen Röhre und Detektor gemessen wird. Ist ein Maximum zu erkennen, so wird der Scanbereich verkleinert, sodass das Maximum der Intensität sowie die Halbwertsbreite des entstehenden Signals genau bestimmt werden können. \\
+Der nächste Schritt der Justage ist die Durchführung eines z-Scans, wobei eine halbe Abschattung durch die Probe erreicht werden soll. Dabei wird die Probe in den Strahl gefahren und die Intensität in Abhängigkeit von der Probenhöhe aufgenommen. Der Punkt der halben maximalen Intensität wird ausgewählt und als Probenhöhe festgelegt. \\
+Als nächstes wird ein Rocking-Scan bei $2\Theta=0^{\circ}$ durchgeführt, wobei Detektor und Röhre um jeweils den gleichen Winkel um die Probe gedreht werden. Der erhaltene Scan hat eine Dreiecksform, wobei ein asymmetrisches Dreieck darauf hindeutet, dass die Probe sich nicht in der Mitte zwischen Röhre und Detektor befindet. Die Breite des Dreiecks wird für die Bestimmung des Geometriewinkels notiert. Detektor und Röhre werden an die Position des Maximums gefahren. \\
+Zur präziseren Einstellung der Abschattung wird eine weitere z-Scan gefahren und die Position der halben Abschattung eingestellt. Zur genaueren Justage des Strahlganges wird eine Rockingscan unter $2\Theta=0.3^{\circ}$ gefahren. Der Werte für Röhre und Detektor werden wieder für diesen Winkel übernommen. \\
+Zur noch präziseren Abstimmung der halben Abschattung wird ein dritter z-Scan durchgeführt und so die endgültige Position der Probe im Strahl festgelegt. Danach wird ein weitere Rockingscan bei $2\Theta=1^{\circ}$ durchgeführt und wieder das Maximum abgespeichert. Die Justage wird mit einem weiteren Detektorscan und weiteren Rocking-Scans bei verschiedenen Werten für $2\Theta$ überprüft.
 
 \subsection{Messung der Röntgenreflektivität}
+Im Anschluss an die Justage wird ein Reflektivitätsscan an einer Polystyrolprobe, die sich auf einem Silizium-Wafer befindet, durchgeführt. Der Scanbereich geht dabei von $0^{\circ}$ bis $2.5^{\circ}$. \\
+Mit einem "'diffusen Scan"' wird der Anteil der gestreuten Intensität bestimmt. Diese Messdaten werden nachher von den Messdaten der Primärmessung subtrahiert.
 
 \section{Auswertung}
 
@@ -235,8 +247,40 @@ Der Geometriewinkel kann aus dem Rockingscan zu
 bestimmt werden. \\
 Die Messdaten werden gemäß Gleichung \ref{eq:geometriefaktor} mit dem Geometriefaktor G korrigiert.
 
-\section{Schichtdicke, Brechungsindex und Rauigkeit}
+\subsection{Schichtdicke, Brechungsindex und Rauigkeit}
 Aus dem korrigierten Signal werden die Minima bestimmt und die Distanz der einzelnen Minima zum jeweils nächsten Minima berechnet. Die entsprechenden Differenzen sind in Tabelle \ref{tab:minima} dargestellt, die Minima, die zur Mittelung verwendet worden sind, sind in Abbildung \ref{fig:reflektivitaet} dargestellt. \\
+\begin{table}[H]
+	\centering
+	\captionof{table}{Minima und Distanz zum nächsten Minimum}
+	\label{tab:minima}
+	\begin{tabular}{r r}
+		\toprule
+		Minimum & Distanz / $^\circ$ \\
+		\midrule
+		1 & 0.05 \\
+		2 & 0.05 \\
+		3 & 0.05 \\
+		4 & 0.055 \\
+		5 & 0.05 \\
+		6 & 0.055 \\
+		7 & 0.05 \\
+		8 & 0.05 \\
+		9 & 0.055 \\
+		10 & 0.055 \\
+		11 & 0.055 \\
+		12 & 0.05 \\
+		13 & 0.055 \\
+		14 & 0.05 \\
+		15 & 0.06 \\
+		16 & 0.05 \\
+		17 & 0.055 \\
+		18 & 0.055 \\
+		19 & 0.05 \\
+		20 & 0.055 \\
+		21 & 0.05 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
 Der Schichtdickenabstand ergibt sich gemäß Formel \ref{eq:schichtdicke} zu
 \begin{align*}
 d=\SI{83.8(47)}{\nano \metre}\,.
@@ -266,8 +310,8 @@ Zur Bestimmung der Rauigkeiten und der Brechungsindices wird mithilfe des Parrat
 
 Mit Formel \ref{eq:elektronendichte} ergeben sich für die Elektronendichte von Schicht und Substrat
 \begin{align*}
-\rho_{\text{Schicht}}=\SI{2.35(21)}{\cdot10^{29}\per\metre\cubed} \\
-\rho_{\text{Substrat}}=\SI{6.58(02)}{\cdot10^{29}\per\metre\cubed}\,.
+\rho_{\text{Schicht}}&=\SI{2.35(21)}{\cdot10^{29}\per\metre\cubed} \\
+\rho_{\text{Substrat}}&=\SI{6.58(02)}{\cdot10^{29}\per\metre\cubed}\,.
 \end{align*}
 
 \section{Diskussion}
