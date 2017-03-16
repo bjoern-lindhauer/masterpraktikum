@@ -25,6 +25,7 @@
 	linkcolor=black
 ]{hyperref}
 
+\sisetup{tophrase={{\,\,bis\,\,}}}
 
 %Hier Titel und so
 \newcommand{\versuchnummer}{} 
@@ -44,7 +45,6 @@
 {\large \versuchdatum}
 \vspace{7cm}
 \begin{center}
-\textbf{\huge Versuch \versuchnummer}\\\vspace{0.5cm}
 \textbf{\huge \versuchname}\\
 \vspace{0.2cm}
 \textbf{Physikalisches Fortgeschrittenenpraktikum}\\
@@ -56,15 +56,16 @@
 \end{titlepage}
 
 \section{Theoretische Grundlagen}
-Bei der Röntgenreflektometrie werden elektromagnetische Welle mit Wellenlänge $\lambda=$ \SIrange{0.1}{10}{\angstrom} und Feldvektor 
+Bei der Röntgenreflektometrie werden elektromagnetische Welle mit Wellenlänge \\ 
+$\lambda=$ \SIrange{0.1}{10}{\angstrom} und Feldvektor 
 \begin{equation}
 E\left(r\right)=E_0 \exp\left(\im  k\cdot r \right)
 \end{equation}
-betrachtet, die aus dem Vakuum mit Brechungsindex $n_1=1$ auf ein Medium mit Brechungsindex $n_2:=n \neq 1$ trifft.
+betrachtet, die aus dem Vakuum mit Brechungsindex $n_1=1$ auf ein Medium mit Brechungsindex $n_2:=n \neq 1$ treffen.
 
 Bei Röntgenstrahlen ist der Realteil des Brechungsindex $n$ geringfügig kleiner als 1, da die Schwingungsfrequenz von Röntgenstrahlung höher ist als die Resonanzfrequenz von Elektronen in einem Medium.
-Ist der Realteil des Brechungsindexes kleiner eins, so ist die Phasengeschwindigkeit größer als die Lichtgeschwindigkeit $c$.
-Dies ist kein Widerspruch zur Relativitätstheorie, da die relavante Geschwindigkeit für Informationsaustausch die Gruppengeschwindigkeit ist und diese natürlich unter der Lichtgeschwindigkeit liegt.
+Ist der Realteil des Brechungsindex kleiner als eins, so ist die Phasengeschwindigkeit größer als die Lichtgeschwindigkeit $c$.
+Dies ist kein Widerspruch zur Relativitätstheorie, da die relavante Geschwindigkeit für Informationsaustausch die Gruppengeschwindigkeit ist und diese unter der Lichtgeschwindigkeit liegt.
 
 Weil der Brechungsindex nahe Eins liegt, wird er häufig als
 \begin{equation}
@@ -76,10 +77,10 @@ Die Absorption wird durch den Parameter $\beta$ beschrieben und liegt für Rönt
 
 \subsection{Einschichtsystem}
 In diesen Abschnitt wird zunächst die Reflexion der Röntgenstrahlen an einer homogenen Schicht betrachtet.
-Die elektromagnetische Welle trifft auf die Oberfläche der homogenen Schicht und wird wie in Abbildung \ref{fig:reflexionschicht} dargestellt, teilweise reflektiert und teilweise gebrochen.
+Die elektromagnetische Welle trifft auf die Oberfläche der homogenen Schicht und wird, wie in Abbildung \ref{fig:reflexionschicht} dargestellt, teilweise reflektiert und teilweise gebrochen.
 \begin{center}
 	\includegraphics[width=10cm]{images/reflexionschicht.png}
-	\captionof{figure}{Graphische Darstellung der einfallenden, teflexierten und gebrochenen Strahlen an einer Grenzschicht mit unterschiedlichen Brechungsindex. \ref{q:anleitung}}
+	\captionof{figure}{Graphische Darstellung der einfallenden, reflektierten und gebrochenen Strahlen an einer Grenzschicht mit unterschiedlichen Brechungsindex. \ref{q:anleitung}}
 	\label{fig:reflexionschicht}
 \end{center}
 Es kann in diesen Fall das Brechungsgesetz nach Snellius angewendet werden, nur ist zu beachten, dass die Winkel aufgrund ihrer kleinen Größe im Bezug zur Oberfläche und nicht im Bezug auf das Lot gemessen werden. 
@@ -88,12 +89,12 @@ Somit lautet das Brechungsgesetz nach Snellius
 \begin{equation}
 \cos \alpha_{\indx{i}}=n\cos \alpha_{\indx{t}} \hspace{0.5cm}\text{.}
 \end{equation}
-Dies hat zur Folge, dass es aufgrund von $\RE{n}<1 $ ein kritischer Winkel
+Dies hat zur Folge, dass aufgrund von $\RE{n}<1 $ ein kritischer Winkel
 \begin{equation}
 \alpha_{\indx{c}}=\arccos n \approx \sqrt{2\delta } = \lambda \sqrt{\frac{r_{\indx{e}} \rho}{\pi}}
 \label{eq:elektronendichte}
 \end{equation}
-existiert, ab dem $\alpha \le \alpha_{\indx{c}}$ nur noch Totalreflexion auftritt.
+existiert, und ab $\alpha \le \alpha_{\indx{c}}$ nur noch Totalreflexion auftritt.
 Dabei ist $\lambda$ die Wellenlänge der Röntgenstrahlung, $r_{\indx{e}}$ der klassische Elektronenradius und $\rho$ die Elektronendichte des Materials. 
 
 Wie in der Optik gelten die Fresnelformeln für s-polarisierte Strahlung
@@ -157,7 +158,7 @@ mit $q=2k\sin \alpha_{\indx{i}}$ der Wellenübertrag in z-Richtung. In Abbildung
 aus dem Vakuum an einem Mehrschichtsystem.  \ref{q:anleitung}}
 	\label{fig:reflexionmehrschichten}
 \end{center}
-Für ein System mit $N$ Schichten, wie in Abbildung \ref{fig:reflexionmehrschichten} kann die Röntgenrefektivität durch den Parratt-Algorithmus berechnet werden. 
+Für ein System mit $N$ Schichten, wie in Abbildung \ref{fig:reflexionmehrschichten} dargestellt, kann die Röntgenreflektivität durch den Parratt-Algorithmus berechnet werden. 
 Dieser berechnet rekursiv das Verhältnis der reflektierten und transmittierten Wellen an der j-ten Gränzfläche durch
 \begin{equation}
 X_\indx{j}=\frac{\indx{j}}{T_\indx{j}}=\exp \left(-2\im k_\indx{z,j}z_\indx{j} \right)\frac{r_\indx{j,j+1} + X_\indx{j+1}\exp\left(-2\im k_\indx{z,j+1}z_\indx{j}\right) }{ 1+r_\indx{j,j+1}X_\indx{j+1}\exp\left(-2\im k_\indx{z,j+1}z_\indx{j}\right) }
@@ -169,8 +170,8 @@ r_\indx{j,j+1}= \frac{k_\indx{z,j}-k_\indx{z,j+1}}{k_\indx{z,j}+k_\indx{z,j+1}}
 der Fresnelreflektivität der j-ten Grenzfläche. 
 Abbildung \ref{fig:reflexionbeispiel} zeigt das Ergebnis des Parratt-Algorithmus für ein System mit einer Schicht mit $\delta=10^{-6}$ auf einen  Substrat mit $\delta = 3\cdot 10^{-6}$.
 \begin{center}
-	\includegraphics[width=10cm]{images/reflektivitaet_schicht.pdf}
-	\captionof{figure}{Durch  Parratt-Algorithmus berechnete Reflexität für ein System mit einer Schicht mit $\delta=10^{-6}$ auf einen  Substrat mit $\delta = 3\cdot 10^{-6} $ }
+	\includegraphics[width=0.9\textwidth]{images/reflektivitaet_schicht.pdf}
+	\captionof{figure}{Durch  Parratt-Algorithmus berechnete Reflektivität für ein System mit einer Schicht mit $\delta=10^{-6}$ auf einem Substrat mit $\delta = 3\cdot 10^{-6} $ }
 	\label{fig:reflexionbeispiel}
 \end{center}
 \subsection{Rauigkeit}
@@ -189,16 +190,16 @@ Beim Parratt-Algorithmus kann die Rauigkeit berücksichtigt werden, indem modifi
 verwendet werden. In Abbildung \ref{fig:rauigkeitbeispiel} ist die Auswirkung der Rauigkeit an einen konkreten Beispiel dargestellt.
 
 \begin{center}
-	\includegraphics[width=10cm]{images/reflektivitaet_rau.pdf}
-	\captionof{figure}{Berechnete Reflexität für ein Substrat mit unterschiedlichen Rauigkeiten $\sigma_1=$\SI{0}{\angstrom} und $\sigma_2=$\SI{6}{\angstrom}.}
+	\includegraphics[width=0.9 \textwidth]{images/reflektivitaet_rau.pdf}
+	\captionof{figure}{Berechnete Reflektivität für ein Substrat mit unterschiedlichen Rauigkeiten $\sigma_1=$\SI{0}{\angstrom} und $\sigma_2=$\SI{6}{\angstrom}.}
 	\label{fig:rauigkeitbeispiel}
 \end{center}
 \subsection{Geometrischer Winkel}
-Bei kleinen Winkeln trifft der Röntgenstrahl nicht vollständig auf die Probe. Der Winkel, ab dem der gesamte Strahl auf die Probe trifft wird als Geometriewinkel 
+Bei kleinen Winkeln trifft der Röntgenstrahl nicht vollständig auf die Probe. Der Winkel, ab dem der gesamte Strahl auf die Probe trifft, wird als Geometriewinkel 
 \begin{align}
 \alpha_{\indx{g}}=\arcsin \left( \frac{d_0}{D} \right)
 \end{align}
-bezeichen. 
+bezeichnet. 
 Dabei ist $D$ der Durchmesser der Probenoberfläche und $d_0$ die Höhe des Strahls.
 Es lässt sich so ein Geometriefaktor 
 \begin{align}
@@ -212,7 +213,7 @@ bestimmen, der angibt, welcher Anteil des Strahls auf die Probenoberfläche trif
 Der Geometriefaktor muss reziprok mit der gemessenen Intensität multipliziert werden.
 
 \section{Durchführung}
-Der Versuch wurd am D8-Diffraktometer der Firma Bruker-AXS durchgeführt. Die im Diffraktometer erzeugte Röntgenstrahlung hat eine Wellenlänge von $\lambda=\SI{1.54}{\angstrom}$ (Cu-K$_{\alpha}$-Linie) und wird von einer Kupferanodenröhre emittiert. Die emittierte divergente Strahlung wird von einem Göbelspiegel monochromatisiert und gebündelt. Nach dem Göbelspiegel wird die Strahlungsintensität durch einen Autoabsorber vermindert und der Strahl passiert eine Blende, die den Einfallswinkel $\alpha_i$ definiert. Dieser Aufbau ist in Abbildung \ref{fig:aufbau} dargestellt.
+Der Versuch wurd am D8-Diffraktometer der Firma Bruker-AXS durchgeführt. Die im Diffraktometer erzeugte Röntgenstrahlung hat eine Wellenlänge von $\lambda=\SI{1.54}{\angstrom}$ \\ (Cu-K$_{\alpha}$-Linie) und wird von einer Kupferanodenröhre emittiert. Die emittierte divergente Strahlung wird von einem Göbelspiegel monochromatisiert und gebündelt. Nach dem Göbelspiegel wird die Strahlungsintensität durch einen Autoabsorber vermindert und der Strahl passiert eine Blende, die den Einfallswinkel $\alpha_i$ definiert. Dieser Aufbau ist in Abbildung \ref{fig:aufbau} dargestellt.
 \begin{center}
 	\includegraphics[width=0.8\textwidth]{images/aufbau.png}
 	\captionof{figure}{Bild der Kupferanodenröhre mit Göbelspiegel und Blende}
@@ -224,7 +225,7 @@ Nach der Reflexion wird Streustrahlung durch einen weiteren Spalt ausgefiltert. 
 Zur Justage des D8-Labordiffraktometers wird zunächst ein Detektorscan durchgeführt. Dabei bleibt die Röntgenröhre fest, während die Probe aus dem Strahl herausgefahren und die einfallende Intensität abhängig vom Winkel zwischen Röhre und Detektor gemessen wird. Ist ein Maximum zu erkennen, so wird der Scanbereich verkleinert, sodass das Maximum der Intensität sowie die Halbwertsbreite des entstehenden Signals genau bestimmt werden können. \\
 Der nächste Schritt der Justage ist die Durchführung eines z-Scans, wobei eine halbe Abschattung durch die Probe erreicht werden soll. Dabei wird die Probe in den Strahl gefahren und die Intensität in Abhängigkeit von der Probenhöhe aufgenommen. Der Punkt der halben maximalen Intensität wird ausgewählt und als Probenhöhe festgelegt. \\
 Als nächstes wird ein Rocking-Scan bei $2\Theta=0^{\circ}$ durchgeführt, wobei Detektor und Röhre um jeweils den gleichen Winkel um die Probe gedreht werden. Der erhaltene Scan hat eine Dreiecksform, wobei ein asymmetrisches Dreieck darauf hindeutet, dass die Probe sich nicht in der Mitte zwischen Röhre und Detektor befindet. Die Breite des Dreiecks wird für die Bestimmung des Geometriewinkels notiert. Detektor und Röhre werden an die Position des Maximums gefahren. \\
-Zur präziseren Einstellung der Abschattung wird eine weitere z-Scan gefahren und die Position der halben Abschattung eingestellt. Zur genaueren Justage des Strahlganges wird eine Rockingscan unter $2\Theta=0.3^{\circ}$ gefahren. Der Werte für Röhre und Detektor werden wieder für diesen Winkel übernommen. \\
+Zur präziseren Einstellung der Abschattung wird ein weiterer z-Scan gefahren und die Position der halben Abschattung eingestellt. Zur genaueren Justage des Strahlganges wird eine Rockingscan unter $2\Theta=0.3^{\circ}$ gefahren. Der Werte für Röhre und Detektor werden wieder für diesen Winkel übernommen. \\
 Zur noch präziseren Abstimmung der halben Abschattung wird ein dritter z-Scan durchgeführt und so die endgültige Position der Probe im Strahl festgelegt. Danach wird ein weitere Rockingscan bei $2\Theta=1^{\circ}$ durchgeführt und wieder das Maximum abgespeichert. Die Justage wird mit einem weiteren Detektorscan und weiteren Rocking-Scans bei verschiedenen Werten für $2\Theta$ überprüft.
 
 \subsection{Messung der Röntgenreflektivität}
@@ -318,7 +319,7 @@ Mit Formel \ref{eq:elektronendichte} ergeben sich für die Elektronendichte von 
 Bezüglich der Schichtdicke sind keine Literaturwerte bekannt, jedoch bewegt sich der Wert von $d=\SI{83.8(47)}{\nano \metre}$ in einer realistischen Größenordnung. \\
 Der Brechungsindex der Polystyrolschicht weicht um 29\% vom Literaturwert\ref{q:anleitung} ab, der Brechungsindex des Substrats weicht nur um 7.8\% vom Literaturwert\ref{q:anleitung} ab. In beiden Fällen übersteigt die Abweichung die angegebene Unsicherheit, was auf die nicht perfekte Anpassung der Theoriekurve zurückzuführen ist. \\
 Für die Werte der Rauigkeit liegen keine Literaturwerte vor, jedoch bewegen sich die Werte in einer realistischen Größenordnung. Die hohen statistischen Fehler liegen darin begründet, dass die Theoriekurve nicht genau mit den Messdaten in Übereinstimmung gebracht werden konnte. \\
-Die Elektronendichten befinden sich in der richtigen Größenordnung, jedoch ergeben sich Abweichungen von 31\% bzw. 7\%, welche auf die Abweichungen der Brechungindices von den Theoriewerten zurückgehen.
+Die Elektronendichten befinden sich in der richtigen Größenordnung, jedoch ergeben sich Abweichungen von 31\% bzw. 7\% von den Literaturwerten\ref{q:anleitung}, welche auf die Abweichungen der Brechungindices von den Literaturwerten zurückgehen.
 
 \section{Quellen}
 %\renewcommand{\labelenumi}{\value{enumi}}
