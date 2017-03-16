@@ -91,6 +91,7 @@ Somit lautet das Brechungsgesetz nach Snellius
 Dies hat zur Folge, dass es aufgrund von $\RE{n}<1 $ ein kritischer Winkel
 \begin{equation}
 \alpha_{\indx{c}}=\arccos n \approx \sqrt{2\delta } = \lambda \sqrt{\frac{r_{\indx{e}} \rho}{\pi}}
+\label{eq:elektronendichte}
 \end{equation}
 existiert, ab dem $\alpha \le \alpha_{\indx{c}}$ nur noch Totalreflexion auftritt.
 Dabei ist $\lambda$ die Wellenlänge der Röntgenstrahlung, $r_{\indx{e}}$ der klassische Elektronenradius und $\rho$ die Elektronendichte des Materials. 
@@ -142,6 +143,7 @@ Bei einer Schichtdicke von $d$ gilt
 \end{equation}
 \begin{equation}
 d=\frac{2\pi}{\Delta q}\approx \frac{\lambda}{2\Delta\alpha_{\indx{i}}}\text{,}
+\label{eq:schichtdicke}
 \end{equation}
 mit $q=2k\sin \alpha_{\indx{i}}$ der Wellenübertrag in z-Richtung. In Abbildung \ref{fig:reflexionschichten} ist dies illustriert.
 \begin{center}
@@ -218,23 +220,54 @@ $I\left(\vec{k}\right)=\left\|\Psi_0\left(\vec{k}\right)+\sum\limits_j\Psi_j\lef
 
 \section{Auswertung}
 
-\subsection{Diffuser Scan}
+\subsection{Diffuser Scan und Geometriefaktor}
 In Abbildung \ref{fig:diffus} sind der diffuse Scan, die Originalmessdaten und die bereinigten Daten dargestellt. Die weitere Datenverarbeitung wird mit den bereinigten Daten durchgeführt.
-
 \begin{center}
 	\includegraphics[width=0.8\textwidth]{images/rawdata.pdf}
 	\captionof{figure}{Messwerte der Primär- und der Diffusmessung}
 	\label{fig:diffus}
 \end{center}
-
-\subsection{Geometriewinkel und Geometriefaktor}
-Der Geometriewinkel konnte aus dem Rockingscan zu
+Der Geometriewinkel kann aus dem Rockingscan zu
 \begin{align*}
 \alpha_G=0.3247^{\circ}
 \end{align*}
 bestimmt werden. \\
-Zur Berechnung der Schichtdicke
-\section{Brechungsindex und Rauigkeit}
+Die Messdaten werden gemäß Gleichung \ref{eq:geometriefaktor} mit dem Geometriefaktor G korrigiert.
+
+\section{Schichtdicke, Brechungsindex und Rauigkeit}
+Aus dem korrigierten Signal werden die Minima bestimmt und die Distanz der einzelnen Minima zum jeweils nächsten Minima berechnet. Die entsprechenden Differenzen sind in Tabelle \ref{tab:minima} dargestellt, die Minima, die zur Mittelung verwendet worden sind, sind in Abbildung \ref{fig:reflektivitaet} dargestellt. \\
+Der Schichtdickenabstand ergibt sich gemäß Formel \ref{eq:schichtdicke} zu
+\begin{align*}
+d=\SI{83.8(47)}{\nano \metre}\,.
+\end{align*}
+Zur Bestimmung der Rauigkeiten und der Brechungsindices wird mithilfe des Parratt-Algorithmus eine Theoriekurve berechnet, welche mithilfe von Python an die Messdaten angepasst wird. Die Fitparameter sind in Tabelle \ref{tab:fitparameter} dargestellt. Die Messdaten und die Theoriekurve sind in Abbildung \ref{fig:reflektivitaet} dargestellt.
+\begin{table}[H]
+	\centering
+	\captionof{table}{Fitparameter}
+	\label{tab:fitparameter}
+	\begin{tabular}{r r}
+		\toprule
+		Fitparameter & Wert \\
+		\midrule
+		n$_{Schicht}$ & $1 - 25\cdot10^{-7} \pm 2.2\cdot10^{-7}$ \\
+		n$_{Substrat}$ & $1 - 70\cdot10^{-7}\pm 0.2\cdot10^{-7}$ \\
+		$\sigma_{Schicht}$ &  $\SI{75(558)}{\nano\metre}$ \\
+		$\sigma_{Substrat}$ & $\SI{35(475)}{\nano\metre}$ \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\begin{center}
+	\includegraphics[width=0.8\textwidth]{images/reflectrometry.pdf}
+	\captionof{figure}{Korrigiertes Messsignal, angepasste Theoriekurve und verwendete Peaks}
+	\label{fig:reflektivitaet}
+\end{center}
+
+Mit Formel \ref{eq:elektronendichte} ergeben sich für die Elektronendichte von Schicht und Substrat
+\begin{align*}
+\rho_{\text{Schicht}}=\SI{2.35(21)}{\cdot10^{29}\per\metre\cubed} \\
+\rho_{\text{Substrat}}=\SI{6.58(02)}{\cdot10^{29}\per\metre\cubed}\,.
+\end{align*}
 
 \section{Diskussion}
 
