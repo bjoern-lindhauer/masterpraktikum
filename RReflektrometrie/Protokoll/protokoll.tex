@@ -206,12 +206,12 @@ G=\left\lbrace\begin{matrix}
 \frac{D \sin \alpha_{i} }{d} &,\ \alpha_{i} < \alpha_{\indx{g}} \\
 1 &,\  \alpha_{i} > \alpha_{\indx{g}}
 \end{matrix}\right.
+\label{eq:geometriefaktor}
 \end{align}
 bestimmen, der angibt, welcher Anteil des Strahls auf die Probenoberfläche trifft.
-Der Geometriefaktor muss reziprok mit der gemessenen Itensität multiplizert werden.
+Der Geometriefaktor muss reziprok mit der gemessenen Intensität multipliziert werden.
 
 \section{Aufbau}
-$I\left(\vec{k}\right)=\left\|\Psi_0\left(\vec{k}\right)+\sum\limits_j\Psi_j\left( \vec{k} \right) \right|^2$
 
 \section{Durchführung}
 
@@ -235,8 +235,40 @@ Der Geometriewinkel kann aus dem Rockingscan zu
 bestimmt werden. \\
 Die Messdaten werden gemäß Gleichung \ref{eq:geometriefaktor} mit dem Geometriefaktor G korrigiert.
 
-\section{Schichtdicke, Brechungsindex und Rauigkeit}
+\subsection{Schichtdicke, Brechungsindex und Rauigkeit}
 Aus dem korrigierten Signal werden die Minima bestimmt und die Distanz der einzelnen Minima zum jeweils nächsten Minima berechnet. Die entsprechenden Differenzen sind in Tabelle \ref{tab:minima} dargestellt, die Minima, die zur Mittelung verwendet worden sind, sind in Abbildung \ref{fig:reflektivitaet} dargestellt. \\
+\begin{table}[H]
+	\centering
+	\captionof{table}{Minima und Distanz zum nächsten Minimum}
+	\label{tab:minima}
+	\begin{tabular}{r r}
+		\toprule
+		Minimum & Distanz / $^\circ$ \\
+		\midrule
+		1 & 0.05 \\
+		2 & 0.05 \\
+		3 & 0.05 \\
+		4 & 0.055 \\
+		5 & 0.05 \\
+		6 & 0.055 \\
+		7 & 0.05 \\
+		8 & 0.05 \\
+		9 & 0.055 \\
+		10 & 0.055 \\
+		11 & 0.055 \\
+		12 & 0.05 \\
+		13 & 0.055 \\
+		14 & 0.05 \\
+		15 & 0.06 \\
+		16 & 0.05 \\
+		17 & 0.055 \\
+		18 & 0.055 \\
+		19 & 0.05 \\
+		20 & 0.055 \\
+		21 & 0.05 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
 Der Schichtdickenabstand ergibt sich gemäß Formel \ref{eq:schichtdicke} zu
 \begin{align*}
 d=\SI{83.8(47)}{\nano \metre}\,.
@@ -266,8 +298,8 @@ Zur Bestimmung der Rauigkeiten und der Brechungsindices wird mithilfe des Parrat
 
 Mit Formel \ref{eq:elektronendichte} ergeben sich für die Elektronendichte von Schicht und Substrat
 \begin{align*}
-\rho_{\text{Schicht}}=\SI{2.35(21)}{\cdot10^{29}\per\metre\cubed} \\
-\rho_{\text{Substrat}}=\SI{6.58(02)}{\cdot10^{29}\per\metre\cubed}\,.
+\rho_{\text{Schicht}}&=\SI{2.35(21)}{\cdot10^{29}\per\metre\cubed} \\
+\rho_{\text{Substrat}}&=\SI{6.58(02)}{\cdot10^{29}\per\metre\cubed}\,.
 \end{align*}
 
 \section{Diskussion}
