@@ -78,7 +78,9 @@ z_unp = l/(2*mean_dist)
 z2 = unp.nominal_values(z_unp)
 
 print("{:.2u}".format(z_unp))
-print(dist)
+
+for i in range (1, len(dist)+1):
+    print(i, "\t", dist[i-1])
 
 def geometryfactor(I,a):
 
@@ -127,6 +129,9 @@ delta = unp.uarray([params[0],params[1]],[errors[0], errors[1]])
 print('Die Elektronendichten lauten: ', '\n')
 print(electron_density(1-delta[0]), '\n')
 print(electron_density(1-delta[1]), '\n')
+print(electron_density(1-delta[0])*constants.value(u'classical electron radius'), '\n')
+print(electron_density(1-delta[1])*constants.value(u'classical electron radius'), '\n')
+
 
 plt.figure()
 plt.plot(data[0], data[1], 'b-', label="Messwerte")
