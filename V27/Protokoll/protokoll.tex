@@ -205,15 +205,32 @@ Es ergibt sich somit eine linienreichere Aufspaltung, wie in Abbildung \ref{fig:
 
 \section{Auswertung}
 
+\subsection{Kalibrierung des Magnetfeldes}
+Zur Bestimmung des Zusammenhanges zwischen Stromstärke und Magnetfeld wird für die Messwerte von Stromstärke und Magnetfeld eine lineare Ausgleichsrechung der Form
+\begin{align}
+B(I)=B_0+m\cdot I
+\end{align}
+durchgeführt. Die Ausgleichsrechnung wird mithilfe von \textit{Python} durchgeführt und ergibt folgende Parameter:
+\begin{align*}
+B_0&=\SI{0.031(12)}{\tesla} \\
+m&=\SI{0.0515(10)}{\tesla\per\ampere}
+\label{eq:parameter}
+\end{align*}
+Die aufgenommenen Messdaten und der lineare Fit sind in Abbildung \ref{fig:magnetfeld} dargestellt.
 
+\begin{center}
+	\includegraphics[width=0.8\textwidth]{images/magnetfeld.pdf}
+	\captionof{figure}{Gemessenes Magnetfeld in Abhängigkeit von der Stromstärke und linearer Fit}
+	\label{fig:magnetfeld}
+\end{center}
 \section{Diskussion}
 
 \section{Quellen}
 %\renewcommand{\labelenumi}{\value{enumi}}
 \begin{enumerate}[label={[\arabic*]}]
 \item \label{q:anleitung} \textbf{Physikalisches Praktikum}, TU Dortmund: \\
-\textit{Versuchsanleitung zu Versuch: Röntgenreflektometrie} \\
-\url{http://e1.physik.tu-dortmund.de/cms/Medienpool/Downloads/Roentgenreflektometrie_Versuch.pdf} (letzte Version vom 15.02.2017, 12:26)
+\textit{Versuchsanleitung zu Versuch: V27 Der Zeeman-Effekt} \\
+\url{http://129.217.224.2/HOMEPAGE/PHYSIKER/MASTER/SKRIPT/V27.pdf} (letzte Version vom 27.03.2017, 09:07
 \end{enumerate}
 
 \end{document}
