@@ -210,19 +210,53 @@ Zur Bestimmung des Zusammenhanges zwischen Stromstärke und Magnetfeld wird für
 \begin{align}
 B(I)=B_0+m\cdot I
 \end{align}
-durchgeführt. Die Ausgleichsrechnung wird mithilfe von \textit{Python} durchgeführt und ergibt folgende Parameter:
+durchgeführt. Die Messwerte sind in Tabelle \ref{tab:magnetfeld} dargestellt.
+\begin{table}[H]
+	\centering
+	\captionof{table}{Magnetfeld $B$ in Abhängigkeit von $I$}
+	\label{tab:magnetfeld}
+	\begin{tabular}{r r}
+		\toprule
+		I / A & B / T \\
+		\midrule
+		0 & 0.004 \\
+		1 & 0.058 \\
+		2 & 0.115 \\
+		3 & 0.171 \\
+		4 & 0.228 \\
+		5 & 0.285 \\
+		6 & 0.343 \\
+		7 & 0.403 \\
+		8 & 0.453 \\
+		9 & 0.512 \\
+		10 & 0.564 \\
+		11 & 0.630 \\
+		12 & 0.675 \\
+		13 & 0.733 \\
+		14 & 0.785 \\
+		15 & 0.836 \\
+		16 & 0.869 \\
+		17 & 0.910 \\ 
+		18 & 0.936 \\
+		19 & 0.962 \\
+		20 & 0.988 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+Die Ausgleichsrechnung wird mithilfe von \textit{Python} durchgeführt und ergibt folgende Parameter:
 \begin{align*}
 B_0&=\SI{0.031(12)}{\tesla} \\
 m&=\SI{0.0515(10)}{\tesla\per\ampere}
 \label{eq:parameter}
 \end{align*}
 Die aufgenommenen Messdaten und der lineare Fit sind in Abbildung \ref{fig:magnetfeld} dargestellt.
-
 \begin{center}
 	\includegraphics[width=0.8\textwidth]{images/magnetfeld.pdf}
 	\captionof{figure}{Gemessenes Magnetfeld in Abhängigkeit von der Stromstärke und linearer Fit}
 	\label{fig:magnetfeld}
 \end{center}
+
+
 \section{Diskussion}
 
 \section{Quellen}

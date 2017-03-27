@@ -56,8 +56,8 @@
 \end{titlepage}
 
 \section{Theoretische Grundlagen}
-Bei der Röntgenreflektometrie werden elektromagnetische Welle mit Wellenlänge \\ 
-$\lambda=$ \SIrange{0.1}{10}{\angstrom} und Feldvektor 
+Bei der Röntgenreflektometrie werden elektromagnetische Wellen mit Wellenlänge \\ 
+$\lambda=$ \SIrange{0.1}{10}{\angstrom} und dem Feldvektor 
 \begin{equation}
 E\left(r\right)=E_0 \exp\left(\im  k\cdot r \right)
 \end{equation}
@@ -72,7 +72,7 @@ Weil der Brechungsindex nahe Eins liegt, wird er häufig als
 n=1-\delta + \im\beta \hspace{0.5cm}\text{,}\hspace{0.1cm} \delta >0
 \end{equation}
 geschrieben. 
-Die Korrektur $\delta$ liegt in der Größenordnung $10^{-6}$. 
+Die Korrektur $\delta$ liegt in der Größenordnung $10^{-6}$ und beschreibt die Dispersion. 
 Die Absorption wird durch den Parameter $\beta$ beschrieben und liegt für Röntgenstrahlen der Energie $E=$\SI{8}{\kilo\eV} bei $\beta \sim 10^{-7}$.
 
 \subsection{Einschichtsystem}
@@ -213,7 +213,7 @@ bestimmen, der angibt, welcher Anteil des Strahls auf die Probenoberfläche trif
 Der Geometriefaktor muss reziprok mit der gemessenen Intensität multipliziert werden.
 
 \section{Durchführung}
-Der Versuch wurd am D8-Diffraktometer der Firma Bruker-AXS durchgeführt. Die im Diffraktometer erzeugte Röntgenstrahlung hat eine Wellenlänge von $\lambda=\SI{1.54}{\angstrom}$ \\ (Cu-K$_{\alpha}$-Linie) und wird von einer Kupferanodenröhre emittiert. Die emittierte divergente Strahlung wird von einem Göbelspiegel monochromatisiert und gebündelt. Nach dem Göbelspiegel wird die Strahlungsintensität durch einen Autoabsorber vermindert und der Strahl passiert eine Blende, die den Einfallswinkel $\alpha_i$ definiert. Dieser Aufbau ist in Abbildung \ref{fig:aufbau} dargestellt.
+Der Versuch wurde am D8-Diffraktometer der Firma Bruker-AXS durchgeführt. Die im Diffraktometer erzeugte Röntgenstrahlung hat eine Wellenlänge von $\lambda=\SI{1.54}{\angstrom}$ \\ (Cu-K$_{\alpha}$-Linie) und wird von einer Kupferanodenröhre emittiert. Die emittierte divergente Strahlung wird von einem Göbelspiegel monochromatisiert und gebündelt. Nach dem Göbelspiegel wird die Strahlungsintensität durch einen Autoabsorber vermindert und der Strahl passiert eine Blende, die den Einfallswinkel $\alpha_i$ definiert. Dieser Aufbau ist in Abbildung \ref{fig:aufbau} dargestellt.
 \begin{center}
 	\includegraphics[width=0.8\textwidth]{images/aufbau.png}
 	\captionof{figure}{Bild der Kupferanodenröhre mit Göbelspiegel und Blende}
@@ -286,7 +286,7 @@ Die Schichtdicke ergibt sich gemäß Formel \ref{eq:schichtdicke} zu
 \begin{align*}
 d=\SI{83.8(47)}{\nano \metre}\,.
 \end{align*}
-Zur Bestimmung der Rauigkeiten und der Brechungsindices wird mithilfe des Parratt-Algorithmus eine Theoriekurve berechnet, welche mithilfe von Python an die Messdaten angepasst wird. Die Fitparameter sind in Tabelle \ref{tab:fitparameter} dargestellt. Die Messdaten und die Theoriekurve sind in Abbildung \ref{fig:reflektivitaet} dargestellt.
+Zur Bestimmung der Rauigkeiten und der Brechungsindices wird mithilfe des Parratt-Algorithmus eine Theoriekurve berechnet, welche mithilfe von Python an die Messdaten angepasst wird. Dabei wird auch die Schichtdicke als Fitparameter verwendet. Die Fitparameter sind in Tabelle \ref{tab:fitparameter} dargestellt. Die Messdaten und die Theoriekurve sind in Abbildung \ref{fig:reflektivitaet} dargestellt.
 \begin{table}[H]
 	\centering
 	\captionof{table}{Fitparameter}
@@ -295,10 +295,11 @@ Zur Bestimmung der Rauigkeiten und der Brechungsindices wird mithilfe des Parrat
 		\toprule
 		Fitparameter & Wert \\
 		\midrule
-		n$_{Schicht}$ & $1 - 25\cdot10^{-7} \pm 2.2\cdot10^{-7}$ \\
-		n$_{Substrat}$ & $1 - 70\cdot10^{-7}\pm 0.2\cdot10^{-7}$ \\
-		$\sigma_{Schicht}$ &  $\SI{75(558)}{\nano\metre}$ \\
-		$\sigma_{Substrat}$ & $\SI{35(475)}{\nano\metre}$ \\
+		n$_{Schicht}$ & $1 - 25\cdot10^{-7} \pm 18\cdot10^{-7}$ \\
+		n$_{Substrat}$ & $1 - 70\cdot10^{-7}\pm 0.4\cdot10^{-7}$ \\
+		$\sigma_{Schicht}$ &  $\SI{0.75(1592)}{\nano\metre}$ \\
+		$\sigma_{Substrat}$ & $\SI{0.35(1476)}{\nano\metre}$ \\
+		$d$ & $\SI{83.8(119)}{\nano\metre}$ \\
 		\bottomrule
 	\end{tabular}
 \end{table}
@@ -311,12 +312,12 @@ Zur Bestimmung der Rauigkeiten und der Brechungsindices wird mithilfe des Parrat
 
 Mit Formel \ref{eq:elektronendichte} ergeben sich für die Elektronendichte von Schicht und Substrat
 \begin{align*}
-\rho_{\text{Schicht}}&=\SI{2.35(21)}{\cdot10^{29}\per\metre\cubed} \\
-\rho_{\text{Substrat}}&=\SI{6.58(02)}{\cdot10^{29}\per\metre\cubed}\,.
+\rho_{\text{Schicht}}&=\SI{2.4(17)}{\cdot10^{29}\per\metre\cubed} \\
+\rho_{\text{Substrat}}&=\SI{6.58(04)}{\cdot10^{29}\per\metre\cubed}\,.
 \end{align*}
 
 \section{Diskussion}
-Bezüglich der Schichtdicke sind keine Literaturwerte bekannt, jedoch bewegt sich der Wert von $d=\SI{83.8(47)}{\nano \metre}$ in einer realistischen Größenordnung. \\
+Bezüglich der Schichtdicke sind keine Literaturwerte bekannt, jedoch bewegt sich der Wert von $d=\SI{83.8(119)}{\nano \metre}$ in einer realistischen Größenordnung. \\
 Der Brechungsindex der Polystyrolschicht weicht um 29\% vom Literaturwert\ref{q:anleitung} ab, der Brechungsindex des Substrats weicht nur um 7.8\% vom Literaturwert\ref{q:anleitung} ab. In beiden Fällen übersteigt die Abweichung die angegebene Unsicherheit, was auf die nicht perfekte Anpassung der Theoriekurve zurückzuführen ist. \\
 Für die Werte der Rauigkeit liegen keine Literaturwerte vor, jedoch bewegen sich die Werte in einer realistischen Größenordnung. Die hohen statistischen Fehler liegen darin begründet, dass die Theoriekurve nicht genau mit den Messdaten in Übereinstimmung gebracht werden konnte. \\
 Die Elektronendichten befinden sich in der richtigen Größenordnung, jedoch ergeben sich Abweichungen von 31\% bzw. 7\% von den Literaturwerten\ref{q:anleitung}, welche auf die Abweichungen der Brechungindices von den Literaturwerten zurückgehen.

@@ -15,6 +15,13 @@ import cmath
 plt.rcParams['figure.figsize'] = (10, 8)
 plt.rcParams['font.size'] = 16
 
+l=1.54*10**(-10) #wavelength in Angstrom
+k=2*np.pi/l #wavenumber
+ai = np.linspace(0,2.5,10000) #incident angle
+qz = 4*np.pi/(l*10**(10))*np.sin(np.deg2rad(ai)) #change of wave vector
+n1 = 1 #n(air)
+ag = 0.3247 #geometry-angle
+
 data_signal = np.genfromtxt('messung1_1306.uxd', unpack='True', skip_header=66)
 
 data_noise = np.genfromtxt('messung2_1349.uxd', unpack='True', skip_header=66)
@@ -29,6 +36,19 @@ for i in range (0,len(data[0,:])):
 
 datatxt.close()
 
+def geometryfactor(I,a):
+
+    if (a<=ag):
+        G=np.sin(np.deg2rad(a))/np.sin(np.deg2rad(ag))
+    else:
+        G=1
+
+    return I/G
+
+for i in range (0,len(data[0])):
+    data[1,i]=geometryfactor(data[1,i],data[0,i])
+
+
 plt.figure()
 plt.plot(data_signal[0], data_signal[1], 'r-', label="Messdaten")
 plt.plot(data_noise[0], data_noise[1], 'g-', label="diffuser Scan")
@@ -39,14 +59,6 @@ plt.ylabel("Intensität / a.u.")
 plt.legend(loc="best", numpoints=1)
 plt.grid()
 plt.savefig("../Protokoll/images/rawdata.pdf")
-
-
-l=1.54*10**(-10) #wavelength in Angstrom
-k=2*np.pi/l #wavenumber
-ai = np.linspace(0,2.5,10000) #incident angle
-qz = 4*np.pi/(l*10**(10))*np.sin(np.deg2rad(ai)) #change of wave vector
-n1 = 1 #n(air)
-ag = 0.3247 #geometry-angle
 
 #Peak-Detection
 
@@ -82,20 +94,7 @@ print("{:.2u}".format(z_unp))
 for i in range (1, len(dist)+1):
     print(i, "\t", dist[i-1])
 
-def geometryfactor(I,a):
-
-    if (a<=ag):
-        G=np.sin(np.deg2rad(a))/np.sin(np.deg2rad(ag))
-    else:
-        G=1
-
-    return G*I
-
-for i in range (0,len(data[0])):
-    data[1,i]=geometryfactor(data[1,i],data[0,i])
-
-
-def reflectrometry(a,n2,n3,s1,s2):
+def reflectrometry(a,n2,n3,s1,s2,z):
 
     a0=5*10**7
 
@@ -105,7 +104,7 @@ def reflectrometry(a,n2,n3,s1,s2):
 
     r12 = (kz1-kz2)/(kz1+kz2)*np.exp(-2*kz1*kz2*s1**2)
     r23 = (kz2-kz3)/(kz2+kz3)*np.exp(-2*kz2*kz3*s2**2)
-    x2 = np.exp(-2*1j*kz2*0.96*z2)*r23
+    x2 = np.exp(-2*1j*kz2*0.96*z)*r23
     x1 = (r12+x2)/(1+r12*x2)
     rr = a0*(np.absolute(x1))**2
     return rr
@@ -115,7 +114,7 @@ def electron_density(de):
     return (2*np.pi)/(l**2*constants.value(u'classical electron radius'))*de
 
 
-x0 = [1-25*10**(-7), 1-70*10**(-7), 75*10**(-11), 35*10**(-11)]
+x0 = [1-25*10**(-7), 1-70*10**(-7), 75*10**(-11), 35*10**(-11), z2]
 
 params, covariance = curve_fit(reflectrometry, np.deg2rad(data[0,40:300]), data[1,40:300], p0=x0)
 errors = np.sqrt(np.diag(covariance))
