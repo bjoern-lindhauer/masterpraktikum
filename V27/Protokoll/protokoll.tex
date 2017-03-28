@@ -202,6 +202,7 @@ Es ergibt sich somit eine linienreichere Aufspaltung, wie in Abbildung \ref{fig:
 
 \section{Durchführung}
 
+\section{Vorbereitung}
 
 \section{Auswertung}
 
@@ -259,16 +260,142 @@ Die aufgenommenen Messdaten und der lineare Fit sind in Abbildung \ref{fig:magne
 \subsection{Bestimmung der Wellenlängenänderung}
 Die Wellenlängenänderung $\delta\lambda$ ergibt sich aus der Gleichung
 \begin{align}
-\delta\lambda=\frac{1}{2}\frac{\delta s}{\Delta s}\Delta\lambda-{\text{D}},
+\delta\lambda=\frac{1}{2}\frac{\delta s}{\Delta s}\Delta\lambda_{\text{D}},
 \end{align}
 wobei $\Delta s$ der Abstand der Interferenzstreifen ohne Magnetfeld, $\delta s$ der Abstand der Interferenzstreifen mit Magnetfeld und $\Delta\lambda_{\text{D}}$ das Dispersionsgebiet sind.
 
 \subsubsection{$\sigma$-Übergänge für $\lambda=\SI{643.8}{\nano\metre}$}
+\noindent\makebox[\textwidth][c]{
+	\begin{minipage}[t]{0.6\textwidth}
+		\includegraphics[width=\linewidth]{images/rot_oM.jpg}
+		\centering
+		a) B = $\SI{0}{\tesla}$
+	\end{minipage}
+	\begin{minipage}[t]{0.6\textwidth}
+		\includegraphics[width=\linewidth]{images/rot_mM.jpg}
+		\centering
+		b) B = $\SI{622.93}{\milli\tesla}$
+	\end{minipage}}
+\captionof{figure}{Interferenzmuster der Lummer-Gercke-Platte für die $\sigma$-Übergänge der Cd-Spektrallinie bei $\lambda=\SI{643.8}{\nano\metre}$, mit a) ohne Magnetfeld und b) mit Magnetfeld}
+\label{fig:rot_sigma}
+\vspace{0.5cm}
+In Tabelle \ref{tab:rotmessung} sind die aus Abbildung \ref{fig:rot_sigma} abgelesenen Werte für $\delta s$ und $\Delta s$ sowie die daraus berechneten Wellenlängenänderungen dargestellt.
+\begin{table}[H]
+	\centering
+	\captionof{table}{Abstände $\Delta s$ und $\delta s$ der Interferenzstreifen mit Wellenlängenänderung für die $\sigma$-Übergänge der Cd-Spektrallinie bei $\lambda=\SI{643.8}{\nano\metre}$}
+	\label{tab:rotmessung}
+	\begin{tabular}{r r r r}
+		\toprule
+		Ordnung n & $\Delta s$/px & $\delta s$/px & $\delta \lambda$/pm \\
+		\midrule
+		0 & 332 & 143 & 10.53 \\
+		1 & 312 & 134 & 10.50 \\
+		2 & 304 & 135 & 10.86 \\
+		3 & 292 & 125 & 10.47 \\
+		4 & 280 & 117 & 10.22 \\
+		5 & 268 & 117 & 10.67 \\
+		6 & 260 & 117 & 11.00 \\
+		7 & 248 & 108 & 10.65 \\
+		8 & 248 & 104 & 10.25 \\
+		9 & 236 & 104 & 10.77 \\
+		10 & 236 & 99 & 10.26 \\
+		11 & 224 & 100 & 10.92 \\
+		12 & 228 & 95 & 10.19 \\
+		13 & 212 & 95 & 10.96 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+Der über mehrere Ordnungen gemittelte Wert der Wellenlängenänderung beträgt
+\begin{align}
+\delta \lambda = \SI{10.59(8)}{\pico\metre}\,.
+\end{align}
 
 \subsubsection{$\sigma$-Übergänge für $\lambda=\SI{480.0}{\nano\metre}$}
 
+\noindent\makebox[\textwidth][c]{
+	\begin{minipage}[t]{0.6\textwidth}
+		\includegraphics[width=\linewidth]{images/blau_oM.jpg}
+		\centering
+		a) B = $\SI{0}{\tesla}$
+	\end{minipage}
+	\begin{minipage}[t]{0.6\textwidth}
+		\includegraphics[width=\linewidth]{images/blau_sigma.jpg}
+		\centering
+		b) B = $\SI{314.06}{\milli\tesla}$
+	\end{minipage}}
+	\captionof{figure}{Interferenzmuster der Lummer-Gercke-Platte für die $\sigma$-Übergänge der Cd-Spektrallinie bei $\lambda=\SI{480.0}{\nano\metre}$, mit a) ohne Magnetfeld und b) mit Magnetfeld}
+	\label{fig:blau_sigma}
+	\vspace{0.5cm}
+
+In Tabelle \ref{tab:blausigmamessung} sind die aus Abbildung \ref{fig:blau_sigma} abgelesenen Werte für $\delta s$ und $\Delta s$ sowie die daraus berechneten Wellenlängenänderungen dargestellt.
+\begin{table}[H]
+	\centering
+	\captionof{table}{Abstände $\Delta s$ und $\delta s$ der Interferenzstreifen mit Wellenlängenänderung für die $\sigma$-Übergänge der Cd-Spektrallinie bei $\lambda=\SI{480.0}{\nano\metre}$}
+	\label{tab:blausigmamessung}
+	\begin{tabular}{r r r r}
+			\toprule
+			Ordnung n & $\Delta s$/px & $\delta s$/px & $\delta \lambda$/pm \\
+			\midrule
+			0 & 472 & 264 & 7.52 \\
+			1 & 441 & 225 & 6.86 \\
+			2 & 381 & 186 & 6.56 \\
+			3 & 355 & 182 & 6.88 \\
+			4 & 338 & 173 & 7.10 \\
+			5 & 303 & 160 & 7.10 \\
+			6 & 285 & 148 & 6.99\\
+			7 & 282 & 138 & 6.58 \\
+			8 & 255 & 134 & 7.07\\
+			9 & 221 & 126 & 7.67 \\
+			\bottomrule
+	\end{tabular}
+\end{table}
+Der über mehrere Ordnungen gemittelte Wert der Wellenlängenänderung beträgt
+\begin{align}
+\delta \lambda = \SI{7.01(11)}{\pico\metre}\,.
+\end{align}
 \subsubsection{$\pi$-Übergänge für $\lambda=\SI{480.0}{\nano\metre}$}
 
+\noindent\makebox[\textwidth][c]{
+	\begin{minipage}[t]{0.6\textwidth}
+		\includegraphics[width=\linewidth]{images/blau_oM.jpg}
+		\centering
+		a) B = $\SI{0}{\tesla}$
+	\end{minipage}
+	\begin{minipage}[t]{0.6\textwidth}
+		\includegraphics[width=\linewidth]{images/blau_pi.jpg}
+		\centering
+		b) B = $\SI{957.54}{\milli\tesla}$
+	\end{minipage}}
+	\captionof{figure}{Interferenzmuster der Lummer-Gercke-Platte für die $\pi$-Übergänge der Cd-Spektrallinie bei $\lambda=\SI{480.0}{\nano\metre}$, mit a) ohne Magnetfeld und b) mit Magnetfeld}
+	\label{fig:blau_pi}
+	\vspace{0.5cm}
+
+In Tabelle \ref{tab:blaupimessung} sind die aus Abbildung \ref{fig:blau_pi} abgelesenen Werte für $\delta s$ und $\Delta s$ sowie die daraus berechneten Wellenlängenänderungen dargestellt.
+\begin{table}[H]
+	\centering
+	\captionof{table}{Abstände $\Delta s$ und $\delta s$ der Interferenzstreifen mit Wellenlängenänderung für die $\pi$-Übergänge der Cd-Spektrallinie bei $\lambda=\SI{480.0}{\nano\metre}$}
+	\label{tab:blaupimessung}
+	\begin{tabular}{r r r r}
+		\toprule
+		Ordnung n & $\Delta s$/px & $\delta s$/px & $\delta \lambda$/pm \\
+		\midrule
+		0 & 472 & 195 & 5.56 \\
+		1 & 441 & 178 & 5.43 \\
+		2 & 381 & 147 & 5.19 \\
+		3 & 355 & 134 & 5.08 \\
+		4 & 338 & 131 & 5.21 \\
+		5 & 303 & 130 & 5.77 \\
+		6 & 285 & 112 & 5.29 \\
+		7 & 282 & 113 & 5.39 \\
+		8 & 255 & 104 & 5.49 \\
+		9 & 221 &  96 & 5.84 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+Der über mehrere Ordnungen gemittelte Wert der Wellenlängenänderung beträgt
+\begin{align}
+\delta \lambda = \SI{5.42(8)}{\pico\metre}\,.
+\end{align}
 \subsection{Bestimmung der Landé-Faktoren}
 
 
