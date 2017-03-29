@@ -221,8 +221,88 @@ Danach werden für die beiden Spektrallinien mit $\lambda=\SI{643.8}{\nano\metre
 \section{Vorbereitung}
 
 \subsection{Dispersionsgebiet und Auflösung der Lummer-Gercke-Platte}
-
+\begin{table}[H]
+	\centering
+	\captionof{table}{Auflösungsvermögen A und Dispersionsgebiet $\Delta \lambda_D$ der Lummer-Gercke-Platte für die verwendeten Wellenlängen $\lambda$}
+	\label{tab:lummer}
+	\begin{tabular}{r r r}
+		\toprule
+		$\lambda$/nm & $\lambda_D$/pm & A \\
+		\midrule
+		643.8 & 48.9 & 209129 \\
+		480.0 & 27.0 & 285458 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+In Tabelle \ref{tab:lummer} sind die Auflösungvermögen $A$ sowie die Dispersionsgebiete $\lambda_D$ für die verwendeten Wellenlängen aufgeführt.
+Das Dispersionsgebiet berechnet sich dabei aus der Wellenlänge $\lambda$, dem Brechungsindex n und der Dicke der Platte d zu
+\begin{align}
+\Delta \lambda_D=\frac{\lambda^2}{2d}\sqrt{\frac{1}{n^2-1}}\,.
+\end{align}
+Die Auflösung der Lummer-Gercke wird mit der Länge der Platte L, der Wellenlänge $\lambda$ und mit em Brechungsindex n mithilfe der Gleichung
+\begin{align}
+A=\frac{L}{\lambda}\sqrt{n^2-1}
+\end{align}
+berechnet.
 \subsection{Berechnung der Landé-Faktoren}
+In Tabelle \ref{tab:landedrehimpuls} sind die Landé-Faktoren $g_i$ der verschiedenen Zustände mit den entsprechenden Drehimpulsquantenzahlen angegeben. \\
+In Tabellen \ref{tab:landerot} und \ref{tab:landeblau} sind die daraus bestimmten Landé-Faktoren $g_{ij}$ der Übergänge im Magnetfeld angegeben.
+
+\begin{table}[H]
+	\centering
+	\captionof{table}{Drehimpulsquantenzahlen sowie Landé-Faktoren der daraus resultierenden Zustände}
+	\label{tab:landedrehimpuls}
+	\begin{tabular}{r r r r r}
+		\toprule
+		Zustand & $l$ & $s$ & $j$ & $g_j$ \\
+		\midrule
+		$^1$P$_1$ & 1 & 0 & 1 & 1 \\
+		$^1$D$_2$ & 2 & 0 & 1 & 1 \\
+		$^3$P$_1$ & 1 & 0 & 1 & 1 \\
+		$^3$S$_1$ & 0 & 1 & 1 & 1 \\
+		\bottomrule	
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\captionof{table}{Landé-Faktoren $g_{ij}$ der Übergänge der Spektrallinien mit $\lambda=\SI{643.8}{\nano\metre}$ bei äußerem Magnetfeld}
+	\label{tab:landerot}
+	\begin{tabular}{r r r r r r}
+		\toprule
+		Übergang & $m_i$ & $g_i$ & $m_j$ & $g_j$ & $g_{ij}$ \\
+		\midrule
+		$\sigma^-$ & 2 & 1 & 1 & 1 & 1 \\
+				   & 1 & 1 & 0 & 1 & 1 \\
+				   & 0 & 1 & -1 & 1 &1 \\
+		$\pi$	   & 1 & 1 & 1 & 1 & 0 \\
+				   & 0 & 1 & 0 & 1 & 0 \\
+				   & -1 & 1 & -1 & 1 & 0 \\
+		$\sigma^+$ & 0 & 1 & 1 & 1 & -1 \\
+				   & -1 & 1 & 0 & 1 & -1 \\
+				   & -2 & 1 & -1 & 1 & -1 \\
+		\bottomrule	
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\captionof{table}{Landé-Faktoren $g_{ij}$ der Übergänge der Spektrallinien mit $\lambda=\SI{480.0}{\nano\metre}$ bei äußerem Magnetfeld}
+	\label{tab:landeblau}
+	\begin{tabular}{r r r r r r}
+		\toprule
+		Übergang & $m_i$ & $g_i$ & $m_j$ & $g_j$ & $g_{ij}$ \\
+		\midrule
+		$\sigma^-$ & 1 & 1.5 & 0 & 2 & 1.5 \\
+			   	   & 0 & 1.5 & -1 & 2 & 2 \\
+		$\pi$	   & 1 & 1.5 & 1 & 2 & -0.5 \\
+				   & 0 & 1.5 & 0 & 2 & 0 \\
+				   & -1 & 1.5 & -1 & 2 & 0.5 \\
+		$\sigma^+$ & 0 & 1.5 & 1 & 2 & -2 \\
+				   & -1 & 1.5 & 0 & 2 & -1.5 \\
+		\bottomrule	
+	\end{tabular}
+\end{table}
 
 \section{Auswertung}
 
