@@ -19,8 +19,9 @@ plt.rcParams['font.size'] = 16
 h=constants.value(u'Planck constant')
 c=constants.value(u'speed of light in vacuum')
 mb = constants.value(u'Bohr magneton')
-l_red = 480*10**(-9)
-l_blue = 643.8*10**(-9)
+
+l_blue = 480*10**(-9)
+l_red = 643.8*10**(-9)
 ld_red = 48.9*10**(-12)
 ld_blue = 26.9*10**(-12)
 
@@ -35,8 +36,8 @@ def f(x,a,b):
 def dlambda(ds, Ds, Dl):
     return 0.5*ds/Ds*Dl
 
-def lande(l,B,dl):
-    return h*c/(l**2*mb*B)*dl
+def lande(w,B,d):
+    return ((h*c)/(w*w*mb*B)*d)
 
 params, covariance = curve_fit(f,data_b[0],data_b[1])
 errors = np.sqrt(np.diag(covariance))
@@ -68,12 +69,16 @@ delta_l_blue[1] = dlambda(data_deltas_blue[2], data_deltas_blue[0], ld_blue)
 dl_red = ufloat(np.mean(delta_l_red), sem(delta_l_red))
 dl_blue = unp.uarray([np.mean(delta_l_blue[0]),np.mean(delta_l_blue[1])] , [sem(delta_l_blue[0]),sem(delta_l_blue[1])])
 
+B_red=f(11.5,*params)
+B_blue_1=f(5.5,*params)
+B_blue_2=f(18,*params)
+
 print('dl(643.8nm) = {:.2u}'.format(dl_red))
-print('B = {:.5}'.format(f(11.5,*params)))
+print('B = {:.5}'.format(B_red))
 print('dl(480.0nm) = {:.2u}'.format(dl_blue[0]))
-print('B = {:.5}'.format(f(5.5,*params)))
+print('B = {:.5}'.format(B_blue_1))
 print('dl(480.0nm) = {:.2u}'.format(dl_blue[1]))
-print('B = {:.5}'.format(f(18,*params)))
+print('B = {:.5}'.format(B_blue_2))
 
 # for i in range (0,len(delta_l_red)):
 #     print(i, "\t", '{:.4}'.format(delta_l_red[i]), "\n")
@@ -85,6 +90,6 @@ print('B = {:.5}'.format(f(18,*params)))
 #     print(i, "\t", '{:.4}'.format(delta_l_blue[1,i]), "\n")
 
 print('Die Landé-Faktoren lauten:')
-print('\t', 'rot:', lande(l_red,f(11.5, *params),dl_red))
-print('\t', 'blau, sigma:', lande(l_blue,f(5.5, *params),dl_blue[0]))
-print('\t', 'blau, pi:', lande(l_blue,f(18, *params),dl_blue[1]))
+print('\t', 'rot:', lande(l_red,B_red,dl_red))
+print('\t', 'blau, sigma:', lande(l_blue,B_blue_1,dl_blue[0]))
+print('\t', 'blau, pi:', lande(l_blue,B_blue_2,dl_blue[1]))
